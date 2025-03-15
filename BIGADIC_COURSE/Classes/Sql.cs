@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BIGADIC_COURSE
+namespace BIGADIC_COURSE.Classes
 {
     public class Sql
     {
