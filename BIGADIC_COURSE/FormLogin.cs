@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using Log = BIGADIC_COURSE.Classes.Log;
+using User = BIGADIC_COURSE.Classes.User;
 
 namespace BIGADIC_COURSE
 {
