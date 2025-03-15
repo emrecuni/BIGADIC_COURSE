@@ -1,6 +1,6 @@
 ﻿X Class'ları ekle X
 * Formdesigner'ları ekle
 * Form code'ları ekle
-* Nuget package'ları ekle
+X Nuget package'ları ekle X // text'ler hariç
 * Hataları buraya al
 * 

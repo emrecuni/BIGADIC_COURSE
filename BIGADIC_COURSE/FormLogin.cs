@@ -2,7 +2,9 @@ using BIGADIC_COURSE.Classes;
 using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.VisualBasic.Logging;
 using System.Data;
+using System.Data.SqlClient;
 using System.Text;
+using Log = BIGADIC_COURSE.Classes.Log;
 
 namespace BIGADIC_COURSE
 {
