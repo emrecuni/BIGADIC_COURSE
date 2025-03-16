@@ -11,6 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iText.Kernel.Pdf;
+using iText.Kernel.Font;
+using iText.Layout.Element;
+using iText.IO.Font;
+using iText.IO.Image;
 
 namespace BIGADIC_COURSE
 {
@@ -507,7 +512,7 @@ namespace BIGADIC_COURSE
                         foreach (Register course in activeCourses)
                         {
                             Cell cell = new Cell().Add(new Paragraph($"*{course.COURSE}").SetFont(font).SetFontSize(12));
-                            cell.SetBorder(Border.NO_BORDER);  // Hücrenin kenarlığını kaldır
+                            cell.SetBorder(iText.Layout.Borders.Border.NO_BORDER);  // Hücrenin kenarlığını kaldır
                             cell.SetPadding(7);
                             tableActive.AddCell(cell);
                         }
@@ -524,7 +529,7 @@ namespace BIGADIC_COURSE
                         foreach (Register course in waitingRegisters)
                         {
                             Cell cell = new Cell().Add(new Paragraph($"*{course.COURSE}").SetFont(font).SetFontSize(12));
-                            cell.SetBorder(Border.NO_BORDER);  // Hücrenin kenarlığını kaldır
+                            cell.SetBorder(iText.Layout.Borders.Border.NO_BORDER);  // Hücrenin kenarlığını kaldır
                             cell.SetPadding(7);
                             tableWaiting.AddCell(cell);
                         }
