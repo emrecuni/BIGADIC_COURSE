@@ -419,6 +419,8 @@ namespace BIGADIC_COURSE
                             idStr.Append($"GKM00{register.ID}");
                         else if (register.ID < 1000)
                             idStr.Append($"GKM0{register.ID}");
+                        else
+                            idStr.Append($"GKM{register.ID}");
 
                         ListViewItem item = new ListViewItem(idStr.ToString());
                         item.SubItems.Add(register.TCKN);
@@ -499,13 +501,13 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private void addBranchToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void addBranchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 FormAddBranch formBranch = new FormAddBranch();
                 formBranch.ShowDialog();
-                GetCourses();
+                await GetCourses();
                 GetCourseCount();
             }
             catch (Exception ex)
@@ -583,7 +585,7 @@ namespace BIGADIC_COURSE
                 Sql sql = new Sql();
                 query.Clear();
                 query.Append(@"
-                SELECT R.ID, T.TCKN, T.NAME, T.SURNAME, C.NAME, R.REGISTER_DATE, R.STATUS, 
+                SELECT R.ID, T.TCKN, T.NAME, T.SURNAME, C.NAME AS COURSENAME, R.REGISTER_DATE, R.STATUS, 
                        T.GENDER, T.PHONE, T.BIRTHDATE, C.ID AS COURSEID, T.ID AS TRAINEEID
                 FROM COURSEREGISTER R
                 INNER JOIN TRAINEES T ON T.ID = R.TRAINEE_ID
@@ -622,7 +624,7 @@ namespace BIGADIC_COURSE
                             TCKN = register.Field<string>("TCKN"),
                             NAME = register.Field<string>("NAME"),
                             SURNAME = register.Field<string>("SURNAME"),
-                            COURSE = register.Field<string>("NAME"),
+                            COURSE = register.Field<string>("COURSENAME"),
                             REGISTERDATE = register.Field<DateTime>("REGISTER_DATE"),
                             STATUS = status,
                             GENDER = register.Field<bool>("GENDER"),
@@ -893,13 +895,13 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private void deleteBranchToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void deleteBranchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 FormDeleteBranch formBranch = new FormDeleteBranch();
                 formBranch.ShowDialog();
-                GetCourses();
+                await GetCourses();
                 GetCourseCount();
             }
             catch (Exception ex)
@@ -909,7 +911,7 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private async void GetCourses()
+        private async Task GetCourses()
         {
             try
             {
@@ -1008,8 +1010,11 @@ namespace BIGADIC_COURSE
                     if (label.Tag != null && int.TryParse(label.Tag.ToString(), out int courseId))
                     {
                         label.Text = courseCounts.ContainsKey(courseId) ? courseCounts[courseId].ToString() : "0";
+                        label.Refresh();  // Zorla güncelle  
                     }
                 }
+                //Application.DoEvents(); // UI'yi güncelle
+
             }
             catch (Exception ex)
             {
@@ -1270,7 +1275,6 @@ namespace BIGADIC_COURSE
                                 });
                             }
                             row++;
-
                         }
 
                         query.Clear();
