@@ -1,16 +1,15 @@
 ﻿using BIGADIC_COURSE.Classes;
+using ScottPlot.Statistics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace BIGADIC_COURSE
 {
@@ -58,7 +57,7 @@ namespace BIGADIC_COURSE
             {
                 title = null;
                 selectedChart = 'C';
-                groupBoxFilter.Enabled = true;
+                groupBoxRegisterType.Enabled = true;
                 radioButtonMale.Enabled = true;
                 radioButtonFemale.Enabled = true;
                 startDate = DateTime.MinValue;
@@ -149,7 +148,7 @@ namespace BIGADIC_COURSE
             {
                 title = null;
                 selectedChart = 'G';
-                groupBoxFilter.Enabled = true;
+                groupBoxRegisterType.Enabled = true;
                 radioButtonMale.Enabled = false;
                 radioButtonFemale.Enabled = false;
                 startDate = DateTime.MinValue;
@@ -208,7 +207,7 @@ namespace BIGADIC_COURSE
             {
                 title = null;
                 selectedChart = 'T';
-                groupBoxFilter.Enabled = false;
+                groupBoxRegisterType.Enabled = false;
                 radioButtonMale.Enabled = true;
                 radioButtonFemale.Enabled = true;
                 startDate = DateTime.MinValue;
@@ -254,44 +253,44 @@ namespace BIGADIC_COURSE
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (chart.Series[0].Points.Count > 0)
-                {
-                    string imagePath = Application.StartupPath + $"\\chart_{DateTime.Now.Date:yyyy_MM_dd_HH_mm_ss}.png";
+            //try
+            //{
+            //    if (chart.Series[0].Points.Count > 0)
+            //    {
+            //        string imagePath = Application.StartupPath + $"\\chart_{DateTime.Now.Date:yyyy_MM_dd_HH_mm_ss}.png";
 
-                    Screenshots(imagePath);
-                    MessageBox.Show("Grafik Png Dosyasına Başarıyla Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Process.Start(imagePath);
-                }
-                else
-                    MessageBox.Show("Çizilmiş Bir Grafik Bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                Log.logger.Error($"printToolStripMenuItem_Click Error Hata Kodu: 3004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //        Screenshots(imagePath);
+            //        MessageBox.Show("Grafik Png Dosyasına Başarıyla Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        Process.Start(imagePath);
+            //    }
+            //    else
+            //        MessageBox.Show("Çizilmiş Bir Grafik Bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Log.logger.Error($"printToolStripMenuItem_Click Error Hata Kodu: 3004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+            //    MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void Screenshots(string path)
         {
-            Bitmap chartBitmap = null;
-            try
-            {
-                chartBitmap = new Bitmap(splitContainerChart.Panel2.Width, splitContainerChart.Panel2.Height);
-                splitContainerChart.Panel2.DrawToBitmap(chartBitmap, new Rectangle(0, 0, splitContainerChart.Panel2.Width, splitContainerChart.Panel2.Height));
-                chartBitmap.Save(path, ImageFormat.Png);
-            }
-            catch (Exception ex)
-            {
-                Log.logger.Error($"Screenshots Error Hata Kodu: 3005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                chartBitmap.Dispose();
-            }
+            //Bitmap chartBitmap = null;
+            //try
+            //{
+            //    chartBitmap = new Bitmap(splitContainerChart.Panel2.Width, splitContainerChart.Panel2.Height);
+            //    splitContainerChart.Panel2.DrawToBitmap(chartBitmap, new Rectangle(0, 0, splitContainerChart.Panel2.Width, splitContainerChart.Panel2.Height));
+            //    chartBitmap.Save(path, ImageFormat.Png);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Log.logger.Error($"Screenshots Error Hata Kodu: 3005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+            //    MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            //finally
+            //{
+            //    chartBitmap.Dispose();
+            //}
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
@@ -322,42 +321,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                chart.ChartAreas.Clear();
-                chart.Series.Clear();
-
-                chart.ChartAreas.Add(new ChartArea("MainArea"));
-                chart.ChartAreas[0].BackColor = Color.Transparent;
-
-                // Yeni bir veri serisi (Series) oluşturuyoruz
-                Series series = new Series("Sales")
-                {
-                    ChartType = SeriesChartType.Column, // Sütun grafiği
-                    BorderWidth = 1, // Kenar genişliği
-                    IsValueShownAsLabel = true // Değer etiketlerinin gösterilmesi
-                };
-
-                // Seriye veri ekliyoruz (Örnek veriler)
-                foreach (var register in chartDict)
-                    series.Points.AddXY(register.Key, register.Value);
-
-                // Chart kontrolüne seriyi ekliyoruz
-                chart.Series.Add(series);
-                chart.Series[0].Font = new Font("Segoe UI", 12F);
-
-                // Grafikte daha fazla özelleştirme yapılabilir (örneğin, eksenler, renkler vb.)
-                chart.ChartAreas[0].AxisX.Title = axisName;  // X Ekseninin Başlığı
-                chart.ChartAreas[0].AxisY.Title = "Öğrenci Sayısı";   // Y Ekseninin Başlığı
-                chart.ChartAreas[0].AxisX.TitleFont = new Font("Segoe UI Semibold", 13F);
-                chart.ChartAreas[0].AxisY.TitleFont = new Font("Segoe UI Semibold", 13F);
-
-
-                chart.ChartAreas[0].AxisX.LabelStyle.Angle = 90;  // Etiketleri 90 derece döndür
-                chart.ChartAreas[0].AxisX.IsMarginVisible = false;
-
-                // X eksenindeki etiketlerin aralığını ayarlayalım
-                chart.ChartAreas[0].AxisX.Interval = 1; // Her etiketi göstermek için aralığı 1 yapıyoruz
-                //chart.ChartAreas[0].AxisX.IsLabelAutoFit = false;  // Etiketlerin otomatik sığmasını engelliyoruz
-                chart.ChartAreas[0].AxisX.LabelAutoFitMaxFontSize = 10;  // Etiket fontunun maksimum boyutunu ayarlıyoruz
+                
             }
             catch (Exception ex)
             {
@@ -497,5 +461,6 @@ namespace BIGADIC_COURSE
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3012", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

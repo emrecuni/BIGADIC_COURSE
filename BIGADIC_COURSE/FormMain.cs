@@ -1,4 +1,6 @@
 ﻿using BIGADIC_COURSE.Classes;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
@@ -737,7 +739,7 @@ namespace BIGADIC_COURSE
                 {
                     using (PdfDocument pdf = new PdfDocument(writer))
                     {
-                        Document document = new Document(pdf);
+                        iText.Layout.Document document = new(pdf);
 
                         Table table = new Table(7);
                         table.AddCell("ID");

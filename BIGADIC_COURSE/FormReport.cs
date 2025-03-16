@@ -417,7 +417,7 @@ namespace BIGADIC_COURSE
                 {
                     using (PdfDocument pdf = new PdfDocument(writer))
                     {
-                        iText.Layout.Document document = new iText.Layout.Document(pdf);
+                        iText.Layout.Document document = new(pdf);
 
                         PdfFont font = PdfFontFactory.CreateFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
 

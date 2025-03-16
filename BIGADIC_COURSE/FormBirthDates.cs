@@ -1,4 +1,8 @@
 ﻿using BIGADIC_COURSE.Classes;
+using iText.IO.Font;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;

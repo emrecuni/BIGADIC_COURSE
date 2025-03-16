@@ -1,6 +1,9 @@
 ﻿X Class'ları ekle X
-* Formdesigner'ları ekle
-* Form code'ları ekle
-X Nuget package'ları ekle X // text'ler hariç
+X Formdesigner'ları ekle X
+X Form code'ları ekle X
+X Nuget package'ları ekle X // text'ler hariç X
 * Hataları buraya al
-* 
+* Nesne oluşturmayı basitleştir //new()
+* Logo ve ikonları ekle
+* Chart'ta ss'i güncelle
+* Chart'ta print'i  güncelle
