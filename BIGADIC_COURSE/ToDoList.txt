@@ -7,3 +7,11 @@ X Nuget package'ları ekle X // text'ler hariç X
 * Logo ve ikonları ekle
 * Chart'ta ss'i güncelle
 * Chart'ta print'i  güncelle
+* Zorunlu yönetici olarak çalışmasını sağla
+X 2012 hatası X
+X 2018 hatası X
+* Listelemedeki branş'ı kontrol et
+X Arama çalışmıyor X
+X Log tutulmuyor X
+* Main hata kodları düzelt
+* Bazı raporlar çalışmıyor

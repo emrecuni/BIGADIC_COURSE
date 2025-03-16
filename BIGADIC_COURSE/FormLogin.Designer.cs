@@ -28,161 +28,158 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-             this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.groupBoxAdminLoginPanel = new System.Windows.Forms.GroupBox();
-            this.buttonShowPassword = new System.Windows.Forms.Button();
-            this.imageListShowPassword = new System.Windows.Forms.ImageList(this.components);
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.textBoxUser = new System.Windows.Forms.TextBox();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.labelKullanici = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.labelLoginPage = new System.Windows.Forms.Label();
-            this.groupBoxAdminLoginPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            this.SuspendLayout();
+            groupBoxAdminLoginPanel = new GroupBox();
+            buttonShowPassword = new Button();
+            imageListShowPassword = new ImageList(components);
+            buttonLogin = new Button();
+            textBoxPassword = new TextBox();
+            textBoxUser = new TextBox();
+            labelPassword = new Label();
+            labelKullanici = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            pictureBoxLogo = new PictureBox();
+            labelLoginPage = new Label();
+            groupBoxAdminLoginPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            SuspendLayout();
             // 
             // groupBoxAdminLoginPanel
             // 
-            this.groupBoxAdminLoginPanel.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxAdminLoginPanel.Controls.Add(this.buttonShowPassword);
-            this.groupBoxAdminLoginPanel.Controls.Add(this.buttonLogin);
-            this.groupBoxAdminLoginPanel.Controls.Add(this.textBoxPassword);
-            this.groupBoxAdminLoginPanel.Controls.Add(this.textBoxUser);
-            this.groupBoxAdminLoginPanel.Controls.Add(this.labelPassword);
-            this.groupBoxAdminLoginPanel.Controls.Add(this.labelKullanici);
-            this.groupBoxAdminLoginPanel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBoxAdminLoginPanel.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxAdminLoginPanel.Location = new System.Drawing.Point(89, 160);
-            this.groupBoxAdminLoginPanel.Name = "groupBoxAdminLoginPanel";
-            this.groupBoxAdminLoginPanel.Size = new System.Drawing.Size(438, 195);
-            this.groupBoxAdminLoginPanel.TabIndex = 0;
-            this.groupBoxAdminLoginPanel.TabStop = false;
+            groupBoxAdminLoginPanel.BackColor = Color.Transparent;
+            groupBoxAdminLoginPanel.Controls.Add(buttonShowPassword);
+            groupBoxAdminLoginPanel.Controls.Add(buttonLogin);
+            groupBoxAdminLoginPanel.Controls.Add(textBoxPassword);
+            groupBoxAdminLoginPanel.Controls.Add(textBoxUser);
+            groupBoxAdminLoginPanel.Controls.Add(labelPassword);
+            groupBoxAdminLoginPanel.Controls.Add(labelKullanici);
+            groupBoxAdminLoginPanel.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            groupBoxAdminLoginPanel.ForeColor = Color.Black;
+            groupBoxAdminLoginPanel.Location = new Point(89, 160);
+            groupBoxAdminLoginPanel.Name = "groupBoxAdminLoginPanel";
+            groupBoxAdminLoginPanel.Size = new Size(438, 195);
+            groupBoxAdminLoginPanel.TabIndex = 0;
+            groupBoxAdminLoginPanel.TabStop = false;
             // 
             // buttonShowPassword
             // 
-            this.buttonShowPassword.ImageIndex = 0;
-            this.buttonShowPassword.ImageList = this.imageListShowPassword;
-            this.buttonShowPassword.Location = new System.Drawing.Point(387, 73);
-            this.buttonShowPassword.Name = "buttonShowPassword";
-            this.buttonShowPassword.Size = new System.Drawing.Size(45, 30);
-            this.buttonShowPassword.TabIndex = 7;
-            this.buttonShowPassword.UseVisualStyleBackColor = true;
-            this.buttonShowPassword.Click += new System.EventHandler(this.buttonShowPassword_Click);
+            buttonShowPassword.ImageIndex = 0;
+            buttonShowPassword.ImageList = imageListShowPassword;
+            buttonShowPassword.Location = new Point(387, 73);
+            buttonShowPassword.Name = "buttonShowPassword";
+            buttonShowPassword.Size = new Size(45, 30);
+            buttonShowPassword.TabIndex = 7;
+            buttonShowPassword.UseVisualStyleBackColor = true;
+            buttonShowPassword.Click += buttonShowPassword_Click;
             // 
             // imageListShowPassword
             // 
-            this.imageListShowPassword.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListShowPassword.ImageStream")));
-            this.imageListShowPassword.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListShowPassword.Images.SetKeyName(0, "unlock.png");
-            this.imageListShowPassword.Images.SetKeyName(1, "lock.png");
+            imageListShowPassword.ColorDepth = ColorDepth.Depth32Bit;
+            imageListShowPassword.ImageStream = (ImageListStreamer)resources.GetObject("imageListShowPassword.ImageStream");
+            imageListShowPassword.TransparentColor = Color.Transparent;
+            imageListShowPassword.Images.SetKeyName(0, "unlock.png");
+            imageListShowPassword.Images.SetKeyName(1, "lock.png");
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.White;
-            this.buttonLogin.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonLogin.Location = new System.Drawing.Point(177, 109);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(204, 49);
-            this.buttonLogin.TabIndex = 2;
-            this.buttonLogin.Text = "Giriş Yap";
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            buttonLogin.BackColor = Color.White;
+            buttonLogin.Font = new Font("Consolas", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            buttonLogin.Location = new Point(177, 109);
+            buttonLogin.Name = "buttonLogin";
+            buttonLogin.Size = new Size(204, 49);
+            buttonLogin.TabIndex = 2;
+            buttonLogin.Text = "Giriş Yap";
+            buttonLogin.UseVisualStyleBackColor = false;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.BackColor = System.Drawing.Color.White;
-            this.textBoxPassword.ForeColor = System.Drawing.Color.Black;
-            this.textBoxPassword.Location = new System.Drawing.Point(177, 73);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(204, 30);
-            this.textBoxPassword.TabIndex = 1;
-            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            textBoxPassword.BackColor = Color.White;
+            textBoxPassword.ForeColor = Color.Black;
+            textBoxPassword.Location = new Point(177, 73);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '*';
+            textBoxPassword.Size = new Size(204, 30);
+            textBoxPassword.TabIndex = 1;
+            textBoxPassword.KeyDown += textBox_KeyDown;
             // 
             // textBoxUser
             // 
-            this.textBoxUser.BackColor = System.Drawing.Color.White;
-            this.textBoxUser.ForeColor = System.Drawing.Color.Black;
-            this.textBoxUser.Location = new System.Drawing.Point(177, 37);
-            this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(204, 30);
-            this.textBoxUser.TabIndex = 0;
-            this.textBoxUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            textBoxUser.BackColor = Color.White;
+            textBoxUser.ForeColor = Color.Black;
+            textBoxUser.Location = new Point(177, 37);
+            textBoxUser.Name = "textBoxUser";
+            textBoxUser.Size = new Size(204, 30);
+            textBoxUser.TabIndex = 0;
+            textBoxUser.KeyDown += textBox_KeyDown;
             // 
             // labelPassword
             // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelPassword.Location = new System.Drawing.Point(55, 76);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(80, 22);
-            this.labelPassword.TabIndex = 2;
-            this.labelPassword.Text = "Parola:";
+            labelPassword.AutoSize = true;
+            labelPassword.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelPassword.Location = new Point(55, 76);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(80, 22);
+            labelPassword.TabIndex = 2;
+            labelPassword.Text = "Parola:";
             // 
             // labelKullanici
             // 
-            this.labelKullanici.AutoSize = true;
-            this.labelKullanici.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelKullanici.Location = new System.Drawing.Point(25, 40);
-            this.labelKullanici.Name = "labelKullanici";
-            this.labelKullanici.Size = new System.Drawing.Size(110, 22);
-            this.labelKullanici.TabIndex = 1;
-            this.labelKullanici.Text = "Kullanıcı:";
+            labelKullanici.AutoSize = true;
+            labelKullanici.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelKullanici.Location = new Point(25, 40);
+            labelKullanici.Name = "labelKullanici";
+            labelKullanici.Size = new Size(110, 22);
+            labelKullanici.TabIndex = 1;
+            labelKullanici.Text = "Kullanıcı:";
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(560, 160);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(238, 195);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 2;
-            this.pictureBoxLogo.TabStop = false;
+            pictureBoxLogo.BackgroundImageLayout = ImageLayout.None;
+            pictureBoxLogo.Location = new Point(560, 160);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(238, 195);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxLogo.TabIndex = 2;
+            pictureBoxLogo.TabStop = false;
             // 
             // labelLoginPage
             // 
-            this.labelLoginPage.AutoSize = true;
-            this.labelLoginPage.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.labelLoginPage.Location = new System.Drawing.Point(13, 13);
-            this.labelLoginPage.Name = "labelLoginPage";
-            this.labelLoginPage.Size = new System.Drawing.Size(100, 21);
-            this.labelLoginPage.TabIndex = 3;
-            this.labelLoginPage.Text = "LOGIN PAGE";
+            labelLoginPage.AutoSize = true;
+            labelLoginPage.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            labelLoginPage.Location = new Point(13, 13);
+            labelLoginPage.Name = "labelLoginPage";
+            labelLoginPage.Size = new Size(100, 21);
+            labelLoginPage.TabIndex = 3;
+            labelLoginPage.Text = "LOGIN PAGE";
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(897, 510);
-            this.Controls.Add(this.labelLoginPage);
-            this.Controls.Add(this.pictureBoxLogo);
-            this.Controls.Add(this.groupBoxAdminLoginPanel);
-            this.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bilgi_İşlem_Ali AYTEKİN";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
-            this.Load += new System.EventHandler(this.FormLogin_Load);
-            this.groupBoxAdminLoginPanel.ResumeLayout(false);
-            this.groupBoxAdminLoginPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 18F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            BackColor = Color.DarkGray;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(897, 510);
+            Controls.Add(labelLoginPage);
+            Controls.Add(pictureBoxLogo);
+            Controls.Add(groupBoxAdminLoginPanel);
+            Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Bilgi_İşlem_Ali AYTEKİN";
+            FormClosing += FormLogin_FormClosing;
+            Load += FormLogin_Load;
+            groupBoxAdminLoginPanel.ResumeLayout(false);
+            groupBoxAdminLoginPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

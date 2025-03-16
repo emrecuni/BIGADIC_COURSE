@@ -6,15 +6,16 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 
 namespace BIGADIC_COURSE.Classes
 {
     public class Sql
     {
-        SqlConnection connection;
+        SqlConnection connection = null!;
         string connectionString = "Server=.;Database=TESTBIGADIC_COURSE;Trusted_Connection=True;";
         //string connectionString = "Server=.;Database=TESTBIGADIC_COURSE;Trusted_Connection=True;"; // development
-        string configPath = Application.StartupPath + "\\sql.cnfg";
+        string configPath = Application.StartupPath + "sql.cnfg";
 
         private void GetSqlConfig()
         {
@@ -50,7 +51,7 @@ namespace BIGADIC_COURSE.Classes
             }
         }
 
-        public async Task<DataTable> GetFromDb(string query, List<SqlParameter> parameters = null)
+        public async Task<DataTable?> GetFromDb(string query, List<SqlParameter>? parameters = null)
         {
             try
             {
@@ -77,7 +78,7 @@ namespace BIGADIC_COURSE.Classes
             }
         }
 
-        public async Task<int> EditData(string query, List<SqlParameter> parameters = null)
+        public async Task<int> EditData(string query, List<SqlParameter>? parameters = null)
         {
             try
             {

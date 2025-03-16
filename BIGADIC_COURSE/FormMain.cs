@@ -5,7 +5,7 @@ using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+//using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
@@ -14,6 +14,9 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+using System.Data;
+
 
 namespace BIGADIC_COURSE
 {
@@ -32,8 +35,8 @@ namespace BIGADIC_COURSE
         List<Register> birthDates = new List<Register>();
         Dictionary<int, string> selectionBranches = new Dictionary<int, string>();
         User _user;
-        Register selectedRegister;
-        string statusDesc;
+        Register? selectedRegister;
+        string? statusDesc;
         string title = "BİGADİÇ GENÇLİK VE KÜLTÜR MERKEZİ";
         int titleIndex = 32;
 
@@ -126,7 +129,7 @@ namespace BIGADIC_COURSE
                             END
                             ");
 
-                            parameters.Add(new SqlParameter($"@Name{i + 1}", SqlDbType.NVarChar, 50) { Value = textBoxName.Text.Trim().ToUpper() });
+                            parameters.Add(new Microsoft.Data.SqlClient.SqlParameter($"@Name{i + 1}", SqlDbType.NVarChar, 50) { Value = textBoxName.Text.Trim().ToUpper() });
                             parameters.Add(new SqlParameter($"@Surname{i + 1}", SqlDbType.NVarChar, 50) { Value = textBoxSurname.Text.Trim().ToUpper() });
                             parameters.Add(new SqlParameter($"@Tckn{i + 1}", SqlDbType.Char, 11) { Value = maskedTextBoxTckn.Text.Trim() });
                             parameters.Add(new SqlParameter($"@BirthDate{i + 1}", SqlDbType.Date) { Value = dateTimePickerBirthDate.Value });
@@ -151,7 +154,7 @@ namespace BIGADIC_COURSE
                             case 1:
                                 Log.logger.Info($"Yeni kurs kaydı başarıyla yapıldı. {maskedTextBoxTckn.Text}");
                                 if (allRegistersList.Count > 0)
-                                    id = allRegistersList.LastOrDefault().ID;
+                                    id = allRegistersList.LastOrDefault()?.ID ?? -1;
                                 RefreshData(); // veri tabanındaki kayıtlar tekrar çekilir
                                 GetNewRegisters(id); // sadece yeni eklene kayıtlar listview'a getirir
                                 GetCourseCount(); // kursların kayıt sayıları güncellenir
@@ -240,7 +243,7 @@ namespace BIGADIC_COURSE
                 else if (radioButtonWaiting.Checked)
                     status = 'B';
 
-                if (selectedRegister.NAME == textBoxName.Text && selectedRegister.SURNAME == textBoxSurname.Text && selectedRegister.PHONE == maskedTextBoxPhone.Text
+                if (selectedRegister != null && selectedRegister.NAME == textBoxName.Text && selectedRegister.SURNAME == textBoxSurname.Text && selectedRegister.PHONE == maskedTextBoxPhone.Text
                  && selectedRegister.TCKN == maskedTextBoxTckn.Text && selectedRegister.BIRTHDATE == dateTimePickerBirthDate.Value
                  && selectedRegister.GENDER == gender && selectedRegister.STATUS == status.ToString())
                 {
@@ -265,8 +268,8 @@ namespace BIGADIC_COURSE
                     parameters.Add(new SqlParameter("@Birthdate", SqlDbType.Date) { Value = dateTimePickerBirthDate.Value });
                     parameters.Add(new SqlParameter("@Phone", SqlDbType.Char, 10) { Value = maskedTextBoxPhone.Text.Trim() });
                     parameters.Add(new SqlParameter("@Gender", SqlDbType.Bit) { Value = radioButtonMale.Checked == true ? 1 : 0 });
-                    parameters.Add(new SqlParameter("@TraineeId", SqlDbType.Int) { Value = allRegistersList.FirstOrDefault(r => r.ID == id).TRAINEEID });
-                    parameters.Add(new SqlParameter("@CourseId", SqlDbType.Int) { Value = allRegistersList.FirstOrDefault(r => r.ID == id).COURSEID });
+                    parameters.Add(new SqlParameter("@TraineeId", SqlDbType.Int) { Value = allRegistersList.FirstOrDefault(r => r.ID == id)?.TRAINEEID ?? -1 });
+                    parameters.Add(new SqlParameter("@CourseId", SqlDbType.Int) { Value = allRegistersList.FirstOrDefault(r => r.ID == id)?.COURSEID ?? -1 });
                     parameters.Add(new SqlParameter("@Status", SqlDbType.Char, 1) { Value = status });
                     parameters.Add(new SqlParameter("@RegisterId", SqlDbType.Int) { Value = id });
 
@@ -544,20 +547,20 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                CheckBox checkBox = (sender) as CheckBox;
-                if (checkBox.Checked) // checkbox tiklenirse seçilen branşlar text'ine ve listesine eklenir  
+                CheckBox? checkBox = sender as CheckBox;
+                if (checkBox != null && checkBox.Checked) // checkbox tiklenirse seçilen branşlar text'ine ve listesine eklenir  
                 {
                     if (textBoxSelectionBranches.Text != string.Empty)
                         textBoxSelectionBranches.Text += ",";
                     textBoxSelectionBranches.Text += checkBox.Text;
-                    selectionBranches.Add(int.Parse(checkBox.Tag.ToString()), checkBox.Text);
+                    selectionBranches.Add(int.Parse(checkBox.Tag?.ToString() ?? "-1"), checkBox.Text);
                     checkBox.ForeColor = Color.Red;
                 }
-                else // checkbox'ın tiki kaldırılırsa seçilen branşlar text'inden ve listesinden çıkartılır
+                else if (checkBox != null)// checkbox'ın tiki kaldırılırsa seçilen branşlar text'inden ve listesinden çıkartılır
                 {
                     textBoxSelectionBranches.Text = textBoxSelectionBranches.Text.Replace(checkBox.Text, string.Empty);
                     textBoxSelectionBranches.Text = textBoxSelectionBranches.Text.Replace(",,", ",");
-                    selectionBranches.Remove(int.Parse(checkBox.Tag.ToString()));
+                    selectionBranches.Remove(int.Parse(checkBox.Tag?.ToString() ?? "-1"));
                     checkBox.ForeColor = Color.Black;
 
                     if (textBoxSelectionBranches.Text.Length > 0 && textBoxSelectionBranches.Text[0] == ',') // textbox'ın başında kalan virgülü siler
@@ -587,49 +590,51 @@ namespace BIGADIC_COURSE
                 INNER JOIN COURSES C ON C.ID = R.COURSE_ID;
                 ");
 
-                DataTable allRegister = await sql.GetFromDb(query.ToString());
+                DataTable? allRegister = await sql.GetFromDb(query.ToString());
 
                 // Yeni yöntem: Daha hızlı listeye çevirme
-                allRegistersList = allRegister.AsEnumerable().Select(register =>
+                if (allRegister != null)
                 {
-                    string status = register.Field<string>("STATUS");
-                    string statusDesc;
-
-                    switch (status)
+                    allRegistersList = allRegister.AsEnumerable().Select(register =>
                     {
-                        case "A":
-                            statusDesc = "AKTİF";
-                            break;
-                        case "B":
-                            statusDesc = "BEKLEYEN";
-                            break;
-                        case "P":
-                            statusDesc = "PASİF";
-                            break;
-                        default:
-                            statusDesc = "BİLİNMİYOR";
-                            break;
-                    }
+                        string status = register.Field<string>("STATUS");
+                        string statusDesc;
 
-                    return new Register
-                    {
-                        ID = register.Field<int>("ID"),
-                        TCKN = register.Field<string>("TCKN"),
-                        NAME = register.Field<string>("NAME"),
-                        SURNAME = register.Field<string>("SURNAME"),
-                        COURSE = register.Field<string>("NAME"),
-                        REGISTERDATE = register.Field<DateTime>("REGISTER_DATE"),
-                        STATUS = status,
-                        GENDER = register.Field<bool>("GENDER"),
-                        PHONE = register.Field<string>("PHONE"),
-                        BIRTHDATE = register.Field<DateTime>("BIRTHDATE"),
-                        COURSEID = register.Field<int>("COURSEID"),
-                        TRAINEEID = register.Field<int>("TRAINEEID"),
-                        GENDERDESC = register.Field<bool>("GENDER") ? "Erkek" : "Kadın",
-                        STATUSDESC = statusDesc
-                    };
-                }).ToList();
+                        switch (status)
+                        {
+                            case "A":
+                                statusDesc = "AKTİF";
+                                break;
+                            case "B":
+                                statusDesc = "BEKLEYEN";
+                                break;
+                            case "P":
+                                statusDesc = "PASİF";
+                                break;
+                            default:
+                                statusDesc = "BİLİNMİYOR";
+                                break;
+                        }
 
+                        return new Register
+                        {
+                            ID = register.Field<int>("ID"),
+                            TCKN = register.Field<string>("TCKN"),
+                            NAME = register.Field<string>("NAME"),
+                            SURNAME = register.Field<string>("SURNAME"),
+                            COURSE = register.Field<string>("NAME"),
+                            REGISTERDATE = register.Field<DateTime>("REGISTER_DATE"),
+                            STATUS = status,
+                            GENDER = register.Field<bool>("GENDER"),
+                            PHONE = register.Field<string>("PHONE"),
+                            BIRTHDATE = register.Field<DateTime>("BIRTHDATE"),
+                            COURSEID = register.Field<int>("COURSEID"),
+                            TRAINEEID = register.Field<int>("TRAINEEID"),
+                            GENDERDESC = register.Field<bool>("GENDER") ? "Erkek" : "Kadın",
+                            STATUSDESC = statusDesc
+                        };
+                    }).ToList();
+                }
                 // UI güncellemelerini ana thread'de yap
                 textBoxTotalRegister.Invoke((MethodInvoker)(() =>
                     textBoxTotalRegister.Text = allRegistersList.Count.ToString()));
@@ -985,8 +990,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"reportToolStripMenuItem_Click Error Hata Kodu: 2012 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2012", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"reportToolStripMenuItem_Click Error Hata Kodu: 2029 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2029", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

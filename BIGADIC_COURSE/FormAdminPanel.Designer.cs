@@ -28,237 +28,236 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminPanel));
-            this.groupBoxUsers = new System.Windows.Forms.GroupBox();
-            this.buttonShowPassword = new System.Windows.Forms.Button();
-            this.imageListShowPassword = new System.Windows.Forms.ImageList(this.components);
-            this.buttonShowAgainPassword = new System.Windows.Forms.Button();
-            this.textBoxAgainPassword = new System.Windows.Forms.TextBox();
-            this.labelAgainPassword = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.checkBoxIsAdmin = new System.Windows.Forms.CheckBox();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.labelUsername = new System.Windows.Forms.Label();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.comboBoxAllUsers = new System.Windows.Forms.ComboBox();
-            this.groupBoxProcesses = new System.Windows.Forms.GroupBox();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.groupBoxUsers.SuspendLayout();
-            this.groupBoxProcesses.SuspendLayout();
-            this.SuspendLayout();
+            groupBoxUsers = new GroupBox();
+            buttonShowPassword = new Button();
+            imageListShowPassword = new ImageList(components);
+            buttonShowAgainPassword = new Button();
+            textBoxAgainPassword = new TextBox();
+            labelAgainPassword = new Label();
+            textBoxPassword = new TextBox();
+            textBoxUsername = new TextBox();
+            checkBoxIsAdmin = new CheckBox();
+            labelPassword = new Label();
+            labelUsername = new Label();
+            labelUser = new Label();
+            comboBoxAllUsers = new ComboBox();
+            groupBoxProcesses = new GroupBox();
+            buttonClear = new Button();
+            buttonDelete = new Button();
+            buttonUpdate = new Button();
+            buttonAdd = new Button();
+            groupBoxUsers.SuspendLayout();
+            groupBoxProcesses.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBoxUsers
             // 
-            this.groupBoxUsers.Controls.Add(this.buttonShowPassword);
-            this.groupBoxUsers.Controls.Add(this.buttonShowAgainPassword);
-            this.groupBoxUsers.Controls.Add(this.textBoxAgainPassword);
-            this.groupBoxUsers.Controls.Add(this.labelAgainPassword);
-            this.groupBoxUsers.Controls.Add(this.textBoxPassword);
-            this.groupBoxUsers.Controls.Add(this.textBoxUsername);
-            this.groupBoxUsers.Controls.Add(this.checkBoxIsAdmin);
-            this.groupBoxUsers.Controls.Add(this.labelPassword);
-            this.groupBoxUsers.Controls.Add(this.labelUsername);
-            this.groupBoxUsers.Controls.Add(this.labelUser);
-            this.groupBoxUsers.Controls.Add(this.comboBoxAllUsers);
-            this.groupBoxUsers.Location = new System.Drawing.Point(15, 16);
-            this.groupBoxUsers.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxUsers.Name = "groupBoxUsers";
-            this.groupBoxUsers.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxUsers.Size = new System.Drawing.Size(413, 246);
-            this.groupBoxUsers.TabIndex = 0;
-            this.groupBoxUsers.TabStop = false;
-            this.groupBoxUsers.Text = "Kullanıcılar:";
+            groupBoxUsers.Controls.Add(buttonShowPassword);
+            groupBoxUsers.Controls.Add(buttonShowAgainPassword);
+            groupBoxUsers.Controls.Add(textBoxAgainPassword);
+            groupBoxUsers.Controls.Add(labelAgainPassword);
+            groupBoxUsers.Controls.Add(textBoxPassword);
+            groupBoxUsers.Controls.Add(textBoxUsername);
+            groupBoxUsers.Controls.Add(checkBoxIsAdmin);
+            groupBoxUsers.Controls.Add(labelPassword);
+            groupBoxUsers.Controls.Add(labelUsername);
+            groupBoxUsers.Controls.Add(labelUser);
+            groupBoxUsers.Controls.Add(comboBoxAllUsers);
+            groupBoxUsers.Location = new Point(15, 16);
+            groupBoxUsers.Margin = new Padding(4);
+            groupBoxUsers.Name = "groupBoxUsers";
+            groupBoxUsers.Padding = new Padding(4);
+            groupBoxUsers.Size = new Size(413, 246);
+            groupBoxUsers.TabIndex = 0;
+            groupBoxUsers.TabStop = false;
+            groupBoxUsers.Text = "Kullanıcılar:";
             // 
             // buttonShowPassword
             // 
-            this.buttonShowPassword.ImageIndex = 0;
-            this.buttonShowPassword.ImageList = this.imageListShowPassword;
-            this.buttonShowPassword.Location = new System.Drawing.Point(329, 139);
-            this.buttonShowPassword.Name = "buttonShowPassword";
-            this.buttonShowPassword.Size = new System.Drawing.Size(45, 27);
-            this.buttonShowPassword.TabIndex = 10;
-            this.buttonShowPassword.UseVisualStyleBackColor = true;
-            this.buttonShowPassword.Click += new System.EventHandler(this.buttonShowPassword_Click);
+            buttonShowPassword.ImageIndex = 0;
+            buttonShowPassword.ImageList = imageListShowPassword;
+            buttonShowPassword.Location = new Point(329, 139);
+            buttonShowPassword.Name = "buttonShowPassword";
+            buttonShowPassword.Size = new Size(45, 27);
+            buttonShowPassword.TabIndex = 10;
+            buttonShowPassword.UseVisualStyleBackColor = true;
+            buttonShowPassword.Click += buttonShowPassword_Click;
             // 
             // imageListShowPassword
             // 
-            this.imageListShowPassword.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListShowPassword.ImageStream")));
-            this.imageListShowPassword.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListShowPassword.Images.SetKeyName(0, "unlock.png");
-            this.imageListShowPassword.Images.SetKeyName(1, "lock.png");
+            imageListShowPassword.ColorDepth = ColorDepth.Depth32Bit;
+            imageListShowPassword.ImageStream = (ImageListStreamer)resources.GetObject("imageListShowPassword.ImageStream");
+            imageListShowPassword.TransparentColor = Color.Transparent;
+            imageListShowPassword.Images.SetKeyName(0, "unlock.png");
+            imageListShowPassword.Images.SetKeyName(1, "lock.png");
             // 
             // buttonShowAgainPassword
             // 
-            this.buttonShowAgainPassword.ImageIndex = 0;
-            this.buttonShowAgainPassword.ImageList = this.imageListShowPassword;
-            this.buttonShowAgainPassword.Location = new System.Drawing.Point(329, 179);
-            this.buttonShowAgainPassword.Name = "buttonShowAgainPassword";
-            this.buttonShowAgainPassword.Size = new System.Drawing.Size(45, 27);
-            this.buttonShowAgainPassword.TabIndex = 9;
-            this.buttonShowAgainPassword.UseVisualStyleBackColor = true;
-            this.buttonShowAgainPassword.Click += new System.EventHandler(this.buttonShowPassword_Click);
+            buttonShowAgainPassword.ImageIndex = 0;
+            buttonShowAgainPassword.ImageList = imageListShowPassword;
+            buttonShowAgainPassword.Location = new Point(329, 179);
+            buttonShowAgainPassword.Name = "buttonShowAgainPassword";
+            buttonShowAgainPassword.Size = new Size(45, 27);
+            buttonShowAgainPassword.TabIndex = 9;
+            buttonShowAgainPassword.UseVisualStyleBackColor = true;
+            buttonShowAgainPassword.Click += buttonShowPassword_Click;
             // 
             // textBoxAgainPassword
             // 
-            this.textBoxAgainPassword.Location = new System.Drawing.Point(98, 181);
-            this.textBoxAgainPassword.Name = "textBoxAgainPassword";
-            this.textBoxAgainPassword.PasswordChar = '*';
-            this.textBoxAgainPassword.Size = new System.Drawing.Size(226, 27);
-            this.textBoxAgainPassword.TabIndex = 8;
-            this.textBoxAgainPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            textBoxAgainPassword.Location = new Point(98, 181);
+            textBoxAgainPassword.Name = "textBoxAgainPassword";
+            textBoxAgainPassword.PasswordChar = '*';
+            textBoxAgainPassword.Size = new Size(226, 27);
+            textBoxAgainPassword.TabIndex = 8;
+            textBoxAgainPassword.KeyDown += textBox_KeyDown;
             // 
             // labelAgainPassword
             // 
-            this.labelAgainPassword.AutoSize = true;
-            this.labelAgainPassword.Location = new System.Drawing.Point(8, 182);
-            this.labelAgainPassword.Name = "labelAgainPassword";
-            this.labelAgainPassword.Size = new System.Drawing.Size(57, 20);
-            this.labelAgainPassword.TabIndex = 7;
-            this.labelAgainPassword.Text = "Parola:";
+            labelAgainPassword.AutoSize = true;
+            labelAgainPassword.Location = new Point(8, 182);
+            labelAgainPassword.Name = "labelAgainPassword";
+            labelAgainPassword.Size = new Size(57, 20);
+            labelAgainPassword.TabIndex = 7;
+            labelAgainPassword.Text = "Parola:";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(98, 137);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(226, 27);
-            this.textBoxPassword.TabIndex = 6;
-            this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            textBoxPassword.Location = new Point(98, 137);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '*';
+            textBoxPassword.Size = new Size(226, 27);
+            textBoxPassword.TabIndex = 6;
+            textBoxPassword.KeyDown += textBox_KeyDown;
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(98, 93);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(276, 27);
-            this.textBoxUsername.TabIndex = 5;
-            this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            textBoxUsername.Location = new Point(98, 93);
+            textBoxUsername.Name = "textBoxUsername";
+            textBoxUsername.Size = new Size(276, 27);
+            textBoxUsername.TabIndex = 5;
+            textBoxUsername.KeyDown += textBox_KeyDown;
             // 
             // checkBoxIsAdmin
             // 
-            this.checkBoxIsAdmin.AutoSize = true;
-            this.checkBoxIsAdmin.Location = new System.Drawing.Point(98, 215);
-            this.checkBoxIsAdmin.Name = "checkBoxIsAdmin";
-            this.checkBoxIsAdmin.Size = new System.Drawing.Size(73, 24);
-            this.checkBoxIsAdmin.TabIndex = 4;
-            this.checkBoxIsAdmin.Text = "Admin";
-            this.checkBoxIsAdmin.UseVisualStyleBackColor = true;
+            checkBoxIsAdmin.AutoSize = true;
+            checkBoxIsAdmin.Location = new Point(98, 215);
+            checkBoxIsAdmin.Name = "checkBoxIsAdmin";
+            checkBoxIsAdmin.Size = new Size(73, 24);
+            checkBoxIsAdmin.TabIndex = 4;
+            checkBoxIsAdmin.Text = "Admin";
+            checkBoxIsAdmin.UseVisualStyleBackColor = true;
             // 
             // labelPassword
             // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(8, 138);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(57, 20);
-            this.labelPassword.TabIndex = 3;
-            this.labelPassword.Text = "Parola:";
+            labelPassword.AutoSize = true;
+            labelPassword.Location = new Point(8, 138);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(57, 20);
+            labelPassword.TabIndex = 3;
+            labelPassword.Text = "Parola:";
             // 
             // labelUsername
             // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Location = new System.Drawing.Point(8, 94);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(36, 20);
-            this.labelUsername.TabIndex = 2;
-            this.labelUsername.Text = "Adı:";
+            labelUsername.AutoSize = true;
+            labelUsername.Location = new Point(8, 94);
+            labelUsername.Name = "labelUsername";
+            labelUsername.Size = new Size(36, 20);
+            labelUsername.TabIndex = 2;
+            labelUsername.Text = "Adı:";
             // 
             // labelUser
             // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(8, 41);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(71, 20);
-            this.labelUser.TabIndex = 1;
-            this.labelUser.Text = "Kullanıcı:";
+            labelUser.AutoSize = true;
+            labelUser.Location = new Point(8, 41);
+            labelUser.Name = "labelUser";
+            labelUser.Size = new Size(71, 20);
+            labelUser.TabIndex = 1;
+            labelUser.Text = "Kullanıcı:";
             // 
             // comboBoxAllUsers
             // 
-            this.comboBoxAllUsers.FormattingEnabled = true;
-            this.comboBoxAllUsers.Location = new System.Drawing.Point(98, 33);
-            this.comboBoxAllUsers.Name = "comboBoxAllUsers";
-            this.comboBoxAllUsers.Size = new System.Drawing.Size(276, 28);
-            this.comboBoxAllUsers.TabIndex = 0;
-            this.comboBoxAllUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxAllUsers_SelectedIndexChanged);
+            comboBoxAllUsers.FormattingEnabled = true;
+            comboBoxAllUsers.Location = new Point(98, 33);
+            comboBoxAllUsers.Name = "comboBoxAllUsers";
+            comboBoxAllUsers.Size = new Size(276, 28);
+            comboBoxAllUsers.TabIndex = 0;
+            comboBoxAllUsers.SelectedIndexChanged += comboBoxAllUsers_SelectedIndexChanged;
             // 
             // groupBoxProcesses
             // 
-            this.groupBoxProcesses.Controls.Add(this.buttonClear);
-            this.groupBoxProcesses.Controls.Add(this.buttonDelete);
-            this.groupBoxProcesses.Controls.Add(this.buttonUpdate);
-            this.groupBoxProcesses.Controls.Add(this.buttonAdd);
-            this.groupBoxProcesses.Location = new System.Drawing.Point(450, 16);
-            this.groupBoxProcesses.Name = "groupBoxProcesses";
-            this.groupBoxProcesses.Size = new System.Drawing.Size(200, 246);
-            this.groupBoxProcesses.TabIndex = 1;
-            this.groupBoxProcesses.TabStop = false;
-            this.groupBoxProcesses.Text = "İşlemler:";
+            groupBoxProcesses.Controls.Add(buttonClear);
+            groupBoxProcesses.Controls.Add(buttonDelete);
+            groupBoxProcesses.Controls.Add(buttonUpdate);
+            groupBoxProcesses.Controls.Add(buttonAdd);
+            groupBoxProcesses.Location = new Point(450, 16);
+            groupBoxProcesses.Name = "groupBoxProcesses";
+            groupBoxProcesses.Size = new Size(200, 246);
+            groupBoxProcesses.TabIndex = 1;
+            groupBoxProcesses.TabStop = false;
+            groupBoxProcesses.Text = "İşlemler:";
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(7, 191);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(187, 38);
-            this.buttonClear.TabIndex = 3;
-            this.buttonClear.Text = "Temizle";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            buttonClear.Location = new Point(7, 191);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(187, 38);
+            buttonClear.TabIndex = 3;
+            buttonClear.Text = "Temizle";
+            buttonClear.UseVisualStyleBackColor = true;
+            buttonClear.Click += buttonClear_Click;
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(7, 138);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(187, 38);
-            this.buttonDelete.TabIndex = 2;
-            this.buttonDelete.Text = "Sil";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            buttonDelete.Location = new Point(7, 138);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(187, 38);
+            buttonDelete.TabIndex = 2;
+            buttonDelete.Text = "Sil";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(7, 85);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(187, 38);
-            this.buttonUpdate.TabIndex = 1;
-            this.buttonUpdate.Text = "Güncelle";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            buttonUpdate.Location = new Point(7, 85);
+            buttonUpdate.Name = "buttonUpdate";
+            buttonUpdate.Size = new Size(187, 38);
+            buttonUpdate.TabIndex = 1;
+            buttonUpdate.Text = "Güncelle";
+            buttonUpdate.UseVisualStyleBackColor = true;
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(7, 32);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(187, 38);
-            this.buttonAdd.TabIndex = 0;
-            this.buttonAdd.Text = "Ekle";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            buttonAdd.Location = new Point(7, 32);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(187, 38);
+            buttonAdd.TabIndex = 0;
+            buttonAdd.Text = "Ekle";
+            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // FormAdminPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(664, 272);
-            this.Controls.Add(this.groupBoxProcesses);
-            this.Controls.Add(this.groupBoxUsers);
-            this.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.MaximizeBox = false;
-            this.Name = "FormAdminPanel";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Yönetici Paneli";
-            this.Load += new System.EventHandler(this.FormAdminPanel_Load);
-            this.groupBoxUsers.ResumeLayout(false);
-            this.groupBoxUsers.PerformLayout();
-            this.groupBoxProcesses.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGray;
+            ClientSize = new Size(664, 272);
+            Controls.Add(groupBoxProcesses);
+            Controls.Add(groupBoxUsers);
+            Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(5, 4, 5, 4);
+            MaximizeBox = false;
+            Name = "FormAdminPanel";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Yönetici Paneli";
+            Load += FormAdminPanel_Load;
+            groupBoxUsers.ResumeLayout(false);
+            groupBoxUsers.PerformLayout();
+            groupBoxProcesses.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

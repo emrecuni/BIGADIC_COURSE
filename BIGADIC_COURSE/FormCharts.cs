@@ -1,5 +1,6 @@
 ﻿using BIGADIC_COURSE.Classes;
 using ScottPlot.Statistics;
+using ScottPlot.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -321,7 +322,16 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                
+                FormsPlot plot = new() 
+                {
+                    Dock = DockStyle.Fill 
+                };
+                splitContainerChart.Panel2.Controls.Add(plot);
+
+                foreach (var register in chartDict)
+                {
+
+                }
             }
             catch (Exception ex)
             {
