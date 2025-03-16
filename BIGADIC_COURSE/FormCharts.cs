@@ -1,0 +1,501 @@
+﻿using BIGADIC_COURSE.Classes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+
+namespace BIGADIC_COURSE
+{
+    public partial class FormCharts : Form
+    {
+        public FormCharts(List<Register> registers)
+        {
+            _registers = registers;
+            InitializeComponent();
+        }
+
+        StringBuilder query = new StringBuilder();
+        List<Register> _registers;
+        List<Register> allRegistersList = new List<Register>();
+        Dictionary<string, int> chartDict = new Dictionary<string, int>();
+        DateTime startDate;
+        DateTime endDate;
+        string selectedStatusRadioButton; // hangi kayıt tipini seçildiğini tutar list'ten o tipteki kayıtları çekmek için
+        string selectedGenderRadioButton; // kurs bazında grafiğinde hangi cinsiyetin seçildiği bilgisi tutulur
+        string title = null;
+        char selectedChart; // radiobutton değiştirildiğinde en son hangi grafik çizildiyse o grafiği güncellenmesi için tetiklenecek metodu tutar
+
+        private void FormCharts_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                //courseToolStripMenuItem_Click(sender, e);
+                selectedChart = 'C';
+                radioButtonTotal.Checked = true;
+
+                dateTimePickerEndDate.Value = DateTime.Today;
+                dateTimePickerStartDate.Value = DateTime.Today;
+
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"FormCharts_Load Error Hata Kodu: 3000 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3000", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void courseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                title = null;
+                selectedChart = 'C';
+                groupBoxFilter.Enabled = true;
+                radioButtonMale.Enabled = true;
+                radioButtonFemale.Enabled = true;
+                startDate = DateTime.MinValue;
+                endDate = DateTime.Today;
+                chartDict.Clear();
+                courseToolStripMenuItem.BackColor = Color.Blue;
+                genderToolStripMenuItem.BackColor = Color.DarkGray;
+                registerTypeToolStripMenuItem.BackColor = Color.DarkGray;
+
+                if (checkBoxSelectDate.Checked) // tarih seçimi aktifse seçilen tarihlere göre liste filtrelenir
+                {
+                    startDate = dateTimePickerStartDate.Value;
+                    endDate = dateTimePickerEndDate.Value;
+
+                    title = $"{startDate.Date:dd.MM.yy} - {endDate.Date:dd.MM.yy} Arasında ";
+                }
+
+                title += "Kurs Bazında Branşlara Göre ";
+                if (radioButtonMale.Checked)
+                    title += "Erkek Kursiyerlerin ";
+                else if (radioButtonFemale.Checked)
+                    title += "Kadın Kursiyerlerin ";
+                if (radioButtonTotal.Checked)
+                    title += "Toplam Dağılım Grafiği";
+                else if (radioButtonActive.Checked)
+                    title += "Aktif Dağılım Grafiği";
+                else if (radioButtonPassive.Checked)
+                    title += "Pasif Dağılım Grafiği";
+                else if (radioButtonWaiting.Checked)
+                    title += "Bekleyen Dağılım Grafiği";
+
+                labelTitle.Text = title;
+                labelTitle.Location = new Point(((splitContainerChart.Panel2.Width * 35) / 100 - labelTitle.Text.Length), 0);
+
+
+                foreach (Register register in _registers)
+                {
+                    // seçilen kayıt tipini alır
+                    if (!chartDict.ContainsKey(register.COURSE) && selectedStatusRadioButton != "T" && selectedGenderRadioButton == null && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate && r.STATUS == selectedStatusRadioButton) > 0)
+                        chartDict.Add(register.COURSE, _registers.Count(r => r.COURSE == register.COURSE
+                        && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate
+                        && r.STATUS == selectedStatusRadioButton));
+
+                    // toplam kayıtları alır
+                    else if (!chartDict.ContainsKey(register.COURSE) && selectedStatusRadioButton == "T" && selectedGenderRadioButton == null && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate) > 0)
+                        chartDict.Add(register.COURSE, _registers.Count(r => r.COURSE == register.COURSE
+                        && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate));
+
+                    // seçilen tipteki erkek kayıtları alır
+                    else if (!chartDict.ContainsKey(register.COURSE) && selectedStatusRadioButton != "T" && selectedGenderRadioButton == "E" && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate && r.STATUS == selectedStatusRadioButton && r.GENDER) > 0)
+                        chartDict.Add(register.COURSE, _registers.Count(r => r.COURSE == register.COURSE
+                        && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate
+                        && r.STATUS == selectedStatusRadioButton
+                        && r.GENDER));
+
+                    // seçilen tipteki kadın kayıtları alır
+                    else if (!chartDict.ContainsKey(register.COURSE) && selectedStatusRadioButton != "T" && selectedGenderRadioButton == "K" && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate && r.STATUS == selectedStatusRadioButton && r.GENDER == false) > 0)
+                        chartDict.Add(register.COURSE, _registers.Count(r => r.COURSE == register.COURSE
+                        && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate
+                        && r.STATUS == selectedStatusRadioButton
+                        && r.GENDER == false));
+
+                    // toplam erkek kayıtları alır
+                    else if (!chartDict.ContainsKey(register.COURSE) && selectedStatusRadioButton == "T" && selectedGenderRadioButton == "E" && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate && r.GENDER) > 0)
+                        chartDict.Add(register.COURSE, _registers.Count(r => r.COURSE == register.COURSE
+                        && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate
+                        && r.GENDER));
+
+                    // toplam kadın kayıtları alır
+                    else if (!chartDict.ContainsKey(register.COURSE) && selectedStatusRadioButton == "T" && selectedGenderRadioButton == "K" && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate && r.GENDER == false) > 0)
+                        chartDict.Add(register.COURSE, _registers.Count(r => r.COURSE == register.COURSE
+                        && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate
+                        && r.GENDER == false));
+                }
+
+                DrawChart("Kurs");
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"courseToolStripMenuItem_Click Error Hata Kodu: 3001 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3001", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void genderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                title = null;
+                selectedChart = 'G';
+                groupBoxFilter.Enabled = true;
+                radioButtonMale.Enabled = false;
+                radioButtonFemale.Enabled = false;
+                startDate = DateTime.MinValue;
+                endDate = DateTime.Today;
+                chartDict.Clear();
+                genderToolStripMenuItem.BackColor = Color.Blue;
+                courseToolStripMenuItem.BackColor = Color.DarkGray;
+                registerTypeToolStripMenuItem.BackColor = Color.DarkGray;
+
+                if (checkBoxSelectDate.Checked) // tarih seçimi aktifse seçilen tarihlere göre liste filtrelenir
+                {
+                    startDate = dateTimePickerStartDate.Value;
+                    endDate = dateTimePickerEndDate.Value;
+
+                    title = $"{startDate.Date:dd.MM.yy} - {endDate.Date:dd.MM.yy} Arasında ";
+                }
+
+                title += "Cinsiyet Bazında ";
+                if (radioButtonTotal.Checked)
+                    title += "Toplam Dağılım Grafiği";
+                else if (radioButtonActive.Checked)
+                    title += "Aktif Dağılım Grafiği";
+                else if (radioButtonPassive.Checked)
+                    title += "Pasif Dağılım Grafiği";
+                else if (radioButtonWaiting.Checked)
+                    title += "Bekleyen Dağılım Grafiği";
+
+                labelTitle.Text = title;
+                labelTitle.Location = new Point(((splitContainerChart.Panel2.Width * 35) / 100 - labelTitle.Text.Length), 0);
+
+
+                foreach (Register register in _registers)
+                {
+                    // seçilen kayıt tipini alır
+                    if (!chartDict.ContainsKey(register.GENDERDESC) && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate && r.STATUS == selectedStatusRadioButton) > 0 && selectedStatusRadioButton != "T")
+                        chartDict.Add(register.GENDERDESC, _registers.Count(r => r.GENDER == register.GENDER
+                            && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate
+                            && r.STATUS == selectedStatusRadioButton));
+                    // toplam kayıtları alır
+                    else if (!chartDict.ContainsKey(register.GENDERDESC) && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate) > 0 && selectedStatusRadioButton == "T")
+                        chartDict.Add(register.GENDERDESC, _registers.Count(r => r.GENDER == register.GENDER
+                        && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate));
+                }
+                DrawChart("Cinsiyet");
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"genderToolStripMenuItem_Click Error Hata Kodu: 3002 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3002", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void registerTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                title = null;
+                selectedChart = 'T';
+                groupBoxFilter.Enabled = false;
+                radioButtonMale.Enabled = true;
+                radioButtonFemale.Enabled = true;
+                startDate = DateTime.MinValue;
+                endDate = DateTime.Today;
+                chartDict.Clear();
+                registerTypeToolStripMenuItem.BackColor = Color.Blue;
+                genderToolStripMenuItem.BackColor = Color.DarkGray;
+                courseToolStripMenuItem.BackColor = Color.DarkGray;
+
+                if (checkBoxSelectDate.Checked) // tarih seçimi aktifse seçilen tarihlere göre liste filtrelenir
+                {
+                    startDate = dateTimePickerStartDate.Value;
+                    endDate = dateTimePickerEndDate.Value;
+
+                    title = $"{startDate.Date:dd.MM.yy} - {endDate.Date:dd.MM.yy} Arasında ";
+                }
+
+                title += "Kayıt Durumu Bazında ";
+                if (radioButtonMale.Checked)
+                    title += "Erkek Kursiyerlerin ";
+                else if (radioButtonFemale.Checked)
+                    title += "Kadın Kursiyerlerin ";
+                title += "Dağılım Grafiği";
+
+                labelTitle.Text = title;
+                labelTitle.Location = new Point(((splitContainerChart.Panel2.Width * 35) / 100 - labelTitle.Text.Length), 0);
+
+                foreach (Register register in _registers)
+                {
+                    if (!chartDict.ContainsKey(register.STATUSDESC) && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate) > 0)
+                        chartDict.Add(register.STATUSDESC, _registers.Count(r => r.STATUSDESC == register.STATUSDESC
+                           && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate));
+                }
+
+                DrawChart("Kayıt Tipi");
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"registerTypeToolStripMenuItem_Click Error Hata Kodu: 3003 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3003", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chart.Series[0].Points.Count > 0)
+                {
+                    string imagePath = Application.StartupPath + $"\\chart_{DateTime.Now.Date:yyyy_MM_dd_HH_mm_ss}.png";
+
+                    Screenshots(imagePath);
+                    MessageBox.Show("Grafik Png Dosyasına Başarıyla Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Process.Start(imagePath);
+                }
+                else
+                    MessageBox.Show("Çizilmiş Bir Grafik Bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"printToolStripMenuItem_Click Error Hata Kodu: 3004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Screenshots(string path)
+        {
+            Bitmap chartBitmap = null;
+            try
+            {
+                chartBitmap = new Bitmap(splitContainerChart.Panel2.Width, splitContainerChart.Panel2.Height);
+                splitContainerChart.Panel2.DrawToBitmap(chartBitmap, new Rectangle(0, 0, splitContainerChart.Panel2.Width, splitContainerChart.Panel2.Height));
+                chartBitmap.Save(path, ImageFormat.Png);
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"Screenshots Error Hata Kodu: 3005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                chartBitmap.Dispose();
+            }
+        }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                RadioButton radioButton = (RadioButton)sender;
+                selectedStatusRadioButton = radioButton.Checked ? radioButton.Tag.ToString() : null;
+
+                switch (selectedChart)
+                {
+                    case 'C':
+                        courseToolStripMenuItem_Click(sender, e);
+                        break;
+                    case 'G':
+                        genderToolStripMenuItem_Click(sender, e);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"radioButton_CheckedChanged Error Hata Kodu: 3006 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3006", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DrawChart(string axisName) // grafiği çizer
+        {
+            try
+            {
+                chart.ChartAreas.Clear();
+                chart.Series.Clear();
+
+                chart.ChartAreas.Add(new ChartArea("MainArea"));
+                chart.ChartAreas[0].BackColor = Color.Transparent;
+
+                // Yeni bir veri serisi (Series) oluşturuyoruz
+                Series series = new Series("Sales")
+                {
+                    ChartType = SeriesChartType.Column, // Sütun grafiği
+                    BorderWidth = 1, // Kenar genişliği
+                    IsValueShownAsLabel = true // Değer etiketlerinin gösterilmesi
+                };
+
+                // Seriye veri ekliyoruz (Örnek veriler)
+                foreach (var register in chartDict)
+                    series.Points.AddXY(register.Key, register.Value);
+
+                // Chart kontrolüne seriyi ekliyoruz
+                chart.Series.Add(series);
+                chart.Series[0].Font = new Font("Segoe UI", 12F);
+
+                // Grafikte daha fazla özelleştirme yapılabilir (örneğin, eksenler, renkler vb.)
+                chart.ChartAreas[0].AxisX.Title = axisName;  // X Ekseninin Başlığı
+                chart.ChartAreas[0].AxisY.Title = "Öğrenci Sayısı";   // Y Ekseninin Başlığı
+                chart.ChartAreas[0].AxisX.TitleFont = new Font("Segoe UI Semibold", 13F);
+                chart.ChartAreas[0].AxisY.TitleFont = new Font("Segoe UI Semibold", 13F);
+
+
+                chart.ChartAreas[0].AxisX.LabelStyle.Angle = 90;  // Etiketleri 90 derece döndür
+                chart.ChartAreas[0].AxisX.IsMarginVisible = false;
+
+                // X eksenindeki etiketlerin aralığını ayarlayalım
+                chart.ChartAreas[0].AxisX.Interval = 1; // Her etiketi göstermek için aralığı 1 yapıyoruz
+                //chart.ChartAreas[0].AxisX.IsLabelAutoFit = false;  // Etiketlerin otomatik sığmasını engelliyoruz
+                chart.ChartAreas[0].AxisX.LabelAutoFitMaxFontSize = 10;  // Etiket fontunun maksimum boyutunu ayarlıyoruz
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"DrawChartGenders Error Hata Kodu: 3007 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3007", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dateTimePickerStartDate.Value > dateTimePickerEndDate.Value) // başlangıç tarihi bitiş tarihinden daha büyük bir değer girilmesini engeller
+                {
+                    dateTimePickerStartDate.Value = dateTimePickerEndDate.Value;
+                    MessageBox.Show("Başlangıç Tarihi Bitiş Tarihinden Daha Büyük Olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                switch (selectedChart)
+                {
+                    case 'C':
+                        courseToolStripMenuItem_Click(sender, e);
+                        break;
+                    case 'G':
+                        genderToolStripMenuItem_Click(sender, e);
+                        break;
+                    case 'T':
+                        registerTypeToolStripMenuItem_Click(sender, e);
+                        break;
+                }
+
+                //comboBoxFilters_SelectedIndexChanged(sender, e); // tarih seçimi yapıldıktan listeleme işlemi tekrar tetiklenir
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"dateTimePicker_ValueChanged Error Hata Kodu: 3008 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3008", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void checkBoxSelectDate_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (checkBoxSelectDate.Checked)
+                {
+                    dateTimePickerStartDate.Enabled = true;
+                    dateTimePickerEndDate.Enabled = true;
+                }
+                else // tarih seçimi iptal olursa tarihler default değerlere döner
+                {
+                    dateTimePickerStartDate.Enabled = false;
+                    dateTimePickerEndDate.Enabled = false;
+                    startDate = DateTime.MinValue;
+                    endDate = DateTime.Today;
+                }
+                switch (selectedChart)
+                {
+                    case 'C':
+                        courseToolStripMenuItem_Click(sender, e);
+                        break;
+                    case 'G':
+                        genderToolStripMenuItem_Click(sender, e);
+                        break;
+                    case 'T':
+                        registerTypeToolStripMenuItem_Click(sender, e);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"checkBoxSelectDate_CheckedChanged Error Hata Kodu: 3009 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3009", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void radioButtonGender_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                RadioButton radioButtonGender = (RadioButton)sender;
+                selectedGenderRadioButton = radioButtonGender.Checked ? radioButtonGender.Tag.ToString() : null;
+
+                switch (selectedChart)
+                {
+                    case 'C':
+                        courseToolStripMenuItem_Click(sender, e);
+                        break;
+                    case 'T':
+                        registerTypeToolStripMenuItem_Click(sender, e);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"radioButtonMale_CheckedChanged Error Hata Kodu: 3010 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3010", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonClearGender_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                radioButtonMale.Checked = false;
+                radioButtonFemale.Checked = false;
+                selectedGenderRadioButton = null;
+
+                switch (selectedChart)
+                {
+                    case 'C':
+                        courseToolStripMenuItem_Click(sender, e);
+                        break;
+                    case 'T':
+                        registerTypeToolStripMenuItem_Click(sender, e);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"buttonClearGender_Click Error Hata Kodu: 3011 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3011", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FormCharts_ResizeEnd(object sender, EventArgs e)
+        {
+            try
+            {
+                labelTitle.Text = title;
+                labelTitle.Location = new Point(((splitContainerChart.Panel2.Width * 35) / 100 - labelTitle.Text.Length), 0);
+
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"FormCharts_ResizeEnd Error Hata Kodu: 3012 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3012", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+}
