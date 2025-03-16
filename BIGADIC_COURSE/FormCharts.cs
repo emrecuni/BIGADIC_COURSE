@@ -1,6 +1,8 @@
 ﻿using BIGADIC_COURSE.Classes;
-using ScottPlot.Statistics;
-using ScottPlot.WinForms;
+using OxyPlot;
+using OxyPlot.Axes;
+using OxyPlot.Series;
+using OxyPlot.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,10 +42,9 @@ namespace BIGADIC_COURSE
                 //courseToolStripMenuItem_Click(sender, e);
                 selectedChart = 'C';
                 radioButtonTotal.Checked = true;
-
-                dateTimePickerEndDate.Value = DateTime.Today;
+                                
                 dateTimePickerStartDate.Value = DateTime.Today;
-
+                dateTimePickerEndDate.Value = DateTime.Today;
             }
             catch (Exception ex)
             {
@@ -90,10 +91,6 @@ namespace BIGADIC_COURSE
                 else if (radioButtonWaiting.Checked)
                     title += "Bekleyen Dağılım Grafiği";
 
-                labelTitle.Text = title;
-                labelTitle.Location = new Point(((splitContainerChart.Panel2.Width * 35) / 100 - labelTitle.Text.Length), 0);
-
-
                 foreach (Register register in _registers)
                 {
                     // seçilen kayıt tipini alır
@@ -134,7 +131,7 @@ namespace BIGADIC_COURSE
                         && r.GENDER == false));
                 }
 
-                DrawChart("Kurs");
+                DrawChart("Kurs", title);
             }
             catch (Exception ex)
             {
@@ -177,10 +174,6 @@ namespace BIGADIC_COURSE
                 else if (radioButtonWaiting.Checked)
                     title += "Bekleyen Dağılım Grafiği";
 
-                labelTitle.Text = title;
-                labelTitle.Location = new Point(((splitContainerChart.Panel2.Width * 35) / 100 - labelTitle.Text.Length), 0);
-
-
                 foreach (Register register in _registers)
                 {
                     // seçilen kayıt tipini alır
@@ -193,7 +186,7 @@ namespace BIGADIC_COURSE
                         chartDict.Add(register.GENDERDESC, _registers.Count(r => r.GENDER == register.GENDER
                         && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate));
                 }
-                DrawChart("Cinsiyet");
+                DrawChart("Cinsiyet", title);
             }
             catch (Exception ex)
             {
@@ -233,9 +226,6 @@ namespace BIGADIC_COURSE
                     title += "Kadın Kursiyerlerin ";
                 title += "Dağılım Grafiği";
 
-                labelTitle.Text = title;
-                labelTitle.Location = new Point(((splitContainerChart.Panel2.Width * 35) / 100 - labelTitle.Text.Length), 0);
-
                 foreach (Register register in _registers)
                 {
                     if (!chartDict.ContainsKey(register.STATUSDESC) && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate) > 0)
@@ -243,7 +233,7 @@ namespace BIGADIC_COURSE
                            && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate));
                 }
 
-                DrawChart("Kayıt Tipi");
+                DrawChart("Kayıt Tipi", title);
             }
             catch (Exception ex)
             {
@@ -318,20 +308,50 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private void DrawChart(string axisName) // grafiği çizer
+        private void DrawChart(string axisName, string title) // grafiği çizer
         {
             try
             {
-                FormsPlot plot = new() 
+                splitContainerChart.Panel2.Controls.Clear();
+                BarSeries barSeries = new()  // Yeni bir bar serisi oluştur
                 {
-                    Dock = DockStyle.Fill 
+                    Title = "Kayıt Sayısı",
+                    ItemsSource = chartDict.Select(kv => new BarItem { Value = kv.Value }).ToList()
                 };
-                splitContainerChart.Panel2.Controls.Add(plot);
 
-                foreach (var register in chartDict)
+                CategoryAxis categoryAxis = new() // Kategori ekseni (X ekseni) oluştur
                 {
+                    Position = AxisPosition.Left, // BarSeries için kategori ekseni sol tarafta olmalı
+                    Title = axisName
+                };
 
-                }
+                foreach (var key in chartDict.Keys) // Etiketleri manuel olarak ekleyelim
+                    categoryAxis.Labels.Add(key);
+
+                // Y ekseni (Değer ekseni)
+                LinearAxis valueAxis = new()
+                {
+                    Position = AxisPosition.Bottom,
+                    Title = "Kayıt Sayısı"
+                };
+
+                PlotModel plotModel = new() // Grafik modeli oluştur ve eksenleri/serileri ekle
+                {
+                    Title = title
+                };
+
+                plotModel.Series.Add(barSeries);
+
+                plotModel.Axes.Add(valueAxis);
+                plotModel.Axes.Add(categoryAxis);
+
+                PlotView plotView = new()
+                {
+                    Model = plotModel,
+                    Dock = DockStyle.Fill
+                };
+
+                splitContainerChart.Panel2.Controls.Add(plotView);
             }
             catch (Exception ex)
             {
@@ -456,21 +476,5 @@ namespace BIGADIC_COURSE
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3011", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void FormCharts_ResizeEnd(object sender, EventArgs e)
-        {
-            try
-            {
-                labelTitle.Text = title;
-                labelTitle.Location = new Point(((splitContainerChart.Panel2.Width * 35) / 100 - labelTitle.Text.Length), 0);
-
-            }
-            catch (Exception ex)
-            {
-                Log.logger.Error($"FormCharts_ResizeEnd Error Hata Kodu: 3012 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3012", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
     }
 }

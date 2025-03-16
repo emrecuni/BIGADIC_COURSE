@@ -50,11 +50,9 @@
             labelEndDate = new Label();
             labelStartDate = new Label();
             checkBoxSelectDate = new CheckBox();
-            labelTitle = new Label();
             menuStripChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerChart).BeginInit();
             splitContainerChart.Panel1.SuspendLayout();
-            splitContainerChart.Panel2.SuspendLayout();
             splitContainerChart.SuspendLayout();
             groupBoxFilters.SuspendLayout();
             groupBoxGender.SuspendLayout();
@@ -64,7 +62,7 @@
             // 
             // menuStripChart
             // 
-            menuStripChart.BackColor = SystemColors.Control;
+            menuStripChart.BackColor = Color.Silver;
             menuStripChart.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
             menuStripChart.Items.AddRange(new ToolStripItem[] { courseToolStripMenuItem, genderToolStripMenuItem, registerTypeToolStripMenuItem, printToolStripMenuItem });
             menuStripChart.Location = new Point(0, 0);
@@ -79,24 +77,29 @@
             courseToolStripMenuItem.Name = "courseToolStripMenuItem";
             courseToolStripMenuItem.Size = new Size(117, 25);
             courseToolStripMenuItem.Text = "Kurs Bazında";
+            courseToolStripMenuItem.Click += courseToolStripMenuItem_Click;
             // 
             // genderToolStripMenuItem
             // 
             genderToolStripMenuItem.Name = "genderToolStripMenuItem";
             genderToolStripMenuItem.Size = new Size(143, 25);
             genderToolStripMenuItem.Text = "Cinsiyet Bazında";
+            genderToolStripMenuItem.Click += genderToolStripMenuItem_Click;
             // 
             // registerTypeToolStripMenuItem
             // 
             registerTypeToolStripMenuItem.Name = "registerTypeToolStripMenuItem";
             registerTypeToolStripMenuItem.Size = new Size(186, 25);
             registerTypeToolStripMenuItem.Text = "Kayıt Durumu Bazında";
+            registerTypeToolStripMenuItem.Click += registerTypeToolStripMenuItem_Click;
             // 
             // printToolStripMenuItem
             // 
+            printToolStripMenuItem.BackColor = Color.Silver;
             printToolStripMenuItem.Name = "printToolStripMenuItem";
             printToolStripMenuItem.Size = new Size(68, 25);
             printToolStripMenuItem.Text = "Yazdır";
+            printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
             // splitContainerChart
             // 
@@ -109,10 +112,6 @@
             // splitContainerChart.Panel1
             // 
             splitContainerChart.Panel1.Controls.Add(groupBoxFilters);
-            // 
-            // splitContainerChart.Panel2
-            // 
-            splitContainerChart.Panel2.Controls.Add(labelTitle);
             splitContainerChart.Size = new Size(1214, 633);
             splitContainerChart.SplitterDistance = 105;
             splitContainerChart.SplitterWidth = 5;
@@ -152,6 +151,7 @@
             buttonClearGender.TabIndex = 2;
             buttonClearGender.Text = "Temizle";
             buttonClearGender.UseVisualStyleBackColor = true;
+            buttonClearGender.Click += buttonClearGender_Click;
             // 
             // radioButtonFemale
             // 
@@ -161,8 +161,10 @@
             radioButtonFemale.Size = new Size(66, 24);
             radioButtonFemale.TabIndex = 1;
             radioButtonFemale.TabStop = true;
+            radioButtonFemale.Tag = "K";
             radioButtonFemale.Text = "Kadın";
             radioButtonFemale.UseVisualStyleBackColor = true;
+            radioButtonFemale.CheckedChanged += radioButtonGender_CheckedChanged;
             // 
             // radioButtonMale
             // 
@@ -172,8 +174,10 @@
             radioButtonMale.Size = new Size(65, 24);
             radioButtonMale.TabIndex = 0;
             radioButtonMale.TabStop = true;
+            radioButtonMale.Tag = "E";
             radioButtonMale.Text = "Erkek";
             radioButtonMale.UseVisualStyleBackColor = true;
+            radioButtonMale.CheckedChanged += radioButtonGender_CheckedChanged;
             // 
             // groupBoxRegisterType
             // 
@@ -197,8 +201,10 @@
             radioButtonWaiting.Size = new Size(89, 24);
             radioButtonWaiting.TabIndex = 3;
             radioButtonWaiting.TabStop = true;
+            radioButtonWaiting.Tag = "B";
             radioButtonWaiting.Text = "Bekleyen";
             radioButtonWaiting.UseVisualStyleBackColor = true;
+            radioButtonWaiting.CheckedChanged += radioButton_CheckedChanged;
             // 
             // radioButtonPassive
             // 
@@ -209,8 +215,10 @@
             radioButtonPassive.Size = new Size(59, 24);
             radioButtonPassive.TabIndex = 2;
             radioButtonPassive.TabStop = true;
+            radioButtonPassive.Tag = "P";
             radioButtonPassive.Text = "Pasif";
             radioButtonPassive.UseVisualStyleBackColor = true;
+            radioButtonPassive.CheckedChanged += radioButton_CheckedChanged;
             // 
             // radioButtonActive
             // 
@@ -221,8 +229,10 @@
             radioButtonActive.Size = new Size(59, 24);
             radioButtonActive.TabIndex = 1;
             radioButtonActive.TabStop = true;
+            radioButtonActive.Tag = "A";
             radioButtonActive.Text = "Aktif";
             radioButtonActive.UseVisualStyleBackColor = true;
+            radioButtonActive.CheckedChanged += radioButton_CheckedChanged;
             // 
             // radioButtonTotal
             // 
@@ -232,8 +242,10 @@
             radioButtonTotal.Size = new Size(77, 24);
             radioButtonTotal.TabIndex = 0;
             radioButtonTotal.TabStop = true;
+            radioButtonTotal.Tag = "T";
             radioButtonTotal.Text = "Toplam";
             radioButtonTotal.UseVisualStyleBackColor = true;
+            radioButtonTotal.CheckedChanged += radioButton_CheckedChanged;
             // 
             // groupBoxDate
             // 
@@ -251,19 +263,23 @@
             // 
             // dateTimePickerEndDate
             // 
+            dateTimePickerEndDate.Enabled = false;
             dateTimePickerEndDate.Format = DateTimePickerFormat.Short;
             dateTimePickerEndDate.Location = new Point(449, 31);
             dateTimePickerEndDate.Name = "dateTimePickerEndDate";
             dateTimePickerEndDate.Size = new Size(116, 27);
             dateTimePickerEndDate.TabIndex = 4;
+            dateTimePickerEndDate.ValueChanged += dateTimePicker_ValueChanged;
             // 
             // dateTimePickerStartDate
             // 
+            dateTimePickerStartDate.Enabled = false;
             dateTimePickerStartDate.Format = DateTimePickerFormat.Short;
             dateTimePickerStartDate.Location = new Point(236, 31);
             dateTimePickerStartDate.Name = "dateTimePickerStartDate";
             dateTimePickerStartDate.Size = new Size(110, 27);
             dateTimePickerStartDate.TabIndex = 3;
+            dateTimePickerStartDate.ValueChanged += dateTimePicker_ValueChanged;
             // 
             // labelEndDate
             // 
@@ -292,15 +308,7 @@
             checkBoxSelectDate.TabIndex = 0;
             checkBoxSelectDate.Text = "Tarih Seç";
             checkBoxSelectDate.UseVisualStyleBackColor = true;
-            // 
-            // labelTitle
-            // 
-            labelTitle.AutoSize = true;
-            labelTitle.Location = new Point(545, 9);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(38, 20);
-            labelTitle.TabIndex = 0;
-            labelTitle.Text = "Title";
+            checkBoxSelectDate.CheckedChanged += checkBoxSelectDate_CheckedChanged;
             // 
             // FormCharts
             // 
@@ -315,11 +323,10 @@
             Margin = new Padding(4);
             Name = "FormCharts";
             Text = "FormCharts";
+            Load += FormCharts_Load;
             menuStripChart.ResumeLayout(false);
             menuStripChart.PerformLayout();
             splitContainerChart.Panel1.ResumeLayout(false);
-            splitContainerChart.Panel2.ResumeLayout(false);
-            splitContainerChart.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerChart).EndInit();
             splitContainerChart.ResumeLayout(false);
             groupBoxFilters.ResumeLayout(false);
@@ -357,6 +364,5 @@
         private RadioButton radioButtonActive;
         private RadioButton radioButtonTotal;
         private ToolStripMenuItem registerTypeToolStripMenuItem;
-        private Label labelTitle;
     }
 }

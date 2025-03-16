@@ -15,3 +15,6 @@ X Arama çalışmıyor X
 X Log tutulmuyor X
 * Main hata kodları düzelt
 * Bazı raporlar çalışmıyor
+* Chart exportunu oxyplot.pdf ile yapmayı dene
+X Chart çizdir X
+* Chart menustrip bg'leri düzelt
