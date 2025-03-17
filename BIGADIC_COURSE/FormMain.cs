@@ -60,15 +60,20 @@ namespace BIGADIC_COURSE
                     adminPanelToolStripMenuItem.Visible = true;
                 }
 
-                // Asenkron işlemleri ayrı çalıştır
-                await Task.Run(() =>
+                await Task.Run(async () =>
                 {
-                    GetCourses();
-                    RefreshData(); // Bu işlem büyük veri çektiği için dikkat edilmeli
-                    GetCourseCount();
+                    await GetCourses();  // GetCourses'in tamamlanmasını bekle
+                    await RefreshData();       // GetCourses tamamlandıktan sonra çalıştır
+
                     DeleteOldExportDatas();
                     GetBirthDates();
-                });
+                }).ContinueWith(task =>
+                {
+                    // RefreshData ve diğer işlemler bittikten sonra çalıştır
+                    GetCourseCount();
+                }, TaskScheduler.FromCurrentSynchronizationContext()); // UI thread üzerinde çalışmasını sağla
+
+
             }
             catch (Exception ex)
             {
@@ -578,7 +583,7 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private async void RefreshData()
+        private async Task RefreshData()
         {
             try
             {

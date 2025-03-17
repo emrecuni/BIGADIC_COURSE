@@ -10,7 +10,7 @@ X Nuget package'ları ekle X // text'ler hariç X
 * Zorunlu yönetici olarak çalışmasını sağla
 X 2012 hatası X
 X 2018 hatası X
-* Listelemedeki branş'ı kontrol et
+X Listelemedeki branş'ı kontrol et X
 X Arama çalışmıyor X
 X Log tutulmuyor X
 * Main hata kodları düzelt
