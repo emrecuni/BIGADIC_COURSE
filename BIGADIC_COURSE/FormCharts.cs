@@ -42,7 +42,7 @@ namespace BIGADIC_COURSE
                 //courseToolStripMenuItem_Click(sender, e);
                 selectedChart = 'C';
                 radioButtonTotal.Checked = true;
-                                
+
                 dateTimePickerStartDate.Value = DateTime.Today;
                 dateTimePickerEndDate.Value = DateTime.Today;
             }
@@ -244,44 +244,54 @@ namespace BIGADIC_COURSE
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (chart.Series[0].Points.Count > 0)
-            //    {
-            //        string imagePath = Application.StartupPath + $"\\chart_{DateTime.Now.Date:yyyy_MM_dd_HH_mm_ss}.png";
-
-            //        Screenshots(imagePath);
-            //        MessageBox.Show("Grafik Png Dosyasına Başarıyla Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        Process.Start(imagePath);
-            //    }
-            //    else
-            //        MessageBox.Show("Çizilmiş Bir Grafik Bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Log.logger.Error($"printToolStripMenuItem_Click Error Hata Kodu: 3004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-            //    MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            try
+            {
+                if (splitContainerChart.Panel2.Controls.Count > 0)
+                {
+                    string imagePath = Application.StartupPath + $"ExportCharts";
+                    if(!Directory.Exists(imagePath)) 
+                        Directory.CreateDirectory(imagePath);
+                    imagePath += $"\\chart_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.png";
+                    Screenshots(imagePath);
+                    MessageBox.Show("Grafik Png Dosyasına Başarıyla Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = "explorer",
+                        Arguments = $"\"{imagePath}\"",
+                        UseShellExecute = true
+                    });
+                }
+                else
+                    MessageBox.Show("Çizilmiş Bir Grafik Bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"printToolStripMenuItem_Click Error Hata Kodu: 3004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Screenshots(string path)
         {
-            //Bitmap chartBitmap = null;
-            //try
-            //{
-            //    chartBitmap = new Bitmap(splitContainerChart.Panel2.Width, splitContainerChart.Panel2.Height);
-            //    splitContainerChart.Panel2.DrawToBitmap(chartBitmap, new Rectangle(0, 0, splitContainerChart.Panel2.Width, splitContainerChart.Panel2.Height));
-            //    chartBitmap.Save(path, ImageFormat.Png);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Log.logger.Error($"Screenshots Error Hata Kodu: 3005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-            //    MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //finally
-            //{
-            //    chartBitmap.Dispose();
-            //}
+            try
+            {
+                Control panel = splitContainerChart.Panel2; // Hedef paneli al
+                Bitmap chartBitmap = new Bitmap(panel.Width, panel.Height);
+
+                using (Graphics g = Graphics.FromImage(chartBitmap))
+                {
+                    g.Clear(panel.BackColor); // Arka plan rengini ayarla
+                    panel.DrawToBitmap(chartBitmap, new Rectangle(0, 0, panel.Width, panel.Height));
+                }
+
+                chartBitmap.Save(path, System.Drawing.Imaging.ImageFormat.Png);
+                chartBitmap.Dispose(); // Bellek sızıntısını önlemek için
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"Screenshots Error Hata Kodu: 3005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)

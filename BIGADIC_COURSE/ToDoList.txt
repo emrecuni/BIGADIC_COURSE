@@ -5,8 +5,8 @@ X Nuget package'ları ekle X // text'ler hariç X
 * Hataları buraya al
 * Nesne oluşturmayı basitleştir //new()
 * Logo ve ikonları ekle
-* Chart'ta ss'i güncelle
-* Chart'ta print'i  güncelle
+X Chart'ta ss'i güncelle X
+X Chart'ta print'i güncelle X
 * Zorunlu yönetici olarak çalışmasını sağla
 X 2012 hatası X
 X 2018 hatası X
@@ -14,7 +14,186 @@ X Listelemedeki branş'ı kontrol et X
 X Arama çalışmıyor X
 X Log tutulmuyor X
 * Main hata kodları düzelt
-* Bazı raporlar çalışmıyor
+X Bazı raporlar çalışmıyor X
 * Chart exportunu oxyplot.pdf ile yapmayı dene
 X Chart çizdir X
 * Chart menustrip bg'leri düzelt
+* Doğum günlerine export ekle
+	* Wp'den bak formatına
+
+
+
+
+X Parola textbox'ında enter'a tıklandığında "Giriş Yap" tetiklenecek X
+X Default parola admin admin olacak admin parolası ile giriş yapıldığında parola değiştir ekranına yönlendirecek X
+X Logoyu bütün formların ikonuna ekle X
+X Log ekle X
+X Login formu statik size yap X
+X TabIndex'leri düzelt X
+X Seçilen textbox'ların arka planını rengini değiştir X
+X Parolayı şifreli tut dbde X
+X Doğum tarihinde maksimum bugün seçilebilir olmalı X
+X Ad ile arama yaparken soyadı zorunlu tut X
+X Seçilen textbox'ın select'ini en başa al X
+X Ad - soyad gibi alanlara trim at X
+X Seçilen Branşlar texti disable yap dışarıdan müdahale edilemesin X
+X Branş seçilmeden kaydet butonuna tıklanamasın X
+X Seçilen branş'ın ilk karakteri virgülse onu kaldır X
+X Eklenen kurs kaydının kurs kayıtta olduğunu kontrol et X
+	X Kayıt mevcut mesajı bastır X
+X Birden fazla kayıtta hata veya bilgi pop-up'ları peşpeşe gelecek X
+X Kayıt eklendikten, güncellendikten veya sildikten sonra bütün kayıtları tekrar db'den çek X
+X Excel'e ve pdf'e aktarma yaptıktan sonra dosyaları aç X
+X Chart'ı pdf olarak değil de png olarak export alsam olur mu diye sor X
+X Login ekranındaki logoyu iste X
+X List'e telefon ve doğum tarihi eklenecek X
+X Arama kısmı list'i güncelleyecek X
+X Silmede textbox'ların doluluğunu kontrol et // listclick X
+X Temizlede radiobutton ve checkbox'ları temizle ve list de X
+X Kayıt tarihinde default datetime.now ver X
+X Combobox'ın itemlarını winform1'den al X
+X Raporlama sayfası oluştur ve branş ve kayıt tipine göre listeleme eklencek tarih aralığı verilebilecek X
+X Seçili checkbox'ın forecolor'ını kırmızı yap X
+X Temizle tetiklendiğinde textboxName focusla X
+X Seçili textbox'ın bg'si sarı olsun X
+X Tab ile geçişlere aşağı ok tuşu ile yap X
+X Excel ve pdf oluşturulduğunda otomatik dosyayı aç X
+X Branş silme ekle X
+X Branş ekleme ve silmede checkbox'ları otomatik güncelle X
+X Grafiği fotoğraf olarak export edebilirsin X
+X Grafiklerde kurs bazındaya cinsiyet kırılımı ekle X
+X Branş üzerindeki aktif-pasif-bekleyen kayıt adetlerini arayüz üzerinde göster X
+X User ve admin olarak iki rol ekle admin bütün kullanıcıları kontrol edebilsin X
+X Maximize'da ekranı kaplayacak şekilde düzenle X
+X Ad ve soyadı uppercase yap X
+X Bütün sayfaları startposition'u centerparent yap X
+X Tarih Seç checkbox'ı tiklendiğinde timepicker'ları enable tik kaldırıldığında tekrar disable yap X
+- Test dataları ekle -
+X Combobox'ın sildiğim indexleri chart'a ekle X // radiobutton ile yapıyorum X
+X Tüm filtreleri temizlede seçilen kursları da temizle ve list'i tekrar çağır X
+X Combobox'ın boyutunu değerlere göre ayarla X
+X Branş eklendikten sonra listeyi güncelle X
+X Main formda her checkbox'ın yanında o branştan kaç adet olduğunu yaz X
+X Chart.cs'de hata kodlarını düzenle X
+X Kayıt durumu bazında grafiği çizilirken kayıt tiplerini disable yap X
+X DrawChart'a parametre ile eksen adlarını gönder X
+X Chart.cs'te timepicker'ın değeri değişince otomatik grafiği yenile X
+X Grafiğin yazdır'ını test et X
+X Varolan kullanıcı adının eklenmesi kontrolünü ekle X
+X Strip'teki çıkışı aktif et X
+X "admin" parolasını da değiştire yönlendir X
+X Admin sayfasına showPassword butonlarını ekle X
+X Kullanıcı eklendiğinde, silindiğinde, güncellendiğinde kullanıcıları tekrar çek X
+X Güncelleme işleminde kullanıcı adına müdahale ettirme X
+X Parola textbox'ların passchar ekle X
+X Kullanıcı adı ve parolada case sensitive'e bak X
+X admin ve user parolalarının doğruluğunu kontrol ettikten sonra değiştirme sayfasına yönlendir X
+X Textbox'ları ve checkbox'lardan biri seçilmeyince kaydet butonu aktif olmasın X
+X listview'dan seçim yapılmadan güncelle ve sil butonları aktif olmasın X
+X Main'deki raporlamayı kaldır X
+X Listview'ın click'i event'ini yön tuşlarına ver X
+X Id'nin başına ekrana bgm ekle X
+	X Listview'ın click eventi patlıyor X
+-- Son Id'yi temizle dediğimde ekrana bastır -- // kayıt silindiği zaman yeni gelecek id'yi bilmediğim için yapılamaz
+X Olmayan kayıt için bulanamadı pop-up'ı çıkart // listelemede X
+X Güncelleme işleminden sonra sadece güncellenen kaydı getir X
+X Excel'e aktarda kolonları kontrol et X
+X Export'ları tek dizinde topla X
+X Export'ları haftalık sil X
+X User yetkisi kendi parolasını da değiştiremeyecek X
+X Yedekle de bütün kayıtlar d dizine yedekle excelde X
+X Setup ve sln dosyasını gönder X
+X Import seçeneği ekle X
+X Admin yetkili kullanıcının yönetim panelinde yönetici olup olmadığı belli değil X
+X Sil işleminde id'yi alırken hata veriyor kontrol et X
+X Kaydet işleminde id'den hata veriyor mu kontrol et X
+X Update işleminde seçili kurs dışında bir kurs seçildiğinde nasıl davranıyor X // seçim yaptırıyor ama bir etkisi olmuyor
+X Main'den çıkış yaptıktan sonra login ekranında user'a focusla X
+X Bir kayıt eklendikten sonra branşların yanındaki sayıları güncelle // silinince de X
+X Id BGKM olacak  veya GKM olacak X
+X Id'yi 0001 şeklinde göster // backup tarafını da kontrol et X
+X c:/BGM'yi kaldır X
+X Grafikte kurs adlarını dikine yazdır X
+X Grafikte hangi grafik olduğunu yaz başlık olarak X
+X Grafikleri biraz daha büyüt // yükseklik olarak X
+X ExportPdf'te fontları küçültüp eksik olan d_t telefon gibi kolonları eklemeyi dene X
+X Yeni kayıt eklendiğinde eklenen kayıtları listele sadece X
+X İlk açılışta doğum tarihi olanları pop-up çıkartıp listelenmesini iste başka bir sayfada liste olarak ver // ad - soyad - telefon X
+X Main formunda en üstteki groupbox'ın title'ını kaldır yerine textbox ekle ve kayan yazı şeklinde gelsin X
+X Kayıt tipleri defaultta disable olsun bul veya listclick'te enable olsun X
+X Çıkış strip'i kaldır X
+X Uygulamayı alta alıp tekrar açıldığında branş ve sayıları bozuluyor X
+X Güncelleden önce değişiklik yapılıp yapılmadığını kontrol et X
+X Sil işleminde önce pop-up'la onay iste X
+X Listele'ye tıklandığında temizleyi tetikle X
+X Personel, antrenör ve öğretmenlerin tutulduğu bir tablo ekle ve branşları tutulsun ama kurslarla bağlantısı olması şart değil X
+X Rapor sayfasına anlık rapor deyip wp'deki fotoyu eklicem X
+	X Faaliyet gösteren branşlarda aktif veya pasif kayıt olup olmamasını kontrol et X
+	X Haricindekileri açılması planlananlara ekle X
+	X Personelleri personel tablosundan al X
+	X Özet bilgiyi ekle X
+	X Logoyu ekle X
+X Kaydet'e tıkladığında cinsiyet seçim kontrolü ekle X
+X Kaydet'e tıklandığında doğum tarihinin bugün ile aynı olma kontrolünü ekle veya textbox leave'de kontrol et X
+X Grafiklerde seçili strip'in back color'ı mavi olsun X
+X Sil'den sonra silinen kaydın branş seçimi kalıyor temizle X
+X Grafik için başlıkları wp'den al X
+X Varolan branş yeniden eklenemesin X
+X Branş silerken o branşa ait aktif kayıt olup olmadığını kontrol et ve bütün kayıtları sil X
+X İlk kayıt eklendiğin son kaydın id'sini almayı tekrar dene X
+X Personelde seçiniz default gelsin X
+X Güncelleme de fark kontrolünü personele de ekle X
+X Personel strip'ini yönetimin soluna al X
+X Listview'den kayıt seçildiğinde flowlayout disable olsun X
+X Doğum tarihleri her açılışta gelsin mi X
+X Form büyüdüğünde grafik başlığı otomatik konumlansın X
+X Kayıt durumu bazında tarih seçimi yapılınca kurs kaydına atıyor X
+X Grafiği yazdırırken chart'ın dolu olup olmamasını kontrol et X
+X Title text'ini disable yap X
+X Anlık raporda imagepath'i dinamik yap X
+X Tablonun border'ını kaldır X
+X Bir satırda en fazla 5 kolon olsun X
+X Doğum tarihini sor ve yeni versiyon çıkart X
+X Doğum günü sekmesi ekle X
+X Id - TCKN - ad - soyad - telefon bilgilerini listele X
+X Pdf ve excel export seçeneği sun doğum gününe X
+X Doğum günü olan kayıt yoksa bulunamadı pop-up'ı çıkart X
+X İlk açılışta doğum günü varsa listelensin mi diye sor X
+X Branş eklendikten sonra branş adetleri güncellenmiyor //... X
+X Personel sekmesinin arkasını async yap X
+X Admin paneli async yap X
+* Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
+* Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin
+* Export formatını import formatına göre değiştir // wp'ye bırak
+* Versiyon.txt ekle
+X Import ettikten sonra listele butonu çalışmıyor X
+X Import işleminde sonra RefreshData'yı çek X
+* Doğum günü sayfasına ay bazında sorgu seçeneği ekle
+X Bütün form ve raporlardan toplam - aktif - pasif bekleyen kayıtlardan kayıtları çıkart X
+* Personel seçiminde combobox index değil tag'a göre getir
+* Hiçbir şey yokken import edildiğinde kursları ve sayılarını refresh et
+* Çıkış yaptıktan sonra bazen otomatik içeri alıyor // main form açılmadan textboxları temizlemek gerekebilir
+* Bazen 2029 hatası veriyor kontrol et // muhtemelen anlık takılma yaşadığında asenkrondan patlatıyor
+	* Callback metod gerekebilir belki
+X Grafiklerdeki kayıtlar kısımlarını da çıkart tekrar setup al X
+X Setuptaki veri tabanını prod'a bağlayıp al X
+X Prod'da 7000 hatası veriyor vb'de X
+X Backup'ı import formatına çevir // kontrol gerek olmayabilir X
+* Kayan yazıyı sağdan sola değil soldan sağa getir
+* Personellere de export seçeneği ekle
+* Anlık rapordaki başlık ve logo kısmı bütün pdf'lere eklettir
+* Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
+
+* 2029 hatası veriyor açılışta // callback yazmak gerekebilir
+* import ile alırken bazı kayıtları almıyor gibi 
+* Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
+X Kurs adetlerinde satranç ve akıl zeka 0 geliyor X
+
+
+
+id:
+	X main X
+	X report X
+	X export'u kontrol et X
+
+info: pdf'te gün içindeki son güncel tablo aktarılır
