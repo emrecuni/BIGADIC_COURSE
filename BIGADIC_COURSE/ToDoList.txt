@@ -187,8 +187,8 @@ X Anlık rapordaki başlık ve logo kısmı bütün pdf'lere eklettir X
 * Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
 
 X 2029 hatası veriyor açılışta // callback yazmak gerekebilir X
-* import ile alırken bazı kayıtları almıyor gibi 
-* Import sonrası branş sayacını yenilet
+X import ile alırken bazı kayıtları almıyor gibi X 1550
+X Import sonrası branş sayacını yenilet X
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
 X Kurs adetlerinde satranç ve akıl zeka 0 geliyor X
 

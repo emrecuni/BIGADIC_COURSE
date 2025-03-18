@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 
 namespace BIGADIC_COURSE
@@ -160,10 +161,18 @@ namespace BIGADIC_COURSE
                                 Log.logger.Info($"Yeni kurs kaydı başarıyla yapıldı. {maskedTextBoxTckn.Text}");
                                 if (allRegistersList.Count > 0)
                                     id = allRegistersList.LastOrDefault()?.ID ?? -1;
-                                RefreshData(); // veri tabanındaki kayıtlar tekrar çekilir
-                                GetNewRegisters(id); // sadece yeni eklene kayıtlar listview'a getirir
-                                GetCourseCount(); // kursların kayıt sayıları güncellenir
-                                ChangeEnableRadioButtons(0); // kayıt tipleri pasife alınır
+
+                                await Task.Run(async () =>
+                                {
+                                    await RefreshData();
+                                });
+
+                                // UI işlemlerini senkron yerine async olarak çağır
+                                await Task.Yield(); // UI thread'in kilitlenmesini önler
+                                GetCourseCount();
+                                await Task.Run(() => GetNewRegisters(id));
+                                ChangeEnableRadioButtons(0);
+
                                 buttonRegister.Enabled = false;
                                 MessageBox.Show($"Kayıt(lar) Başarılıyla Eklendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
@@ -289,9 +298,17 @@ namespace BIGADIC_COURSE
                             break;
                         case 1:
                             Log.logger.Info($"Kayıt başarıyla güncellendi. {maskedTextBoxTckn.Text}");
-                            RefreshData(); // veri tabanındaki kayıtlar tekrar çekilir
-                            GetUpdatedRegister(id); // sadece güncellenen kaydı getirir
-                            ChangeEnableRadioButtons(0); // kayıt tipleri pasife alınır
+
+                            await Task.Run(async () =>
+                            {
+                                await RefreshData();
+                            });
+
+                            // UI işlemlerini senkron yerine async olarak çağır
+                            await Task.Yield(); // UI thread'in kilitlenmesini önler
+                            await Task.Run(() => GetUpdatedRegister(id));
+                            ChangeEnableRadioButtons(0);
+
                             buttonUpdate.Enabled = false;
                             buttonDelete.Enabled = false;
                             flowLayoutPanelBranches.Enabled = true;
@@ -339,10 +356,18 @@ namespace BIGADIC_COURSE
                                 break;
                             case 1:
                                 Log.logger.Info($"Kayıt Başarıyla Silindi. {maskedTextBoxTckn.Text} - {textBoxSelectionBranches.Text}");
-                                RefreshData(); // veri tabanındaki kayıtlar tekrar çekilir
+
+                                await Task.Run(async () =>
+                                {
+                                    await RefreshData();
+                                });
+
+                                // UI işlemlerini senkron yerine async olarak çağır
+                                await Task.Yield(); // UI thread'in kilitlenmesini önler
+                                GetCourseCount();
+                                ChangeEnableRadioButtons(0);
+
                                 buttonOrder_Click(sender, e); // listview'ın değerleri güncellenir
-                                GetCourseCount(); // kursların kayıt sayıları güncellenir
-                                ChangeEnableRadioButtons(0); // kayıt tipleri pasife alınır
                                 textBoxId.Text = string.Empty;
                                 textBoxName.Text = string.Empty;
                                 textBoxSurname.Text = string.Empty;
@@ -1010,32 +1035,46 @@ namespace BIGADIC_COURSE
             {
                 listViewAllRegister.Items.Clear();
                 idStr.Clear();
-                if (allRegistersList.FirstOrDefault(r => r.ID == id).ID < 10)
-                    idStr.Append($"GKM000{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
-                else if (allRegistersList.FirstOrDefault(r => r.ID == id).ID < 100)
-                    idStr.Append($"GKM00{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
-                else if (allRegistersList.FirstOrDefault(r => r.ID == id).ID < 1000)
-                    idStr.Append($"GKM0{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
-                else
-                    idStr.Append($"GKM{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
 
+                // ID'ye göre ilgili kaydı bul
+                var register = allRegistersList.FirstOrDefault(r => r.ID == id);
+
+                if (register == null)
+                {
+                    MessageBox.Show("Kayıt bulunamadı!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // ID formatını belirle
+                if (register.ID < 10)
+                    idStr.Append($"GKM000{register.ID}");
+                else if (register.ID < 100)
+                    idStr.Append($"GKM00{register.ID}");
+                else if (register.ID < 1000)
+                    idStr.Append($"GKM0{register.ID}");
+                else
+                    idStr.Append($"GKM{register.ID}");
+
+                // ListViewItem oluştur
                 ListViewItem item = new ListViewItem(idStr.ToString());
-                item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).TCKN);
-                item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).NAME);
-                item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).SURNAME);
-                item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).COURSE);
-                item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).BIRTHDATE.ToString("dd-MM-yyyy"));
-                item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).PHONE);
-                item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).REGISTERDATE.ToString("dd-MM-yyyy"));
-                item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).STATUS);
+                item.SubItems.Add(register.TCKN);
+                item.SubItems.Add(register.NAME);
+                item.SubItems.Add(register.SURNAME);
+                item.SubItems.Add(register.COURSE);
+                item.SubItems.Add(register.BIRTHDATE.ToString("dd-MM-yyyy"));
+                item.SubItems.Add(register.PHONE);
+                item.SubItems.Add(register.REGISTERDATE.ToString("dd-MM-yyyy"));
+                item.SubItems.Add(register.STATUS);
+
                 listViewAllRegister.Items.Add(item);
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"maskedTextBox_Click Error Hata Kodu: 2032 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                Log.logger.Error($"GetUpdatedRegister Error Hata Kodu: 2032 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2032", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void DeleteOldExportDatas()
         {
@@ -1343,7 +1382,7 @@ namespace BIGADIC_COURSE
                                 break;
                         }
 
-                        RefreshData();
+                        await RefreshData();
                         buttonOrder_Click(sender, e);
                     }
                 }
@@ -1360,29 +1399,34 @@ namespace BIGADIC_COURSE
             try
             {
                 listViewAllRegister.Items.Clear();
-                while (allRegistersList.Any(r => r.ID > id))
+
+                // Döngüye girmeden önce sıralı bir liste alalım
+                var newRegisters = allRegistersList.Where(r => r.ID > id).OrderBy(r => r.ID).ToList();
+
+                foreach (var register in newRegisters)
                 {
                     idStr.Clear();
-                    if (allRegistersList.FirstOrDefault(r => r.ID == id).ID < 10)
-                        idStr.Append($"GKM000{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
-                    else if (allRegistersList.FirstOrDefault(r => r.ID == id).ID < 100)
-                        idStr.Append($"GKM00{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
-                    else if (allRegistersList.FirstOrDefault(r => r.ID == id).ID < 1000)
-                        idStr.Append($"GKM0{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
+
+                    if (register.ID < 10)
+                        idStr.Append($"GKM000{register.ID}");
+                    else if (register.ID < 100)
+                        idStr.Append($"GKM00{register.ID}");
+                    else if (register.ID < 1000)
+                        idStr.Append($"GKM0{register.ID}");
                     else
-                        idStr.Append($"GKM{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
+                        idStr.Append($"GKM{register.ID}");
 
                     ListViewItem item = new ListViewItem(idStr.ToString());
-                    item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).TCKN);
-                    item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).NAME);
-                    item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).SURNAME);
-                    item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).COURSE);
-                    item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).BIRTHDATE.ToString("dd-MM-yyyy"));
-                    item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).PHONE);
-                    item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).REGISTERDATE.ToString("dd-MM-yyyy"));
-                    item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).STATUS);
+                    item.SubItems.Add(register.TCKN);
+                    item.SubItems.Add(register.NAME);
+                    item.SubItems.Add(register.SURNAME);
+                    item.SubItems.Add(register.COURSE);
+                    item.SubItems.Add(register.BIRTHDATE.ToString("dd-MM-yyyy"));
+                    item.SubItems.Add(register.PHONE);
+                    item.SubItems.Add(register.REGISTERDATE.ToString("dd-MM-yyyy"));
+                    item.SubItems.Add(register.STATUS);
+
                     listViewAllRegister.Items.Add(item);
-                    id = int.Parse(item.SubItems[0].Text.Substring(3));
                 }
             }
             catch (Exception ex)
