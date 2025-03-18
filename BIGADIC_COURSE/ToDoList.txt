@@ -182,7 +182,7 @@ X Setuptaki veri tabanını prod'a bağlayıp al X
 X Prod'da 7000 hatası veriyor vb'de X
 X Backup'ı import formatına çevir // kontrol gerek olmayabilir X
 * Kayan yazıyı sağdan sola değil soldan sağa getir
-* Personellere de export seçeneği ekle
+X Personellere de export seçeneği ekle X
 X Anlık rapordaki başlık ve logo kısmı bütün pdf'lere eklettir X
 * Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
 
