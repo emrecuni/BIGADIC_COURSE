@@ -58,9 +58,14 @@
             comboBoxPersonelType = new ComboBox();
             textBoxSurname = new TextBox();
             maskedTextBoxPhone = new MaskedTextBox();
+            menuStrip1 = new MenuStrip();
+            exportToolStripMenuItem = new ToolStripMenuItem();
+            exportToExcelToolStripMenuItem = new ToolStripMenuItem();
+            exportToPdfToolStripMenuItem = new ToolStripMenuItem();
             groupBoxPersonel.SuspendLayout();
             groupBoxList.SuspendLayout();
             groupBoxRegister.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBoxPersonel
@@ -68,11 +73,11 @@
             groupBoxPersonel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxPersonel.Controls.Add(groupBoxList);
             groupBoxPersonel.Controls.Add(groupBoxRegister);
-            groupBoxPersonel.Location = new Point(17, 17);
+            groupBoxPersonel.Location = new Point(17, 39);
             groupBoxPersonel.Margin = new Padding(4);
             groupBoxPersonel.Name = "groupBoxPersonel";
             groupBoxPersonel.Padding = new Padding(4);
-            groupBoxPersonel.Size = new Size(652, 555);
+            groupBoxPersonel.Size = new Size(652, 551);
             groupBoxPersonel.TabIndex = 0;
             groupBoxPersonel.TabStop = false;
             groupBoxPersonel.Text = "Personel";
@@ -81,7 +86,7 @@
             // 
             groupBoxList.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxList.Controls.Add(listViewPersonels);
-            groupBoxList.Location = new Point(8, 259);
+            groupBoxList.Location = new Point(8, 255);
             groupBoxList.Name = "groupBoxList";
             groupBoxList.Size = new Size(636, 289);
             groupBoxList.TabIndex = 21;
@@ -376,16 +381,49 @@
             maskedTextBoxPhone.KeyDown += textBox_KeyDown;
             maskedTextBoxPhone.Leave += textBox_Leave;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { exportToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(685, 28);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // exportToolStripMenuItem
+            // 
+            exportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exportToExcelToolStripMenuItem, exportToPdfToolStripMenuItem });
+            exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            exportToolStripMenuItem.Size = new Size(101, 24);
+            exportToolStripMenuItem.Text = "Dışarı Aktar";
+            // 
+            // exportToExcelToolStripMenuItem
+            // 
+            exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
+            exportToExcelToolStripMenuItem.Size = new Size(180, 24);
+            exportToExcelToolStripMenuItem.Text = "Excel'e Aktar";
+            exportToExcelToolStripMenuItem.Click += exportToExcelToolStripMenuItem_Click;
+            // 
+            // exportToPdfToolStripMenuItem
+            // 
+            exportToPdfToolStripMenuItem.Name = "exportToPdfToolStripMenuItem";
+            exportToPdfToolStripMenuItem.Size = new Size(180, 24);
+            exportToPdfToolStripMenuItem.Text = "Pdf'e Aktar";
+            exportToPdfToolStripMenuItem.Click += exportToPdfToolStripMenuItem_Click;
+            // 
             // FormPersonel
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
-            ClientSize = new Size(685, 588);
+            ClientSize = new Size(685, 606);
             Controls.Add(groupBoxPersonel);
+            Controls.Add(menuStrip1);
             Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(5, 4, 5, 4);
             MaximizeBox = false;
             Name = "FormPersonel";
@@ -396,7 +434,10 @@
             groupBoxList.ResumeLayout(false);
             groupBoxRegister.ResumeLayout(false);
             groupBoxRegister.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -430,5 +471,9 @@
         private System.Windows.Forms.Label labelBranch;
         private System.Windows.Forms.ComboBox comboBoxBranch;
         private System.Windows.Forms.ColumnHeader columnHeaderBranch;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem exportToolStripMenuItem;
+        private ToolStripMenuItem exportToExcelToolStripMenuItem;
+        private ToolStripMenuItem exportToPdfToolStripMenuItem;
     }
 }

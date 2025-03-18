@@ -10,6 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using OfficeOpenXml;
+using System.Diagnostics;
+using iText.IO.Font;
+using iText.IO.Image;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
 
 
 namespace BIGADIC_COURSE
@@ -26,6 +33,7 @@ namespace BIGADIC_COURSE
         List<Personel> allPersonels = new List<Personel>();
         Personel selectedPersonel;
         Personel updatedPersonel;
+        string imagePath = Application.StartupPath + "LOGO.png";
 
         private async void FormPersonel_Load(object sender, EventArgs e)
         {
@@ -493,17 +501,186 @@ namespace BIGADIC_COURSE
                 query.Clear();
                 query.Append("SELECT * FROM COURSES;");
 
-                DataTable courses = await sql.GetFromDb(query.ToString());
+                DataTable? courses = await sql.GetFromDb(query.ToString());
 
                 comboBoxBranch.Items.Add("Seçiniz");
-                foreach (DataRow row in courses.Rows)
-                    comboBoxBranch.Items.Add(row.ItemArray[1].ToString());
+                    foreach (DataRow row in courses.Rows)
+                        comboBoxBranch.Items.Add(row.ItemArray[1].ToString());
+                
                 //comboBoxBranch.Items[0].
             }
             catch (Exception ex)
             {
                 Log.logger.Error($"GetCourses Error Hata Kodu: 8021 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8021", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void exportToExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listViewPersonels.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
+                {
+                    DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes && ExportToExcel())
+                        MessageBox.Show("Kayıtlar Excel Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else if (ExportToExcel())
+                    MessageBox.Show("Kayıtlar Excel Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"exportToExcelToolStripMenuItem_Click Error Hata Kodu: 8022 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8022", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ExportToExcel()
+        {
+            try
+            {
+                string excelPath = Application.StartupPath + "ExportExcel\\";
+                if (!Directory.Exists(excelPath))
+                    Directory.CreateDirectory(excelPath);
+
+                excelPath += $"personel_{DateTime.Now.Date:yyyy_MM_dd}.xlsx";
+                int row = 2;
+
+                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
+
+                using (var package = new ExcelPackage(new FileInfo(excelPath)))
+                {
+                    var worksheet = package.Workbook.Worksheets.Add($"{DateTime.Now:HH_mm_ss}");
+
+                    worksheet.Cells[1, 1].Value = "ID";
+                    worksheet.Cells[1, 2].Value = "Adı";
+                    worksheet.Cells[1, 3].Value = "Soyadı";
+                    worksheet.Cells[1, 4].Value = "Telefon";
+                    worksheet.Cells[1, 5].Value = "Tipi";
+                    worksheet.Cells[1, 6].Value = "Branş";
+                    worksheet.Cells[1, 7].Value = "Kayıt Tarihi";
+
+                    for (int i = 0; i < listViewPersonels.Items.Count; i++)
+                    {
+                        worksheet.Cells[row, 1].Value = listViewPersonels.Items[i].SubItems[0].Text;
+                        worksheet.Cells[row, 2].Value = listViewPersonels.Items[i].SubItems[1].Text;
+                        worksheet.Cells[row, 3].Value = listViewPersonels.Items[i].SubItems[2].Text;
+                        worksheet.Cells[row, 4].Value = listViewPersonels.Items[i].SubItems[3].Text;
+                        worksheet.Cells[row, 5].Value = listViewPersonels.Items[i].SubItems[4].Text;
+                        worksheet.Cells[row, 6].Value = listViewPersonels.Items[i].SubItems[5].Text;
+                        worksheet.Cells[row++, 7].Value = listViewPersonels.Items[i].SubItems[6].Text;
+                    }
+                    package.Save();
+                }
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{excelPath}\"",
+                    UseShellExecute = true
+                });
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"ExportToExcel Error Hata Kodu: 8023 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8023", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private void exportToPdfToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (listViewPersonels.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
+                {
+                    DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes && ExportToPdf())
+                        MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (ExportToPdf())
+                    MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"GetCourses Error Hata Kodu: 8024 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8024", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ExportToPdf()
+        {
+            try
+            {
+                string pdfPath = Application.StartupPath + "ExportPdf\\";
+                if (!Directory.Exists(pdfPath))
+                    Directory.CreateDirectory(pdfPath);
+
+                pdfPath += $"personel_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.pdf";
+
+                using (PdfWriter writer = new PdfWriter(new FileInfo(pdfPath)))
+                {
+                    using (PdfDocument pdf = new PdfDocument(writer))
+                    {
+                        iText.Layout.Document document = new(pdf);
+                        PdfFont font = PdfFontFactory.CreateFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
+
+                        iText.Layout.Element.Image img = new iText.Layout.Element.Image(ImageDataFactory.Create(imagePath));
+                        img.ScaleToFit(100, 100); // Resmi 100x100 boyutuna ölçeklendirir
+
+                        img.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
+                        document.Add(img);
+
+                        document.Add(new Paragraph());
+                        document.Add(new Paragraph("BİGADİÇ BELEDİYESİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph("GENÇLİK VE KÜLTÜR MERKEZİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph());
+                        document.Add(new Paragraph());
+                        document.Add(new Paragraph());
+
+                        // Tabloyu oluşturuyoruz ve sütun genişliklerini ayarlıyoruz
+                        float[] columnWidths = { 1, 2, 3, 3, 2, 2, 2 }; // Sütun genişlikleri
+                        Table table = new Table(columnWidths);
+
+                        table.AddCell("ID").SetFont(font).SetFontSize(18);
+                        table.AddCell("Adı").SetFont(font).SetFontSize(18);
+                        table.AddCell("Soyadı").SetFont(font).SetFontSize(18);
+                        table.AddCell("Telefon").SetFont(font).SetFontSize(18);
+                        table.AddCell("Tipi").SetFont(font).SetFontSize(18);
+                        table.AddCell("Branş").SetFont(font).SetFontSize(18);
+                        table.AddCell("Kayıt Tarihi").SetFont(font).SetFontSize(18);
+
+                        for (int i = 0; i < listViewPersonels.Items.Count; i++)
+                        {
+                            table.AddCell(listViewPersonels.Items[i].SubItems[0].Text).SetFont(font).SetFontSize(15);
+                            table.AddCell(listViewPersonels.Items[i].SubItems[1].Text).SetFont(font).SetFontSize(15);
+                            table.AddCell(listViewPersonels.Items[i].SubItems[2].Text).SetFont(font).SetFontSize(15);
+                            table.AddCell(listViewPersonels.Items[i].SubItems[3].Text).SetFont(font).SetFontSize(15);
+                            table.AddCell(listViewPersonels.Items[i].SubItems[4].Text).SetFont(font).SetFontSize(15);
+                            table.AddCell(listViewPersonels.Items[i].SubItems[5].Text).SetFont(font).SetFontSize(15);
+                            table.AddCell(listViewPersonels.Items[i].SubItems[6].Text).SetFont(font).SetFontSize(15);
+                        }
+
+                        document.Add(table);
+                        document.Close();
+                    }
+                }
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{pdfPath}\"",
+                    UseShellExecute = true
+                });
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"ExportToPdf Error Hata Kodu: 8025 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8025", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
     }
