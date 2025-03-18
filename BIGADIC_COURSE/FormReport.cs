@@ -36,6 +36,7 @@ namespace BIGADIC_COURSE
         DateTime endDate;
         StringBuilder query = new StringBuilder();
         StringBuilder idStr = new StringBuilder();
+        string imagePath = Application.StartupPath + "LOGO.png";
 
         private void FormReport_Load(object sender, EventArgs e)
         {
@@ -355,7 +356,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                string excelPath = Application.StartupPath + "\\ExportExcel\\";
+                string excelPath = Application.StartupPath + "ExportExcel\\";
                 if (!Directory.Exists(excelPath))
                     Directory.CreateDirectory(excelPath);
 
@@ -392,7 +393,12 @@ namespace BIGADIC_COURSE
                     }
                     package.Save();
                 }
-                Process.Start(excelPath);
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{excelPath}\"",
+                    UseShellExecute = true
+                });
                 return true;
             }
             catch (Exception ex)
@@ -407,7 +413,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                string pdfPath = Application.StartupPath + "\\ExportPdf\\";
+                string pdfPath = Application.StartupPath + "ExportPdf\\";
                 if (!Directory.Exists(pdfPath))
                     Directory.CreateDirectory(pdfPath);
 
@@ -420,6 +426,17 @@ namespace BIGADIC_COURSE
                         iText.Layout.Document document = new(pdf);
 
                         PdfFont font = PdfFontFactory.CreateFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
+
+                        iText.Layout.Element.Image img = new iText.Layout.Element.Image(ImageDataFactory.Create(imagePath));
+                        img.ScaleToFit(100, 100); // Resmi 100x100 boyutuna ölçeklendirir
+
+                        img.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
+                        document.Add(img);
+
+                        document.Add(new Paragraph());
+                        document.Add(new Paragraph("BİGADİÇ BELEDİYESİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph("GENÇLİK VE KÜLTÜR MERKEZİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph());
 
                         // Tabloyu oluşturuyoruz ve sütun genişliklerini ayarlıyoruz
                         float[] columnWidths = { 1, 2, 3, 3, 2, 2, 2, 2, 2 }; // Sütun genişlikleri
@@ -452,8 +469,12 @@ namespace BIGADIC_COURSE
                         document.Close();
                     }
                 }
-
-                Process.Start(pdfPath);
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{pdfPath}\"",
+                    UseShellExecute = true
+                });
                 return true;
             }
             catch (Exception ex)
@@ -468,12 +489,12 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                string pdfPath = Application.StartupPath + "\\ExportPdf\\";
+                string pdfPath = Application.StartupPath + "ExportPdf\\";
                 if (!Directory.Exists(pdfPath))
                     Directory.CreateDirectory(pdfPath);
 
                 pdfPath += $"Anlık_Rapor_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.pdf";
-                string imagePath = Application.StartupPath + "\\LOGO.png";
+                
 
                 using (PdfWriter writer = new PdfWriter(new FileInfo(pdfPath)))
                 {
@@ -544,7 +565,12 @@ namespace BIGADIC_COURSE
                         document.Close();
                     }
                 }
-                Process.Start(pdfPath);
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{pdfPath}\"",
+                    UseShellExecute = true
+                });
                 return true;
             }
             catch (Exception ex)

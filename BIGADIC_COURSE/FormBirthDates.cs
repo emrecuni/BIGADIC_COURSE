@@ -104,7 +104,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                string excelPath = Application.StartupPath + "\\ExportExcel\\";
+                string excelPath = Application.StartupPath + "ExportExcel\\";
                 if (!Directory.Exists(excelPath))
                     Directory.CreateDirectory(excelPath);
 
@@ -135,7 +135,12 @@ namespace BIGADIC_COURSE
                     }
                     package.Save();
                 }
-                Process.Start(excelPath);
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{excelPath}\"",
+                    UseShellExecute = true
+                });
                 return true;
             }
             catch (Exception ex)
@@ -190,7 +195,12 @@ namespace BIGADIC_COURSE
                     }
                 }
 
-                Process.Start(pdfPath);
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{pdfPath}\"",
+                    UseShellExecute = true
+                });
                 return true;
             }
             catch (Exception ex)

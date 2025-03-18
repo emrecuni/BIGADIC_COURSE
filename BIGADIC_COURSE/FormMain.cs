@@ -486,26 +486,6 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private void buttonExportExcel_Click(object sender, EventArgs e) // listview'daki kayıtları excel'e aktarır
-        {
-            try
-            {
-                if (listViewAllRegister.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
-                {
-                    DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes && ExportToExcel())
-                        MessageBox.Show("Kayıtlar Excel Dosyasına Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else if (ExportToExcel())
-                    MessageBox.Show("Kayıtlar Excel Dosyasına Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                Log.logger.Error($"buttonExportExcel_Click Error Hata Kodu: 2016 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2016", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private async void addBranchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -778,56 +758,17 @@ namespace BIGADIC_COURSE
                     }
                 }
                 MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Process.Start(pdfPath);
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{pdfPath}\"",
+                    UseShellExecute = true
+                });
             }
             catch (Exception ex)
             {
                 Log.logger.Error($"buttonExportExcel_Click Error Hata Kodu: 2023 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2023", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private bool ExportToExcel()
-        {
-            try
-            {
-                string excelPath = Application.StartupPath + $"\\list_{DateTime.Now.Date:yyyy_MM_dd}.xlsx";
-                int row = 2;
-
-                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
-
-                using (var package = new ExcelPackage(new FileInfo(excelPath)))
-                {
-                    var worksheet = package.Workbook.Worksheets.Add($"{DateTime.Now:HH_mm_ss}");
-
-                    worksheet.Cells[1, 1].Value = "ID";
-                    worksheet.Cells[1, 2].Value = "T.C. No";
-                    worksheet.Cells[1, 3].Value = "Adı";
-                    worksheet.Cells[1, 4].Value = "Soyadı";
-                    worksheet.Cells[1, 5].Value = "Branş";
-                    worksheet.Cells[1, 6].Value = "Kayıt Tarihi";
-                    worksheet.Cells[1, 7].Value = "Durumu";
-
-                    for (int i = 0; i < listViewAllRegister.Items.Count; i++)
-                    {
-                        worksheet.Cells[row, 1].Value = listViewAllRegister.Items[i].SubItems[0].Text;
-                        worksheet.Cells[row, 2].Value = listViewAllRegister.Items[i].SubItems[1].Text;
-                        worksheet.Cells[row, 3].Value = listViewAllRegister.Items[i].SubItems[2].Text;
-                        worksheet.Cells[row, 4].Value = listViewAllRegister.Items[i].SubItems[3].Text;
-                        worksheet.Cells[row, 5].Value = listViewAllRegister.Items[i].SubItems[4].Text;
-                        worksheet.Cells[row, 6].Value = listViewAllRegister.Items[i].SubItems[5].Text;
-                        worksheet.Cells[row++, 7].Value = listViewAllRegister.Items[i].SubItems[6].Text;
-                    }
-                    package.Save();
-                }
-                Process.Start(excelPath);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Log.logger.Error($"buttonExportExcel_Click Error Hata Kodu: 2024 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2024", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
         }
 
@@ -1093,7 +1034,7 @@ namespace BIGADIC_COURSE
             try
             {
 
-                string excelPath = Application.StartupPath + "\\ExportExcel\\";
+                string excelPath = Application.StartupPath + "ExportExcel\\";
                 if (!Directory.Exists(excelPath))
                     Directory.CreateDirectory(excelPath);
 

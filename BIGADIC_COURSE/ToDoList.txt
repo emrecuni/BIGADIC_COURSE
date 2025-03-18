@@ -183,7 +183,7 @@ X Prod'da 7000 hatası veriyor vb'de X
 X Backup'ı import formatına çevir // kontrol gerek olmayabilir X
 * Kayan yazıyı sağdan sola değil soldan sağa getir
 * Personellere de export seçeneği ekle
-* Anlık rapordaki başlık ve logo kısmı bütün pdf'lere eklettir
+X Anlık rapordaki başlık ve logo kısmı bütün pdf'lere eklettir X
 * Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
 
 * 2029 hatası veriyor açılışta // callback yazmak gerekebilir
