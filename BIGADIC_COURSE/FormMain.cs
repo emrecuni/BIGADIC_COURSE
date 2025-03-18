@@ -38,7 +38,7 @@ namespace BIGADIC_COURSE
         Register? selectedRegister;
         string? statusDesc;
         string title = "BİGADİÇ GENÇLİK VE KÜLTÜR MERKEZİ";
-        int titleIndex = 32;
+        int titleIndex = 0;
 
         private async void FormMain_Load(object sender, EventArgs e)
         {
@@ -208,7 +208,7 @@ namespace BIGADIC_COURSE
                                 idStr.Append($"GKM0{register.ID}");
                             else
                                 idStr.Append($"GKM{register.ID}");
-                            
+
                             ListViewItem item = new ListViewItem(idStr.ToString());
                             item.SubItems.Add(register.TCKN);
                             item.SubItems.Add(register.NAME);
@@ -454,7 +454,7 @@ namespace BIGADIC_COURSE
                             idStr.Append($"GKM0{register.ID}");
                         else
                             idStr.Append($"GKM{register.ID}");
-                        
+
                         ListViewItem item = new ListViewItem(idStr.ToString());
                         item.SubItems.Add(register.TCKN);
                         item.SubItems.Add(register.NAME);
@@ -1468,14 +1468,14 @@ namespace BIGADIC_COURSE
             try
             {
                 if (textBoxTitle.Text.Length < 49) // textbox'ın length'i dolana kadar boşluk ekler
-                    textBoxTitle.Text = " " + textBoxTitle.Text;
+                    textBoxTitle.Text += " ";
                 else if (textBoxTitle.Text.Length >= 49) // textbox dolduktan sonra textbox'ın başından itibaren yeni text'i yazmaya başlar
                 {
-                    textBoxTitle.Text = textBoxTitle.Text.Remove(textBoxTitle.Text.Length - 1, 1);
-                    textBoxTitle.Text = title[titleIndex--] + textBoxTitle.Text;
-                    if (titleIndex < 0) // index 0'ın altına düşerse işlem başa alınır
+                    textBoxTitle.Text = textBoxTitle.Text.Remove(0, 1);
+                    textBoxTitle.Text = textBoxTitle.Text + title[titleIndex++];
+                    if (titleIndex > 32) // index 0'ın altına düşerse işlem başa alınır
                     {
-                        titleIndex = 32;
+                        titleIndex = 0;
                         textBoxTitle.Text = textBoxTitle.Text.Trim();
                     }
                 }

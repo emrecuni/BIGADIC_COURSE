@@ -986,6 +986,7 @@
             textBoxTitle.Size = new Size(339, 28);
             textBoxTitle.TabIndex = 6;
             textBoxTitle.Text = "BİGADİÇ GENÇLİK VE KÜLTÜR MERKEZİ";
+            textBoxTitle.TextAlign = HorizontalAlignment.Right;
             // 
             // timer
             // 
