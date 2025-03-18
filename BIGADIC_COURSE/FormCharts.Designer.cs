@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCharts));
             menuStripChart = new MenuStrip();
             courseToolStripMenuItem = new ToolStripMenuItem();
             genderToolStripMenuItem = new ToolStripMenuItem();
@@ -319,9 +320,11 @@
             Controls.Add(splitContainerChart);
             Controls.Add(menuStripChart);
             Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStripChart;
             Margin = new Padding(4);
             Name = "FormCharts";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FormCharts";
             Load += FormCharts_Load;
             menuStripChart.ResumeLayout(false);

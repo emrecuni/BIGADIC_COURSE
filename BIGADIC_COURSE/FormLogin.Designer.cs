@@ -137,6 +137,7 @@
             // pictureBoxLogo
             // 
             pictureBoxLogo.BackgroundImageLayout = ImageLayout.None;
+            pictureBoxLogo.Image = (Image)resources.GetObject("pictureBoxLogo.Image");
             pictureBoxLogo.Location = new Point(560, 160);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(238, 195);
@@ -167,6 +168,7 @@
             Controls.Add(groupBoxAdminLoginPanel);
             Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;

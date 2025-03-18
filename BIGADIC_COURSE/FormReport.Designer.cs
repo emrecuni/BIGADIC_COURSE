@@ -551,6 +551,7 @@
             Controls.Add(menuStrip1);
             Font = new Font("Consolas", 11.25F);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4);
             MaximizeBox = false;

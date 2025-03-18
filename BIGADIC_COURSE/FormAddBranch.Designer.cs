@@ -29,74 +29,73 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddBranch));
-            this.groupBoxAddBranch = new System.Windows.Forms.GroupBox();
-            this.buttonAddBranch = new System.Windows.Forms.Button();
-            this.textBoxBranch = new System.Windows.Forms.TextBox();
-            this.labelBranch = new System.Windows.Forms.Label();
-            this.groupBoxAddBranch.SuspendLayout();
-            this.SuspendLayout();
+            groupBoxAddBranch = new GroupBox();
+            buttonAddBranch = new Button();
+            textBoxBranch = new TextBox();
+            labelBranch = new Label();
+            groupBoxAddBranch.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBoxAddBranch
             // 
-            this.groupBoxAddBranch.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxAddBranch.Controls.Add(this.buttonAddBranch);
-            this.groupBoxAddBranch.Controls.Add(this.textBoxBranch);
-            this.groupBoxAddBranch.Controls.Add(this.labelBranch);
-            this.groupBoxAddBranch.Location = new System.Drawing.Point(12, 12);
-            this.groupBoxAddBranch.Name = "groupBoxAddBranch";
-            this.groupBoxAddBranch.Size = new System.Drawing.Size(274, 127);
-            this.groupBoxAddBranch.TabIndex = 0;
-            this.groupBoxAddBranch.TabStop = false;
+            groupBoxAddBranch.BackColor = Color.Transparent;
+            groupBoxAddBranch.Controls.Add(buttonAddBranch);
+            groupBoxAddBranch.Controls.Add(textBoxBranch);
+            groupBoxAddBranch.Controls.Add(labelBranch);
+            groupBoxAddBranch.Location = new Point(12, 12);
+            groupBoxAddBranch.Name = "groupBoxAddBranch";
+            groupBoxAddBranch.Size = new Size(274, 127);
+            groupBoxAddBranch.TabIndex = 0;
+            groupBoxAddBranch.TabStop = false;
             // 
             // buttonAddBranch
             // 
-            this.buttonAddBranch.BackColor = System.Drawing.Color.White;
-            this.buttonAddBranch.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonAddBranch.ForeColor = System.Drawing.Color.Black;
-            this.buttonAddBranch.Location = new System.Drawing.Point(22, 67);
-            this.buttonAddBranch.Name = "buttonAddBranch";
-            this.buttonAddBranch.Size = new System.Drawing.Size(236, 45);
-            this.buttonAddBranch.TabIndex = 18;
-            this.buttonAddBranch.Text = "Ekle";
-            this.buttonAddBranch.UseVisualStyleBackColor = false;
-            this.buttonAddBranch.Click += new System.EventHandler(this.buttonAddBranch_Click);
+            buttonAddBranch.BackColor = Color.White;
+            buttonAddBranch.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            buttonAddBranch.ForeColor = Color.Black;
+            buttonAddBranch.Location = new Point(22, 67);
+            buttonAddBranch.Name = "buttonAddBranch";
+            buttonAddBranch.Size = new Size(236, 45);
+            buttonAddBranch.TabIndex = 18;
+            buttonAddBranch.Text = "Ekle";
+            buttonAddBranch.UseVisualStyleBackColor = false;
+            buttonAddBranch.Click += buttonAddBranch_Click;
             // 
             // textBoxBranch
             // 
-            this.textBoxBranch.Location = new System.Drawing.Point(113, 25);
-            this.textBoxBranch.Name = "textBoxBranch";
-            this.textBoxBranch.Size = new System.Drawing.Size(145, 25);
-            this.textBoxBranch.TabIndex = 1;
+            textBoxBranch.Location = new Point(113, 25);
+            textBoxBranch.Name = "textBoxBranch";
+            textBoxBranch.Size = new Size(145, 25);
+            textBoxBranch.TabIndex = 1;
             // 
             // labelBranch
             // 
-            this.labelBranch.AutoSize = true;
-            this.labelBranch.Location = new System.Drawing.Point(19, 31);
-            this.labelBranch.Name = "labelBranch";
-            this.labelBranch.Size = new System.Drawing.Size(88, 18);
-            this.labelBranch.TabIndex = 0;
-            this.labelBranch.Text = "Branş Adı:";
+            labelBranch.AutoSize = true;
+            labelBranch.Location = new Point(19, 31);
+            labelBranch.Name = "labelBranch";
+            labelBranch.Size = new Size(88, 18);
+            labelBranch.TabIndex = 0;
+            labelBranch.Text = "Branş Adı:";
             // 
             // FormAddBranch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(298, 147);
-            this.Controls.Add(this.groupBoxAddBranch);
-            this.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
-            this.Name = "FormAddBranch";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Branş Ekle";
-            this.groupBoxAddBranch.ResumeLayout(false);
-            this.groupBoxAddBranch.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 18F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGray;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(298, 147);
+            Controls.Add(groupBoxAddBranch);
+            Font = new Font("Consolas", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4);
+            MaximizeBox = false;
+            Name = "FormAddBranch";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Branş Ekle";
+            groupBoxAddBranch.ResumeLayout(false);
+            groupBoxAddBranch.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

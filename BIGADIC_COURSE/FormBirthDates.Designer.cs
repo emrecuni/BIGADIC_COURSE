@@ -29,125 +29,114 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBirthDates));
-            this.listViewBirthDate = new System.Windows.Forms.ListView();
-            this.columnHeaderTckn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderSurname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderBirthDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.menuStripExport = new System.Windows.Forms.MenuStrip();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToPdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeaderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.menuStripExport.SuspendLayout();
-            this.SuspendLayout();
+            listViewBirthDate = new ListView();
+            columnHeaderId = new ColumnHeader();
+            columnHeaderTckn = new ColumnHeader();
+            columnHeaderName = new ColumnHeader();
+            columnHeaderSurname = new ColumnHeader();
+            columnHeaderPhone = new ColumnHeader();
+            columnHeaderBirthDate = new ColumnHeader();
+            menuStripExport = new MenuStrip();
+            exportToolStripMenuItem = new ToolStripMenuItem();
+            exportToExcelToolStripMenuItem = new ToolStripMenuItem();
+            exportToPdfToolStripMenuItem = new ToolStripMenuItem();
+            menuStripExport.SuspendLayout();
+            SuspendLayout();
             // 
             // listViewBirthDate
             // 
-            this.listViewBirthDate.BackColor = System.Drawing.Color.Silver;
-            this.listViewBirthDate.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderId,
-            this.columnHeaderTckn,
-            this.columnHeaderName,
-            this.columnHeaderSurname,
-            this.columnHeaderPhone,
-            this.columnHeaderBirthDate});
-            this.listViewBirthDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewBirthDate.HideSelection = false;
-            this.listViewBirthDate.Location = new System.Drawing.Point(0, 28);
-            this.listViewBirthDate.Name = "listViewBirthDate";
-            this.listViewBirthDate.Size = new System.Drawing.Size(769, 371);
-            this.listViewBirthDate.TabIndex = 0;
-            this.listViewBirthDate.UseCompatibleStateImageBehavior = false;
-            this.listViewBirthDate.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeaderTckn
-            // 
-            this.columnHeaderTckn.Text = "TC. No";
-            this.columnHeaderTckn.Width = 110;
-            // 
-            // columnHeaderName
-            // 
-            this.columnHeaderName.Text = "Adı";
-            this.columnHeaderName.Width = 150;
-            // 
-            // columnHeaderSurname
-            // 
-            this.columnHeaderSurname.Text = "Soyadı";
-            this.columnHeaderSurname.Width = 150;
-            // 
-            // columnHeaderPhone
-            // 
-            this.columnHeaderPhone.Text = "Telefon";
-            this.columnHeaderPhone.Width = 125;
-            // 
-            // columnHeaderBirthDate
-            // 
-            this.columnHeaderBirthDate.Text = "Doğum Tarihi";
-            this.columnHeaderBirthDate.Width = 130;
-            // 
-            // menuStripExport
-            // 
-            this.menuStripExport.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.menuStripExport.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToolStripMenuItem});
-            this.menuStripExport.Location = new System.Drawing.Point(0, 0);
-            this.menuStripExport.Name = "menuStripExport";
-            this.menuStripExport.Size = new System.Drawing.Size(769, 28);
-            this.menuStripExport.TabIndex = 1;
-            this.menuStripExport.Text = "menuStrip1";
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToExcelToolStripMenuItem,
-            this.exportToPdfToolStripMenuItem});
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
-            this.exportToolStripMenuItem.Text = "Dışarı Aktar";
-            // 
-            // exportToExcelToolStripMenuItem
-            // 
-            this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.exportToExcelToolStripMenuItem.Text = "Excel\'e Aktar";
-            this.exportToExcelToolStripMenuItem.Click += new System.EventHandler(this.exportToExcelToolStripMenuItem_Click);
-            // 
-            // exportToPdfToolStripMenuItem
-            // 
-            this.exportToPdfToolStripMenuItem.Name = "exportToPdfToolStripMenuItem";
-            this.exportToPdfToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.exportToPdfToolStripMenuItem.Text = "Pdf\'e Aktar";
-            this.exportToPdfToolStripMenuItem.Click += new System.EventHandler(this.exportToPdfToolStripMenuItem_Click);
+            listViewBirthDate.BackColor = Color.Silver;
+            listViewBirthDate.Columns.AddRange(new ColumnHeader[] { columnHeaderId, columnHeaderTckn, columnHeaderName, columnHeaderSurname, columnHeaderPhone, columnHeaderBirthDate });
+            listViewBirthDate.Dock = DockStyle.Fill;
+            listViewBirthDate.Location = new Point(0, 28);
+            listViewBirthDate.Name = "listViewBirthDate";
+            listViewBirthDate.Size = new Size(769, 371);
+            listViewBirthDate.TabIndex = 0;
+            listViewBirthDate.UseCompatibleStateImageBehavior = false;
+            listViewBirthDate.View = View.Details;
             // 
             // columnHeaderId
             // 
-            this.columnHeaderId.Text = "ID";
-            this.columnHeaderId.Width = 100;
+            columnHeaderId.Text = "ID";
+            columnHeaderId.Width = 100;
+            // 
+            // columnHeaderTckn
+            // 
+            columnHeaderTckn.Text = "TC. No";
+            columnHeaderTckn.Width = 110;
+            // 
+            // columnHeaderName
+            // 
+            columnHeaderName.Text = "Adı";
+            columnHeaderName.Width = 150;
+            // 
+            // columnHeaderSurname
+            // 
+            columnHeaderSurname.Text = "Soyadı";
+            columnHeaderSurname.Width = 150;
+            // 
+            // columnHeaderPhone
+            // 
+            columnHeaderPhone.Text = "Telefon";
+            columnHeaderPhone.Width = 125;
+            // 
+            // columnHeaderBirthDate
+            // 
+            columnHeaderBirthDate.Text = "Doğum Tarihi";
+            columnHeaderBirthDate.Width = 130;
+            // 
+            // menuStripExport
+            // 
+            menuStripExport.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            menuStripExport.Items.AddRange(new ToolStripItem[] { exportToolStripMenuItem });
+            menuStripExport.Location = new Point(0, 0);
+            menuStripExport.Name = "menuStripExport";
+            menuStripExport.Size = new Size(769, 28);
+            menuStripExport.TabIndex = 1;
+            menuStripExport.Text = "menuStrip1";
+            // 
+            // exportToolStripMenuItem
+            // 
+            exportToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exportToExcelToolStripMenuItem, exportToPdfToolStripMenuItem });
+            exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            exportToolStripMenuItem.Size = new Size(101, 24);
+            exportToolStripMenuItem.Text = "Dışarı Aktar";
+            // 
+            // exportToExcelToolStripMenuItem
+            // 
+            exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
+            exportToExcelToolStripMenuItem.Size = new Size(166, 24);
+            exportToExcelToolStripMenuItem.Text = "Excel'e Aktar";
+            exportToExcelToolStripMenuItem.Click += exportToExcelToolStripMenuItem_Click;
+            // 
+            // exportToPdfToolStripMenuItem
+            // 
+            exportToPdfToolStripMenuItem.Name = "exportToPdfToolStripMenuItem";
+            exportToPdfToolStripMenuItem.Size = new Size(166, 24);
+            exportToPdfToolStripMenuItem.Text = "Pdf'e Aktar";
+            exportToPdfToolStripMenuItem.Click += exportToPdfToolStripMenuItem_Click;
             // 
             // FormBirthDates
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(769, 399);
-            this.Controls.Add(this.listViewBirthDate);
-            this.Controls.Add(this.menuStripExport);
-            this.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStripExport;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximizeBox = false;
-            this.Name = "FormBirthDates";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Doğum Günleri";
-            this.Load += new System.EventHandler(this.FormBirthDates_Load);
-            this.menuStripExport.ResumeLayout(false);
-            this.menuStripExport.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGray;
+            ClientSize = new Size(769, 399);
+            Controls.Add(listViewBirthDate);
+            Controls.Add(menuStripExport);
+            Font = new Font("Segoe UI Semibold", 11.25F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStripExport;
+            Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
+            Name = "FormBirthDates";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Doğum Günleri";
+            Load += FormBirthDates_Load;
+            menuStripExport.ResumeLayout(false);
+            menuStripExport.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

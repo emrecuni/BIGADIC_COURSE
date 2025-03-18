@@ -28,1033 +28,1004 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.branchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addBranchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteBranchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.graphicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.birthDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBoxPerson = new System.Windows.Forms.GroupBox();
-            this.labelEndDate = new System.Windows.Forms.Label();
-            this.labelStartDate = new System.Windows.Forms.Label();
-            this.dateTimePickerRegisterDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerEndDate = new System.Windows.Forms.DateTimePicker();
-            this.buttonOrder = new System.Windows.Forms.Button();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
-            this.checkBoxSelectDate = new System.Windows.Forms.CheckBox();
-            this.textBoxId = new System.Windows.Forms.TextBox();
-            this.labelId = new System.Windows.Forms.Label();
-            this.buttonBackup = new System.Windows.Forms.Button();
-            this.maskedTextBoxPhone = new System.Windows.Forms.MaskedTextBox();
-            this.dateTimePickerBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonRegister = new System.Windows.Forms.Button();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
-            this.textBoxSelectionBranches = new System.Windows.Forms.TextBox();
-            this.maskedTextBoxTckn = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxSurname = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.labelSelectionBranches = new System.Windows.Forms.Label();
-            this.labelRegisterDate = new System.Windows.Forms.Label();
-            this.labelGender = new System.Windows.Forms.Label();
-            this.labelPhone = new System.Windows.Forms.Label();
-            this.labelBirthDate = new System.Windows.Forms.Label();
-            this.labelTckn = new System.Windows.Forms.Label();
-            this.labelSurname = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.groupBoxTotal = new System.Windows.Forms.GroupBox();
-            this.radioButtonTotal = new System.Windows.Forms.RadioButton();
-            this.radioButtonWaiting = new System.Windows.Forms.RadioButton();
-            this.radioButtonPassive = new System.Windows.Forms.RadioButton();
-            this.radioButtonActive = new System.Windows.Forms.RadioButton();
-            this.textBoxMale = new System.Windows.Forms.TextBox();
-            this.textBoxFemale = new System.Windows.Forms.TextBox();
-            this.textBoxWaitingRegisters = new System.Windows.Forms.TextBox();
-            this.textBoxPassiveRegisters = new System.Windows.Forms.TextBox();
-            this.textBoxActiveRegisters = new System.Windows.Forms.TextBox();
-            this.textBoxTotalRegister = new System.Windows.Forms.TextBox();
-            this.labelMale = new System.Windows.Forms.Label();
-            this.labelFemale = new System.Windows.Forms.Label();
-            this.labelWaitingRegisters = new System.Windows.Forms.Label();
-            this.labelPassiveRegisters = new System.Windows.Forms.Label();
-            this.labelActiveRegisters = new System.Windows.Forms.Label();
-            this.labelTotalRegisters = new System.Windows.Forms.Label();
-            this.groupBoxBranches = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanelBranches = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBoxListGraphicsPrint = new System.Windows.Forms.GroupBox();
-            this.groupBoxList = new System.Windows.Forms.GroupBox();
-            this.listViewAllRegister = new System.Windows.Forms.ListView();
-            this.columnHeaderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderTCKN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderSurname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderBranch = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderBirthDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderRegisterDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBoxMain = new System.Windows.Forms.GroupBox();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.menuStrip1.SuspendLayout();
-            this.groupBoxPerson.SuspendLayout();
-            this.groupBoxTotal.SuspendLayout();
-            this.groupBoxBranches.SuspendLayout();
-            this.groupBoxListGraphicsPrint.SuspendLayout();
-            this.groupBoxList.SuspendLayout();
-            this.groupBoxMain.SuspendLayout();
-            this.SuspendLayout();
+            menuStrip1 = new MenuStrip();
+            branchToolStripMenuItem = new ToolStripMenuItem();
+            addBranchToolStripMenuItem = new ToolStripMenuItem();
+            deleteBranchToolStripMenuItem = new ToolStripMenuItem();
+            reportToolStripMenuItem = new ToolStripMenuItem();
+            graphicToolStripMenuItem = new ToolStripMenuItem();
+            importToolStripMenuItem = new ToolStripMenuItem();
+            personelToolStripMenuItem = new ToolStripMenuItem();
+            birthDatesToolStripMenuItem = new ToolStripMenuItem();
+            adminPanelToolStripMenuItem = new ToolStripMenuItem();
+            groupBoxPerson = new GroupBox();
+            labelEndDate = new Label();
+            labelStartDate = new Label();
+            dateTimePickerRegisterDate = new DateTimePicker();
+            dateTimePickerEndDate = new DateTimePicker();
+            buttonOrder = new Button();
+            dateTimePickerStartDate = new DateTimePicker();
+            checkBoxSelectDate = new CheckBox();
+            textBoxId = new TextBox();
+            labelId = new Label();
+            buttonBackup = new Button();
+            maskedTextBoxPhone = new MaskedTextBox();
+            dateTimePickerBirthDate = new DateTimePicker();
+            buttonClear = new Button();
+            buttonDelete = new Button();
+            buttonUpdate = new Button();
+            buttonSearch = new Button();
+            buttonRegister = new Button();
+            radioButtonMale = new RadioButton();
+            radioButtonFemale = new RadioButton();
+            textBoxSelectionBranches = new TextBox();
+            maskedTextBoxTckn = new MaskedTextBox();
+            textBoxSurname = new TextBox();
+            textBoxName = new TextBox();
+            labelSelectionBranches = new Label();
+            labelRegisterDate = new Label();
+            labelGender = new Label();
+            labelPhone = new Label();
+            labelBirthDate = new Label();
+            labelTckn = new Label();
+            labelSurname = new Label();
+            labelName = new Label();
+            groupBoxTotal = new GroupBox();
+            radioButtonTotal = new RadioButton();
+            radioButtonWaiting = new RadioButton();
+            radioButtonPassive = new RadioButton();
+            radioButtonActive = new RadioButton();
+            textBoxMale = new TextBox();
+            textBoxFemale = new TextBox();
+            textBoxWaitingRegisters = new TextBox();
+            textBoxPassiveRegisters = new TextBox();
+            textBoxActiveRegisters = new TextBox();
+            textBoxTotalRegister = new TextBox();
+            labelMale = new Label();
+            labelFemale = new Label();
+            labelWaitingRegisters = new Label();
+            labelPassiveRegisters = new Label();
+            labelActiveRegisters = new Label();
+            labelTotalRegisters = new Label();
+            groupBoxBranches = new GroupBox();
+            flowLayoutPanelBranches = new FlowLayoutPanel();
+            groupBoxListGraphicsPrint = new GroupBox();
+            groupBoxList = new GroupBox();
+            listViewAllRegister = new ListView();
+            columnHeaderId = new ColumnHeader();
+            columnHeaderTCKN = new ColumnHeader();
+            columnHeaderName = new ColumnHeader();
+            columnHeaderSurname = new ColumnHeader();
+            columnHeaderBranch = new ColumnHeader();
+            columnHeaderBirthDate = new ColumnHeader();
+            columnHeaderPhone = new ColumnHeader();
+            columnHeaderRegisterDate = new ColumnHeader();
+            columnHeaderStatus = new ColumnHeader();
+            groupBoxMain = new GroupBox();
+            textBoxTitle = new TextBox();
+            timer = new System.Windows.Forms.Timer(components);
+            menuStrip1.SuspendLayout();
+            groupBoxPerson.SuspendLayout();
+            groupBoxTotal.SuspendLayout();
+            groupBoxBranches.SuspendLayout();
+            groupBoxListGraphicsPrint.SuspendLayout();
+            groupBoxList.SuspendLayout();
+            groupBoxMain.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.branchToolStripMenuItem,
-            this.reportToolStripMenuItem,
-            this.graphicToolStripMenuItem,
-            this.importToolStripMenuItem,
-            this.personelToolStripMenuItem,
-            this.birthDatesToolStripMenuItem,
-            this.adminPanelToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1307, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { branchToolStripMenuItem, reportToolStripMenuItem, graphicToolStripMenuItem, importToolStripMenuItem, personelToolStripMenuItem, birthDatesToolStripMenuItem, adminPanelToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(1307, 28);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
             // 
             // branchToolStripMenuItem
             // 
-            this.branchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addBranchToolStripMenuItem,
-            this.deleteBranchToolStripMenuItem});
-            this.branchToolStripMenuItem.Name = "branchToolStripMenuItem";
-            this.branchToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.branchToolStripMenuItem.Text = "Branş";
+            branchToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addBranchToolStripMenuItem, deleteBranchToolStripMenuItem });
+            branchToolStripMenuItem.Name = "branchToolStripMenuItem";
+            branchToolStripMenuItem.Size = new Size(59, 24);
+            branchToolStripMenuItem.Text = "Branş";
             // 
             // addBranchToolStripMenuItem
             // 
-            this.addBranchToolStripMenuItem.Name = "addBranchToolStripMenuItem";
-            this.addBranchToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
-            this.addBranchToolStripMenuItem.Text = "Ekle";
-            this.addBranchToolStripMenuItem.Click += new System.EventHandler(this.addBranchToolStripMenuItem_Click);
+            addBranchToolStripMenuItem.Name = "addBranchToolStripMenuItem";
+            addBranchToolStripMenuItem.Size = new Size(106, 24);
+            addBranchToolStripMenuItem.Text = "Ekle";
+            addBranchToolStripMenuItem.Click += addBranchToolStripMenuItem_Click;
             // 
             // deleteBranchToolStripMenuItem
             // 
-            this.deleteBranchToolStripMenuItem.Name = "deleteBranchToolStripMenuItem";
-            this.deleteBranchToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
-            this.deleteBranchToolStripMenuItem.Text = "Sil";
-            this.deleteBranchToolStripMenuItem.Click += new System.EventHandler(this.deleteBranchToolStripMenuItem_Click);
+            deleteBranchToolStripMenuItem.Name = "deleteBranchToolStripMenuItem";
+            deleteBranchToolStripMenuItem.Size = new Size(106, 24);
+            deleteBranchToolStripMenuItem.Text = "Sil";
+            deleteBranchToolStripMenuItem.Click += deleteBranchToolStripMenuItem_Click;
             // 
             // reportToolStripMenuItem
             // 
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.reportToolStripMenuItem.Text = "Rapor";
-            this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
+            reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            reportToolStripMenuItem.Size = new Size(62, 24);
+            reportToolStripMenuItem.Text = "Rapor";
+            reportToolStripMenuItem.Click += reportToolStripMenuItem_Click;
             // 
             // graphicToolStripMenuItem
             // 
-            this.graphicToolStripMenuItem.Name = "graphicToolStripMenuItem";
-            this.graphicToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.graphicToolStripMenuItem.Text = "Grafik";
-            this.graphicToolStripMenuItem.Click += new System.EventHandler(this.graphicToolStripMenuItem_Click);
+            graphicToolStripMenuItem.Name = "graphicToolStripMenuItem";
+            graphicToolStripMenuItem.Size = new Size(62, 24);
+            graphicToolStripMenuItem.Text = "Grafik";
+            graphicToolStripMenuItem.Click += graphicToolStripMenuItem_Click;
             // 
             // importToolStripMenuItem
             // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
-            this.importToolStripMenuItem.Text = "İçeri Aktar";
-            this.importToolStripMenuItem.Visible = false;
-            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
+            importToolStripMenuItem.Name = "importToolStripMenuItem";
+            importToolStripMenuItem.Size = new Size(91, 24);
+            importToolStripMenuItem.Text = "İçeri Aktar";
+            importToolStripMenuItem.Visible = false;
+            importToolStripMenuItem.Click += importToolStripMenuItem_Click;
             // 
             // personelToolStripMenuItem
             // 
-            this.personelToolStripMenuItem.Name = "personelToolStripMenuItem";
-            this.personelToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.personelToolStripMenuItem.Text = "Personel";
-            this.personelToolStripMenuItem.Click += new System.EventHandler(this.personelToolStripMenuItem_Click);
+            personelToolStripMenuItem.Name = "personelToolStripMenuItem";
+            personelToolStripMenuItem.Size = new Size(79, 24);
+            personelToolStripMenuItem.Text = "Personel";
+            personelToolStripMenuItem.Click += personelToolStripMenuItem_Click;
             // 
             // birthDatesToolStripMenuItem
             // 
-            this.birthDatesToolStripMenuItem.Name = "birthDatesToolStripMenuItem";
-            this.birthDatesToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
-            this.birthDatesToolStripMenuItem.Text = "Doğum Günleri";
-            this.birthDatesToolStripMenuItem.Click += new System.EventHandler(this.birthDatesToolStripMenuItem_Click);
+            birthDatesToolStripMenuItem.Name = "birthDatesToolStripMenuItem";
+            birthDatesToolStripMenuItem.Size = new Size(126, 24);
+            birthDatesToolStripMenuItem.Text = "Doğum Günleri";
+            birthDatesToolStripMenuItem.Click += birthDatesToolStripMenuItem_Click;
             // 
             // adminPanelToolStripMenuItem
             // 
-            this.adminPanelToolStripMenuItem.Name = "adminPanelToolStripMenuItem";
-            this.adminPanelToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
-            this.adminPanelToolStripMenuItem.Text = "Yönetim Paneli";
-            this.adminPanelToolStripMenuItem.Visible = false;
-            this.adminPanelToolStripMenuItem.Click += new System.EventHandler(this.adminPanelToolStripMenuItem_Click);
+            adminPanelToolStripMenuItem.Name = "adminPanelToolStripMenuItem";
+            adminPanelToolStripMenuItem.Size = new Size(123, 24);
+            adminPanelToolStripMenuItem.Text = "Yönetim Paneli";
+            adminPanelToolStripMenuItem.Visible = false;
+            adminPanelToolStripMenuItem.Click += adminPanelToolStripMenuItem_Click;
             // 
             // groupBoxPerson
             // 
-            this.groupBoxPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.groupBoxPerson.Controls.Add(this.labelEndDate);
-            this.groupBoxPerson.Controls.Add(this.labelStartDate);
-            this.groupBoxPerson.Controls.Add(this.dateTimePickerRegisterDate);
-            this.groupBoxPerson.Controls.Add(this.dateTimePickerEndDate);
-            this.groupBoxPerson.Controls.Add(this.buttonOrder);
-            this.groupBoxPerson.Controls.Add(this.dateTimePickerStartDate);
-            this.groupBoxPerson.Controls.Add(this.checkBoxSelectDate);
-            this.groupBoxPerson.Controls.Add(this.textBoxId);
-            this.groupBoxPerson.Controls.Add(this.labelId);
-            this.groupBoxPerson.Controls.Add(this.buttonBackup);
-            this.groupBoxPerson.Controls.Add(this.maskedTextBoxPhone);
-            this.groupBoxPerson.Controls.Add(this.dateTimePickerBirthDate);
-            this.groupBoxPerson.Controls.Add(this.buttonClear);
-            this.groupBoxPerson.Controls.Add(this.buttonDelete);
-            this.groupBoxPerson.Controls.Add(this.buttonUpdate);
-            this.groupBoxPerson.Controls.Add(this.buttonSearch);
-            this.groupBoxPerson.Controls.Add(this.buttonRegister);
-            this.groupBoxPerson.Controls.Add(this.radioButtonMale);
-            this.groupBoxPerson.Controls.Add(this.radioButtonFemale);
-            this.groupBoxPerson.Controls.Add(this.textBoxSelectionBranches);
-            this.groupBoxPerson.Controls.Add(this.maskedTextBoxTckn);
-            this.groupBoxPerson.Controls.Add(this.textBoxSurname);
-            this.groupBoxPerson.Controls.Add(this.textBoxName);
-            this.groupBoxPerson.Controls.Add(this.labelSelectionBranches);
-            this.groupBoxPerson.Controls.Add(this.labelRegisterDate);
-            this.groupBoxPerson.Controls.Add(this.labelGender);
-            this.groupBoxPerson.Controls.Add(this.labelPhone);
-            this.groupBoxPerson.Controls.Add(this.labelBirthDate);
-            this.groupBoxPerson.Controls.Add(this.labelTckn);
-            this.groupBoxPerson.Controls.Add(this.labelSurname);
-            this.groupBoxPerson.Controls.Add(this.labelName);
-            this.groupBoxPerson.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.groupBoxPerson.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.groupBoxPerson.Location = new System.Drawing.Point(13, 50);
-            this.groupBoxPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxPerson.Name = "groupBoxPerson";
-            this.groupBoxPerson.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxPerson.Size = new System.Drawing.Size(602, 460);
-            this.groupBoxPerson.TabIndex = 0;
-            this.groupBoxPerson.TabStop = false;
-            this.groupBoxPerson.Text = "Kayıt";
+            groupBoxPerson.BackgroundImageLayout = ImageLayout.Stretch;
+            groupBoxPerson.Controls.Add(labelEndDate);
+            groupBoxPerson.Controls.Add(labelStartDate);
+            groupBoxPerson.Controls.Add(dateTimePickerRegisterDate);
+            groupBoxPerson.Controls.Add(dateTimePickerEndDate);
+            groupBoxPerson.Controls.Add(buttonOrder);
+            groupBoxPerson.Controls.Add(dateTimePickerStartDate);
+            groupBoxPerson.Controls.Add(checkBoxSelectDate);
+            groupBoxPerson.Controls.Add(textBoxId);
+            groupBoxPerson.Controls.Add(labelId);
+            groupBoxPerson.Controls.Add(buttonBackup);
+            groupBoxPerson.Controls.Add(maskedTextBoxPhone);
+            groupBoxPerson.Controls.Add(dateTimePickerBirthDate);
+            groupBoxPerson.Controls.Add(buttonClear);
+            groupBoxPerson.Controls.Add(buttonDelete);
+            groupBoxPerson.Controls.Add(buttonUpdate);
+            groupBoxPerson.Controls.Add(buttonSearch);
+            groupBoxPerson.Controls.Add(buttonRegister);
+            groupBoxPerson.Controls.Add(radioButtonMale);
+            groupBoxPerson.Controls.Add(radioButtonFemale);
+            groupBoxPerson.Controls.Add(textBoxSelectionBranches);
+            groupBoxPerson.Controls.Add(maskedTextBoxTckn);
+            groupBoxPerson.Controls.Add(textBoxSurname);
+            groupBoxPerson.Controls.Add(textBoxName);
+            groupBoxPerson.Controls.Add(labelSelectionBranches);
+            groupBoxPerson.Controls.Add(labelRegisterDate);
+            groupBoxPerson.Controls.Add(labelGender);
+            groupBoxPerson.Controls.Add(labelPhone);
+            groupBoxPerson.Controls.Add(labelBirthDate);
+            groupBoxPerson.Controls.Add(labelTckn);
+            groupBoxPerson.Controls.Add(labelSurname);
+            groupBoxPerson.Controls.Add(labelName);
+            groupBoxPerson.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            groupBoxPerson.ForeColor = SystemColors.Desktop;
+            groupBoxPerson.Location = new Point(13, 50);
+            groupBoxPerson.Margin = new Padding(3, 2, 3, 2);
+            groupBoxPerson.Name = "groupBoxPerson";
+            groupBoxPerson.Padding = new Padding(3, 2, 3, 2);
+            groupBoxPerson.Size = new Size(602, 460);
+            groupBoxPerson.TabIndex = 0;
+            groupBoxPerson.TabStop = false;
+            groupBoxPerson.Text = "Kayıt";
             // 
             // labelEndDate
             // 
-            this.labelEndDate.AutoSize = true;
-            this.labelEndDate.Location = new System.Drawing.Point(15, 408);
-            this.labelEndDate.Name = "labelEndDate";
-            this.labelEndDate.Size = new System.Drawing.Size(83, 20);
-            this.labelEndDate.TabIndex = 37;
-            this.labelEndDate.Text = "Bitiş Tarihi:";
+            labelEndDate.AutoSize = true;
+            labelEndDate.Location = new Point(15, 408);
+            labelEndDate.Name = "labelEndDate";
+            labelEndDate.Size = new Size(83, 20);
+            labelEndDate.TabIndex = 37;
+            labelEndDate.Text = "Bitiş Tarihi:";
             // 
             // labelStartDate
             // 
-            this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Location = new System.Drawing.Point(15, 377);
-            this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(119, 20);
-            this.labelStartDate.TabIndex = 36;
-            this.labelStartDate.Text = "Başlangıç Tarihi:";
+            labelStartDate.AutoSize = true;
+            labelStartDate.Location = new Point(15, 377);
+            labelStartDate.Name = "labelStartDate";
+            labelStartDate.Size = new Size(119, 20);
+            labelStartDate.TabIndex = 36;
+            labelStartDate.Text = "Başlangıç Tarihi:";
             // 
             // dateTimePickerRegisterDate
             // 
-            this.dateTimePickerRegisterDate.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dateTimePickerRegisterDate.CustomFormat = "dd.MM.yyyy";
-            this.dateTimePickerRegisterDate.Enabled = false;
-            this.dateTimePickerRegisterDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerRegisterDate.Location = new System.Drawing.Point(140, 258);
-            this.dateTimePickerRegisterDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerRegisterDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerRegisterDate.Name = "dateTimePickerRegisterDate";
-            this.dateTimePickerRegisterDate.Size = new System.Drawing.Size(199, 27);
-            this.dateTimePickerRegisterDate.TabIndex = 35;
-            this.dateTimePickerRegisterDate.Value = new System.DateTime(2025, 2, 11, 23, 6, 0, 0);
+            dateTimePickerRegisterDate.CalendarMonthBackground = Color.White;
+            dateTimePickerRegisterDate.CustomFormat = "dd.MM.yyyy";
+            dateTimePickerRegisterDate.Enabled = false;
+            dateTimePickerRegisterDate.Format = DateTimePickerFormat.Short;
+            dateTimePickerRegisterDate.Location = new Point(140, 258);
+            dateTimePickerRegisterDate.Margin = new Padding(3, 2, 3, 2);
+            dateTimePickerRegisterDate.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dateTimePickerRegisterDate.Name = "dateTimePickerRegisterDate";
+            dateTimePickerRegisterDate.Size = new Size(199, 27);
+            dateTimePickerRegisterDate.TabIndex = 35;
+            dateTimePickerRegisterDate.Value = new DateTime(2025, 2, 11, 23, 6, 0, 0);
             // 
             // dateTimePickerEndDate
             // 
-            this.dateTimePickerEndDate.CustomFormat = "dd.MM.yyyy";
-            this.dateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerEndDate.Location = new System.Drawing.Point(140, 404);
-            this.dateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerEndDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerEndDate.Name = "dateTimePickerEndDate";
-            this.dateTimePickerEndDate.Size = new System.Drawing.Size(100, 27);
-            this.dateTimePickerEndDate.TabIndex = 33;
-            this.dateTimePickerEndDate.Value = new System.DateTime(2025, 2, 15, 0, 0, 0, 0);
+            dateTimePickerEndDate.CustomFormat = "dd.MM.yyyy";
+            dateTimePickerEndDate.Format = DateTimePickerFormat.Short;
+            dateTimePickerEndDate.Location = new Point(140, 404);
+            dateTimePickerEndDate.Margin = new Padding(3, 2, 3, 2);
+            dateTimePickerEndDate.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dateTimePickerEndDate.Name = "dateTimePickerEndDate";
+            dateTimePickerEndDate.Size = new Size(100, 27);
+            dateTimePickerEndDate.TabIndex = 33;
+            dateTimePickerEndDate.Value = new DateTime(2025, 2, 15, 0, 0, 0, 0);
             // 
             // buttonOrder
             // 
-            this.buttonOrder.BackColor = System.Drawing.Color.Silver;
-            this.buttonOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonOrder.Location = new System.Drawing.Point(442, 211);
-            this.buttonOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonOrder.Name = "buttonOrder";
-            this.buttonOrder.Size = new System.Drawing.Size(149, 41);
-            this.buttonOrder.TabIndex = 12;
-            this.buttonOrder.Text = "Listele";
-            this.buttonOrder.UseVisualStyleBackColor = false;
-            this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
+            buttonOrder.BackColor = Color.Silver;
+            buttonOrder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            buttonOrder.Location = new Point(442, 211);
+            buttonOrder.Margin = new Padding(3, 2, 3, 2);
+            buttonOrder.Name = "buttonOrder";
+            buttonOrder.Size = new Size(149, 41);
+            buttonOrder.TabIndex = 12;
+            buttonOrder.Text = "Listele";
+            buttonOrder.UseVisualStyleBackColor = false;
+            buttonOrder.Click += buttonOrder_Click;
             // 
             // dateTimePickerStartDate
             // 
-            this.dateTimePickerStartDate.CustomFormat = "dd.MM.yyyy";
-            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(140, 373);
-            this.dateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerStartDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(100, 27);
-            this.dateTimePickerStartDate.TabIndex = 32;
-            this.dateTimePickerStartDate.Value = new System.DateTime(2025, 2, 15, 0, 0, 0, 0);
+            dateTimePickerStartDate.CustomFormat = "dd.MM.yyyy";
+            dateTimePickerStartDate.Format = DateTimePickerFormat.Short;
+            dateTimePickerStartDate.Location = new Point(140, 373);
+            dateTimePickerStartDate.Margin = new Padding(3, 2, 3, 2);
+            dateTimePickerStartDate.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dateTimePickerStartDate.Name = "dateTimePickerStartDate";
+            dateTimePickerStartDate.Size = new Size(100, 27);
+            dateTimePickerStartDate.TabIndex = 32;
+            dateTimePickerStartDate.Value = new DateTime(2025, 2, 15, 0, 0, 0, 0);
             // 
             // checkBoxSelectDate
             // 
-            this.checkBoxSelectDate.AutoSize = true;
-            this.checkBoxSelectDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.checkBoxSelectDate.Location = new System.Drawing.Point(140, 344);
-            this.checkBoxSelectDate.Name = "checkBoxSelectDate";
-            this.checkBoxSelectDate.Size = new System.Drawing.Size(89, 24);
-            this.checkBoxSelectDate.TabIndex = 31;
-            this.checkBoxSelectDate.Text = "Tarih Seç";
-            this.checkBoxSelectDate.UseVisualStyleBackColor = true;
+            checkBoxSelectDate.AutoSize = true;
+            checkBoxSelectDate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            checkBoxSelectDate.Location = new Point(140, 344);
+            checkBoxSelectDate.Name = "checkBoxSelectDate";
+            checkBoxSelectDate.Size = new Size(89, 24);
+            checkBoxSelectDate.TabIndex = 31;
+            checkBoxSelectDate.Text = "Tarih Seç";
+            checkBoxSelectDate.UseVisualStyleBackColor = true;
             // 
             // textBoxId
             // 
-            this.textBoxId.Enabled = false;
-            this.textBoxId.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxId.ForeColor = System.Drawing.Color.Black;
-            this.textBoxId.Location = new System.Drawing.Point(140, 18);
-            this.textBoxId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(151, 25);
-            this.textBoxId.TabIndex = 27;
+            textBoxId.Enabled = false;
+            textBoxId.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxId.ForeColor = Color.Black;
+            textBoxId.Location = new Point(140, 18);
+            textBoxId.Margin = new Padding(3, 2, 3, 2);
+            textBoxId.Name = "textBoxId";
+            textBoxId.Size = new Size(151, 25);
+            textBoxId.TabIndex = 27;
             // 
             // labelId
             // 
-            this.labelId.AutoSize = true;
-            this.labelId.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelId.ForeColor = System.Drawing.Color.Black;
-            this.labelId.Location = new System.Drawing.Point(16, 20);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(51, 20);
-            this.labelId.TabIndex = 26;
-            this.labelId.Text = "Id No:";
+            labelId.AutoSize = true;
+            labelId.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelId.ForeColor = Color.Black;
+            labelId.Location = new Point(16, 20);
+            labelId.Name = "labelId";
+            labelId.Size = new Size(51, 20);
+            labelId.TabIndex = 26;
+            labelId.Text = "Id No:";
             // 
             // buttonBackup
             // 
-            this.buttonBackup.BackColor = System.Drawing.Color.Silver;
-            this.buttonBackup.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonBackup.ForeColor = System.Drawing.Color.Red;
-            this.buttonBackup.Location = new System.Drawing.Point(442, 311);
-            this.buttonBackup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonBackup.Name = "buttonBackup";
-            this.buttonBackup.Size = new System.Drawing.Size(149, 41);
-            this.buttonBackup.TabIndex = 25;
-            this.buttonBackup.Text = "Yedekle";
-            this.buttonBackup.UseVisualStyleBackColor = false;
-            this.buttonBackup.Click += new System.EventHandler(this.buttonBackup_Click);
+            buttonBackup.BackColor = Color.Silver;
+            buttonBackup.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            buttonBackup.ForeColor = Color.Red;
+            buttonBackup.Location = new Point(442, 311);
+            buttonBackup.Margin = new Padding(3, 2, 3, 2);
+            buttonBackup.Name = "buttonBackup";
+            buttonBackup.Size = new Size(149, 41);
+            buttonBackup.TabIndex = 25;
+            buttonBackup.Text = "Yedekle";
+            buttonBackup.UseVisualStyleBackColor = false;
+            buttonBackup.Click += buttonBackup_Click;
             // 
             // maskedTextBoxPhone
             // 
-            this.maskedTextBoxPhone.BackColor = System.Drawing.Color.White;
-            this.maskedTextBoxPhone.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.maskedTextBoxPhone.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBoxPhone.Location = new System.Drawing.Point(140, 190);
-            this.maskedTextBoxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBoxPhone.Mask = "0000000000";
-            this.maskedTextBoxPhone.Name = "maskedTextBoxPhone";
-            this.maskedTextBoxPhone.PromptChar = ' ';
-            this.maskedTextBoxPhone.Size = new System.Drawing.Size(199, 25);
-            this.maskedTextBoxPhone.TabIndex = 5;
-            this.maskedTextBoxPhone.Click += new System.EventHandler(this.maskedTextBox_Click);
-            this.maskedTextBoxPhone.Enter += new System.EventHandler(this.textBox_Enter);
-            this.maskedTextBoxPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
-            this.maskedTextBoxPhone.Leave += new System.EventHandler(this.textBox_Leave);
+            maskedTextBoxPhone.BackColor = Color.White;
+            maskedTextBoxPhone.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            maskedTextBoxPhone.ForeColor = Color.Black;
+            maskedTextBoxPhone.Location = new Point(140, 190);
+            maskedTextBoxPhone.Margin = new Padding(3, 2, 3, 2);
+            maskedTextBoxPhone.Mask = "0000000000";
+            maskedTextBoxPhone.Name = "maskedTextBoxPhone";
+            maskedTextBoxPhone.PromptChar = ' ';
+            maskedTextBoxPhone.Size = new Size(199, 25);
+            maskedTextBoxPhone.TabIndex = 5;
+            maskedTextBoxPhone.Click += maskedTextBox_Click;
+            maskedTextBoxPhone.Enter += textBox_Enter;
+            maskedTextBoxPhone.KeyDown += textBox_KeyDown;
+            maskedTextBoxPhone.Leave += textBox_Leave;
             // 
             // dateTimePickerBirthDate
             // 
-            this.dateTimePickerBirthDate.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dateTimePickerBirthDate.CustomFormat = "dd.MM.yyyy";
-            this.dateTimePickerBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBirthDate.Location = new System.Drawing.Point(140, 153);
-            this.dateTimePickerBirthDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerBirthDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerBirthDate.Name = "dateTimePickerBirthDate";
-            this.dateTimePickerBirthDate.Size = new System.Drawing.Size(199, 27);
-            this.dateTimePickerBirthDate.TabIndex = 4;
-            this.dateTimePickerBirthDate.Value = new System.DateTime(2025, 2, 11, 23, 6, 0, 0);
-            this.dateTimePickerBirthDate.Enter += new System.EventHandler(this.textBox_Enter);
-            this.dateTimePickerBirthDate.Leave += new System.EventHandler(this.textBox_Leave);
+            dateTimePickerBirthDate.CalendarMonthBackground = Color.White;
+            dateTimePickerBirthDate.CustomFormat = "dd.MM.yyyy";
+            dateTimePickerBirthDate.Format = DateTimePickerFormat.Short;
+            dateTimePickerBirthDate.Location = new Point(140, 153);
+            dateTimePickerBirthDate.Margin = new Padding(3, 2, 3, 2);
+            dateTimePickerBirthDate.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dateTimePickerBirthDate.Name = "dateTimePickerBirthDate";
+            dateTimePickerBirthDate.Size = new Size(199, 27);
+            dateTimePickerBirthDate.TabIndex = 4;
+            dateTimePickerBirthDate.Value = new DateTime(2025, 2, 11, 23, 6, 0, 0);
+            dateTimePickerBirthDate.Enter += textBox_Enter;
+            dateTimePickerBirthDate.Leave += textBox_Leave;
             // 
             // buttonClear
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.Silver;
-            this.buttonClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonClear.ForeColor = System.Drawing.Color.Black;
-            this.buttonClear.Location = new System.Drawing.Point(442, 259);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(149, 41);
-            this.buttonClear.TabIndex = 13;
-            this.buttonClear.Text = "Temizleme";
-            this.buttonClear.UseVisualStyleBackColor = false;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            buttonClear.BackColor = Color.Silver;
+            buttonClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            buttonClear.ForeColor = Color.Black;
+            buttonClear.Location = new Point(442, 259);
+            buttonClear.Margin = new Padding(3, 2, 3, 2);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(149, 41);
+            buttonClear.TabIndex = 13;
+            buttonClear.Text = "Temizleme";
+            buttonClear.UseVisualStyleBackColor = false;
+            buttonClear.Click += buttonClear_Click;
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.Silver;
-            this.buttonDelete.Enabled = false;
-            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonDelete.ForeColor = System.Drawing.Color.Red;
-            this.buttonDelete.Location = new System.Drawing.Point(442, 163);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(149, 41);
-            this.buttonDelete.TabIndex = 11;
-            this.buttonDelete.Text = "Sil";
-            this.buttonDelete.UseVisualStyleBackColor = false;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            buttonDelete.BackColor = Color.Silver;
+            buttonDelete.Enabled = false;
+            buttonDelete.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            buttonDelete.ForeColor = Color.Red;
+            buttonDelete.Location = new Point(442, 163);
+            buttonDelete.Margin = new Padding(3, 2, 3, 2);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(149, 41);
+            buttonDelete.TabIndex = 11;
+            buttonDelete.Text = "Sil";
+            buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.BackColor = System.Drawing.Color.Silver;
-            this.buttonUpdate.Enabled = false;
-            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonUpdate.ForeColor = System.Drawing.Color.Black;
-            this.buttonUpdate.Location = new System.Drawing.Point(442, 115);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(149, 41);
-            this.buttonUpdate.TabIndex = 10;
-            this.buttonUpdate.Text = "Güncelle";
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            buttonUpdate.BackColor = Color.Silver;
+            buttonUpdate.Enabled = false;
+            buttonUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            buttonUpdate.ForeColor = Color.Black;
+            buttonUpdate.Location = new Point(442, 115);
+            buttonUpdate.Margin = new Padding(3, 2, 3, 2);
+            buttonUpdate.Name = "buttonUpdate";
+            buttonUpdate.Size = new Size(149, 41);
+            buttonUpdate.TabIndex = 10;
+            buttonUpdate.Text = "Güncelle";
+            buttonUpdate.UseVisualStyleBackColor = false;
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // buttonSearch
             // 
-            this.buttonSearch.BackColor = System.Drawing.Color.Silver;
-            this.buttonSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonSearch.ForeColor = System.Drawing.Color.Black;
-            this.buttonSearch.Location = new System.Drawing.Point(442, 67);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(149, 41);
-            this.buttonSearch.TabIndex = 9;
-            this.buttonSearch.Text = "Bul";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            buttonSearch.BackColor = Color.Silver;
+            buttonSearch.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            buttonSearch.ForeColor = Color.Black;
+            buttonSearch.Location = new Point(442, 67);
+            buttonSearch.Margin = new Padding(3, 2, 3, 2);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(149, 41);
+            buttonSearch.TabIndex = 9;
+            buttonSearch.Text = "Bul";
+            buttonSearch.UseVisualStyleBackColor = false;
+            buttonSearch.Click += buttonSearch_Click;
             // 
             // buttonRegister
             // 
-            this.buttonRegister.BackColor = System.Drawing.Color.Silver;
-            this.buttonRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonRegister.ForeColor = System.Drawing.Color.Black;
-            this.buttonRegister.Location = new System.Drawing.Point(442, 19);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(149, 41);
-            this.buttonRegister.TabIndex = 8;
-            this.buttonRegister.Text = "Kaydet";
-            this.buttonRegister.UseVisualStyleBackColor = false;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            buttonRegister.BackColor = Color.Silver;
+            buttonRegister.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            buttonRegister.ForeColor = Color.Black;
+            buttonRegister.Location = new Point(442, 19);
+            buttonRegister.Margin = new Padding(3, 2, 3, 2);
+            buttonRegister.Name = "buttonRegister";
+            buttonRegister.Size = new Size(149, 41);
+            buttonRegister.TabIndex = 8;
+            buttonRegister.Text = "Kaydet";
+            buttonRegister.UseVisualStyleBackColor = false;
+            buttonRegister.Click += buttonRegister_Click;
             // 
             // radioButtonMale
             // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.radioButtonMale.ForeColor = System.Drawing.Color.Red;
-            this.radioButtonMale.Location = new System.Drawing.Point(216, 229);
-            this.radioButtonMale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(65, 24);
-            this.radioButtonMale.TabIndex = 7;
-            this.radioButtonMale.Text = "Erkek";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
+            radioButtonMale.AutoSize = true;
+            radioButtonMale.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            radioButtonMale.ForeColor = Color.Red;
+            radioButtonMale.Location = new Point(216, 229);
+            radioButtonMale.Margin = new Padding(3, 2, 3, 2);
+            radioButtonMale.Name = "radioButtonMale";
+            radioButtonMale.Size = new Size(65, 24);
+            radioButtonMale.TabIndex = 7;
+            radioButtonMale.Text = "Erkek";
+            radioButtonMale.UseVisualStyleBackColor = true;
             // 
             // radioButtonFemale
             // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.radioButtonFemale.ForeColor = System.Drawing.Color.Red;
-            this.radioButtonFemale.Location = new System.Drawing.Point(140, 229);
-            this.radioButtonFemale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(66, 24);
-            this.radioButtonFemale.TabIndex = 6;
-            this.radioButtonFemale.Text = "Kadın";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            radioButtonFemale.AutoSize = true;
+            radioButtonFemale.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            radioButtonFemale.ForeColor = Color.Red;
+            radioButtonFemale.Location = new Point(140, 229);
+            radioButtonFemale.Margin = new Padding(3, 2, 3, 2);
+            radioButtonFemale.Name = "radioButtonFemale";
+            radioButtonFemale.Size = new Size(66, 24);
+            radioButtonFemale.TabIndex = 6;
+            radioButtonFemale.Text = "Kadın";
+            radioButtonFemale.UseVisualStyleBackColor = true;
             // 
             // textBoxSelectionBranches
             // 
-            this.textBoxSelectionBranches.Enabled = false;
-            this.textBoxSelectionBranches.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxSelectionBranches.ForeColor = System.Drawing.Color.Black;
-            this.textBoxSelectionBranches.Location = new System.Drawing.Point(140, 298);
-            this.textBoxSelectionBranches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxSelectionBranches.Name = "textBoxSelectionBranches";
-            this.textBoxSelectionBranches.Size = new System.Drawing.Size(274, 25);
-            this.textBoxSelectionBranches.TabIndex = 14;
+            textBoxSelectionBranches.Enabled = false;
+            textBoxSelectionBranches.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxSelectionBranches.ForeColor = Color.Black;
+            textBoxSelectionBranches.Location = new Point(140, 298);
+            textBoxSelectionBranches.Margin = new Padding(3, 2, 3, 2);
+            textBoxSelectionBranches.Name = "textBoxSelectionBranches";
+            textBoxSelectionBranches.Size = new Size(274, 25);
+            textBoxSelectionBranches.TabIndex = 14;
             // 
             // maskedTextBoxTckn
             // 
-            this.maskedTextBoxTckn.BackColor = System.Drawing.Color.White;
-            this.maskedTextBoxTckn.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.maskedTextBoxTckn.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBoxTckn.Location = new System.Drawing.Point(140, 121);
-            this.maskedTextBoxTckn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBoxTckn.Mask = "00000000000";
-            this.maskedTextBoxTckn.Name = "maskedTextBoxTckn";
-            this.maskedTextBoxTckn.PromptChar = ' ';
-            this.maskedTextBoxTckn.Size = new System.Drawing.Size(199, 25);
-            this.maskedTextBoxTckn.TabIndex = 3;
-            this.maskedTextBoxTckn.Click += new System.EventHandler(this.maskedTextBox_Click);
-            this.maskedTextBoxTckn.Enter += new System.EventHandler(this.textBox_Enter);
-            this.maskedTextBoxTckn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
-            this.maskedTextBoxTckn.Leave += new System.EventHandler(this.textBox_Leave);
+            maskedTextBoxTckn.BackColor = Color.White;
+            maskedTextBoxTckn.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            maskedTextBoxTckn.ForeColor = Color.Black;
+            maskedTextBoxTckn.Location = new Point(140, 121);
+            maskedTextBoxTckn.Margin = new Padding(3, 2, 3, 2);
+            maskedTextBoxTckn.Mask = "00000000000";
+            maskedTextBoxTckn.Name = "maskedTextBoxTckn";
+            maskedTextBoxTckn.PromptChar = ' ';
+            maskedTextBoxTckn.Size = new Size(199, 25);
+            maskedTextBoxTckn.TabIndex = 3;
+            maskedTextBoxTckn.Click += maskedTextBox_Click;
+            maskedTextBoxTckn.Enter += textBox_Enter;
+            maskedTextBoxTckn.KeyDown += textBox_KeyDown;
+            maskedTextBoxTckn.Leave += textBox_Leave;
             // 
             // textBoxSurname
             // 
-            this.textBoxSurname.BackColor = System.Drawing.Color.White;
-            this.textBoxSurname.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxSurname.ForeColor = System.Drawing.Color.Black;
-            this.textBoxSurname.Location = new System.Drawing.Point(140, 85);
-            this.textBoxSurname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(199, 25);
-            this.textBoxSurname.TabIndex = 2;
-            this.textBoxSurname.Enter += new System.EventHandler(this.textBox_Enter);
-            this.textBoxSurname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
-            this.textBoxSurname.Leave += new System.EventHandler(this.textBox_Leave);
+            textBoxSurname.BackColor = Color.White;
+            textBoxSurname.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxSurname.ForeColor = Color.Black;
+            textBoxSurname.Location = new Point(140, 85);
+            textBoxSurname.Margin = new Padding(3, 2, 3, 2);
+            textBoxSurname.Name = "textBoxSurname";
+            textBoxSurname.Size = new Size(199, 25);
+            textBoxSurname.TabIndex = 2;
+            textBoxSurname.Enter += textBox_Enter;
+            textBoxSurname.KeyDown += textBox_KeyDown;
+            textBoxSurname.Leave += textBox_Leave;
             // 
             // textBoxName
             // 
-            this.textBoxName.BackColor = System.Drawing.Color.White;
-            this.textBoxName.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxName.ForeColor = System.Drawing.Color.Black;
-            this.textBoxName.Location = new System.Drawing.Point(140, 50);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(199, 25);
-            this.textBoxName.TabIndex = 1;
-            this.textBoxName.Enter += new System.EventHandler(this.textBox_Enter);
-            this.textBoxName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
-            this.textBoxName.Leave += new System.EventHandler(this.textBox_Leave);
+            textBoxName.BackColor = Color.White;
+            textBoxName.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxName.ForeColor = Color.Black;
+            textBoxName.Location = new Point(140, 50);
+            textBoxName.Margin = new Padding(3, 2, 3, 2);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(199, 25);
+            textBoxName.TabIndex = 1;
+            textBoxName.Enter += textBox_Enter;
+            textBoxName.KeyDown += textBox_KeyDown;
+            textBoxName.Leave += textBox_Leave;
             // 
             // labelSelectionBranches
             // 
-            this.labelSelectionBranches.AutoSize = true;
-            this.labelSelectionBranches.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelSelectionBranches.ForeColor = System.Drawing.Color.Black;
-            this.labelSelectionBranches.Location = new System.Drawing.Point(15, 300);
-            this.labelSelectionBranches.Name = "labelSelectionBranches";
-            this.labelSelectionBranches.Size = new System.Drawing.Size(51, 20);
-            this.labelSelectionBranches.TabIndex = 7;
-            this.labelSelectionBranches.Text = "Branş:";
+            labelSelectionBranches.AutoSize = true;
+            labelSelectionBranches.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelSelectionBranches.ForeColor = Color.Black;
+            labelSelectionBranches.Location = new Point(15, 300);
+            labelSelectionBranches.Name = "labelSelectionBranches";
+            labelSelectionBranches.Size = new Size(51, 20);
+            labelSelectionBranches.TabIndex = 7;
+            labelSelectionBranches.Text = "Branş:";
             // 
             // labelRegisterDate
             // 
-            this.labelRegisterDate.AutoSize = true;
-            this.labelRegisterDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelRegisterDate.ForeColor = System.Drawing.Color.Black;
-            this.labelRegisterDate.Location = new System.Drawing.Point(16, 262);
-            this.labelRegisterDate.Name = "labelRegisterDate";
-            this.labelRegisterDate.Size = new System.Drawing.Size(89, 20);
-            this.labelRegisterDate.TabIndex = 6;
-            this.labelRegisterDate.Text = "Kayıt Tarihi:";
+            labelRegisterDate.AutoSize = true;
+            labelRegisterDate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelRegisterDate.ForeColor = Color.Black;
+            labelRegisterDate.Location = new Point(16, 262);
+            labelRegisterDate.Name = "labelRegisterDate";
+            labelRegisterDate.Size = new Size(89, 20);
+            labelRegisterDate.TabIndex = 6;
+            labelRegisterDate.Text = "Kayıt Tarihi:";
             // 
             // labelGender
             // 
-            this.labelGender.AutoSize = true;
-            this.labelGender.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelGender.ForeColor = System.Drawing.Color.Black;
-            this.labelGender.Location = new System.Drawing.Point(16, 227);
-            this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(66, 20);
-            this.labelGender.TabIndex = 5;
-            this.labelGender.Text = "Cinsiyet:";
+            labelGender.AutoSize = true;
+            labelGender.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelGender.ForeColor = Color.Black;
+            labelGender.Location = new Point(16, 227);
+            labelGender.Name = "labelGender";
+            labelGender.Size = new Size(66, 20);
+            labelGender.TabIndex = 5;
+            labelGender.Text = "Cinsiyet:";
             // 
             // labelPhone
             // 
-            this.labelPhone.AutoSize = true;
-            this.labelPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelPhone.ForeColor = System.Drawing.Color.Black;
-            this.labelPhone.Location = new System.Drawing.Point(16, 192);
-            this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(63, 20);
-            this.labelPhone.TabIndex = 4;
-            this.labelPhone.Text = "Telefon:";
+            labelPhone.AutoSize = true;
+            labelPhone.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelPhone.ForeColor = Color.Black;
+            labelPhone.Location = new Point(16, 192);
+            labelPhone.Name = "labelPhone";
+            labelPhone.Size = new Size(63, 20);
+            labelPhone.TabIndex = 4;
+            labelPhone.Text = "Telefon:";
             // 
             // labelBirthDate
             // 
-            this.labelBirthDate.AutoSize = true;
-            this.labelBirthDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelBirthDate.ForeColor = System.Drawing.Color.Black;
-            this.labelBirthDate.Location = new System.Drawing.Point(16, 157);
-            this.labelBirthDate.Name = "labelBirthDate";
-            this.labelBirthDate.Size = new System.Drawing.Size(106, 20);
-            this.labelBirthDate.TabIndex = 3;
-            this.labelBirthDate.Text = "Doğum Tarihi:";
+            labelBirthDate.AutoSize = true;
+            labelBirthDate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelBirthDate.ForeColor = Color.Black;
+            labelBirthDate.Location = new Point(16, 157);
+            labelBirthDate.Name = "labelBirthDate";
+            labelBirthDate.Size = new Size(106, 20);
+            labelBirthDate.TabIndex = 3;
+            labelBirthDate.Text = "Doğum Tarihi:";
             // 
             // labelTckn
             // 
-            this.labelTckn.AutoSize = true;
-            this.labelTckn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelTckn.ForeColor = System.Drawing.Color.Black;
-            this.labelTckn.Location = new System.Drawing.Point(16, 122);
-            this.labelTckn.Name = "labelTckn";
-            this.labelTckn.Size = new System.Drawing.Size(62, 20);
-            this.labelTckn.TabIndex = 2;
-            this.labelTckn.Text = "T.C. No:";
+            labelTckn.AutoSize = true;
+            labelTckn.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelTckn.ForeColor = Color.Black;
+            labelTckn.Location = new Point(16, 122);
+            labelTckn.Name = "labelTckn";
+            labelTckn.Size = new Size(62, 20);
+            labelTckn.TabIndex = 2;
+            labelTckn.Text = "T.C. No:";
             // 
             // labelSurname
             // 
-            this.labelSurname.AutoSize = true;
-            this.labelSurname.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelSurname.ForeColor = System.Drawing.Color.Black;
-            this.labelSurname.Location = new System.Drawing.Point(16, 87);
-            this.labelSurname.Name = "labelSurname";
-            this.labelSurname.Size = new System.Drawing.Size(59, 20);
-            this.labelSurname.TabIndex = 1;
-            this.labelSurname.Text = "Soyadı:";
+            labelSurname.AutoSize = true;
+            labelSurname.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelSurname.ForeColor = Color.Black;
+            labelSurname.Location = new Point(16, 87);
+            labelSurname.Name = "labelSurname";
+            labelSurname.Size = new Size(59, 20);
+            labelSurname.TabIndex = 1;
+            labelSurname.Text = "Soyadı:";
             // 
             // labelName
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.labelName.ForeColor = System.Drawing.Color.Black;
-            this.labelName.Location = new System.Drawing.Point(16, 52);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(36, 20);
-            this.labelName.TabIndex = 0;
-            this.labelName.Text = "Adı:";
+            labelName.AutoSize = true;
+            labelName.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            labelName.ForeColor = Color.Black;
+            labelName.Location = new Point(16, 52);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(36, 20);
+            labelName.TabIndex = 0;
+            labelName.Text = "Adı:";
             // 
             // groupBoxTotal
             // 
-            this.groupBoxTotal.Controls.Add(this.radioButtonTotal);
-            this.groupBoxTotal.Controls.Add(this.radioButtonWaiting);
-            this.groupBoxTotal.Controls.Add(this.radioButtonPassive);
-            this.groupBoxTotal.Controls.Add(this.radioButtonActive);
-            this.groupBoxTotal.Controls.Add(this.textBoxMale);
-            this.groupBoxTotal.Controls.Add(this.textBoxFemale);
-            this.groupBoxTotal.Controls.Add(this.textBoxWaitingRegisters);
-            this.groupBoxTotal.Controls.Add(this.textBoxPassiveRegisters);
-            this.groupBoxTotal.Controls.Add(this.textBoxActiveRegisters);
-            this.groupBoxTotal.Controls.Add(this.textBoxTotalRegister);
-            this.groupBoxTotal.Controls.Add(this.labelMale);
-            this.groupBoxTotal.Controls.Add(this.labelFemale);
-            this.groupBoxTotal.Controls.Add(this.labelWaitingRegisters);
-            this.groupBoxTotal.Controls.Add(this.labelPassiveRegisters);
-            this.groupBoxTotal.Controls.Add(this.labelActiveRegisters);
-            this.groupBoxTotal.Controls.Add(this.labelTotalRegisters);
-            this.groupBoxTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.groupBoxTotal.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxTotal.Location = new System.Drawing.Point(625, 50);
-            this.groupBoxTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxTotal.Name = "groupBoxTotal";
-            this.groupBoxTotal.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxTotal.Size = new System.Drawing.Size(193, 460);
-            this.groupBoxTotal.TabIndex = 1;
-            this.groupBoxTotal.TabStop = false;
-            this.groupBoxTotal.Text = "Toplamlar...";
+            groupBoxTotal.Controls.Add(radioButtonTotal);
+            groupBoxTotal.Controls.Add(radioButtonWaiting);
+            groupBoxTotal.Controls.Add(radioButtonPassive);
+            groupBoxTotal.Controls.Add(radioButtonActive);
+            groupBoxTotal.Controls.Add(textBoxMale);
+            groupBoxTotal.Controls.Add(textBoxFemale);
+            groupBoxTotal.Controls.Add(textBoxWaitingRegisters);
+            groupBoxTotal.Controls.Add(textBoxPassiveRegisters);
+            groupBoxTotal.Controls.Add(textBoxActiveRegisters);
+            groupBoxTotal.Controls.Add(textBoxTotalRegister);
+            groupBoxTotal.Controls.Add(labelMale);
+            groupBoxTotal.Controls.Add(labelFemale);
+            groupBoxTotal.Controls.Add(labelWaitingRegisters);
+            groupBoxTotal.Controls.Add(labelPassiveRegisters);
+            groupBoxTotal.Controls.Add(labelActiveRegisters);
+            groupBoxTotal.Controls.Add(labelTotalRegisters);
+            groupBoxTotal.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            groupBoxTotal.ForeColor = Color.Black;
+            groupBoxTotal.Location = new Point(625, 50);
+            groupBoxTotal.Margin = new Padding(3, 2, 3, 2);
+            groupBoxTotal.Name = "groupBoxTotal";
+            groupBoxTotal.Padding = new Padding(3, 2, 3, 2);
+            groupBoxTotal.Size = new Size(193, 460);
+            groupBoxTotal.TabIndex = 1;
+            groupBoxTotal.TabStop = false;
+            groupBoxTotal.Text = "Toplamlar...";
             // 
             // radioButtonTotal
             // 
-            this.radioButtonTotal.AutoSize = true;
-            this.radioButtonTotal.Enabled = false;
-            this.radioButtonTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonTotal.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonTotal.Location = new System.Drawing.Point(36, 343);
-            this.radioButtonTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonTotal.Name = "radioButtonTotal";
-            this.radioButtonTotal.Size = new System.Drawing.Size(79, 24);
-            this.radioButtonTotal.TabIndex = 15;
-            this.radioButtonTotal.Text = "Toplam";
-            this.radioButtonTotal.UseVisualStyleBackColor = true;
+            radioButtonTotal.AutoSize = true;
+            radioButtonTotal.Enabled = false;
+            radioButtonTotal.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            radioButtonTotal.ForeColor = Color.Black;
+            radioButtonTotal.Location = new Point(36, 343);
+            radioButtonTotal.Margin = new Padding(3, 2, 3, 2);
+            radioButtonTotal.Name = "radioButtonTotal";
+            radioButtonTotal.Size = new Size(79, 24);
+            radioButtonTotal.TabIndex = 15;
+            radioButtonTotal.Text = "Toplam";
+            radioButtonTotal.UseVisualStyleBackColor = true;
             // 
             // radioButtonWaiting
             // 
-            this.radioButtonWaiting.AutoSize = true;
-            this.radioButtonWaiting.Checked = true;
-            this.radioButtonWaiting.Enabled = false;
-            this.radioButtonWaiting.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonWaiting.ForeColor = System.Drawing.Color.Yellow;
-            this.radioButtonWaiting.Location = new System.Drawing.Point(36, 418);
-            this.radioButtonWaiting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonWaiting.Name = "radioButtonWaiting";
-            this.radioButtonWaiting.Size = new System.Drawing.Size(90, 24);
-            this.radioButtonWaiting.TabIndex = 14;
-            this.radioButtonWaiting.TabStop = true;
-            this.radioButtonWaiting.Text = "Bekleyen";
-            this.radioButtonWaiting.UseVisualStyleBackColor = true;
+            radioButtonWaiting.AutoSize = true;
+            radioButtonWaiting.Checked = true;
+            radioButtonWaiting.Enabled = false;
+            radioButtonWaiting.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            radioButtonWaiting.ForeColor = Color.Yellow;
+            radioButtonWaiting.Location = new Point(36, 418);
+            radioButtonWaiting.Margin = new Padding(3, 2, 3, 2);
+            radioButtonWaiting.Name = "radioButtonWaiting";
+            radioButtonWaiting.Size = new Size(90, 24);
+            radioButtonWaiting.TabIndex = 14;
+            radioButtonWaiting.TabStop = true;
+            radioButtonWaiting.Text = "Bekleyen";
+            radioButtonWaiting.UseVisualStyleBackColor = true;
             // 
             // radioButtonPassive
             // 
-            this.radioButtonPassive.AutoSize = true;
-            this.radioButtonPassive.Enabled = false;
-            this.radioButtonPassive.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonPassive.ForeColor = System.Drawing.Color.Red;
-            this.radioButtonPassive.Location = new System.Drawing.Point(36, 393);
-            this.radioButtonPassive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonPassive.Name = "radioButtonPassive";
-            this.radioButtonPassive.Size = new System.Drawing.Size(61, 24);
-            this.radioButtonPassive.TabIndex = 13;
-            this.radioButtonPassive.Text = "Pasif";
-            this.radioButtonPassive.UseVisualStyleBackColor = true;
+            radioButtonPassive.AutoSize = true;
+            radioButtonPassive.Enabled = false;
+            radioButtonPassive.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            radioButtonPassive.ForeColor = Color.Red;
+            radioButtonPassive.Location = new Point(36, 393);
+            radioButtonPassive.Margin = new Padding(3, 2, 3, 2);
+            radioButtonPassive.Name = "radioButtonPassive";
+            radioButtonPassive.Size = new Size(61, 24);
+            radioButtonPassive.TabIndex = 13;
+            radioButtonPassive.Text = "Pasif";
+            radioButtonPassive.UseVisualStyleBackColor = true;
             // 
             // radioButtonActive
             // 
-            this.radioButtonActive.AutoSize = true;
-            this.radioButtonActive.Enabled = false;
-            this.radioButtonActive.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonActive.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.radioButtonActive.Location = new System.Drawing.Point(36, 368);
-            this.radioButtonActive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButtonActive.Name = "radioButtonActive";
-            this.radioButtonActive.Size = new System.Drawing.Size(62, 24);
-            this.radioButtonActive.TabIndex = 12;
-            this.radioButtonActive.Text = "Aktif";
-            this.radioButtonActive.UseVisualStyleBackColor = true;
+            radioButtonActive.AutoSize = true;
+            radioButtonActive.Enabled = false;
+            radioButtonActive.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            radioButtonActive.ForeColor = SystemColors.Highlight;
+            radioButtonActive.Location = new Point(36, 368);
+            radioButtonActive.Margin = new Padding(3, 2, 3, 2);
+            radioButtonActive.Name = "radioButtonActive";
+            radioButtonActive.Size = new Size(62, 24);
+            radioButtonActive.TabIndex = 12;
+            radioButtonActive.Text = "Aktif";
+            radioButtonActive.UseVisualStyleBackColor = true;
             // 
             // textBoxMale
             // 
-            this.textBoxMale.Enabled = false;
-            this.textBoxMale.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxMale.ForeColor = System.Drawing.Color.Black;
-            this.textBoxMale.Location = new System.Drawing.Point(31, 276);
-            this.textBoxMale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxMale.Name = "textBoxMale";
-            this.textBoxMale.Size = new System.Drawing.Size(124, 25);
-            this.textBoxMale.TabIndex = 11;
+            textBoxMale.Enabled = false;
+            textBoxMale.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxMale.ForeColor = Color.Black;
+            textBoxMale.Location = new Point(31, 276);
+            textBoxMale.Margin = new Padding(3, 2, 3, 2);
+            textBoxMale.Name = "textBoxMale";
+            textBoxMale.Size = new Size(124, 25);
+            textBoxMale.TabIndex = 11;
             // 
             // textBoxFemale
             // 
-            this.textBoxFemale.Enabled = false;
-            this.textBoxFemale.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxFemale.ForeColor = System.Drawing.Color.Black;
-            this.textBoxFemale.Location = new System.Drawing.Point(31, 230);
-            this.textBoxFemale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxFemale.Name = "textBoxFemale";
-            this.textBoxFemale.Size = new System.Drawing.Size(124, 25);
-            this.textBoxFemale.TabIndex = 10;
+            textBoxFemale.Enabled = false;
+            textBoxFemale.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxFemale.ForeColor = Color.Black;
+            textBoxFemale.Location = new Point(31, 230);
+            textBoxFemale.Margin = new Padding(3, 2, 3, 2);
+            textBoxFemale.Name = "textBoxFemale";
+            textBoxFemale.Size = new Size(124, 25);
+            textBoxFemale.TabIndex = 10;
             // 
             // textBoxWaitingRegisters
             // 
-            this.textBoxWaitingRegisters.Enabled = false;
-            this.textBoxWaitingRegisters.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxWaitingRegisters.ForeColor = System.Drawing.Color.Black;
-            this.textBoxWaitingRegisters.Location = new System.Drawing.Point(31, 184);
-            this.textBoxWaitingRegisters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxWaitingRegisters.Name = "textBoxWaitingRegisters";
-            this.textBoxWaitingRegisters.Size = new System.Drawing.Size(124, 25);
-            this.textBoxWaitingRegisters.TabIndex = 9;
+            textBoxWaitingRegisters.Enabled = false;
+            textBoxWaitingRegisters.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxWaitingRegisters.ForeColor = Color.Black;
+            textBoxWaitingRegisters.Location = new Point(31, 184);
+            textBoxWaitingRegisters.Margin = new Padding(3, 2, 3, 2);
+            textBoxWaitingRegisters.Name = "textBoxWaitingRegisters";
+            textBoxWaitingRegisters.Size = new Size(124, 25);
+            textBoxWaitingRegisters.TabIndex = 9;
             // 
             // textBoxPassiveRegisters
             // 
-            this.textBoxPassiveRegisters.Enabled = false;
-            this.textBoxPassiveRegisters.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxPassiveRegisters.ForeColor = System.Drawing.Color.Black;
-            this.textBoxPassiveRegisters.Location = new System.Drawing.Point(31, 138);
-            this.textBoxPassiveRegisters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPassiveRegisters.Name = "textBoxPassiveRegisters";
-            this.textBoxPassiveRegisters.Size = new System.Drawing.Size(124, 25);
-            this.textBoxPassiveRegisters.TabIndex = 8;
+            textBoxPassiveRegisters.Enabled = false;
+            textBoxPassiveRegisters.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxPassiveRegisters.ForeColor = Color.Black;
+            textBoxPassiveRegisters.Location = new Point(31, 138);
+            textBoxPassiveRegisters.Margin = new Padding(3, 2, 3, 2);
+            textBoxPassiveRegisters.Name = "textBoxPassiveRegisters";
+            textBoxPassiveRegisters.Size = new Size(124, 25);
+            textBoxPassiveRegisters.TabIndex = 8;
             // 
             // textBoxActiveRegisters
             // 
-            this.textBoxActiveRegisters.Enabled = false;
-            this.textBoxActiveRegisters.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxActiveRegisters.ForeColor = System.Drawing.Color.Black;
-            this.textBoxActiveRegisters.Location = new System.Drawing.Point(31, 92);
-            this.textBoxActiveRegisters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxActiveRegisters.Name = "textBoxActiveRegisters";
-            this.textBoxActiveRegisters.Size = new System.Drawing.Size(124, 25);
-            this.textBoxActiveRegisters.TabIndex = 7;
+            textBoxActiveRegisters.Enabled = false;
+            textBoxActiveRegisters.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxActiveRegisters.ForeColor = Color.Black;
+            textBoxActiveRegisters.Location = new Point(31, 92);
+            textBoxActiveRegisters.Margin = new Padding(3, 2, 3, 2);
+            textBoxActiveRegisters.Name = "textBoxActiveRegisters";
+            textBoxActiveRegisters.Size = new Size(124, 25);
+            textBoxActiveRegisters.TabIndex = 7;
             // 
             // textBoxTotalRegister
             // 
-            this.textBoxTotalRegister.Enabled = false;
-            this.textBoxTotalRegister.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxTotalRegister.ForeColor = System.Drawing.Color.Black;
-            this.textBoxTotalRegister.Location = new System.Drawing.Point(31, 47);
-            this.textBoxTotalRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxTotalRegister.Name = "textBoxTotalRegister";
-            this.textBoxTotalRegister.Size = new System.Drawing.Size(124, 25);
-            this.textBoxTotalRegister.TabIndex = 6;
+            textBoxTotalRegister.Enabled = false;
+            textBoxTotalRegister.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBoxTotalRegister.ForeColor = Color.Black;
+            textBoxTotalRegister.Location = new Point(31, 47);
+            textBoxTotalRegister.Margin = new Padding(3, 2, 3, 2);
+            textBoxTotalRegister.Name = "textBoxTotalRegister";
+            textBoxTotalRegister.Size = new Size(124, 25);
+            textBoxTotalRegister.TabIndex = 6;
             // 
             // labelMale
             // 
-            this.labelMale.AutoSize = true;
-            this.labelMale.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelMale.ForeColor = System.Drawing.Color.Black;
-            this.labelMale.Location = new System.Drawing.Point(33, 256);
-            this.labelMale.Name = "labelMale";
-            this.labelMale.Size = new System.Drawing.Size(48, 18);
-            this.labelMale.TabIndex = 5;
-            this.labelMale.Text = "Erkek";
+            labelMale.AutoSize = true;
+            labelMale.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            labelMale.ForeColor = Color.Black;
+            labelMale.Location = new Point(33, 256);
+            labelMale.Name = "labelMale";
+            labelMale.Size = new Size(48, 18);
+            labelMale.TabIndex = 5;
+            labelMale.Text = "Erkek";
             // 
             // labelFemale
             // 
-            this.labelFemale.AutoSize = true;
-            this.labelFemale.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelFemale.ForeColor = System.Drawing.Color.Black;
-            this.labelFemale.Location = new System.Drawing.Point(33, 210);
-            this.labelFemale.Name = "labelFemale";
-            this.labelFemale.Size = new System.Drawing.Size(48, 18);
-            this.labelFemale.TabIndex = 4;
-            this.labelFemale.Text = "Kadın";
+            labelFemale.AutoSize = true;
+            labelFemale.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            labelFemale.ForeColor = Color.Black;
+            labelFemale.Location = new Point(33, 210);
+            labelFemale.Name = "labelFemale";
+            labelFemale.Size = new Size(48, 18);
+            labelFemale.TabIndex = 4;
+            labelFemale.Text = "Kadın";
             // 
             // labelWaitingRegisters
             // 
-            this.labelWaitingRegisters.AutoSize = true;
-            this.labelWaitingRegisters.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelWaitingRegisters.ForeColor = System.Drawing.Color.Black;
-            this.labelWaitingRegisters.Location = new System.Drawing.Point(33, 164);
-            this.labelWaitingRegisters.Name = "labelWaitingRegisters";
-            this.labelWaitingRegisters.Size = new System.Drawing.Size(72, 18);
-            this.labelWaitingRegisters.TabIndex = 3;
-            this.labelWaitingRegisters.Text = "Bekleyen";
+            labelWaitingRegisters.AutoSize = true;
+            labelWaitingRegisters.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            labelWaitingRegisters.ForeColor = Color.Black;
+            labelWaitingRegisters.Location = new Point(33, 164);
+            labelWaitingRegisters.Name = "labelWaitingRegisters";
+            labelWaitingRegisters.Size = new Size(72, 18);
+            labelWaitingRegisters.TabIndex = 3;
+            labelWaitingRegisters.Text = "Bekleyen";
             // 
             // labelPassiveRegisters
             // 
-            this.labelPassiveRegisters.AutoSize = true;
-            this.labelPassiveRegisters.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelPassiveRegisters.ForeColor = System.Drawing.Color.Black;
-            this.labelPassiveRegisters.Location = new System.Drawing.Point(33, 118);
-            this.labelPassiveRegisters.Name = "labelPassiveRegisters";
-            this.labelPassiveRegisters.Size = new System.Drawing.Size(48, 18);
-            this.labelPassiveRegisters.TabIndex = 2;
-            this.labelPassiveRegisters.Text = "Pasif";
+            labelPassiveRegisters.AutoSize = true;
+            labelPassiveRegisters.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            labelPassiveRegisters.ForeColor = Color.Black;
+            labelPassiveRegisters.Location = new Point(33, 118);
+            labelPassiveRegisters.Name = "labelPassiveRegisters";
+            labelPassiveRegisters.Size = new Size(48, 18);
+            labelPassiveRegisters.TabIndex = 2;
+            labelPassiveRegisters.Text = "Pasif";
             // 
             // labelActiveRegisters
             // 
-            this.labelActiveRegisters.AutoSize = true;
-            this.labelActiveRegisters.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelActiveRegisters.ForeColor = System.Drawing.Color.Black;
-            this.labelActiveRegisters.Location = new System.Drawing.Point(33, 72);
-            this.labelActiveRegisters.Name = "labelActiveRegisters";
-            this.labelActiveRegisters.Size = new System.Drawing.Size(48, 18);
-            this.labelActiveRegisters.TabIndex = 1;
-            this.labelActiveRegisters.Text = "Aktif";
+            labelActiveRegisters.AutoSize = true;
+            labelActiveRegisters.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            labelActiveRegisters.ForeColor = Color.Black;
+            labelActiveRegisters.Location = new Point(33, 72);
+            labelActiveRegisters.Name = "labelActiveRegisters";
+            labelActiveRegisters.Size = new Size(48, 18);
+            labelActiveRegisters.TabIndex = 1;
+            labelActiveRegisters.Text = "Aktif";
             // 
             // labelTotalRegisters
             // 
-            this.labelTotalRegisters.AutoSize = true;
-            this.labelTotalRegisters.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelTotalRegisters.ForeColor = System.Drawing.Color.Black;
-            this.labelTotalRegisters.Location = new System.Drawing.Point(33, 27);
-            this.labelTotalRegisters.Name = "labelTotalRegisters";
-            this.labelTotalRegisters.Size = new System.Drawing.Size(56, 18);
-            this.labelTotalRegisters.TabIndex = 0;
-            this.labelTotalRegisters.Text = "Toplam";
+            labelTotalRegisters.AutoSize = true;
+            labelTotalRegisters.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            labelTotalRegisters.ForeColor = Color.Black;
+            labelTotalRegisters.Location = new Point(33, 27);
+            labelTotalRegisters.Name = "labelTotalRegisters";
+            labelTotalRegisters.Size = new Size(56, 18);
+            labelTotalRegisters.TabIndex = 0;
+            labelTotalRegisters.Text = "Toplam";
             // 
             // groupBoxBranches
             // 
-            this.groupBoxBranches.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxBranches.Controls.Add(this.flowLayoutPanelBranches);
-            this.groupBoxBranches.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBoxBranches.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.groupBoxBranches.Location = new System.Drawing.Point(827, 50);
-            this.groupBoxBranches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxBranches.Name = "groupBoxBranches";
-            this.groupBoxBranches.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxBranches.Size = new System.Drawing.Size(446, 460);
-            this.groupBoxBranches.TabIndex = 2;
-            this.groupBoxBranches.TabStop = false;
-            this.groupBoxBranches.Text = "Branş Seçimleri...";
+            groupBoxBranches.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxBranches.Controls.Add(flowLayoutPanelBranches);
+            groupBoxBranches.FlatStyle = FlatStyle.Popup;
+            groupBoxBranches.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            groupBoxBranches.Location = new Point(827, 50);
+            groupBoxBranches.Margin = new Padding(3, 2, 3, 2);
+            groupBoxBranches.Name = "groupBoxBranches";
+            groupBoxBranches.Padding = new Padding(3, 2, 3, 2);
+            groupBoxBranches.Size = new Size(446, 460);
+            groupBoxBranches.TabIndex = 2;
+            groupBoxBranches.TabStop = false;
+            groupBoxBranches.Text = "Branş Seçimleri...";
             // 
             // flowLayoutPanelBranches
             // 
-            this.flowLayoutPanelBranches.AutoScroll = true;
-            this.flowLayoutPanelBranches.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelBranches.Location = new System.Drawing.Point(3, 22);
-            this.flowLayoutPanelBranches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanelBranches.Name = "flowLayoutPanelBranches";
-            this.flowLayoutPanelBranches.Size = new System.Drawing.Size(440, 436);
-            this.flowLayoutPanelBranches.TabIndex = 0;
+            flowLayoutPanelBranches.AutoScroll = true;
+            flowLayoutPanelBranches.Dock = DockStyle.Fill;
+            flowLayoutPanelBranches.Location = new Point(3, 22);
+            flowLayoutPanelBranches.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanelBranches.Name = "flowLayoutPanelBranches";
+            flowLayoutPanelBranches.Size = new Size(440, 436);
+            flowLayoutPanelBranches.TabIndex = 0;
             // 
             // groupBoxListGraphicsPrint
             // 
-            this.groupBoxListGraphicsPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxListGraphicsPrint.Controls.Add(this.groupBoxList);
-            this.groupBoxListGraphicsPrint.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.groupBoxListGraphicsPrint.Location = new System.Drawing.Point(13, 514);
-            this.groupBoxListGraphicsPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxListGraphicsPrint.Name = "groupBoxListGraphicsPrint";
-            this.groupBoxListGraphicsPrint.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxListGraphicsPrint.Size = new System.Drawing.Size(1260, 271);
-            this.groupBoxListGraphicsPrint.TabIndex = 5;
-            this.groupBoxListGraphicsPrint.TabStop = false;
-            this.groupBoxListGraphicsPrint.Text = "Listeler";
+            groupBoxListGraphicsPrint.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxListGraphicsPrint.Controls.Add(groupBoxList);
+            groupBoxListGraphicsPrint.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            groupBoxListGraphicsPrint.Location = new Point(13, 514);
+            groupBoxListGraphicsPrint.Margin = new Padding(3, 2, 3, 2);
+            groupBoxListGraphicsPrint.Name = "groupBoxListGraphicsPrint";
+            groupBoxListGraphicsPrint.Padding = new Padding(3, 2, 3, 2);
+            groupBoxListGraphicsPrint.Size = new Size(1260, 271);
+            groupBoxListGraphicsPrint.TabIndex = 5;
+            groupBoxListGraphicsPrint.TabStop = false;
+            groupBoxListGraphicsPrint.Text = "Listeler";
             // 
             // groupBoxList
             // 
-            this.groupBoxList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxList.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBoxList.Controls.Add(this.listViewAllRegister);
-            this.groupBoxList.Location = new System.Drawing.Point(6, 24);
-            this.groupBoxList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxList.Name = "groupBoxList";
-            this.groupBoxList.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxList.Size = new System.Drawing.Size(1249, 242);
-            this.groupBoxList.TabIndex = 0;
-            this.groupBoxList.TabStop = false;
+            groupBoxList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxList.BackColor = SystemColors.ControlDark;
+            groupBoxList.Controls.Add(listViewAllRegister);
+            groupBoxList.Location = new Point(6, 24);
+            groupBoxList.Margin = new Padding(3, 2, 3, 2);
+            groupBoxList.Name = "groupBoxList";
+            groupBoxList.Padding = new Padding(3, 2, 3, 2);
+            groupBoxList.Size = new Size(1249, 242);
+            groupBoxList.TabIndex = 0;
+            groupBoxList.TabStop = false;
             // 
             // listViewAllRegister
             // 
-            this.listViewAllRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewAllRegister.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.listViewAllRegister.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderId,
-            this.columnHeaderTCKN,
-            this.columnHeaderName,
-            this.columnHeaderSurname,
-            this.columnHeaderBranch,
-            this.columnHeaderBirthDate,
-            this.columnHeaderPhone,
-            this.columnHeaderRegisterDate,
-            this.columnHeaderStatus});
-            this.listViewAllRegister.FullRowSelect = true;
-            this.listViewAllRegister.HideSelection = false;
-            this.listViewAllRegister.Location = new System.Drawing.Point(3, 20);
-            this.listViewAllRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listViewAllRegister.Name = "listViewAllRegister";
-            this.listViewAllRegister.Size = new System.Drawing.Size(1243, 220);
-            this.listViewAllRegister.TabIndex = 0;
-            this.listViewAllRegister.UseCompatibleStateImageBehavior = false;
-            this.listViewAllRegister.View = System.Windows.Forms.View.Details;
-            this.listViewAllRegister.Click += new System.EventHandler(this.listViewAllRegister_Click);
-            this.listViewAllRegister.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewAllRegister_Key);
-            this.listViewAllRegister.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listViewAllRegister_Key);
+            listViewAllRegister.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listViewAllRegister.BackColor = SystemColors.ControlDark;
+            listViewAllRegister.Columns.AddRange(new ColumnHeader[] { columnHeaderId, columnHeaderTCKN, columnHeaderName, columnHeaderSurname, columnHeaderBranch, columnHeaderBirthDate, columnHeaderPhone, columnHeaderRegisterDate, columnHeaderStatus });
+            listViewAllRegister.FullRowSelect = true;
+            listViewAllRegister.Location = new Point(3, 20);
+            listViewAllRegister.Margin = new Padding(3, 2, 3, 2);
+            listViewAllRegister.Name = "listViewAllRegister";
+            listViewAllRegister.Size = new Size(1243, 220);
+            listViewAllRegister.TabIndex = 0;
+            listViewAllRegister.UseCompatibleStateImageBehavior = false;
+            listViewAllRegister.View = View.Details;
+            listViewAllRegister.Click += listViewAllRegister_Click;
+            listViewAllRegister.KeyDown += listViewAllRegister_Key;
+            listViewAllRegister.KeyUp += listViewAllRegister_Key;
             // 
             // columnHeaderId
             // 
-            this.columnHeaderId.Text = "ID";
-            this.columnHeaderId.Width = 90;
+            columnHeaderId.Text = "ID";
+            columnHeaderId.Width = 90;
             // 
             // columnHeaderTCKN
             // 
-            this.columnHeaderTCKN.Text = "T.C. No";
-            this.columnHeaderTCKN.Width = 130;
+            columnHeaderTCKN.Text = "T.C. No";
+            columnHeaderTCKN.Width = 130;
             // 
             // columnHeaderName
             // 
-            this.columnHeaderName.Text = "Adı";
-            this.columnHeaderName.Width = 175;
+            columnHeaderName.Text = "Adı";
+            columnHeaderName.Width = 175;
             // 
             // columnHeaderSurname
             // 
-            this.columnHeaderSurname.Text = "Soyadı";
-            this.columnHeaderSurname.Width = 175;
+            columnHeaderSurname.Text = "Soyadı";
+            columnHeaderSurname.Width = 175;
             // 
             // columnHeaderBranch
             // 
-            this.columnHeaderBranch.Text = "Branş";
-            this.columnHeaderBranch.Width = 150;
+            columnHeaderBranch.Text = "Branş";
+            columnHeaderBranch.Width = 150;
             // 
             // columnHeaderBirthDate
             // 
-            this.columnHeaderBirthDate.Text = "Doğum Tarihi";
-            this.columnHeaderBirthDate.Width = 150;
+            columnHeaderBirthDate.Text = "Doğum Tarihi";
+            columnHeaderBirthDate.Width = 150;
             // 
             // columnHeaderPhone
             // 
-            this.columnHeaderPhone.Text = "Telefon";
-            this.columnHeaderPhone.Width = 130;
+            columnHeaderPhone.Text = "Telefon";
+            columnHeaderPhone.Width = 130;
             // 
             // columnHeaderRegisterDate
             // 
-            this.columnHeaderRegisterDate.Text = "Kayıt Tarihi";
-            this.columnHeaderRegisterDate.Width = 130;
+            columnHeaderRegisterDate.Text = "Kayıt Tarihi";
+            columnHeaderRegisterDate.Width = 130;
             // 
             // columnHeaderStatus
             // 
-            this.columnHeaderStatus.Text = "Durumu";
-            this.columnHeaderStatus.Width = 90;
+            columnHeaderStatus.Text = "Durumu";
+            columnHeaderStatus.Width = 90;
             // 
             // groupBoxMain
             // 
-            this.groupBoxMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxMain.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxMain.Controls.Add(this.textBoxTitle);
-            this.groupBoxMain.Controls.Add(this.groupBoxListGraphicsPrint);
-            this.groupBoxMain.Controls.Add(this.groupBoxBranches);
-            this.groupBoxMain.Controls.Add(this.groupBoxTotal);
-            this.groupBoxMain.Controls.Add(this.groupBoxPerson);
-            this.groupBoxMain.Location = new System.Drawing.Point(8, 30);
-            this.groupBoxMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxMain.Name = "groupBoxMain";
-            this.groupBoxMain.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxMain.Size = new System.Drawing.Size(1287, 799);
-            this.groupBoxMain.TabIndex = 0;
-            this.groupBoxMain.TabStop = false;
+            groupBoxMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxMain.BackColor = Color.Transparent;
+            groupBoxMain.Controls.Add(textBoxTitle);
+            groupBoxMain.Controls.Add(groupBoxListGraphicsPrint);
+            groupBoxMain.Controls.Add(groupBoxBranches);
+            groupBoxMain.Controls.Add(groupBoxTotal);
+            groupBoxMain.Controls.Add(groupBoxPerson);
+            groupBoxMain.Location = new Point(8, 30);
+            groupBoxMain.Margin = new Padding(3, 2, 3, 2);
+            groupBoxMain.Name = "groupBoxMain";
+            groupBoxMain.Padding = new Padding(3, 2, 3, 2);
+            groupBoxMain.Size = new Size(1287, 799);
+            groupBoxMain.TabIndex = 0;
+            groupBoxMain.TabStop = false;
             // 
             // textBoxTitle
             // 
-            this.textBoxTitle.BackColor = System.Drawing.Color.DarkGray;
-            this.textBoxTitle.Enabled = false;
-            this.textBoxTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBoxTitle.Location = new System.Drawing.Point(13, 13);
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(339, 28);
-            this.textBoxTitle.TabIndex = 6;
-            this.textBoxTitle.Text = "BİGADİÇ GENÇLİK VE KÜLTÜR MERKEZİ";
+            textBoxTitle.BackColor = Color.DarkGray;
+            textBoxTitle.Enabled = false;
+            textBoxTitle.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
+            textBoxTitle.Location = new Point(13, 13);
+            textBoxTitle.Name = "textBoxTitle";
+            textBoxTitle.Size = new Size(339, 28);
+            textBoxTitle.TabIndex = 6;
+            textBoxTitle.Text = "BİGADİÇ GENÇLİK VE KÜLTÜR MERKEZİ";
             // 
             // timer
             // 
-            this.timer.Interval = 350;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            timer.Interval = 350;
+            timer.Tick += timer_Tick;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1307, 840);
-            this.Controls.Add(this.groupBoxMain);
-            this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximizeBox = false;
-            this.Name = "FormMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bilgi İşlem Ali BAYTEKİN";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
-            this.Load += new System.EventHandler(this.FormMain_Load);
-            this.Resize += new System.EventHandler(this.FormMain_Resize);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.groupBoxPerson.ResumeLayout(false);
-            this.groupBoxPerson.PerformLayout();
-            this.groupBoxTotal.ResumeLayout(false);
-            this.groupBoxTotal.PerformLayout();
-            this.groupBoxBranches.ResumeLayout(false);
-            this.groupBoxListGraphicsPrint.ResumeLayout(false);
-            this.groupBoxList.ResumeLayout(false);
-            this.groupBoxMain.ResumeLayout(false);
-            this.groupBoxMain.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGray;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1307, 840);
+            Controls.Add(groupBoxMain);
+            Controls.Add(menuStrip1);
+            Font = new Font("Segoe UI", 9F);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Bilgi İşlem Ali BAYTEKİN";
+            FormClosing += FormMain_FormClosing;
+            Load += FormMain_Load;
+            Resize += FormMain_Resize;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            groupBoxPerson.ResumeLayout(false);
+            groupBoxPerson.PerformLayout();
+            groupBoxTotal.ResumeLayout(false);
+            groupBoxTotal.PerformLayout();
+            groupBoxBranches.ResumeLayout(false);
+            groupBoxListGraphicsPrint.ResumeLayout(false);
+            groupBoxList.ResumeLayout(false);
+            groupBoxMain.ResumeLayout(false);
+            groupBoxMain.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

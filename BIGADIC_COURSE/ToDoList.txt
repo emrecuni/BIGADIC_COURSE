@@ -21,7 +21,7 @@ X Chart çizdir X
 * Doğum günlerine export ekle
 	* Wp'den bak formatına
 X Import ve kurs branş sayıları hatası giderilmiş gibi duruyor X
-* Setup'ta arama çalışmıyor gibi
+X Setup'ta arama çalışmıyor gibi X // db'de adlar büyük harfle yazılmadığı için
 
 
 

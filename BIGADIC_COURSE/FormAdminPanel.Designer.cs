@@ -248,6 +248,7 @@
             Controls.Add(groupBoxUsers);
             Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5, 4, 5, 4);
             MaximizeBox = false;
             Name = "FormAdminPanel";
