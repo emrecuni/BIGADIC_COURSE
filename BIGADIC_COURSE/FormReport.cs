@@ -68,6 +68,8 @@ namespace BIGADIC_COURSE
                         idStr.Append($"GKM00{register.ID}");
                     else if (register.ID < 1000)
                         idStr.Append($"GKM0{register.ID}");
+                    else
+                        idStr.Append($"GKM{register.ID}");
 
                     ListViewItem item = new ListViewItem(idStr.ToString());
                     item.SubItems.Add(register.TCKN);

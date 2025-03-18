@@ -41,6 +41,8 @@ namespace BIGADIC_COURSE
                         idStr.Append($"GKM00{birthDate.ID}");
                     else if (birthDate.ID < 1000)
                         idStr.Append($"GKM0{birthDate.ID}");
+                    else
+                        idStr.Append($"GKM{birthDate.ID}");
 
                     ListViewItem item = new ListViewItem(idStr.ToString());
                     item.SubItems.Add(birthDate.TCKN);

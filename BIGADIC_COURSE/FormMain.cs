@@ -206,7 +206,9 @@ namespace BIGADIC_COURSE
                                 idStr.Append($"GKM00{register.ID}");
                             else if (register.ID < 1000)
                                 idStr.Append($"GKM0{register.ID}");
-
+                            else
+                                idStr.Append($"GKM{register.ID}");
+                            
                             ListViewItem item = new ListViewItem(idStr.ToString());
                             item.SubItems.Add(register.TCKN);
                             item.SubItems.Add(register.NAME);
@@ -450,7 +452,9 @@ namespace BIGADIC_COURSE
                             idStr.Append($"GKM00{register.ID}");
                         else if (register.ID < 1000)
                             idStr.Append($"GKM0{register.ID}");
-
+                        else
+                            idStr.Append($"GKM{register.ID}");
+                        
                         ListViewItem item = new ListViewItem(idStr.ToString());
                         item.SubItems.Add(register.TCKN);
                         item.SubItems.Add(register.NAME);
@@ -667,7 +671,9 @@ namespace BIGADIC_COURSE
                     idStr.Append($"GKM00{id}");
                 else if (id < 1000)
                     idStr.Append($"GKM0{id}");
-                ;
+                else
+                    idStr.Append($"GKM{id}");
+
                 textBoxId.Text = idStr.ToString();
                 textBoxName.Text = allRegistersList.FirstOrDefault(r => r.ID == id).NAME;
                 textBoxSurname.Text = allRegistersList.FirstOrDefault(r => r.ID == id).SURNAME;
@@ -1010,6 +1016,8 @@ namespace BIGADIC_COURSE
                     idStr.Append($"GKM00{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
                 else if (allRegistersList.FirstOrDefault(r => r.ID == id).ID < 1000)
                     idStr.Append($"GKM0{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
+                else
+                    idStr.Append($"GKM{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
 
                 ListViewItem item = new ListViewItem(idStr.ToString());
                 item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID == id).TCKN);
@@ -1132,6 +1140,8 @@ namespace BIGADIC_COURSE
                                 idStr.Append($"GKM00{allRegistersList[i].ID}");
                             else if (allRegistersList[i].ID < 1000)
                                 idStr.Append($"GKM0{allRegistersList[i].ID}");
+                            else
+                                idStr.Append($"GKM{allRegistersList[i].ID}");
 
                             worksheet.Cells[row, 1].Value = allRegistersList[i].ID;
                             worksheet.Cells[row, 2].Value = idStr.ToString();
@@ -1359,6 +1369,8 @@ namespace BIGADIC_COURSE
                         idStr.Append($"GKM00{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
                     else if (allRegistersList.FirstOrDefault(r => r.ID == id).ID < 1000)
                         idStr.Append($"GKM0{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
+                    else
+                        idStr.Append($"GKM{allRegistersList.FirstOrDefault(r => r.ID == id).ID}");
 
                     ListViewItem item = new ListViewItem(idStr.ToString());
                     item.SubItems.Add(allRegistersList.FirstOrDefault(r => r.ID > id).TCKN);
