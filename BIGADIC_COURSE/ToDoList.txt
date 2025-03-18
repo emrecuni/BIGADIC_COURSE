@@ -173,15 +173,15 @@ X Import işleminde sonra RefreshData'yı çek X
 * Doğum günü sayfasına ay bazında sorgu seçeneği ekle
 X Bütün form ve raporlardan toplam - aktif - pasif bekleyen kayıtlardan kayıtları çıkart X
 * Personel seçiminde combobox index değil tag'a göre getir
-* Hiçbir şey yokken import edildiğinde kursları ve sayılarını refresh et
-* Çıkış yaptıktan sonra bazen otomatik içeri alıyor // main form açılmadan textboxları temizlemek gerekebilir
-* Bazen 2029 hatası veriyor kontrol et // muhtemelen anlık takılma yaşadığında asenkrondan patlatıyor
-	* Callback metod gerekebilir belki
+X Hiçbir şey yokken import edildiğinde kursları ve sayılarını refresh et X
+X Çıkış yaptıktan sonra bazen otomatik içeri alıyor // main form açılmadan textboxları temizlemek gerekebilir X
+X Bazen 2029 hatası veriyor kontrol et // muhtemelen anlık takılma yaşadığında asenkrondan patlatıyor X
+	X Callback metod gerekebilir belki X
 X Grafiklerdeki kayıtlar kısımlarını da çıkart tekrar setup al X
 X Setuptaki veri tabanını prod'a bağlayıp al X
 X Prod'da 7000 hatası veriyor vb'de X
 X Backup'ı import formatına çevir // kontrol gerek olmayabilir X
-* Kayan yazıyı sağdan sola değil soldan sağa getir
+X Kayan yazıyı sağdan sola değil soldan sağa getir X
 X Personellere de export seçeneği ekle X
 X Anlık rapordaki başlık ve logo kısmı bütün pdf'lere eklettir X
 * Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi

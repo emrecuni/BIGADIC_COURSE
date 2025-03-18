@@ -1382,7 +1382,16 @@ namespace BIGADIC_COURSE
                                 break;
                         }
 
-                        await RefreshData();
+                        await Task.Run(async () =>
+                        {
+                            await GetCourses();  // GetCourses'in tamamlanmasını bekle
+                            await RefreshData();       // GetCourses tamamlandıktan sonra çalıştır
+                        }).ContinueWith(task =>
+                        {
+                            // RefreshData ve diğer işlemler bittikten sonra çalıştır
+                            GetCourseCount();
+                        }, TaskScheduler.FromCurrentSynchronizationContext()); // UI thread üzerinde çalışmasını sağla
+                        
                         buttonOrder_Click(sender, e);
                     }
                 }
