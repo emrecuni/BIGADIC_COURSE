@@ -157,6 +157,7 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[5, 4].Style.Font.Bold = true; // Kalın;                    
                     worksheet.Cells[5, 5].Style.Font.Bold = true; // Kalın;                    
                     worksheet.Cells[5, 6].Style.Font.Bold = true; // Kalın;
+                    worksheet.Row(5).Height = (20); // Excel'de yükseklik yaklaşık %75 ölçekli
 
                     for (int i = 0; i < listViewBirthDate.Items.Count; i++)
                     {
@@ -178,6 +179,7 @@ namespace BIGADIC_COURSE
 
                         worksheet.Cells[row, 6].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
                         worksheet.Cells[row, 1].Value = "Açıklama:";
+                        worksheet.Row(row).Height = (30); // Excel'de yükseklik yaklaşık %75 ölçekli
                         worksheet.Cells[row, 2, row, 6].Merge = true;
                         worksheet.Cells[row, 2].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                         worksheet.Cells[row++, 2].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
@@ -189,26 +191,27 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[row, 4].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
                     worksheet.Cells[row, 5].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
                     worksheet.Cells[row, 6].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                    
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
 
                     worksheet.Cells[row, 1].Value = "Görüşmeyi Yapan Personel";
-                    worksheet.Cells[row, 5].Value = "Onaylayan";
-                    worksheet.Cells[row, 5, row, 6].Merge = true;
-                    worksheet.Cells[row, 5].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                    worksheet.Cells[row++, 5].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    worksheet.Cells[row, 4].Value = "Onaylayan";
+                    worksheet.Cells[row, 4, row, 6].Merge = true;
+                    worksheet.Cells[row, 4].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row++, 4].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
 
                     worksheet.Cells[row, 1].Value = ".......................";
-                    worksheet.Cells[row, 5].Value = "Nalan ŞAHAL";
-                    worksheet.Cells[row, 5, row, 6].Merge = true;
-                    worksheet.Cells[row, 5].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                    worksheet.Cells[row++, 5].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    worksheet.Cells[row, 4].Value = "Nalan ŞAHAL";
+                    worksheet.Cells[row, 4, row, 6].Merge = true;
+                    worksheet.Cells[row, 4].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row++, 4].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
 
-                    worksheet.Cells[row, 5].Value = "Gençlik ve Kültür Merkezi Müdürü";
-                    worksheet.Cells[row, 5, row, 6].Merge = true;
-                    worksheet.Cells[row, 5].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
-                    worksheet.Cells[row, 5].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    worksheet.Cells[row, 4].Value = "Gençlik ve Kültür Merkezi Müdürü";
+                    worksheet.Cells[row, 4, row, 6].Merge = true;
+                    worksheet.Cells[row, 4].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row, 4].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
 
-
-                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                                        
                     worksheet.Cells.Style.Font.Name = "Calibri";
                     try
                     {

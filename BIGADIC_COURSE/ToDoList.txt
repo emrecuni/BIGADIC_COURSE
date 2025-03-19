@@ -188,7 +188,7 @@ X Doğum günü sayfasına ay bazında sorgu seçeneği ekle X
 * Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin
 * Chart menustrip bg'leri düzelt // silip yeniden eklemek gerek
 X Doğum günlerine export ekle X
-	* Wp'den bak formatına
+	X Wp'den bak formatına X
 * Branş sil büyütüldüğünde sil butonu sayfanın yarısını kaplıyor
 * Nesne oluşturmayı basitleştir //new()
 * Zorunlu yönetici olarak çalışmasını sağla
