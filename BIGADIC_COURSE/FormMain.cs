@@ -1497,7 +1497,7 @@ namespace BIGADIC_COURSE
                 await Task.Run(() =>
                 {
                     birthDates.Clear();
-                    birthDates = allRegistersList.Where(r => r.BIRTHDATE.Day == DateTime.Now.Day && r.BIRTHDATE.Month == DateTime.Now.Month)
+                    birthDates = allRegistersList.Where(r => r.BIRTHDATE.Month == DateTime.Now.Month)
                         .GroupBy(r => r.TRAINEEID)
                         .Select(r => r.First()).ToList();
 

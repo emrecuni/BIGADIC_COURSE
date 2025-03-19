@@ -40,17 +40,18 @@
             exportToolStripMenuItem = new ToolStripMenuItem();
             exportToExcelToolStripMenuItem = new ToolStripMenuItem();
             exportToPdfToolStripMenuItem = new ToolStripMenuItem();
+            checkBoxMonth = new CheckBox();
             menuStripExport.SuspendLayout();
             SuspendLayout();
             // 
             // listViewBirthDate
             // 
+            listViewBirthDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listViewBirthDate.BackColor = Color.Silver;
             listViewBirthDate.Columns.AddRange(new ColumnHeader[] { columnHeaderId, columnHeaderTckn, columnHeaderName, columnHeaderSurname, columnHeaderPhone, columnHeaderBirthDate });
-            listViewBirthDate.Dock = DockStyle.Fill;
-            listViewBirthDate.Location = new Point(0, 28);
+            listViewBirthDate.Location = new Point(0, 56);
             listViewBirthDate.Name = "listViewBirthDate";
-            listViewBirthDate.Size = new Size(769, 371);
+            listViewBirthDate.Size = new Size(769, 343);
             listViewBirthDate.TabIndex = 0;
             listViewBirthDate.UseCompatibleStateImageBehavior = false;
             listViewBirthDate.View = View.Details;
@@ -116,12 +117,24 @@
             exportToPdfToolStripMenuItem.Text = "Pdf'e Aktar";
             exportToPdfToolStripMenuItem.Click += exportToPdfToolStripMenuItem_Click;
             // 
+            // checkBoxMonth
+            // 
+            checkBoxMonth.AutoSize = true;
+            checkBoxMonth.Location = new Point(5, 32);
+            checkBoxMonth.Name = "checkBoxMonth";
+            checkBoxMonth.Size = new Size(169, 24);
+            checkBoxMonth.TabIndex = 2;
+            checkBoxMonth.Text = "Aylık Sorgulama Yap";
+            checkBoxMonth.UseVisualStyleBackColor = true;
+            checkBoxMonth.CheckedChanged += checkBoxMonth_CheckedChanged;
+            // 
             // FormBirthDates
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
             ClientSize = new Size(769, 399);
+            Controls.Add(checkBoxMonth);
             Controls.Add(listViewBirthDate);
             Controls.Add(menuStripExport);
             Font = new Font("Segoe UI Semibold", 11.25F);
@@ -152,5 +165,6 @@
         private System.Windows.Forms.ToolStripMenuItem exportToExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToPdfToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeaderId;
+        private CheckBox checkBoxMonth;
     }
 }

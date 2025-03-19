@@ -35,26 +35,8 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                foreach (Register birthDate in _birthDates)
-                {
-                    idStr.Clear();
-                    if (birthDate.ID < 10)
-                        idStr.Append($"GKM000{birthDate.ID}");
-                    else if (birthDate.ID < 100)
-                        idStr.Append($"GKM00{birthDate.ID}");
-                    else if (birthDate.ID < 1000)
-                        idStr.Append($"GKM0{birthDate.ID}");
-                    else
-                        idStr.Append($"GKM{birthDate.ID}");
-
-                    ListViewItem item = new ListViewItem(idStr.ToString());
-                    item.SubItems.Add(birthDate.TCKN);
-                    item.SubItems.Add(birthDate.NAME);
-                    item.SubItems.Add(birthDate.SURNAME);
-                    item.SubItems.Add(birthDate.PHONE);
-                    item.SubItems.Add(birthDate.BIRTHDATE.ToString("dd-MM-yyyy"));
-                    listViewBirthDate.Items.Add(item);
-                }
+                var birthDates = _birthDates.FindAll(b => b.BIRTHDATE.Date.Day == DateTime.Now.Date.Day);
+                FillListView(birthDates);
             }
             catch (Exception ex)
             {
@@ -228,8 +210,16 @@ namespace BIGADIC_COURSE
 
                     worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
                     worksheet.Cells.Style.Font.Name = "Calibri";
+                    try
+                    {
+                        package.Save();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Açık Excel Dosyasını Kapatıp Yeniden Deneyin.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
 
-                    package.Save();
                 }
                 Process.Start(new ProcessStartInfo
                 {
@@ -315,6 +305,58 @@ namespace BIGADIC_COURSE
                 Log.logger.Error($"ExportToPdf Error Hata Kodu: 9004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 9004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+
+        private void checkBoxMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (checkBoxMonth.Checked)
+                    FillListView(_birthDates);
+                else
+                {
+                    var birthDates = _birthDates.FindAll(b => b.BIRTHDATE.Date.Day == DateTime.Now.Date.Day);
+                    FillListView(birthDates);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"checkBoxMonth_CheckedChanged Error Hata Kodu: 9005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 9005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FillListView(List<Register> birthDates)
+        {
+            try
+            {
+                listViewBirthDate.Items.Clear();
+                foreach (Register birthDate in birthDates)
+                {
+                    idStr.Clear();
+                    if (birthDate.ID < 10)
+                        idStr.Append($"GKM000{birthDate.ID}");
+                    else if (birthDate.ID < 100)
+                        idStr.Append($"GKM00{birthDate.ID}");
+                    else if (birthDate.ID < 1000)
+                        idStr.Append($"GKM0{birthDate.ID}");
+                    else
+                        idStr.Append($"GKM{birthDate.ID}");
+
+                    ListViewItem item = new ListViewItem(idStr.ToString());
+                    item.SubItems.Add(birthDate.TCKN);
+                    item.SubItems.Add(birthDate.NAME);
+                    item.SubItems.Add(birthDate.SURNAME);
+                    item.SubItems.Add(birthDate.PHONE);
+                    item.SubItems.Add(birthDate.BIRTHDATE.ToString("dd-MM-yyyy"));
+                    listViewBirthDate.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"checkBoxMonth_CheckedChanged Error Hata Kodu: 9005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 9005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

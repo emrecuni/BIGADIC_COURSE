@@ -181,7 +181,8 @@ X Kurs adetlerinde satranç ve akıl zeka 0 geliyor X
 * Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
 * Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
 * Personel seçiminde combobox index değil tag'a göre getir
-* Doğum günü sayfasına ay bazında sorgu seçeneği ekle
+X Doğum günü sayfasına ay bazında sorgu seçeneği ekle X
+	X Aylık sorgu checkbox'ı ekle tiklenirse içinde bulunulan aydakiler getirsin X
 * Versiyon.txt ekle
 * Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
 * Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin
