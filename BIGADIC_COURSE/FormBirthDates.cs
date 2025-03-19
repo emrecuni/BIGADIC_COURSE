@@ -136,7 +136,6 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[4, 3].Style.Font.Bold = true; // Kalın;
                     worksheet.Cells[4, 6].Value = "Tarih:.../.../2025";
 
-
                     worksheet.Cells[5, 1].Value = "ID";
                     worksheet.Cells[5, 2].Value = "T.C. No";
                     worksheet.Cells[5, 3].Value = "Adı";
@@ -244,7 +243,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                string pdfPath = Application.StartupPath + "\\ExportPdf\\";
+                string pdfPath = Application.StartupPath + "ExportPdf\\";
                 if (!Directory.Exists(pdfPath))
                     Directory.CreateDirectory(pdfPath);
 
@@ -267,6 +266,8 @@ namespace BIGADIC_COURSE
                         document.Add(new Paragraph());
                         document.Add(new Paragraph("BİGADİÇ BELEDİYESİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                         document.Add(new Paragraph("GENÇLİK VE KÜLTÜR MERKEZİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph("DOĞUM GÜNÜ KUTLAMA FORMU").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph("Tarih:.../.../2025").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
                         document.Add(new Paragraph());
 
                         // Tabloyu oluşturuyoruz ve sütun genişliklerini ayarlıyoruz
@@ -288,9 +289,19 @@ namespace BIGADIC_COURSE
                             table.AddCell(listViewBirthDate.Items[i].SubItems[3].Text).SetFont(font).SetFontSize(13);
                             table.AddCell(listViewBirthDate.Items[i].SubItems[4].Text).SetFont(font).SetFontSize(13);
                             table.AddCell(listViewBirthDate.Items[i].SubItems[5].Text).SetFont(font).SetFontSize(13);
+
+                            table.AddCell("Açıklama:").SetFont(font).SetFontSize(13);
+                            table.AddCell(new Cell(1, 5));
                         }
 
                         document.Add(table);
+
+                        document.Add(new Paragraph());
+                        document.Add(new Paragraph("Görüşmeyi Yapan Personel").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT));
+                        document.Add(new Paragraph("Onaylayan").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
+                        document.Add(new Paragraph("Nalan ŞAHAL").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
+                        document.Add(new Paragraph("Gençlik ve Kültür Merkezi Müdürü").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
+                        
                         document.Close();
                     }
                 }

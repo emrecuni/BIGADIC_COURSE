@@ -185,7 +185,7 @@ X Grafiklere değerlerini yazılı ekle X
 X Branş sil büyütüldüğünde sil butonu sayfanın yarısını kaplıyor X
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
-* Tüm excel ve pdf'lere logo ve başlık ekle
+* Tüm excel ve pdf'lere logo ve başlık ekle 
 * Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
 * Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
 * Personel seçiminde combobox index değil tag'a göre getir
