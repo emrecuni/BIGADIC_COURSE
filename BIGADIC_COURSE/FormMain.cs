@@ -106,17 +106,19 @@ namespace BIGADIC_COURSE
             {
                 if (radioButtonMale.Checked || radioButtonFemale.Checked)
                 {
-                    Sql sql = new Sql();
-                    query.Clear();
-                    parameters.Clear();
-
-                    var list = new List<KeyValuePair<int, string>>(selectionBranches);
-
-                    if (list.Count > 0)
+                    if (dateTimePickerBirthDate.Value.Date != DateTime.Now.Date)
                     {
-                        for (int i = 0; i < list.Count; i++) // seçilen her branş için kayıt ekler
+                        Sql sql = new Sql();
+                        query.Clear();
+                        parameters.Clear();
+
+                        var list = new List<KeyValuePair<int, string>>(selectionBranches);
+
+                        if (list.Count > 0)
                         {
-                            query.Append($@"IF NOT EXISTS (SELECT TOP 1 * FROM TRAINEES WHERE (NAME = @Name{i + 1} AND SURNAME = @Surname{i + 1}) OR TCKN = @Tckn{i + 1})
+                            for (int i = 0; i < list.Count; i++) // seçilen her branş için kayıt ekler
+                            {
+                                query.Append($@"IF NOT EXISTS (SELECT TOP 1 * FROM TRAINEES WHERE (NAME = @Name{i + 1} AND SURNAME = @Surname{i + 1}) OR TCKN = @Tckn{i + 1})
                             AND NOT EXISTS (SELECT TOP 1 * FROM COURSEREGISTER WHERE TRAINEE_ID = (SELECT TOP 1 ID FROM TRAINEES WHERE NAME = @Name{i + 1} AND SURNAME = @Surname{i + 1}) AND COURSE_ID = @BranchId{i + 1})
                             BEGIN
 	                            INSERT INTO TRAINEES (NAME, SURNAME, TCKN, BIRTHDATE, PHONE, GENDER, REGISTER_DATE)
@@ -135,55 +137,58 @@ namespace BIGADIC_COURSE
                             END
                             ");
 
-                            parameters.Add(new Microsoft.Data.SqlClient.SqlParameter($"@Name{i + 1}", SqlDbType.NVarChar, 50) { Value = textBoxName.Text.Trim().ToUpper() });
-                            parameters.Add(new SqlParameter($"@Surname{i + 1}", SqlDbType.NVarChar, 50) { Value = textBoxSurname.Text.Trim().ToUpper() });
-                            parameters.Add(new SqlParameter($"@Tckn{i + 1}", SqlDbType.Char, 11) { Value = maskedTextBoxTckn.Text.Trim() });
-                            parameters.Add(new SqlParameter($"@BirthDate{i + 1}", SqlDbType.Date) { Value = dateTimePickerBirthDate.Value });
-                            parameters.Add(new SqlParameter($"@Phone{i + 1}", SqlDbType.Char, 10) { Value = maskedTextBoxPhone.Text.Trim() });
-                            parameters.Add(new SqlParameter($"@Gender{i + 1}", SqlDbType.Bit) { Value = radioButtonMale.Checked ? 1 : 0 });
-                            parameters.Add(new SqlParameter($"@RegisterDate{i + 1}", SqlDbType.Date) { Value = dateTimePickerRegisterDate.Value });
-                            parameters.Add(new SqlParameter($"@BranchId{i + 1}", SqlDbType.Int) { Value = list[i].Key });
+                                parameters.Add(new Microsoft.Data.SqlClient.SqlParameter($"@Name{i + 1}", SqlDbType.NVarChar, 50) { Value = textBoxName.Text.Trim().ToUpper() });
+                                parameters.Add(new SqlParameter($"@Surname{i + 1}", SqlDbType.NVarChar, 50) { Value = textBoxSurname.Text.Trim().ToUpper() });
+                                parameters.Add(new SqlParameter($"@Tckn{i + 1}", SqlDbType.Char, 11) { Value = maskedTextBoxTckn.Text.Trim() });
+                                parameters.Add(new SqlParameter($"@BirthDate{i + 1}", SqlDbType.Date) { Value = dateTimePickerBirthDate.Value });
+                                parameters.Add(new SqlParameter($"@Phone{i + 1}", SqlDbType.Char, 10) { Value = maskedTextBoxPhone.Text.Trim() });
+                                parameters.Add(new SqlParameter($"@Gender{i + 1}", SqlDbType.Bit) { Value = radioButtonMale.Checked ? 1 : 0 });
+                                parameters.Add(new SqlParameter($"@RegisterDate{i + 1}", SqlDbType.Date) { Value = dateTimePickerRegisterDate.Value });
+                                parameters.Add(new SqlParameter($"@BranchId{i + 1}", SqlDbType.Int) { Value = list[i].Key });
+                            }
+                            int id = -1;
+                            int returnCode = await sql.EditData(query.ToString(), parameters);
+
+                            switch (returnCode) // işlem sonucunu kontrol eder
+                            {
+                                case -1:
+                                    Log.logger.Error("buttonRegister_Click Error EditData Hatası. Hata Kodu: 2002");
+                                    MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2002", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    break;
+                                case 0:
+                                    Log.logger.Error("buttonRegister_Click Error Sql Bağlantısı Açılamadı. Hata Kodu: 2003");
+                                    MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2003", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    break;
+                                case 1:
+                                    Log.logger.Info($"Yeni kurs kaydı başarıyla yapıldı. {maskedTextBoxTckn.Text}");
+                                    if (allRegistersList.Count > 0)
+                                        id = allRegistersList.LastOrDefault()?.ID ?? -1;
+
+                                    await Task.Run(async () =>
+                                    {
+                                        await RefreshData();
+                                    });
+
+                                    // UI işlemlerini senkron yerine async olarak çağır
+                                    await Task.Yield(); // UI thread'in kilitlenmesini önler
+                                    GetCourseCount();
+                                    await Task.Run(() => GetNewRegisters(id));
+                                    ChangeEnableRadioButtons(0);
+
+                                    buttonRegister.Enabled = false;
+                                    MessageBox.Show($"Kayıt(lar) Başarılıyla Eklendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    break;
+                                case 2:
+                                    Log.logger.Info($"Kurs zaten kayıtlı. {maskedTextBoxTckn.Text}");
+                                    MessageBox.Show($"Eklemek İstediğiniz Kayıt Veri Tabanında Mevcut", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    break;
+                            }
                         }
-                        int id = -1;
-                        int returnCode = await sql.EditData(query.ToString(), parameters);
-
-                        switch (returnCode) // işlem sonucunu kontrol eder
-                        {
-                            case -1:
-                                Log.logger.Error("buttonRegister_Click Error EditData Hatası. Hata Kodu: 2002");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2002", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
-                            case 0:
-                                Log.logger.Error("buttonRegister_Click Error Sql Bağlantısı Açılamadı. Hata Kodu: 2003");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2003", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                break;
-                            case 1:
-                                Log.logger.Info($"Yeni kurs kaydı başarıyla yapıldı. {maskedTextBoxTckn.Text}");
-                                if (allRegistersList.Count > 0)
-                                    id = allRegistersList.LastOrDefault()?.ID ?? -1;
-
-                                await Task.Run(async () =>
-                                {
-                                    await RefreshData();
-                                });
-
-                                // UI işlemlerini senkron yerine async olarak çağır
-                                await Task.Yield(); // UI thread'in kilitlenmesini önler
-                                GetCourseCount();
-                                await Task.Run(() => GetNewRegisters(id));
-                                ChangeEnableRadioButtons(0);
-
-                                buttonRegister.Enabled = false;
-                                MessageBox.Show($"Kayıt(lar) Başarılıyla Eklendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                break;
-                            case 2:
-                                Log.logger.Info($"Kurs zaten kayıtlı. {maskedTextBoxTckn.Text}");
-                                MessageBox.Show($"Eklemek İstediğiniz Kayıt Veri Tabanında Mevcut", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                break;
-                        }
+                        else
+                            MessageBox.Show("Lütfen Bir Kurs Seçiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
-                        MessageBox.Show("Lütfen Bir Kurs Seçiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Doğum Tarihi Bugün Olamaz.\n\nLütfen Geçerli Bir Tarih Yazınız.","UYARI",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                     MessageBox.Show("Lütfen Cinsiyet Seçiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);

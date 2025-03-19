@@ -185,6 +185,11 @@ X Backup'ı import formatına çevir // kontrol gerek olmayabilir X
 X Personellere de export seçeneği ekle X
 X Anlık rapordaki başlık ve logo kısmı bütün pdf'lere eklettir X
 * Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
+* Doğum günü bugünse kayıt yaptırmasın // doğum tarihi picker'ına hiç girmeden kaydet'e tıklarsa kabul ediyor
+* Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
+* Anlık raporda faaliyet gösteren branş sayısı kısmında branş adetleri gelmiyor // aktif + pasif kayıt sayısı geliyor
+* Tüm excel ve pdf'lere logo ve başlık ekle
+
 
 X 2029 hatası veriyor açılışta // callback yazmak gerekebilir X
 X import ile alırken bazı kayıtları almıyor gibi X 1550
