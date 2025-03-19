@@ -48,7 +48,7 @@
             // 
             // groupBoxBranches
             // 
-            groupBoxBranches.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxBranches.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxBranches.Controls.Add(flowLayoutPanelBranches);
             groupBoxBranches.Location = new Point(12, 12);
             groupBoxBranches.Name = "groupBoxBranches";
@@ -59,7 +59,7 @@
             // 
             // groupBoxDelete
             // 
-            groupBoxDelete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxDelete.Controls.Add(buttonDeleteBranch);
             groupBoxDelete.Location = new Point(12, 387);
             groupBoxDelete.Name = "groupBoxDelete";
