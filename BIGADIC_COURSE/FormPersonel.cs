@@ -43,11 +43,11 @@ namespace BIGADIC_COURSE
                 await Task.Run(() =>
                 {
                     RefreshData();
-                    GetCourses();
-                    buttonOrder_Click(sender, e);
+                    GetCourses();                   
                     comboBoxPersonelType.SelectedIndex = 0; // seçiniz default gelir
                     comboBoxBranch.SelectedIndex = 0; // seçiniz default gelir
                 });
+                buttonOrder_Click(sender, e);
             }
             catch (Exception ex)
             {

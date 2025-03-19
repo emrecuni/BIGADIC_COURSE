@@ -196,7 +196,9 @@ X Doğum günlerine export ekle X
 * Chart exportunu oxyplot.pdf ile yapmayı dene
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Excel save için ayrı try-catch yaz X
-* Personelleri load'da listele
+X Personelleri load'da listele X
+	* Fazla datayla test et // sanal makinede 
+	
 
 id:
 	X main X
