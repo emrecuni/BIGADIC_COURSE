@@ -195,8 +195,8 @@ X Doğum günlerine export ekle X
 * Main hata kodları düzelt
 * Chart exportunu oxyplot.pdf ile yapmayı dene
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
-* Excel Onaylayan'ı dinamik yap
 X Excel save için ayrı try-catch yaz X
+* Personelleri load'da listele
 
 id:
 	X main X

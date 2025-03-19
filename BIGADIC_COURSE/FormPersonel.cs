@@ -17,6 +17,7 @@ using iText.IO.Image;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout.Element;
+using OfficeOpenXml.Drawing;
 
 
 namespace BIGADIC_COURSE
@@ -546,7 +547,7 @@ namespace BIGADIC_COURSE
                     Directory.CreateDirectory(excelPath);
 
                 excelPath += $"personel_{DateTime.Now.Date:yyyy_MM_dd}.xlsx";
-                int row = 2;
+                int row = 5;
 
                 ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
 
@@ -554,13 +555,36 @@ namespace BIGADIC_COURSE
                 {
                     var worksheet = package.Workbook.Worksheets.Add($"{DateTime.Now:HH_mm_ss}");
 
-                    worksheet.Cells[1, 1].Value = "ID";
-                    worksheet.Cells[1, 2].Value = "Adı";
-                    worksheet.Cells[1, 3].Value = "Soyadı";
-                    worksheet.Cells[1, 4].Value = "Telefon";
-                    worksheet.Cells[1, 5].Value = "Tipi";
-                    worksheet.Cells[1, 6].Value = "Branş";
-                    worksheet.Cells[1, 7].Value = "Kayıt Tarihi";
+                    ExcelPicture logo = worksheet.Drawings.AddPicture("Logo", new FileInfo(imagePath));
+
+                    logo.SetPosition(0, 15, 3, 10); // Satır 2, Sütun B (Hücre: B2)
+                    logo.SetSize(55, 50); // Genişlik - Yükseklik
+
+                    worksheet.Cells[1, 1, 1, 7].Merge = true;
+                    worksheet.Cells[1, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[1, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+
+                    worksheet.Row(1).Height = (60); // Excel'de yükseklik yaklaşık %75 ölçekli
+
+                    worksheet.Cells[2, 1, 2, 7].Merge = true;
+                    worksheet.Cells[2, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[2, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    worksheet.Cells[2, 1].Value = "Bigadiç Belediyesi";
+                    worksheet.Cells[2, 1].Style.Font.Size = 14;
+
+                    worksheet.Cells[3, 1, 3, 7].Merge = true;
+                    worksheet.Cells[3, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[3, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    worksheet.Cells[3, 1].Value = "Gençlik ve Kültür Merkezi";
+                    worksheet.Cells[3, 1].Style.Font.Size = 14;
+
+                    worksheet.Cells[4, 1].Value = "ID";
+                    worksheet.Cells[4, 2].Value = "Adı";
+                    worksheet.Cells[4, 3].Value = "Soyadı";
+                    worksheet.Cells[4, 4].Value = "Telefon";
+                    worksheet.Cells[4, 5].Value = "Tipi";
+                    worksheet.Cells[4, 6].Value = "Branş";
+                    worksheet.Cells[4, 7].Value = "Kayıt Tarihi";
 
                     for (int i = 0; i < listViewPersonels.Items.Count; i++)
                     {
@@ -572,7 +596,18 @@ namespace BIGADIC_COURSE
                         worksheet.Cells[row, 6].Value = listViewPersonels.Items[i].SubItems[5].Text;
                         worksheet.Cells[row++, 7].Value = listViewPersonels.Items[i].SubItems[6].Text;
                     }
-                    package.Save();
+
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                    
+                    try
+                    {
+                        package.Save();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Açık Excel Dosyasını Kapatıp Yeniden Deneyin.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
                 }
                 Process.Start(new ProcessStartInfo
                 {

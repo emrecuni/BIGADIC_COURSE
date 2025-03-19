@@ -381,6 +381,9 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[1, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     worksheet.Cells[1, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
 
+                    // **Satırın yüksekliğini resme göre ayarla**
+                    worksheet.Row(1).Height = (60); // Excel'de yükseklik yaklaşık %75 ölçekli
+
                     worksheet.Cells[2, 1, 2, 9].Merge = true;
                     worksheet.Cells[2, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     worksheet.Cells[2, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
@@ -392,10 +395,7 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[3, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
                     worksheet.Cells[3, 1].Value = "Gençlik ve Kültür Merkezi";
                     worksheet.Cells[3, 1].Style.Font.Size = 14;
-
-                    // **Satırın yüksekliğini resme göre ayarla**
-                    worksheet.Row(1).Height = (60); // Excel'de yükseklik yaklaşık %75 ölçekli
-
+                    
                     worksheet.Cells[4, 1].Value = "ID";
                     worksheet.Cells[4, 2].Value = "T.C. No";
                     worksheet.Cells[4, 3].Value = "Adı";
@@ -420,6 +420,7 @@ namespace BIGADIC_COURSE
                     }
 
                     worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                   
                     try
                     {
                         package.Save();
