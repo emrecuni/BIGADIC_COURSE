@@ -66,8 +66,8 @@ namespace BIGADIC_COURSE
                 endDate = DateTime.Today;
                 chartDict.Clear();
                 courseToolStripMenuItem.BackColor = Color.Blue;
-                genderToolStripMenuItem.BackColor = Color.DarkGray;
-                registerTypeToolStripMenuItem.BackColor = Color.DarkGray;
+                genderToolStripMenuItem.BackColor = Color.Silver;
+                registerTypeToolStripMenuItem.BackColor = Color.Silver;
 
                 if (checkBoxSelectDate.Checked) // tarih seçimi aktifse seçilen tarihlere göre liste filtrelenir
                 {
@@ -153,8 +153,8 @@ namespace BIGADIC_COURSE
                 endDate = DateTime.Today;
                 chartDict.Clear();
                 genderToolStripMenuItem.BackColor = Color.Blue;
-                courseToolStripMenuItem.BackColor = Color.DarkGray;
-                registerTypeToolStripMenuItem.BackColor = Color.DarkGray;
+                courseToolStripMenuItem.BackColor = Color.Silver;
+                registerTypeToolStripMenuItem.BackColor = Color.Silver;
 
                 if (checkBoxSelectDate.Checked) // tarih seçimi aktifse seçilen tarihlere göre liste filtrelenir
                 {
@@ -208,8 +208,8 @@ namespace BIGADIC_COURSE
                 endDate = DateTime.Today;
                 chartDict.Clear();
                 registerTypeToolStripMenuItem.BackColor = Color.Blue;
-                genderToolStripMenuItem.BackColor = Color.DarkGray;
-                courseToolStripMenuItem.BackColor = Color.DarkGray;
+                genderToolStripMenuItem.BackColor = Color.Silver;
+                courseToolStripMenuItem.BackColor = Color.Silver;
 
                 if (checkBoxSelectDate.Checked) // tarih seçimi aktifse seçilen tarihlere göre liste filtrelenir
                 {
@@ -326,7 +326,9 @@ namespace BIGADIC_COURSE
                 BarSeries barSeries = new()  // Yeni bir bar serisi oluştur
                 {
                     Title = "Kayıt Sayısı",
-                    ItemsSource = chartDict.Select(kv => new BarItem { Value = kv.Value }).ToList()
+                    ItemsSource = chartDict.Select(kv => new BarItem { Value = kv.Value }).ToList(),
+                    LabelPlacement = LabelPlacement.Inside, // Label konumunu ayarla (Inside, Middle, Outside)
+                    LabelFormatString = "{0:N0}" // Sayıyı formatla (Tam sayı)
                 };
 
                 CategoryAxis categoryAxis = new() // Kategori ekseni (X ekseni) oluştur

@@ -175,27 +175,29 @@ X 2029 hatası veriyor açılışta // callback yazmak gerekebilir X
 X import ile alırken bazı kayıtları almıyor gibi X 1550
 X Import sonrası branş sayacını yenilet X
 X Kurs adetlerinde satranç ve akıl zeka 0 geliyor X
+X Excel save için ayrı try-catch yaz X
+X Doğum günü sayfasına ay bazında sorgu seçeneği ekle X
+	X Aylık sorgu checkbox'ı ekle tiklenirse içinde bulunulan aydakiler getirsin X
+X Doğum günlerine export ekle X
+	X Wp'den bak formatına X
+X Chart menustrip bg'leri düzelt // silip yeniden eklemek gerek X
+X Grafiklere değerlerini yazılı ekle X
+
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
 * Tüm excel ve pdf'lere logo ve başlık ekle
 * Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
 * Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
 * Personel seçiminde combobox index değil tag'a göre getir
-X Doğum günü sayfasına ay bazında sorgu seçeneği ekle X
-	X Aylık sorgu checkbox'ı ekle tiklenirse içinde bulunulan aydakiler getirsin X
 * Versiyon.txt ekle
 * Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
 * Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin
-* Chart menustrip bg'leri düzelt // silip yeniden eklemek gerek
-X Doğum günlerine export ekle X
-	X Wp'den bak formatına X
 * Branş sil büyütüldüğünde sil butonu sayfanın yarısını kaplıyor
 * Nesne oluşturmayı basitleştir //new()
 * Zorunlu yönetici olarak çalışmasını sağla
 * Main hata kodları düzelt
 * Chart exportunu oxyplot.pdf ile yapmayı dene
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
-X Excel save için ayrı try-catch yaz X
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 	

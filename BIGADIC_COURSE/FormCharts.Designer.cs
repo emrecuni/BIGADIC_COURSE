@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCharts));
-            menuStripChart = new MenuStrip();
-            courseToolStripMenuItem = new ToolStripMenuItem();
-            genderToolStripMenuItem = new ToolStripMenuItem();
-            registerTypeToolStripMenuItem = new ToolStripMenuItem();
-            printToolStripMenuItem = new ToolStripMenuItem();
             splitContainerChart = new SplitContainer();
             groupBoxFilters = new GroupBox();
             groupBoxGender = new GroupBox();
@@ -51,7 +46,11 @@
             labelEndDate = new Label();
             labelStartDate = new Label();
             checkBoxSelectDate = new CheckBox();
-            menuStripChart.SuspendLayout();
+            printToolStripMenuItem = new ToolStripMenuItem();
+            menuStripChart = new MenuStrip();
+            courseToolStripMenuItem = new ToolStripMenuItem();
+            genderToolStripMenuItem = new ToolStripMenuItem();
+            registerTypeToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)splitContainerChart).BeginInit();
             splitContainerChart.Panel1.SuspendLayout();
             splitContainerChart.SuspendLayout();
@@ -59,48 +58,8 @@
             groupBoxGender.SuspendLayout();
             groupBoxRegisterType.SuspendLayout();
             groupBoxDate.SuspendLayout();
+            menuStripChart.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuStripChart
-            // 
-            menuStripChart.BackColor = Color.Silver;
-            menuStripChart.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            menuStripChart.Items.AddRange(new ToolStripItem[] { courseToolStripMenuItem, genderToolStripMenuItem, registerTypeToolStripMenuItem, printToolStripMenuItem });
-            menuStripChart.Location = new Point(0, 0);
-            menuStripChart.Name = "menuStripChart";
-            menuStripChart.Padding = new Padding(8, 3, 0, 3);
-            menuStripChart.Size = new Size(1214, 31);
-            menuStripChart.TabIndex = 0;
-            menuStripChart.Text = "menuStrip1";
-            // 
-            // courseToolStripMenuItem
-            // 
-            courseToolStripMenuItem.Name = "courseToolStripMenuItem";
-            courseToolStripMenuItem.Size = new Size(117, 25);
-            courseToolStripMenuItem.Text = "Kurs Bazında";
-            courseToolStripMenuItem.Click += courseToolStripMenuItem_Click;
-            // 
-            // genderToolStripMenuItem
-            // 
-            genderToolStripMenuItem.Name = "genderToolStripMenuItem";
-            genderToolStripMenuItem.Size = new Size(143, 25);
-            genderToolStripMenuItem.Text = "Cinsiyet Bazında";
-            genderToolStripMenuItem.Click += genderToolStripMenuItem_Click;
-            // 
-            // registerTypeToolStripMenuItem
-            // 
-            registerTypeToolStripMenuItem.Name = "registerTypeToolStripMenuItem";
-            registerTypeToolStripMenuItem.Size = new Size(186, 25);
-            registerTypeToolStripMenuItem.Text = "Kayıt Durumu Bazında";
-            registerTypeToolStripMenuItem.Click += registerTypeToolStripMenuItem_Click;
-            // 
-            // printToolStripMenuItem
-            // 
-            printToolStripMenuItem.BackColor = Color.Silver;
-            printToolStripMenuItem.Name = "printToolStripMenuItem";
-            printToolStripMenuItem.Size = new Size(68, 25);
-            printToolStripMenuItem.Text = "Yazdır";
-            printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
             // splitContainerChart
             // 
@@ -311,6 +270,47 @@
             checkBoxSelectDate.UseVisualStyleBackColor = true;
             checkBoxSelectDate.CheckedChanged += checkBoxSelectDate_CheckedChanged;
             // 
+            // printToolStripMenuItem
+            // 
+            printToolStripMenuItem.BackColor = Color.Silver;
+            printToolStripMenuItem.Name = "printToolStripMenuItem";
+            printToolStripMenuItem.Size = new Size(68, 25);
+            printToolStripMenuItem.Text = "Yazdır";
+            printToolStripMenuItem.Click += printToolStripMenuItem_Click;
+            // 
+            // menuStripChart
+            // 
+            menuStripChart.BackColor = Color.Silver;
+            menuStripChart.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
+            menuStripChart.Items.AddRange(new ToolStripItem[] { courseToolStripMenuItem, genderToolStripMenuItem, registerTypeToolStripMenuItem, printToolStripMenuItem });
+            menuStripChart.Location = new Point(0, 0);
+            menuStripChart.Name = "menuStripChart";
+            menuStripChart.Padding = new Padding(8, 3, 0, 3);
+            menuStripChart.Size = new Size(1214, 31);
+            menuStripChart.TabIndex = 0;
+            menuStripChart.Text = "menuStrip1";
+            // 
+            // courseToolStripMenuItem
+            // 
+            courseToolStripMenuItem.Name = "courseToolStripMenuItem";
+            courseToolStripMenuItem.Size = new Size(117, 25);
+            courseToolStripMenuItem.Text = "Kurs Bazında";
+            courseToolStripMenuItem.Click += courseToolStripMenuItem_Click;
+            // 
+            // genderToolStripMenuItem
+            // 
+            genderToolStripMenuItem.Name = "genderToolStripMenuItem";
+            genderToolStripMenuItem.Size = new Size(143, 25);
+            genderToolStripMenuItem.Text = "Cinsiyet Bazında";
+            genderToolStripMenuItem.Click += genderToolStripMenuItem_Click;
+            // 
+            // registerTypeToolStripMenuItem
+            // 
+            registerTypeToolStripMenuItem.Name = "registerTypeToolStripMenuItem";
+            registerTypeToolStripMenuItem.Size = new Size(186, 25);
+            registerTypeToolStripMenuItem.Text = "Kayıt Durumu Bazında";
+            registerTypeToolStripMenuItem.Click += registerTypeToolStripMenuItem_Click;
+            // 
             // FormCharts
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -327,8 +327,6 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "FormCharts";
             Load += FormCharts_Load;
-            menuStripChart.ResumeLayout(false);
-            menuStripChart.PerformLayout();
             splitContainerChart.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainerChart).EndInit();
             splitContainerChart.ResumeLayout(false);
@@ -339,16 +337,13 @@
             groupBoxRegisterType.PerformLayout();
             groupBoxDate.ResumeLayout(false);
             groupBoxDate.PerformLayout();
+            menuStripChart.ResumeLayout(false);
+            menuStripChart.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private MenuStrip menuStripChart;
-        private ToolStripMenuItem courseToolStripMenuItem;
-        private ToolStripMenuItem genderToolStripMenuItem;
-        private ToolStripMenuItem printToolStripMenuItem;
         private SplitContainer splitContainerChart;
         private GroupBox groupBoxFilters;
         private GroupBox groupBoxDate;
@@ -366,6 +361,10 @@
         private RadioButton radioButtonPassive;
         private RadioButton radioButtonActive;
         private RadioButton radioButtonTotal;
+        private ToolStripMenuItem printToolStripMenuItem;
+        private MenuStrip menuStripChart;
+        private ToolStripMenuItem courseToolStripMenuItem;
+        private ToolStripMenuItem genderToolStripMenuItem;
         private ToolStripMenuItem registerTypeToolStripMenuItem;
     }
 }
