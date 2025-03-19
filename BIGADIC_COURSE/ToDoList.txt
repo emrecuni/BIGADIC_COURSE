@@ -166,14 +166,14 @@ X Personel sekmesinin arkasını async yap X
 X Admin paneli async yap X
 * Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
 * Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin
-* Export formatını import formatına göre değiştir // wp'ye bırak
+X Export formatını import formatına göre değiştir // wp'ye bırak X
 * Versiyon.txt ekle
 X Import ettikten sonra listele butonu çalışmıyor X
 X Import işleminde sonra RefreshData'yı çek X
 * Doğum günü sayfasına ay bazında sorgu seçeneği ekle
 X Bütün form ve raporlardan toplam - aktif - pasif bekleyen kayıtlardan kayıtları çıkart X
 * Personel seçiminde combobox index değil tag'a göre getir
-* Hiçbir şey yokken import edildiğinde kursları ve sayılarını refresh et
+X Hiçbir şey yokken import edildiğinde kursları ve sayılarını refresh et X
 * Çıkış yaptıktan sonra bazen otomatik içeri alıyor // main form açılmadan textboxları temizlemek gerekebilir
 * Bazen 2029 hatası veriyor kontrol et // muhtemelen anlık takılma yaşadığında asenkrondan patlatıyor
 	* Callback metod gerekebilir belki
@@ -189,6 +189,7 @@ X Doğum günü bugünse kayıt yaptırmasın // doğum tarihi picker'ına hiç 
 * Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
 X Anlık raporda faaliyet gösteren branş sayısı kısmında branş adetleri gelmiyor // aktif + pasif kayıt sayısı geliyor X
 * Tüm excel ve pdf'lere logo ve başlık ekle
+X Hiçbir kayıt yokken import ettiğinde branşlar gelmiyor X
 
 
 X 2029 hatası veriyor açılışta // callback yazmak gerekebilir X

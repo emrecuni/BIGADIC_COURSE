@@ -35,7 +35,7 @@ namespace BIGADIC_COURSE
         List<Register> allRegistersList = new List<Register>();
         List<Register> birthDates = new List<Register>();
         Dictionary<int, string> selectionBranches = new Dictionary<int, string>();
-        User _user;
+        User? _user;
         Register? selectedRegister;
         string? statusDesc;
         string title = "BİGADİÇ GENÇLİK VE KÜLTÜR MERKEZİ";
@@ -92,6 +92,8 @@ namespace BIGADIC_COURSE
 
                 if (dialogResult != DialogResult.Yes) // evet dışında bir seçenek seçildiyse kapatılma event'i iptal edilir
                     e.Cancel = true;
+
+                _user = null;
             }
             catch (Exception ex)
             {
@@ -1386,8 +1388,15 @@ namespace BIGADIC_COURSE
                                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2050", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                         }
+                        await Task.Run(async () =>
+                        {
+                            await GetCourses();  // GetCourses'in tamamlanmasını bekle
+                            await RefreshData();
+                        });
 
-                        await RefreshData();
+                        // UI işlemlerini senkron yerine async olarak çağır
+                        await Task.Yield(); // UI thread'in kilitlenmesini önler
+                        GetCourseCount();
                         buttonOrder_Click(sender, e);
                     }
                 }

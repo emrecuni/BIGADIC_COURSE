@@ -68,6 +68,7 @@ namespace BIGADIC_COURSE
                         Hide();
                         formMain.ShowDialog();
                         Show();
+                        
                     }
                     else
                         MessageBox.Show("Hatalý Giriþ!\nGirdiðiniz Deðerleri Kontrol Ediniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
