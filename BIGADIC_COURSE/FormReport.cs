@@ -521,7 +521,9 @@ namespace BIGADIC_COURSE
                         document.Add(new Paragraph($"AKTİF SAYI: {_registers.Count(r => r.STATUS == "A")}").SetFont(font).SetFontSize(12));
                         document.Add(new Paragraph($"PASİF SAYI: {_registers.Count(r => r.STATUS == "P")}").SetFont(font).SetFontSize(12));
                         document.Add(new Paragraph($"BEKLEYEN BAŞVURU SAYISI: {_registers.Count(r => r.STATUS == "B")}").SetFont(font).SetFontSize(12));
-                        document.Add(new Paragraph($"FAALİYET GÖSTEREN BRANŞ SAYISI: {_registers.Count(r => r.STATUS == "A" || r.STATUS == "P")}").SetFont(font).SetFontSize(12));
+                        document.Add(new Paragraph($"FAALİYET GÖSTEREN BRANŞ SAYISI: {_registers.Where(r => r.STATUS == "A" || r.STATUS == "P").GroupBy(r => r.COURSEID).Count()}").SetFont(font).SetFontSize(12));
+
+                        
 
                         document.Add(new Paragraph("\nFAALİYET GÖSTEREN BRANŞLAR\n").SetFont(font).SetFontSize(14).SetUnderline().SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
 
