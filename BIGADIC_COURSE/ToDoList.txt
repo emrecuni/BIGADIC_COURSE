@@ -196,7 +196,7 @@ X Doğum günlerine export ekle X
 * Chart exportunu oxyplot.pdf ile yapmayı dene
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 * Excel Onaylayan'ı dinamik yap
-* Excel save için ayrı try-catch yaz
+X Excel save için ayrı try-catch yaz X
 
 id:
 	X main X
