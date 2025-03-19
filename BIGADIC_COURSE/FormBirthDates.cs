@@ -1,9 +1,11 @@
 ﻿using BIGADIC_COURSE.Classes;
 using iText.IO.Font;
+using iText.IO.Image;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout.Element;
 using OfficeOpenXml;
+using OfficeOpenXml.Drawing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +29,7 @@ namespace BIGADIC_COURSE
 
         List<Register> _birthDates;
         StringBuilder idStr = new StringBuilder();
+        string imagePath = Application.StartupPath + "LOGO.png";
 
         private void FormBirthDates_Load(object sender, EventArgs e)
         {
@@ -111,7 +114,7 @@ namespace BIGADIC_COURSE
                     Directory.CreateDirectory(excelPath);
 
                 excelPath += $"birthDate_{DateTime.Now.Date:yyyy_MM_dd}.xlsx";
-                int row = 2;
+                int row = 6;
 
                 ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.Commercial;
 
@@ -119,22 +122,113 @@ namespace BIGADIC_COURSE
                 {
                     var worksheet = package.Workbook.Worksheets.Add($"{DateTime.Now:HH_mm_ss}");
 
-                    worksheet.Cells[1, 1].Value = "ID";
-                    worksheet.Cells[1, 2].Value = "T.C. No";
-                    worksheet.Cells[1, 3].Value = "Adı";
-                    worksheet.Cells[1, 4].Value = "Soyadı";
-                    worksheet.Cells[1, 5].Value = "Telefon";
-                    worksheet.Cells[1, 6].Value = "Doğum Tarihi";
+                    ExcelPicture logo = worksheet.Drawings.AddPicture("Logo", new FileInfo(imagePath));
+
+                    logo.SetPosition(0, 5, 3, 5); // Satır 2, Sütun B (Hücre: B2)
+                    logo.SetSize(55, 50); // Genişlik - Yükseklik
+
+                    worksheet.Cells[1, 1, 1, 6].Merge = true;
+                    worksheet.Cells[1, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[1, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+
+                    // **Satırın yüksekliğini resme göre ayarla**
+                    worksheet.Row(1).Height = (60); // Excel'de yükseklik yaklaşık %75 ölçekli
+
+                    worksheet.Cells[2, 1, 2, 6].Merge = true;
+                    worksheet.Cells[2, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[2, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    worksheet.Cells[2, 1].Value = "Bigadiç Belediyesi";
+                    worksheet.Cells[2, 1].Style.Font.Size = 14;
+
+                    worksheet.Cells[3, 1, 3, 6].Merge = true;
+                    worksheet.Cells[3, 1].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[3, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    worksheet.Cells[3, 1].Value = "Gençlik ve Kültür Merkezi";
+                    worksheet.Cells[3, 1].Style.Font.Size = 14;
+
+                    worksheet.Cells[4, 3, 4, 5].Merge = true;
+                    worksheet.Cells[4, 3].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[4, 3].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    worksheet.Cells[4, 3].Value = "Doğum Günü Kutlama Formu";
+                    worksheet.Cells[4, 3].Style.Font.Size = 12;
+                    worksheet.Cells[4, 3].Style.Font.Bold = true; // Kalın;
+                    worksheet.Cells[4, 6].Value = "Tarih:.../.../2025";
+
+
+                    worksheet.Cells[5, 1].Value = "ID";
+                    worksheet.Cells[5, 2].Value = "T.C. No";
+                    worksheet.Cells[5, 3].Value = "Adı";
+                    worksheet.Cells[5, 4].Value = "Soyadı";
+                    worksheet.Cells[5, 5].Value = "Telefon";
+                    worksheet.Cells[5, 6].Value = "Doğum Tarihi";
+
+                    worksheet.Cells[5, 1].Style.Font.Size = 12;
+                    worksheet.Cells[5, 2].Style.Font.Size = 12;
+                    worksheet.Cells[5, 3].Style.Font.Size = 12;
+                    worksheet.Cells[5, 4].Style.Font.Size = 12;
+                    worksheet.Cells[5, 5].Style.Font.Size = 12;
+                    worksheet.Cells[5, 6].Style.Font.Size = 12;
+
+                    worksheet.Cells[5, 1].Style.Font.Bold = true; // Kalın;
+                    worksheet.Cells[5, 2].Style.Font.Bold = true; // Kalın;                    
+                    worksheet.Cells[5, 3].Style.Font.Bold = true; // Kalın;                    
+                    worksheet.Cells[5, 4].Style.Font.Bold = true; // Kalın;                    
+                    worksheet.Cells[5, 5].Style.Font.Bold = true; // Kalın;                    
+                    worksheet.Cells[5, 6].Style.Font.Bold = true; // Kalın;
 
                     for (int i = 0; i < listViewBirthDate.Items.Count; i++)
                     {
+                        worksheet.Cells[row, 1].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                        worksheet.Cells[row, 2].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                        worksheet.Cells[row, 3].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                        worksheet.Cells[row, 4].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                        worksheet.Cells[row, 5].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                        worksheet.Cells[row, 6].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                        worksheet.Cells[row, 6].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+
+
                         worksheet.Cells[row, 1].Value = listViewBirthDate.Items[i].SubItems[0].Text;
                         worksheet.Cells[row, 2].Value = listViewBirthDate.Items[i].SubItems[1].Text;
                         worksheet.Cells[row, 3].Value = listViewBirthDate.Items[i].SubItems[2].Text;
                         worksheet.Cells[row, 4].Value = listViewBirthDate.Items[i].SubItems[3].Text;
                         worksheet.Cells[row, 5].Value = listViewBirthDate.Items[i].SubItems[4].Text;
                         worksheet.Cells[row++, 6].Value = listViewBirthDate.Items[i].SubItems[5].Text;
+
+                        worksheet.Cells[row, 6].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                        worksheet.Cells[row, 1].Value = "Açıklama:";
+                        worksheet.Cells[row, 2, row, 6].Merge = true;
+                        worksheet.Cells[row, 2].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                        worksheet.Cells[row++, 2].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
                     }
+
+                    worksheet.Cells[row, 1].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                    worksheet.Cells[row, 2].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                    worksheet.Cells[row, 3].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                    worksheet.Cells[row, 4].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                    worksheet.Cells[row, 5].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+                    worksheet.Cells[row, 6].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
+
+                    worksheet.Cells[row, 1].Value = "Görüşmeyi Yapan Personel";
+                    worksheet.Cells[row, 5].Value = "Onaylayan";
+                    worksheet.Cells[row, 5, row, 6].Merge = true;
+                    worksheet.Cells[row, 5].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row++, 5].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+
+                    worksheet.Cells[row, 1].Value = ".......................";
+                    worksheet.Cells[row, 5].Value = "Nalan ŞAHAL";
+                    worksheet.Cells[row, 5, row, 6].Merge = true;
+                    worksheet.Cells[row, 5].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row++, 5].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+
+                    worksheet.Cells[row, 5].Value = "Gençlik ve Kültür Merkezi Müdürü";
+                    worksheet.Cells[row, 5, row, 6].Merge = true;
+                    worksheet.Cells[row, 5].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[row, 5].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+
+
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                    worksheet.Cells.Style.Font.Name = "Calibri";
+
                     package.Save();
                 }
                 Process.Start(new ProcessStartInfo
@@ -170,6 +264,17 @@ namespace BIGADIC_COURSE
                         iText.Layout.Document document = new iText.Layout.Document(pdf);
 
                         PdfFont font = PdfFontFactory.CreateFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
+
+                        iText.Layout.Element.Image img = new iText.Layout.Element.Image(ImageDataFactory.Create(imagePath));
+                        img.ScaleToFit(100, 100); // Resmi 100x100 boyutuna ölçeklendirir
+
+                        img.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
+                        document.Add(img);
+
+                        document.Add(new Paragraph());
+                        document.Add(new Paragraph("BİGADİÇ BELEDİYESİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph("GENÇLİK VE KÜLTÜR MERKEZİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph());
 
                         // Tabloyu oluşturuyoruz ve sütun genişliklerini ayarlıyoruz
                         float[] columnWidths = { 1, 2, 3, 3, 2, 2 }; // Sütun genişlikleri

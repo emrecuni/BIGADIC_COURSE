@@ -2,29 +2,19 @@
 X Formdesigner'ları ekle X
 X Form code'ları ekle X
 X Nuget package'ları ekle X // text'ler hariç X
-* Hataları buraya al
-* Nesne oluşturmayı basitleştir //new()
-* Logo ve ikonları ekle
+X Hataları buraya al X
+X Logo ve ikonları ekle X
 X Chart'ta ss'i güncelle X
 X Chart'ta print'i güncelle X
-* Zorunlu yönetici olarak çalışmasını sağla
 X 2012 hatası X
 X 2018 hatası X
 X Listelemedeki branş'ı kontrol et X
 X Arama çalışmıyor X
 X Log tutulmuyor X
-* Main hata kodları düzelt
 X Bazı raporlar çalışmıyor X
-* Chart exportunu oxyplot.pdf ile yapmayı dene
 X Chart çizdir X
-* Chart menustrip bg'leri düzelt
-* Doğum günlerine export ekle
-	* Wp'den bak formatına
 X Import ve kurs branş sayıları hatası giderilmiş gibi duruyor X
 X Setup'ta arama çalışmıyor gibi X // db'de adlar büyük harfle yazılmadığı için
-
-
-
 
 X Parola textbox'ında enter'a tıklandığında "Giriş Yap" tetiklenecek X
 X Default parola admin admin olacak admin parolası ile giriş yapıldığında parola değiştir ekranına yönlendirecek X
@@ -164,41 +154,48 @@ X İlk açılışta doğum günü varsa listelensin mi diye sor X
 X Branş eklendikten sonra branş adetleri güncellenmiyor //... X
 X Personel sekmesinin arkasını async yap X
 X Admin paneli async yap X
-* Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
-* Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin
 X Export formatını import formatına göre değiştir // wp'ye bırak X
-* Versiyon.txt ekle
 X Import ettikten sonra listele butonu çalışmıyor X
 X Import işleminde sonra RefreshData'yı çek X
-* Doğum günü sayfasına ay bazında sorgu seçeneği ekle
 X Bütün form ve raporlardan toplam - aktif - pasif bekleyen kayıtlardan kayıtları çıkart X
-* Personel seçiminde combobox index değil tag'a göre getir
 X Hiçbir şey yokken import edildiğinde kursları ve sayılarını refresh et X
-* Çıkış yaptıktan sonra bazen otomatik içeri alıyor // main form açılmadan textboxları temizlemek gerekebilir
-* Bazen 2029 hatası veriyor kontrol et // muhtemelen anlık takılma yaşadığında asenkrondan patlatıyor
-	* Callback metod gerekebilir belki
+X Bazen 2029 hatası veriyor kontrol et // muhtemelen anlık takılma yaşadığında asenkrondan patlatıyor X
+	X Callback metod gerekebilir belki X
 X Grafiklerdeki kayıtlar kısımlarını da çıkart tekrar setup al X
 X Setuptaki veri tabanını prod'a bağlayıp al X
 X Prod'da 7000 hatası veriyor vb'de X
 X Backup'ı import formatına çevir // kontrol gerek olmayabilir X
-* Kayan yazıyı sağdan sola değil soldan sağa getir
+X Kayan yazıyı sağdan sola değil soldan sağa getir X
 X Personellere de export seçeneği ekle X
 X Anlık rapordaki başlık ve logo kısmı bütün pdf'lere eklettir X
-* Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
 X Doğum günü bugünse kayıt yaptırmasın // doğum tarihi picker'ına hiç girmeden kaydet'e tıklarsa kabul ediyor X
-* Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
 X Anlık raporda faaliyet gösteren branş sayısı kısmında branş adetleri gelmiyor // aktif + pasif kayıt sayısı geliyor X
-* Tüm excel ve pdf'lere logo ve başlık ekle
 X Hiçbir kayıt yokken import ettiğinde branşlar gelmiyor X
-
-
 X 2029 hatası veriyor açılışta // callback yazmak gerekebilir X
 X import ile alırken bazı kayıtları almıyor gibi X 1550
 X Import sonrası branş sayacını yenilet X
-* Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
 X Kurs adetlerinde satranç ve akıl zeka 0 geliyor X
 
-
+* Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
+* Tüm excel ve pdf'lere logo ve başlık ekle
+* Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
+* Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
+* Personel seçiminde combobox index değil tag'a göre getir
+* Doğum günü sayfasına ay bazında sorgu seçeneği ekle
+* Versiyon.txt ekle
+* Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
+* Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin
+* Chart menustrip bg'leri düzelt // silip yeniden eklemek gerek
+X Doğum günlerine export ekle X
+	* Wp'den bak formatına
+* Branş sil büyütüldüğünde sil butonu sayfanın yarısını kaplıyor
+* Nesne oluşturmayı basitleştir //new()
+* Zorunlu yönetici olarak çalışmasını sağla
+* Main hata kodları düzelt
+* Chart exportunu oxyplot.pdf ile yapmayı dene
+* Excel ve pdf işlemlerini tek bir class ile yapmayı dene
+* Excel Onaylayan'ı dinamik yap
+* Excel save için ayrı try-catch yaz
 
 id:
 	X main X
