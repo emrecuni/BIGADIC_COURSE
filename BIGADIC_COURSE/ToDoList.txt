@@ -183,11 +183,13 @@ X Doğum günlerine export ekle X
 X Chart menustrip bg'leri düzelt // silip yeniden eklemek gerek X
 X Grafiklere değerlerini yazılı ekle X
 X Branş sil büyütüldüğünde sil butonu sayfanın yarısını kaplıyor X
+X Tüm excel ve pdf'lere logo ve başlık ekle X
+X Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi X
+- Chart exportunu oxyplot.pdf ile yapmayı dene -
+
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
-* Tüm excel ve pdf'lere logo ve başlık ekle 
 * Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
-* Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi
 * Personel seçiminde combobox index değil tag'a göre getir
 * Versiyon.txt ekle
 * Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
@@ -195,7 +197,6 @@ X Branş sil büyütüldüğünde sil butonu sayfanın yarısını kaplıyor X
 * Zorunlu yönetici olarak çalışmasını sağla
 * Main hata kodları düzelt
 * Nesne oluşturmayı basitleştir //new()
-* Chart exportunu oxyplot.pdf ile yapmayı dene
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 

@@ -1,4 +1,10 @@
 ﻿using BIGADIC_COURSE.Classes;
+using iText.IO.Font;
+using iText.IO.Image;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
+using iText.Kernel.Geom;  // PageSize için gerekli
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
@@ -33,6 +39,8 @@ namespace BIGADIC_COURSE
         string selectedStatusRadioButton; // hangi kayıt tipini seçildiğini tutar list'ten o tipteki kayıtları çekmek için
         string selectedGenderRadioButton; // kurs bazında grafiğinde hangi cinsiyetin seçildiği bilgisi tutulur
         string title = null;
+        string logoPath = Application.StartupPath + "LOGO.png";
+        string imagePath = Application.StartupPath + $"ExportCharts";
         char selectedChart; // radiobutton değiştirildiğinde en son hangi grafik çizildiyse o grafiği güncellenmesi için tetiklenecek metodu tutar
 
         private void FormCharts_Load(object sender, EventArgs e)
@@ -242,35 +250,6 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private void printToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (splitContainerChart.Panel2.Controls.Count > 0)
-                {
-                    string imagePath = Application.StartupPath + $"ExportCharts";
-                    if(!Directory.Exists(imagePath)) 
-                        Directory.CreateDirectory(imagePath);
-                    imagePath += $"\\chart_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.png";
-                    Screenshots(imagePath);
-                    MessageBox.Show("Grafik Png Dosyasına Başarıyla Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Process.Start(new ProcessStartInfo
-                    {
-                        FileName = "explorer",
-                        Arguments = $"\"{imagePath}\"",
-                        UseShellExecute = true
-                    });
-                }
-                else
-                    MessageBox.Show("Çizilmiş Bir Grafik Bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                Log.logger.Error($"printToolStripMenuItem_Click Error Hata Kodu: 3004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void Screenshots(string path)
         {
             try
@@ -281,7 +260,7 @@ namespace BIGADIC_COURSE
                 using (Graphics g = Graphics.FromImage(chartBitmap))
                 {
                     g.Clear(panel.BackColor); // Arka plan rengini ayarla
-                    panel.DrawToBitmap(chartBitmap, new Rectangle(0, 0, panel.Width, panel.Height));
+                    panel.DrawToBitmap(chartBitmap, new System.Drawing.Rectangle(0, 0, panel.Width, panel.Height));
                 }
 
                 chartBitmap.Save(path, System.Drawing.Imaging.ImageFormat.Png);
@@ -289,8 +268,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"Screenshots Error Hata Kodu: 3005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"Screenshots Error Hata Kodu: 3004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -313,8 +292,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"radioButton_CheckedChanged Error Hata Kodu: 3006 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3006", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"radioButton_CheckedChanged Error Hata Kodu: 3005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -367,8 +346,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"DrawChartGenders Error Hata Kodu: 3007 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3007", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"DrawChartGenders Error Hata Kodu: 3006 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3006", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -399,8 +378,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"dateTimePicker_ValueChanged Error Hata Kodu: 3008 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3008", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"dateTimePicker_ValueChanged Error Hata Kodu: 3007 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3007", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -435,8 +414,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"checkBoxSelectDate_CheckedChanged Error Hata Kodu: 3009 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3009", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"checkBoxSelectDate_CheckedChanged Error Hata Kodu: 3008 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3008", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -459,8 +438,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"radioButtonMale_CheckedChanged Error Hata Kodu: 3010 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3010", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"radioButtonMale_CheckedChanged Error Hata Kodu: 3009 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3009", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -484,8 +463,92 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonClearGender_Click Error Hata Kodu: 3011 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                Log.logger.Error($"buttonClearGender_Click Error Hata Kodu: 3010 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3010", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void exportToPdfToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (splitContainerChart.Panel2.Controls.Count > 0)
+                {
+
+                    if (!Directory.Exists(imagePath))
+                        Directory.CreateDirectory(imagePath);
+                    imagePath += $"\\chart_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.png";
+                    Screenshots(imagePath);
+                    if(ExportToPdf())
+                    MessageBox.Show("Grafik Pdf Dosyasına Başarıyla Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);                                        
+                }
+                else
+                    MessageBox.Show("Çizilmiş Bir Grafik Bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"exportToPdfToolStripMenuItem_Click Error Hata Kodu: 3011 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3011", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ExportToPdf()
+        {
+            try
+            {
+                string pdfPath = Application.StartupPath + "ExportPdf\\";
+                if (!Directory.Exists(pdfPath))
+                    Directory.CreateDirectory(pdfPath);
+
+                pdfPath += $"chart_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.pdf";
+
+                using (PdfWriter writer = new PdfWriter(new FileInfo(pdfPath)))
+                {
+                    using (PdfDocument pdf = new PdfDocument(writer))
+                    {
+                        pdf.AddNewPage(iText.Kernel.Geom.PageSize.A4.Rotate());
+
+                        iText.Layout.Document document = new iText.Layout.Document(pdf);
+                        document.SetMargins(0, 10, 30, 10);
+
+
+                        PdfFont font = PdfFontFactory.CreateFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
+
+                        iText.Layout.Element.Image img = new iText.Layout.Element.Image(ImageDataFactory.Create(logoPath));
+                        img.ScaleToFit(50, 50); // Resmi 100x100 boyutuna ölçeklendirir
+
+                        img.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
+                        document.Add(img);
+                        document.Add(new Paragraph("BİGADİÇ BELEDİYESİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                        document.Add(new Paragraph("GENÇLİK VE KÜLTÜR MERKEZİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+
+
+                        img = new iText.Layout.Element.Image(ImageDataFactory.Create(imagePath));
+                        img.SetAutoScale(true);
+
+                        img.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
+                        document.Add(img);
+
+                        document.Add(new Paragraph());
+
+                        document.Close();
+                    }
+                }
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "explorer",
+                    Arguments = $"\"{pdfPath}\"",
+                    UseShellExecute = true
+                });
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"ExportToPdf Error Hata Kodu: 3012 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3012", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
     }

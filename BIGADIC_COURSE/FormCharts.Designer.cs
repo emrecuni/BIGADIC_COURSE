@@ -46,11 +46,11 @@
             labelEndDate = new Label();
             labelStartDate = new Label();
             checkBoxSelectDate = new CheckBox();
-            printToolStripMenuItem = new ToolStripMenuItem();
             menuStripChart = new MenuStrip();
             courseToolStripMenuItem = new ToolStripMenuItem();
             genderToolStripMenuItem = new ToolStripMenuItem();
             registerTypeToolStripMenuItem = new ToolStripMenuItem();
+            exportToPdfToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)splitContainerChart).BeginInit();
             splitContainerChart.Panel1.SuspendLayout();
             splitContainerChart.SuspendLayout();
@@ -72,8 +72,8 @@
             // splitContainerChart.Panel1
             // 
             splitContainerChart.Panel1.Controls.Add(groupBoxFilters);
-            splitContainerChart.Size = new Size(1214, 633);
-            splitContainerChart.SplitterDistance = 105;
+            splitContainerChart.Size = new Size(1275, 892);
+            splitContainerChart.SplitterDistance = 108;
             splitContainerChart.SplitterWidth = 5;
             splitContainerChart.TabIndex = 1;
             // 
@@ -270,23 +270,15 @@
             checkBoxSelectDate.UseVisualStyleBackColor = true;
             checkBoxSelectDate.CheckedChanged += checkBoxSelectDate_CheckedChanged;
             // 
-            // printToolStripMenuItem
-            // 
-            printToolStripMenuItem.BackColor = Color.Silver;
-            printToolStripMenuItem.Name = "printToolStripMenuItem";
-            printToolStripMenuItem.Size = new Size(68, 25);
-            printToolStripMenuItem.Text = "Yazdır";
-            printToolStripMenuItem.Click += printToolStripMenuItem_Click;
-            // 
             // menuStripChart
             // 
             menuStripChart.BackColor = Color.Silver;
             menuStripChart.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic);
-            menuStripChart.Items.AddRange(new ToolStripItem[] { courseToolStripMenuItem, genderToolStripMenuItem, registerTypeToolStripMenuItem, printToolStripMenuItem });
+            menuStripChart.Items.AddRange(new ToolStripItem[] { courseToolStripMenuItem, genderToolStripMenuItem, registerTypeToolStripMenuItem, exportToPdfToolStripMenuItem });
             menuStripChart.Location = new Point(0, 0);
             menuStripChart.Name = "menuStripChart";
             menuStripChart.Padding = new Padding(8, 3, 0, 3);
-            menuStripChart.Size = new Size(1214, 31);
+            menuStripChart.Size = new Size(1275, 31);
             menuStripChart.TabIndex = 0;
             menuStripChart.Text = "menuStrip1";
             // 
@@ -311,12 +303,19 @@
             registerTypeToolStripMenuItem.Text = "Kayıt Durumu Bazında";
             registerTypeToolStripMenuItem.Click += registerTypeToolStripMenuItem_Click;
             // 
+            // exportToPdfToolStripMenuItem
+            // 
+            exportToPdfToolStripMenuItem.Name = "exportToPdfToolStripMenuItem";
+            exportToPdfToolStripMenuItem.Size = new Size(102, 25);
+            exportToPdfToolStripMenuItem.Text = "Pdf'e Aktar";
+            exportToPdfToolStripMenuItem.Click += exportToPdfToolStripMenuItem_Click;
+            // 
             // FormCharts
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
-            ClientSize = new Size(1214, 664);
+            ClientSize = new Size(1275, 923);
             Controls.Add(splitContainerChart);
             Controls.Add(menuStripChart);
             Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
@@ -361,10 +360,10 @@
         private RadioButton radioButtonPassive;
         private RadioButton radioButtonActive;
         private RadioButton radioButtonTotal;
-        private ToolStripMenuItem printToolStripMenuItem;
         private MenuStrip menuStripChart;
         private ToolStripMenuItem courseToolStripMenuItem;
         private ToolStripMenuItem genderToolStripMenuItem;
         private ToolStripMenuItem registerTypeToolStripMenuItem;
+        private ToolStripMenuItem exportToPdfToolStripMenuItem;
     }
 }
