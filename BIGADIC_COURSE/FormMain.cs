@@ -197,8 +197,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonRegister_Click Error Hata Kodu: 2005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonRegister_Click Error Hata Kodu: 2004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -246,8 +246,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonSearch_Click Error Hata Kodu: 2006 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2006", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonSearch_Click Error Hata Kodu: 2005 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2005", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -300,8 +300,8 @@ namespace BIGADIC_COURSE
                     switch (returnCode)
                     {
                         case 0:
-                            Log.logger.Error("buttonUpdate_Click Error Sql Bağlantısı Açılamadı. Hata Kodu: 2007");
-                            MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2007", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Log.logger.Error("buttonUpdate_Click Error Sql Bağlantısı Açılamadı. Hata Kodu: 2006");
+                            MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2006", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             break;
                         case 1:
                             Log.logger.Info($"Kayıt başarıyla güncellendi. {maskedTextBoxTckn.Text}");
@@ -322,16 +322,16 @@ namespace BIGADIC_COURSE
                             MessageBox.Show($"Kayıt Başarılıyla Güncellendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         case -1:
-                            Log.logger.Error("buttonUpdate_Click Error EditData Hatası. Hata Kodu: 2008");
-                            MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2008", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Log.logger.Error("buttonUpdate_Click Error EditData Hatası. Hata Kodu: 2007");
+                            MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2007", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonUpdate_Click Error Hata Kodu: 2009 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2009", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonUpdate_Click Error Hata Kodu: 2008 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2008", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -358,8 +358,8 @@ namespace BIGADIC_COURSE
                         switch (returnCode)
                         {
                             case 0:
-                                Log.logger.Error("buttonDelete_Click Error Sql Bağlantısı Açılamadı. Hata Kodu: 2010");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2010", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Log.logger.Error("buttonDelete_Click Error Sql Bağlantısı Açılamadı. Hata Kodu: 2009");
+                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2009", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                             case 1:
                                 Log.logger.Info($"Kayıt Başarıyla Silindi. {maskedTextBoxTckn.Text} - {textBoxSelectionBranches.Text}");
@@ -387,8 +387,8 @@ namespace BIGADIC_COURSE
                                 MessageBox.Show($"Kayıt Başarıyla Silindi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
                             case -1:
-                                Log.logger.Error("buttonDelete_Click Error EditData Hatası. Hata Kodu: 2011");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2011", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Log.logger.Error("buttonDelete_Click Error EditData Hatası. Hata Kodu: 2010");
+                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2010", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                         }
                     }
@@ -398,8 +398,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonDelete_Click Error Hata Kodu: 2012 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2012", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonDelete_Click Error Hata Kodu: 2011 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2011", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -435,8 +435,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonClear_Click Error Hata Kodu: 2013 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2013", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonClear_Click Error Hata Kodu: 2012 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2012", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -503,8 +503,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonOrder_Click Error Hata Kodu: 2014 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2014", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonOrder_Click Error Hata Kodu: 2013 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2013", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -517,8 +517,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"graphicToolStripMenuItem_Click Error Hata Kodu: 2015 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2015", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"graphicToolStripMenuItem_Click Error Hata Kodu: 2014 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2014", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -533,8 +533,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"addBranchToolStripMenuItem_Click Error Hata Kodu: 2017 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2017", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"addBranchToolStripMenuItem_Click Error Hata Kodu: 2015 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2015", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -547,8 +547,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"adminPanelToolStripMenuItem_Click Error Hata Kodu: 2018 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2018", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"adminPanelToolStripMenuItem_Click Error Hata Kodu: 2016 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2016", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -561,8 +561,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"exitToolStripMenuItem_Click Error Hata Kodu: 2019 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2019", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"exitToolStripMenuItem_Click Error Hata Kodu: 2017 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2017", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -594,8 +594,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"AddedBranch_CheckedChanged Error Hata Kodu: 2020 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2020", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"AddedBranch_CheckedChanged Error Hata Kodu: 2018 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2018", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -679,8 +679,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"RefreshData Error Hata Kodu: 2021 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2021", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"RefreshData Error Hata Kodu: 2019 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2019", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -692,7 +692,6 @@ namespace BIGADIC_COURSE
                 List<CheckBox> allCheckBoxes = flowLayoutPanelBranches.Controls.OfType<CheckBox>().ToList(); // bütün checkbox'ların tiki kaldırılır
                 foreach (var check in allCheckBoxes)
                     check.Checked = false;
-
 
                 int id = int.Parse(listViewAllRegister.SelectedItems[0].Text.Substring(3));
 
@@ -754,8 +753,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"listViewAllRegister_Click Error Hata Kodu: 2022 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2022", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"listViewAllRegister_Click Error Hata Kodu: 2020 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2020", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -805,8 +804,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonExportExcel_Click Error Hata Kodu: 2023 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2023", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonExportExcel_Click Error Hata Kodu: 2021 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2021", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -834,8 +833,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"textBox_Enter Error Hata Kodu: 2025 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2025", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"textBox_Enter Error Hata Kodu: 2022 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2022", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -874,8 +873,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"textBox_Enter Error Hata Kodu: 2026 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2026", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"textBox_Enter Error Hata Kodu: 2023 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2023", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -890,8 +889,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"deleteBranchToolStripMenuItem_Click Error Hata Kodu: 2027 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2027", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"deleteBranchToolStripMenuItem_Click Error Hata Kodu: 2024 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2024", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -960,8 +959,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"GetCourses Error Hata Kodu: 2028 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2028", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"GetCourses Error Hata Kodu: 2025 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2025", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -976,8 +975,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"reportToolStripMenuItem_Click Error Hata Kodu: 2029 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2029", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"reportToolStripMenuItem_Click Error Hata Kodu: 2026 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2026", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1002,8 +1001,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"GetCourseCount Error Hata Kodu: 2029 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2029", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"GetCourseCount Error Hata Kodu: 2027 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2027", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1017,8 +1016,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"textBox_KeyDown Error Hata Kodu: 2030 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2030", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"textBox_KeyDown Error Hata Kodu: 2028 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2028", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1031,8 +1030,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"maskedTextBox_Click Error Hata Kodu: 2031 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2031", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"maskedTextBox_Click Error Hata Kodu: 2029 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2029", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1077,8 +1076,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"GetUpdatedRegister Error Hata Kodu: 2032 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2032", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"GetUpdatedRegister Error Hata Kodu: 2030 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2030", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1118,8 +1117,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"maskedTextBox_Click Error Hata Kodu: 2033 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2033", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"maskedTextBox_Click Error Hata Kodu: 2031 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2031", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1131,8 +1130,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonBackup_Click Error Hata Kodu: 2034 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2034", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonBackup_Click Error Hata Kodu: 2032 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2032", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1151,7 +1150,7 @@ namespace BIGADIC_COURSE
                 catch (Exception ex)
                 {
                     errorCode = true;
-                    Log.logger.Error($"WriteToExcel path Error Hata Kodu: 2035 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                    Log.logger.Error($"WriteToExcel path Error Hata Kodu: 2033 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                     MessageBox.Show("D Diski Bulunamadı!", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
@@ -1208,8 +1207,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"WriteToExcel Error Hata Kodu: 2036 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2036", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"WriteToExcel Error Hata Kodu: 2034 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2034", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1222,8 +1221,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"listViewAllRegister_Key Error Hata Kodu: 2037 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2037", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"listViewAllRegister_Key Error Hata Kodu: 2035 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2035", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1301,8 +1300,8 @@ namespace BIGADIC_COURSE
                         switch (returnCodeTrainees)
                         {
                             case 0:
-                                Log.logger.Error("importToolStripMenuItem_Click Trainees Error Sql Bağlantısı Açılamadı. Hata Kodu: 2045");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2045", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Log.logger.Error("importToolStripMenuItem_Click Trainees Error Sql Bağlantısı Açılamadı. Hata Kodu: 2036");
+                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2036", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                             case 1:
                                 Log.logger.Info($"Kursiyerler Başarıyla Eklendi.");
@@ -1312,8 +1311,8 @@ namespace BIGADIC_COURSE
                                 MessageBox.Show($"Kursiyerler Başarıyla Eklendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
                             case -1:
-                                Log.logger.Error("importToolStripMenuItem_Click Trainees Error EditData Hatası. Hata Kodu: 2046");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2046", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Log.logger.Error("importToolStripMenuItem_Click Trainees Error EditData Hatası. Hata Kodu: 2037");
+                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2037", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                         }
 
@@ -1334,8 +1333,8 @@ namespace BIGADIC_COURSE
                         switch (returnCodeBranches)
                         {
                             case 0:
-                                Log.logger.Error("importToolStripMenuItem_Click Branch Error Sql Bağlantısı Açılamadı. Hata Kodu: 2047");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2047", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Log.logger.Error("importToolStripMenuItem_Click Branch Error Sql Bağlantısı Açılamadı. Hata Kodu: 2038");
+                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2038", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                             case 1:
                                 Log.logger.Info($"Branşlar Başarıyla Eklendi.");
@@ -1345,8 +1344,8 @@ namespace BIGADIC_COURSE
                                 MessageBox.Show($"Branşlar Başarıyla Eklendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
                             case -1:
-                                Log.logger.Error("importToolStripMenuItem_Click Branch Error EditData Hatası. Hata Kodu: 2048");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2048", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Log.logger.Error("importToolStripMenuItem_Click Branch Error EditData Hatası. Hata Kodu: 2039");
+                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2039", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                         }
 
@@ -1373,8 +1372,8 @@ namespace BIGADIC_COURSE
                         switch (returnCodeRegisters)
                         {
                             case 0:
-                                Log.logger.Error("importToolStripMenuItem_Click Register Error Sql Bağlantısı Açılamadı. Hata Kodu: 2049");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2049", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Log.logger.Error("importToolStripMenuItem_Click Register Error Sql Bağlantısı Açılamadı. Hata Kodu: 2040");
+                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2040", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                             case 1:
                                 Log.logger.Info($"Kurs Kayıtları Başarıyla Eklendi.");
@@ -1384,8 +1383,8 @@ namespace BIGADIC_COURSE
                                 MessageBox.Show($"Kurs Kayıtları Başarıyla Eklendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
                             case -1:
-                                Log.logger.Error($"importToolStripMenuItem_Click Register Error EditData Hatası. Hata Kodu: 2050\nQuery:{query}");
-                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2050", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Log.logger.Error($"importToolStripMenuItem_Click Register Error EditData Hatası. Hata Kodu: 2041\nQuery:{query}");
+                                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2041", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 break;
                         }
                         await Task.Run(async () =>
@@ -1403,8 +1402,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"importToolStripMenuItem_Click Error Hata Kodu: 2038 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2038", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"importToolStripMenuItem_Click Error Hata Kodu: 2042 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2042", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1445,8 +1444,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"GetNewRegisters Error Hata Kodu: 2039 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2039", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"GetNewRegisters Error Hata Kodu: 2043 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2043", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1471,8 +1470,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"EnabledRadioButtons Error Hata Kodu: 2040 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2040", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"EnabledRadioButtons Error Hata Kodu: 2044 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2044", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1485,8 +1484,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"FormMain_Resize Error Hata Kodu: 2041 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2041", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"FormMain_Resize Error Hata Kodu: 2045 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2045", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1516,8 +1515,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"GetBirthDates Error Hata Kodu: 2042 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2042", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"GetBirthDates Error Hata Kodu: 2046 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2046", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1540,8 +1539,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"timer_Tick Error Hata Kodu: 2043 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2043", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"timer_Tick Error Hata Kodu: 2047 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2047", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1553,8 +1552,8 @@ namespace BIGADIC_COURSE
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"birthDatesToolStripMenuItem_Click Error Hata Kodu: 2044 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2044", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"birthDatesToolStripMenuItem_Click Error Hata Kodu: 2048 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2048", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

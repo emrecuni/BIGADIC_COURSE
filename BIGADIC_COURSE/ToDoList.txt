@@ -186,7 +186,7 @@ X Branş sil büyütüldüğünde sil butonu sayfanın yarısını kaplıyor X
 X Tüm excel ve pdf'lere logo ve başlık ekle X
 X Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi X
 - Chart exportunu oxyplot.pdf ile yapmayı dene -
-
+X Main hata kodları düzelt X
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
 * Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
@@ -195,7 +195,6 @@ X Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık ra
 * Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
 * Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin
 * Zorunlu yönetici olarak çalışmasını sağla
-* Main hata kodları düzelt
 * Nesne oluşturmayı basitleştir //new()
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Personelleri load'da listele X
