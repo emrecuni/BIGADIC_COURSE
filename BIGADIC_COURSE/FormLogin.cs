@@ -47,12 +47,12 @@ namespace BIGADIC_COURSE
                     parameters.Add(new SqlParameter("@Username", SqlDbType.NVarChar, 50) { Value = $"{textBoxUser.Text.Trim()}" });
                     parameters.Add(new SqlParameter("@Password", SqlDbType.NVarChar, 32) { Value = $"{AESService.Encrypt(textBoxPassword.Text.Trim())}" });
 
-                    DataTable result = await sql.GetFromDb(query.ToString(), parameters);
+                    DataTable? result = await sql.GetFromDb(query.ToString(), parameters);
 
-                    if (result.Rows.Count > 0) // giriþ yapan kullanýcý parola bilgileri doðruysa 
+                    if (result != null && result.Rows.Count > 0) // giriþ yapan kullanýcý parola bilgileri doðruysa 
                     {
                         MessageBox.Show($"Hoþgeldiniz {textBoxUser.Text}!", "BÝLGÝ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        User user = new User()
+                        User? user = new User()
                         {
                             Id = int.Parse(result.Rows[0].ItemArray[0].ToString()),
                             Username = result.Rows[0].ItemArray[1].ToString(),
@@ -66,6 +66,7 @@ namespace BIGADIC_COURSE
 
                         FormMain formMain = new FormMain(user);
                         Hide();
+                        user = null;
                         formMain.ShowDialog();
                         Show();
                         

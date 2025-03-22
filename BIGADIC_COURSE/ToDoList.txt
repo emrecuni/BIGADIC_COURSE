@@ -189,7 +189,8 @@ X Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık ra
 X Main hata kodları düzelt X
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
-* Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir
+X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
+	* Test etmek gerekiyor 
 * Personel seçiminde combobox index değil tag'a göre getir
 * Versiyon.txt ekle
 * Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
