@@ -194,6 +194,7 @@ X Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif ol
 X Sadece seçilen tipteki branşlar listelensin X
 X Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin X
 X Personel seçiminde combobox index değil tag'a göre getir X
+X Title'ı "Bigadiç Belediyesi_Bilgi_işlem" yap X
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
 X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
@@ -204,7 +205,8 @@ X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesn
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
-* Title'ı "Bigadiç Belediyesi_Bilgi_işlem" yap
+* Export chart'ta png dosyalarını sil
+
 
 
 

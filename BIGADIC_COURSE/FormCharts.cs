@@ -474,7 +474,7 @@ namespace BIGADIC_COURSE
             {
                 if (splitContainerChart.Panel2.Controls.Count > 0)
                 {
-
+                    imagePath = Application.StartupPath + $"ExportCharts";
                     if (!Directory.Exists(imagePath))
                         Directory.CreateDirectory(imagePath);
                     imagePath += $"\\chart_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.png";
@@ -497,6 +497,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
+                
                 string pdfPath = Application.StartupPath + "ExportPdf\\";
                 if (!Directory.Exists(pdfPath))
                     Directory.CreateDirectory(pdfPath);
@@ -507,6 +508,7 @@ namespace BIGADIC_COURSE
                 {
                     using (PdfDocument pdf = new PdfDocument(writer))
                     {
+                        
                         pdf.AddNewPage(iText.Kernel.Geom.PageSize.A4.Rotate());
 
                         iText.Layout.Document document = new iText.Layout.Document(pdf);
