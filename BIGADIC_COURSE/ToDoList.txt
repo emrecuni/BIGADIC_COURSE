@@ -187,6 +187,8 @@ X Tüm excel ve pdf'lere logo ve başlık ekle X
 X Grafiklerde de başlığın yanına ufak logo ve bgm yazısı gelsin anlık rapordaki gibi X
 - Chart exportunu oxyplot.pdf ile yapmayı dene -
 X Main hata kodları düzelt X
+X Personel ekleme telefon index'i direkt 0 olsun X
+
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
 X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
@@ -201,6 +203,7 @@ X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesn
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 * Type'ı 1 olan branşları ana sayfada gösterme	
+
 
 id:
 	X main X

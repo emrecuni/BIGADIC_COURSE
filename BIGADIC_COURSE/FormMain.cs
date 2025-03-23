@@ -83,7 +83,6 @@ namespace BIGADIC_COURSE
             }
         }
 
-
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
@@ -684,7 +683,6 @@ namespace BIGADIC_COURSE
             }
         }
 
-
         private void listViewAllRegister_Click(object sender, EventArgs e)
         {
             try
@@ -900,7 +898,7 @@ namespace BIGADIC_COURSE
             {
                 Sql sql = new Sql();
                 query.Clear();
-                query.Append("SELECT * FROM COURSES;");
+                query.Append("SELECT * FROM COURSES WHERE TYPE <> 1;");
 
                 DataTable branchesTable = await sql.GetFromDb(query.ToString()); // veri tabanından bütün branşlar çekilir
 
@@ -964,7 +962,6 @@ namespace BIGADIC_COURSE
             }
         }
 
-
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -1005,7 +1002,6 @@ namespace BIGADIC_COURSE
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2027", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1080,7 +1076,6 @@ namespace BIGADIC_COURSE
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2030", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void DeleteOldExportDatas()
         {

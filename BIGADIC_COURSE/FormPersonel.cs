@@ -43,7 +43,7 @@ namespace BIGADIC_COURSE
                 await Task.Run(() =>
                 {
                     RefreshData();
-                    GetCourses();                   
+                    GetCourses();
                     comboBoxPersonelType.SelectedIndex = 0; // seçiniz default gelir
                     comboBoxBranch.SelectedIndex = 0; // seçiniz default gelir
                 });
@@ -505,9 +505,9 @@ namespace BIGADIC_COURSE
                 DataTable? courses = await sql.GetFromDb(query.ToString());
 
                 comboBoxBranch.Items.Add("Seçiniz");
-                    foreach (DataRow row in courses.Rows)
-                        comboBoxBranch.Items.Add(row.ItemArray[1].ToString());
-                
+                foreach (DataRow row in courses.Rows)
+                    comboBoxBranch.Items.Add(row.ItemArray[1].ToString());
+
                 //comboBoxBranch.Items[0].
             }
             catch (Exception ex)
@@ -598,7 +598,7 @@ namespace BIGADIC_COURSE
                     }
 
                     worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
-                    
+
                     try
                     {
                         package.Save();
@@ -716,6 +716,20 @@ namespace BIGADIC_COURSE
                 Log.logger.Error($"ExportToPdf Error Hata Kodu: 8025 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8025", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+
+        private void maskedTextBoxPhone_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MaskedTextBox maskedTextBox = (MaskedTextBox)sender;
+                maskedTextBox.SelectionStart = 0;
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"maskedTextBox_Click Error Hata Kodu: 8026 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8026", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
