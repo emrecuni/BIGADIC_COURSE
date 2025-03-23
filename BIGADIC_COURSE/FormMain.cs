@@ -189,7 +189,7 @@ namespace BIGADIC_COURSE
                             MessageBox.Show("Lütfen Bir Kurs Seçiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
-                        MessageBox.Show("Doğum Tarihi Bugün Olamaz.\n\nLütfen Geçerli Bir Tarih Yazınız.","UYARI",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Doğum Tarihi Bugün Olamaz.\n\nLütfen Geçerli Bir Tarih Yazınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                     MessageBox.Show("Lütfen Cinsiyet Seçiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -898,7 +898,7 @@ namespace BIGADIC_COURSE
             {
                 Sql sql = new Sql();
                 query.Clear();
-                query.Append("SELECT * FROM COURSES WHERE TYPE <> 1;");
+                query.Append("SELECT * FROM COURSES WHERE TYPE <> 1 OR TYPE IS NULL;");
 
                 DataTable branchesTable = await sql.GetFromDb(query.ToString()); // veri tabanından bütün branşlar çekilir
 

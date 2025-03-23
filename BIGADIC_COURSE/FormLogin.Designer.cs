@@ -174,7 +174,7 @@
             MinimizeBox = false;
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Bilgi_İşlem_Ali AYTEKİN";
+            Text = "Bigadiç Belediyesi_Bilgi_İşlem";
             FormClosing += FormLogin_FormClosing;
             Load += FormLogin_Load;
             groupBoxAdminLoginPanel.ResumeLayout(false);

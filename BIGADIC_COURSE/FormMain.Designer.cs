@@ -1010,7 +1010,7 @@
             MaximizeBox = false;
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Bilgi İşlem Ali BAYTEKİN";
+            Text = "Bigadiç Belediyesi_Bilgi_İşlem";
             FormClosing += FormMain_FormClosing;
             Load += FormMain_Load;
             Resize += FormMain_Resize;

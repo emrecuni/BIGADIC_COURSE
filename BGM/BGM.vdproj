@@ -190,85 +190,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B7DF5F15866B4B5A5CD01161BBA61FC4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3317F119ED6C975D7A0AC0ABCBFC0F7A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5F0EFDF5FC604C6D513CC259702C5B2D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_105310819CC9832B330CFD6DF578C14B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_56A79B42EDA3A2BBC852838426C7E9A7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_161D2554F3C7CEC9F30E693C2AB38B13"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AE97FD3E3BEBE56E3DA7DDADD2D5D42F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1D5CB366B8903484B86C4C66A3607F71"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E20770BF481EC6EEC7D957E079C019BF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_397100EE02BA407C611FA6C581BB5ED5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BCDF63F107DB9EC2D558DA01718FA35F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2AA688C39ACAAC11213B58815DAFC3EA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4235C29AF73B1C1440EFC09540025184"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DF684D434A278ABC486E8EBCA1A25D9C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -280,7 +202,85 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DF684D434A278ABC486E8EBCA1A25D9C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BCDF63F107DB9EC2D558DA01718FA35F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B7DF5F15866B4B5A5CD01161BBA61FC4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_AE97FD3E3BEBE56E3DA7DDADD2D5D42F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_7C9B6210D84DF24B0F2F4C76B1D36958"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5F0EFDF5FC604C6D513CC259702C5B2D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_56A79B42EDA3A2BBC852838426C7E9A7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4235C29AF73B1C1440EFC09540025184"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_397100EE02BA407C611FA6C581BB5ED5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3317F119ED6C975D7A0AC0ABCBFC0F7A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2AA688C39ACAAC11213B58815DAFC3EA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1D5CB366B8903484B86C4C66A3607F71"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_161D2554F3C7CEC9F30E693C2AB38B13"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_105310819CC9832B330CFD6DF578C14B"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -301,6 +301,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -317,6 +325,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -1231,23 +1247,9 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3671692A579D421AAEA305CDDC4D7CEA"
-            {
-            "Name" = "8:BİGADİÇ GENÇLİK ve KÜLTÜR MERKEZİ"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_2625EAE9EBD841C9B27702FDA8F8A068"
-            "Folder" = "8:_11372A6CB5CE451C9E82970025FEA22B"
-            "WorkingFolder" = "8:_CF99A9145B6744D79C8BC070E2A74531"
-            "Icon" = "8:_E71CD5F551A543A8B1D5444D771C4A4C"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_61654E55C0FA4F28AC59ED0DCE4A45F5"
             {
-            "Name" = "8:BIGADIC_COURSE"
+            "Name" = "8:BİGADİÇ BELEDİYESİ GENÇLİK ve KÜLTÜR MERKEZİ"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -1256,7 +1258,7 @@
             "Target" = "8:_B15255A6A34344118B0D6EB492E2D961"
             "Folder" = "8:_11372A6CB5CE451C9E82970025FEA22B"
             "WorkingFolder" = "8:_CF99A9145B6744D79C8BC070E2A74531"
-            "Icon" = "8:"
+            "Icon" = "8:_E71CD5F551A543A8B1D5444D771C4A4C"
             "Feature" = "8:"
             }
         }
@@ -1660,7 +1662,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2625EAE9EBD841C9B27702FDA8F8A068"
             {
-            "SourcePath" = "8:..\\BIGADIC_COURSE\\obj\\Debug\\net8.0-windows\\BIGADIC_COURSE.dll"
+            "SourcePath" = "8:..\\BIGADIC_COURSE\\obj\\Release\\net8.0-windows\\BIGADIC_COURSE.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CF99A9145B6744D79C8BC070E2A74531"
@@ -1688,7 +1690,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_B15255A6A34344118B0D6EB492E2D961"
             {
-            "SourcePath" = "8:..\\BIGADIC_COURSE\\obj\\Debug\\net8.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\BIGADIC_COURSE\\obj\\Release\\net8.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_CF99A9145B6744D79C8BC070E2A74531"
