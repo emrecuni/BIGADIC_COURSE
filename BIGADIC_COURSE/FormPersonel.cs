@@ -128,7 +128,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                if (textBoxName.Text != string.Empty && textBoxSurname.Text != string.Empty && maskedTextBoxPhone.Text != string.Empty && comboBoxPersonelType.SelectedIndex >= 0)
+                if (textBoxName.Text != string.Empty && textBoxSurname.Text != string.Empty && maskedTextBoxPhone.Text != string.Empty && comboBoxPersonelType.SelectedIndex > 0 && comboBoxBranch.SelectedIndex > 0)
                 {
                     Sql sql = new Sql();
 
@@ -170,6 +170,8 @@ namespace BIGADIC_COURSE
                             break;
                     }
                 }
+                else
+                    MessageBox.Show("Lütfen Bütün Alanları Doldurun.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
