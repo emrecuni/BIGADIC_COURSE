@@ -191,21 +191,20 @@ X Personel ekleme telefon index'i direkt 0 olsun X
 X Personel eklerken boşluk kontrolü ekle X
 X Type'ı 1 olan branşları ana sayfada gösterme X
 X Yönetim panelinde seçili kayıt olmadan güncelle ve sil butonları aktif olmasın // wp'ye bırakabilirsin X
-
-
+X Sadece seçilen tipteki branşlar listelensin X
+X Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin X
+X Personel seçiminde combobox index değil tag'a göre getir X
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
 X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
 	* Test etmek gerekiyor 
-* Personel seçiminde combobox index değil tag'a göre getir
 * Versiyon.txt ekle
-* Branş silerken personelin branşı silinirse personel görünmüyor // wp'ye bırakabilirsin
 * Zorunlu yönetici olarak çalışmasını sağla
 * Nesne oluşturmayı basitleştir //new()
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
-* Sadece seçilen tipteki branşlar listelensin
+
 
 
 
