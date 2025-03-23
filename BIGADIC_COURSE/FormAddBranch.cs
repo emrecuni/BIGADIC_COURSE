@@ -68,7 +68,7 @@ namespace BIGADIC_COURSE
                             break;
                         case 1:
                             Log.logger.Info($"Branş Başarıyla Eklendi. {textBoxBranch.Text}");
-                            MessageBox.Show("Branş Başarıyla Eklendi.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Branş Başarıyla Eklendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         case 2:
                             Log.logger.Warn("Branş zaten kayıtlı.");

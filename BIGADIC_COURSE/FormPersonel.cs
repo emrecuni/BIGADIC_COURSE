@@ -29,9 +29,11 @@ namespace BIGADIC_COURSE
             InitializeComponent();
         }
 
-        StringBuilder query = new StringBuilder();
-        List<SqlParameter> parameters = new List<SqlParameter>();
-        List<Personel> allPersonels = new List<Personel>();
+        StringBuilder query = new();
+        List<SqlParameter> parameters = new();
+        List<Personel> allPersonels = new();
+        List<Personel> courses  = new();
+        //Dictionary<int, string> courses = new();
         Personel selectedPersonel;
         Personel updatedPersonel;
         string imagePath = Application.StartupPath + "LOGO.png";
@@ -372,11 +374,11 @@ namespace BIGADIC_COURSE
                 int id = int.Parse(listViewPersonels.SelectedItems[0].Text);
 
                 textBoxId.Text = id.ToString();
-                textBoxName.Text = allPersonels.Find(p => p.ID == id).NAME;
-                textBoxSurname.Text = allPersonels.Find(p => p.ID == id).SURNAME;
-                maskedTextBoxPhone.Text = allPersonels.Find(p => p.ID == id).PHONE;
+                textBoxName.Text = allPersonels.Find(p => p.ID == id)?.NAME;
+                textBoxSurname.Text = allPersonels.Find(p => p.ID == id)?.SURNAME;
+                maskedTextBoxPhone.Text = allPersonels.Find(p => p.ID == id)?.PHONE;
                 comboBoxPersonelType.SelectedIndex = allPersonels.Find(p => p.ID == id).TYPE;
-                comboBoxBranch.SelectedIndex = allPersonels.Find(p => p.ID == id).COURSEID;
+                comboBoxBranch.SelectedItem = allPersonels.Find(p => p.ID == id)?.COURSE;
 
                 buttonRegister.Enabled = false;
                 buttonUpdate.Enabled = true;
@@ -502,14 +504,25 @@ namespace BIGADIC_COURSE
                 Sql sql = new Sql();
 
                 query.Clear();
-                query.Append("SELECT * FROM COURSES;");
+                query.Append("SELECT C.*,P.NAME FROM COURSES C INNER JOIN PERSONELTYPES P ON P.ID = C.TYPE;");
 
-                DataTable? courses = await sql.GetFromDb(query.ToString());
+                DataTable? results = await sql.GetFromDb(query.ToString());
 
                 comboBoxBranch.Items.Add("Seçiniz");
-                foreach (DataRow row in courses.Rows)
-                    comboBoxBranch.Items.Add(row.ItemArray[1].ToString());
-
+                if (results != null)
+                {
+                    foreach (DataRow row in results.Rows)
+                    {
+                        comboBoxBranch.Items.Add(row.ItemArray[1].ToString());
+                        courses.Add(new Personel
+                        {
+                            COURSEID = int.Parse(row.ItemArray[0].ToString()),
+                            COURSE = row.ItemArray[1]?.ToString(),
+                            TYPE = int.Parse(row.ItemArray[4].ToString()),
+                            TYPEDESCRIPTION = row.ItemArray[5]?.ToString()
+                        });
+                    }
+                }
                 //comboBoxBranch.Items[0].
             }
             catch (Exception ex)
