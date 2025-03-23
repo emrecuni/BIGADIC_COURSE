@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddBranch));
             groupBoxAddBranch = new GroupBox();
+            comboBoxBranchType = new ComboBox();
+            labelType = new Label();
             buttonAddBranch = new Button();
             textBoxBranch = new TextBox();
             labelBranch = new Label();
@@ -38,24 +40,44 @@
             // 
             // groupBoxAddBranch
             // 
+            groupBoxAddBranch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxAddBranch.BackColor = Color.Transparent;
+            groupBoxAddBranch.Controls.Add(comboBoxBranchType);
+            groupBoxAddBranch.Controls.Add(labelType);
             groupBoxAddBranch.Controls.Add(buttonAddBranch);
             groupBoxAddBranch.Controls.Add(textBoxBranch);
             groupBoxAddBranch.Controls.Add(labelBranch);
             groupBoxAddBranch.Location = new Point(12, 12);
             groupBoxAddBranch.Name = "groupBoxAddBranch";
-            groupBoxAddBranch.Size = new Size(274, 127);
+            groupBoxAddBranch.Size = new Size(307, 167);
             groupBoxAddBranch.TabIndex = 0;
             groupBoxAddBranch.TabStop = false;
+            // 
+            // comboBoxBranchType
+            // 
+            comboBoxBranchType.FormattingEnabled = true;
+            comboBoxBranchType.Location = new Point(144, 64);
+            comboBoxBranchType.Name = "comboBoxBranchType";
+            comboBoxBranchType.Size = new Size(146, 26);
+            comboBoxBranchType.TabIndex = 20;
+            // 
+            // labelType
+            // 
+            labelType.AutoSize = true;
+            labelType.Location = new Point(18, 65);
+            labelType.Name = "labelType";
+            labelType.Size = new Size(120, 18);
+            labelType.TabIndex = 19;
+            labelType.Text = "Personel Tipi:";
             // 
             // buttonAddBranch
             // 
             buttonAddBranch.BackColor = Color.White;
             buttonAddBranch.Font = new Font("Consolas", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             buttonAddBranch.ForeColor = Color.Black;
-            buttonAddBranch.Location = new Point(22, 67);
+            buttonAddBranch.Location = new Point(22, 104);
             buttonAddBranch.Name = "buttonAddBranch";
-            buttonAddBranch.Size = new Size(236, 45);
+            buttonAddBranch.Size = new Size(268, 45);
             buttonAddBranch.TabIndex = 18;
             buttonAddBranch.Text = "Ekle";
             buttonAddBranch.UseVisualStyleBackColor = false;
@@ -63,15 +85,15 @@
             // 
             // textBoxBranch
             // 
-            textBoxBranch.Location = new Point(113, 25);
+            textBoxBranch.Location = new Point(144, 25);
             textBoxBranch.Name = "textBoxBranch";
-            textBoxBranch.Size = new Size(145, 25);
+            textBoxBranch.Size = new Size(146, 25);
             textBoxBranch.TabIndex = 1;
             // 
             // labelBranch
             // 
             labelBranch.AutoSize = true;
-            labelBranch.Location = new Point(19, 31);
+            labelBranch.Location = new Point(18, 31);
             labelBranch.Name = "labelBranch";
             labelBranch.Size = new Size(88, 18);
             labelBranch.TabIndex = 0;
@@ -83,7 +105,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(298, 147);
+            ClientSize = new Size(330, 187);
             Controls.Add(groupBoxAddBranch);
             Font = new Font("Consolas", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -93,6 +115,7 @@
             Name = "FormAddBranch";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Branş Ekle";
+            Load += FormAddBranch_Load;
             groupBoxAddBranch.ResumeLayout(false);
             groupBoxAddBranch.PerformLayout();
             ResumeLayout(false);
@@ -103,5 +126,7 @@
         private System.Windows.Forms.TextBox textBoxBranch;
         private System.Windows.Forms.Label labelBranch;
         private System.Windows.Forms.Button buttonAddBranch;
+        private ComboBox comboBoxBranchType;
+        private Label labelType;
     }
 }

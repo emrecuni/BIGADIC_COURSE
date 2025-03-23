@@ -20,20 +20,34 @@ namespace BIGADIC_COURSE
             InitializeComponent();
         }
 
-        Sql sql = new Sql();
-        StringBuilder query = new StringBuilder();
-        List<SqlParameter> parameters = new List<SqlParameter>();
+        Sql sql = new();
+        StringBuilder query = new();
+        List<SqlParameter> parameters = new();
+        Dictionary<int, string> types = new();
+
+        private async void FormAddBranch_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                await GetBranchTypes();
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"FormAddBranch_Load Error Hata Kodu: 4000 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 4000", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private async void buttonAddBranch_Click(object sender, EventArgs e)
         {
             try
             {
-                if (textBoxBranch.Text != null)
+                if (textBoxBranch.Text != null && comboBoxBranchType.SelectedIndex > 0)
                 {
                     query.Clear();
                     query.Append("IF NOT EXISTS (SELECT * FROM COURSES WHERE NAME = @Name) " +
                         "BEGIN " +
-                        "INSERT INTO COURSES (NAME, ADDITION_TIME) VALUES (@Name, GETDATE()) " +
+                        "INSERT INTO COURSES (NAME, TYPE, ADDITION_TIME) VALUES (@Name, @Type, GETDATE()) " +
                         "END " +
                         "ELSE " +
                         "BEGIN " +
@@ -42,6 +56,7 @@ namespace BIGADIC_COURSE
 
                     parameters.Clear();
                     parameters.Add(new SqlParameter("@Name", SqlDbType.NVarChar, 50) { Value = textBoxBranch.Text });
+                    parameters.Add(new SqlParameter("@Type", SqlDbType.TinyInt) { Value = types.First(t => t.Value == comboBoxBranchType.SelectedItem.ToString()).Key });
 
                     int resultCode = await sql.EditData(query.ToString(), parameters);
 
@@ -66,12 +81,41 @@ namespace BIGADIC_COURSE
                     }
                 }
                 else
-                    MessageBox.Show("Lütfen Bir Branş Adı Giriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Lütfen Bir Branş Adı ve Tipini Giriniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                Log.logger.Error($"buttonAddBranch_Click Error Hata Kodu: 4000 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
-                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 4000", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.logger.Error($"buttonAddBranch_Click Error Hata Kodu: 4003 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 4003", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task GetBranchTypes()
+        {
+            try
+            {
+                comboBoxBranchType.Items.Clear();
+                comboBoxBranchType.Items.Add("Seçiniz");
+                comboBoxBranchType.SelectedIndex = 0;
+
+                query.Clear();
+                query.Append("SELECT * FROM PERSONELTYPES;");
+
+                DataTable? results = await sql.GetFromDb(query.ToString());
+
+                if (results != null)
+                {
+                    foreach (DataRow type in results.Rows)
+                    {
+                        comboBoxBranchType.Items.Add(type.ItemArray[1].ToString());
+                        types.Add(int.Parse(type.ItemArray[0].ToString()), type.ItemArray[1].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"GetBranchTypes Error Hata Kodu: 4004 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 4004", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

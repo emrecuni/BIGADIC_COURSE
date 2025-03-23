@@ -200,7 +200,7 @@ X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesn
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
-	
+* Type'ı 1 olan branşları ana sayfada gösterme	
 
 id:
 	X main X
