@@ -67,7 +67,7 @@ namespace BIGADIC_COURSE
                     await RefreshData();       // GetCourses tamamlandıktan sonra çalıştır
 
                     DeleteOldExportDatas();
-                    GetBirthDates();
+                    GetBirthDates(false);
                 }).ContinueWith(task =>
                 {
                     // RefreshData ve diğer işlemler bittikten sonra çalıştır
@@ -1484,7 +1484,7 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private async void GetBirthDates() // doğum günü bugün olan kayıtları alır
+        private async void GetBirthDates(bool isBirthdateStrip) // doğum günü bugün olan kayıtları alır
         {
             try
             {
@@ -1495,7 +1495,7 @@ namespace BIGADIC_COURSE
                         .GroupBy(r => r.TRAINEEID)
                         .Select(r => r.First()).ToList();
 
-                    if (birthDates.Count() > 0)
+                    if (birthDates.Count(b => b.BIRTHDATE.Date == DateTime.Now.Date) > 0 || isBirthdateStrip)
                     {
                         DialogResult dialogResult = MessageBox.Show("Eşleşen Doğum Günleri Listelensin Mi?", "SORU", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialogResult == DialogResult.Yes)
@@ -1543,7 +1543,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                GetBirthDates();
+                GetBirthDates(true);
             }
             catch (Exception ex)
             {

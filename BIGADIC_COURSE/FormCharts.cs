@@ -53,6 +53,7 @@ namespace BIGADIC_COURSE
 
                 dateTimePickerStartDate.Value = DateTime.Today;
                 dateTimePickerEndDate.Value = DateTime.Today;
+                DeleteOldSS();
             }
             catch (Exception ex)
             {
@@ -551,6 +552,30 @@ namespace BIGADIC_COURSE
                 Log.logger.Error($"ExportToPdf Error Hata Kodu: 3012 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3012", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+
+        private void DeleteOldSS()
+        {
+            try
+            {
+                string ssPath = Application.StartupPath + $"ExportCharts";
+                var oldSS = Directory.GetFiles(ssPath) ;
+
+                if (oldSS.Length > 0)
+                {
+                    foreach (var file in oldSS)
+                    {
+                        if (File.GetLastWriteTime(file) < DateTime.Now.AddDays(-7))
+                            File.Delete(file);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"DeleteOldSS Error Hata Kodu: 3013 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 3013", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
