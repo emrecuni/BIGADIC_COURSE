@@ -18,6 +18,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout.Element;
 using OfficeOpenXml.Drawing;
+using Microsoft.VisualBasic.Devices;
 
 
 namespace BIGADIC_COURSE
@@ -32,7 +33,7 @@ namespace BIGADIC_COURSE
         StringBuilder query = new();
         List<SqlParameter> parameters = new();
         List<Personel> allPersonels = new();
-        List<Personel> courses  = new();
+        List<Personel> courses = new();
         //Dictionary<int, string> courses = new();
         Personel selectedPersonel;
         Personel updatedPersonel;
@@ -45,11 +46,11 @@ namespace BIGADIC_COURSE
                 await Task.Run(() =>
                 {
                     RefreshData();
-                    GetCourses();
-                    comboBoxPersonelType.SelectedIndex = 0; // seçiniz default gelir
-                    comboBoxBranch.SelectedIndex = 0; // seçiniz default gelir
+                    GetCourses();                   
                 });
                 buttonOrder_Click(sender, e);
+                comboBoxPersonelType.SelectedIndex = 0; // seçiniz default gelir
+                comboBoxBranch.SelectedIndex = 0; // seçiniz default gelir
             }
             catch (Exception ex)
             {
@@ -379,7 +380,7 @@ namespace BIGADIC_COURSE
                 maskedTextBoxPhone.Text = allPersonels.Find(p => p.ID == id)?.PHONE;
                 comboBoxPersonelType.SelectedIndex = allPersonels.Find(p => p.ID == id).TYPE;
                 comboBoxBranch.SelectedItem = allPersonels.Find(p => p.ID == id)?.COURSE;
-
+                
                 buttonRegister.Enabled = false;
                 buttonUpdate.Enabled = true;
                 buttonDelete.Enabled = true;
@@ -514,12 +515,13 @@ namespace BIGADIC_COURSE
                     foreach (DataRow row in results.Rows)
                     {
                         comboBoxBranch.Items.Add(row.ItemArray[1].ToString());
+
                         courses.Add(new Personel
                         {
                             COURSEID = int.Parse(row.ItemArray[0].ToString()),
-                            COURSE = row.ItemArray[1]?.ToString(),
-                            TYPE = int.Parse(row.ItemArray[4].ToString()),
-                            TYPEDESCRIPTION = row.ItemArray[5]?.ToString()
+                            COURSE = row.ItemArray[1].ToString(),
+                            TYPE = int.Parse(row.ItemArray[3].ToString()),
+                            TYPEDESCRIPTION = row.ItemArray[4].ToString()
                         });
                     }
                 }
@@ -745,6 +747,30 @@ namespace BIGADIC_COURSE
             {
                 Log.logger.Error($"maskedTextBox_Click Error Hata Kodu: 8026 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8026", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comboBoxPersonelType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBoxPersonelType.SelectedIndex > 0)
+                {
+                    comboBoxBranch.Items.Clear();
+
+                    var selectedTypeCourses = courses.FindAll(c => c.TYPEDESCRIPTION == comboBoxPersonelType.SelectedItem.ToString());
+                    
+                    foreach (Personel? course in selectedTypeCourses)
+                    {
+                        comboBoxBranch.Items.Add(course.COURSE);
+                       
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"comboBoxPersonelType_SelectedIndexChanged Error Hata Kodu: 8027 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 8027", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -353,6 +353,7 @@
             comboBoxPersonelType.Name = "comboBoxPersonelType";
             comboBoxPersonelType.Size = new Size(157, 28);
             comboBoxPersonelType.TabIndex = 9;
+            comboBoxPersonelType.SelectedIndexChanged += comboBoxPersonelType_SelectedIndexChanged;
             // 
             // textBoxSurname
             // 
