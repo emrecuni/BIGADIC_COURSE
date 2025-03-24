@@ -197,6 +197,8 @@ X Personel seçiminde combobox index değil tag'a göre getir X
 X Title'ı "Bigadiç Belediyesi_Bilgi_işlem" yap X
 X Export chart'ta png dosyalarını sil X
 X Anasayfadaki kayıt sayısı ile rapor sayfasındaki kayıt sayısı tutmuyor X
+X Grafiğin sütun renkleri mavi olsun X
+X Grafik formun title'ı düzelt X
 
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
@@ -210,8 +212,6 @@ X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 * Branş eklerken 3. sıraya geçebiliyor geçemesin // futbol - fen bilgisi - hentbol
 * Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış
-X Grafiğin sütun renkleri mavi olsun X
-* Grafik formun title'ı düzelt
 * Grafik formun size'ını düşür veya startposition'ı düzenle // sayfanın üstüne taşıyor laptop ekranında
 * SS'e zoom yapıp pdf'e basmayı dene
 * Chart'ta selected strip'in mavisini biraz daha açık renk yap

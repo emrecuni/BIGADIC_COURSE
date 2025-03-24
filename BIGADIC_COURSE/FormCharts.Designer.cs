@@ -324,7 +324,7 @@
             Margin = new Padding(4);
             Name = "FormCharts";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "FormCharts";
+            Text = "Grafikler";
             Load += FormCharts_Load;
             splitContainerChart.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainerChart).EndInit();
