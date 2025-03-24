@@ -74,7 +74,7 @@ namespace BIGADIC_COURSE
                 startDate = DateTime.MinValue;
                 endDate = DateTime.Today;
                 chartDict.Clear();
-                courseToolStripMenuItem.BackColor = Color.Blue;
+                courseToolStripMenuItem.BackColor = Color.DarkTurquoise;
                 genderToolStripMenuItem.BackColor = Color.Silver;
                 registerTypeToolStripMenuItem.BackColor = Color.Silver;
 
@@ -161,7 +161,7 @@ namespace BIGADIC_COURSE
                 startDate = DateTime.MinValue;
                 endDate = DateTime.Today;
                 chartDict.Clear();
-                genderToolStripMenuItem.BackColor = Color.Blue;
+                genderToolStripMenuItem.BackColor = Color.DarkTurquoise;
                 courseToolStripMenuItem.BackColor = Color.Silver;
                 registerTypeToolStripMenuItem.BackColor = Color.Silver;
 
@@ -216,7 +216,7 @@ namespace BIGADIC_COURSE
                 startDate = DateTime.MinValue;
                 endDate = DateTime.Today;
                 chartDict.Clear();
-                registerTypeToolStripMenuItem.BackColor = Color.Blue;
+                registerTypeToolStripMenuItem.BackColor = Color.DarkTurquoise;
                 genderToolStripMenuItem.BackColor = Color.Silver;
                 courseToolStripMenuItem.BackColor = Color.Silver;
 

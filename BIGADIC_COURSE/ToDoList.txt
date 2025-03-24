@@ -199,6 +199,7 @@ X Export chart'ta png dosyalarını sil X
 X Anasayfadaki kayıt sayısı ile rapor sayfasındaki kayıt sayısı tutmuyor X
 X Grafiğin sütun renkleri mavi olsun X
 X Grafik formun title'ı düzelt X
+X Chart'ta selected strip'in mavisini biraz daha açık renk yap X
 
 
 * Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor
@@ -214,7 +215,6 @@ X Personelleri load'da listele X
 * Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış
 * Grafik formun size'ını düşür veya startposition'ı düzenle // sayfanın üstüne taşıyor laptop ekranında
 * SS'e zoom yapıp pdf'e basmayı dene
-* Chart'ta selected strip'in mavisini biraz daha açık renk yap
 * Chart'ta split kötü görünüyor //Ekran görüntüsü 2025-03-24 014400.png
 * Dosya açılırken pop-up'ı kaldır
 * Personel eklemeyi kontrol et // bütün alanlar doluyken doldur pop-up'ı çıkartıyor

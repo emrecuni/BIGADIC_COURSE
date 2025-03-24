@@ -284,6 +284,7 @@
             // 
             // courseToolStripMenuItem
             // 
+            courseToolStripMenuItem.BackColor = Color.Silver;
             courseToolStripMenuItem.Name = "courseToolStripMenuItem";
             courseToolStripMenuItem.Size = new Size(117, 25);
             courseToolStripMenuItem.Text = "Kurs Bazında";
