@@ -204,7 +204,7 @@ X Dosya açılırken pop-up'ı kaldır X
 X Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor X
 X Zorunlu yönetici olarak çalışmasını sağla X
 X Personel listview'ının kolon uzunluklarını düzelt X
-
+X Grafik formun size'ını düşür veya startposition'ı düzenle // sayfanın üstüne taşıyor laptop ekranında X
 
 X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
 	* Test etmek gerekiyor 
@@ -215,7 +215,6 @@ X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 * Branş eklerken 3. sıraya geçebiliyor geçemesin // futbol - fen bilgisi - hentbol
 * Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış
-* Grafik formun size'ını düşür veya startposition'ı düzenle // sayfanın üstüne taşıyor laptop ekranında
 * SS'e zoom yapıp pdf'e basmayı dene
 * Chart'ta split kötü görünüyor //Ekran görüntüsü 2025-03-24 014400.png
 * Personel eklemeyi kontrol et // bütün alanlar doluyken doldur pop-up'ı çıkartıyor

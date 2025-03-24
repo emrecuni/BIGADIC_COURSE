@@ -72,8 +72,8 @@
             // splitContainerChart.Panel1
             // 
             splitContainerChart.Panel1.Controls.Add(groupBoxFilters);
-            splitContainerChart.Size = new Size(1275, 892);
-            splitContainerChart.SplitterDistance = 108;
+            splitContainerChart.Size = new Size(1275, 855);
+            splitContainerChart.SplitterDistance = 120;
             splitContainerChart.SplitterWidth = 5;
             splitContainerChart.TabIndex = 1;
             // 
@@ -86,7 +86,7 @@
             groupBoxFilters.Margin = new Padding(4);
             groupBoxFilters.Name = "groupBoxFilters";
             groupBoxFilters.Padding = new Padding(4);
-            groupBoxFilters.Size = new Size(1206, 98);
+            groupBoxFilters.Size = new Size(1267, 98);
             groupBoxFilters.TabIndex = 0;
             groupBoxFilters.TabStop = false;
             groupBoxFilters.Text = "Filtreler";
@@ -96,9 +96,9 @@
             groupBoxGender.Controls.Add(buttonClearGender);
             groupBoxGender.Controls.Add(radioButtonFemale);
             groupBoxGender.Controls.Add(radioButtonMale);
-            groupBoxGender.Location = new Point(922, 21);
+            groupBoxGender.Location = new Point(962, 21);
             groupBoxGender.Name = "groupBoxGender";
-            groupBoxGender.Size = new Size(276, 67);
+            groupBoxGender.Size = new Size(293, 67);
             groupBoxGender.TabIndex = 2;
             groupBoxGender.TabStop = false;
             groupBoxGender.Text = "Cinsiyet";
@@ -145,9 +145,9 @@
             groupBoxRegisterType.Controls.Add(radioButtonPassive);
             groupBoxRegisterType.Controls.Add(radioButtonActive);
             groupBoxRegisterType.Controls.Add(radioButtonTotal);
-            groupBoxRegisterType.Location = new Point(593, 21);
+            groupBoxRegisterType.Location = new Point(615, 21);
             groupBoxRegisterType.Name = "groupBoxRegisterType";
-            groupBoxRegisterType.Size = new Size(323, 67);
+            groupBoxRegisterType.Size = new Size(340, 67);
             groupBoxRegisterType.TabIndex = 1;
             groupBoxRegisterType.TabStop = false;
             groupBoxRegisterType.Text = "Kayıt Durumu";
@@ -216,7 +216,7 @@
             groupBoxDate.Controls.Add(checkBoxSelectDate);
             groupBoxDate.Location = new Point(8, 21);
             groupBoxDate.Name = "groupBoxDate";
-            groupBoxDate.Size = new Size(579, 67);
+            groupBoxDate.Size = new Size(600, 67);
             groupBoxDate.TabIndex = 0;
             groupBoxDate.TabStop = false;
             groupBoxDate.Text = "Tarih";
@@ -316,7 +316,7 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
-            ClientSize = new Size(1275, 923);
+            ClientSize = new Size(1275, 886);
             Controls.Add(splitContainerChart);
             Controls.Add(menuStripChart);
             Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
