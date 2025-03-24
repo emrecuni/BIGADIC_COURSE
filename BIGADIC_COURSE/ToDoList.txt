@@ -206,11 +206,20 @@ X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesn
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
-
-
-
-
-
+* Branş eklerken 3. sıraya geçebiliyor geçemesin // futbol - fen bilgisi - hentbol
+* Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış
+* Grafiğin sütun renkleri mavi olsun
+* Grafik formun title'ı düzelt
+* Grafik formun size'ını düşür veya startposition'ı düzenle // sayfanın üstüne taşıyor laptop ekranında
+* SS'e zoom yapıp pdf'e basmayı dene
+* Chart'ta selected strip'in mavisini biraz daha açık renk yap
+* Chart'ta split kötü görünüyor //Ekran görüntüsü 2025-03-24 014400.png
+* Dosya açılırken pop-up'ı kaldır
+* Personel eklemeyi kontrol et // bütün alanlar doluyken doldur pop-up'ı çıkartıyor
+* Personel tipleri için personel branş'ı ekle formu ekle
+* Personel listview'ının kolon uzunluklarını düzelt
+* Personel ekledikten sonra anlık raporda personel sayısı gelmiyor // tip eklendikten sonra oldu sanırım
+* Anasayfadaki kayıt sayısı ile rapor sayfasındaki kayıt sayısı tutmuyor
 
 id:
 	X main X

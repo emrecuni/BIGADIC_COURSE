@@ -1003,7 +1003,6 @@
             Controls.Add(groupBoxMain);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 9F);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 3, 4, 3);
