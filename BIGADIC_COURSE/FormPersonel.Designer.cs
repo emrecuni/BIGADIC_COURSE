@@ -77,7 +77,7 @@
             groupBoxPersonel.Margin = new Padding(4);
             groupBoxPersonel.Name = "groupBoxPersonel";
             groupBoxPersonel.Padding = new Padding(4);
-            groupBoxPersonel.Size = new Size(652, 551);
+            groupBoxPersonel.Size = new Size(718, 551);
             groupBoxPersonel.TabIndex = 0;
             groupBoxPersonel.TabStop = false;
             groupBoxPersonel.Text = "Personel";
@@ -88,7 +88,7 @@
             groupBoxList.Controls.Add(listViewPersonels);
             groupBoxList.Location = new Point(8, 255);
             groupBoxList.Name = "groupBoxList";
-            groupBoxList.Size = new Size(636, 289);
+            groupBoxList.Size = new Size(702, 289);
             groupBoxList.TabIndex = 21;
             groupBoxList.TabStop = false;
             groupBoxList.Text = "Liste";
@@ -101,7 +101,7 @@
             listViewPersonels.FullRowSelect = true;
             listViewPersonels.Location = new Point(3, 23);
             listViewPersonels.Name = "listViewPersonels";
-            listViewPersonels.Size = new Size(630, 263);
+            listViewPersonels.Size = new Size(696, 263);
             listViewPersonels.TabIndex = 0;
             listViewPersonels.UseCompatibleStateImageBehavior = false;
             listViewPersonels.View = View.Details;
@@ -131,11 +131,12 @@
             // columnHeaderType
             // 
             columnHeaderType.Text = "Tipi";
-            columnHeaderType.Width = 80;
+            columnHeaderType.Width = 90;
             // 
             // columnHeaderBranch
             // 
             columnHeaderBranch.Text = "Branş";
+            columnHeaderBranch.Width = 120;
             // 
             // columnHeaderRegisterDate
             // 
@@ -165,7 +166,7 @@
             groupBoxRegister.Controls.Add(maskedTextBoxPhone);
             groupBoxRegister.Location = new Point(7, 20);
             groupBoxRegister.Name = "groupBoxRegister";
-            groupBoxRegister.Size = new Size(637, 232);
+            groupBoxRegister.Size = new Size(703, 232);
             groupBoxRegister.TabIndex = 20;
             groupBoxRegister.TabStop = false;
             groupBoxRegister.Text = "Kayıt";
@@ -202,7 +203,7 @@
             // 
             buttonOrder.BackColor = Color.Silver;
             buttonOrder.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            buttonOrder.Location = new Point(473, 91);
+            buttonOrder.Location = new Point(510, 81);
             buttonOrder.Margin = new Padding(3, 2, 3, 2);
             buttonOrder.Name = "buttonOrder";
             buttonOrder.Size = new Size(149, 41);
@@ -226,7 +227,7 @@
             buttonClear.BackColor = Color.Silver;
             buttonClear.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             buttonClear.ForeColor = Color.Black;
-            buttonClear.Location = new Point(473, 139);
+            buttonClear.Location = new Point(510, 129);
             buttonClear.Margin = new Padding(3, 2, 3, 2);
             buttonClear.Name = "buttonClear";
             buttonClear.Size = new Size(149, 41);
@@ -251,7 +252,7 @@
             buttonDelete.Enabled = false;
             buttonDelete.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             buttonDelete.ForeColor = Color.Red;
-            buttonDelete.Location = new Point(303, 139);
+            buttonDelete.Location = new Point(327, 129);
             buttonDelete.Margin = new Padding(3, 2, 3, 2);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(149, 41);
@@ -276,7 +277,7 @@
             buttonUpdate.Enabled = false;
             buttonUpdate.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             buttonUpdate.ForeColor = Color.Black;
-            buttonUpdate.Location = new Point(303, 91);
+            buttonUpdate.Location = new Point(327, 81);
             buttonUpdate.Margin = new Padding(3, 2, 3, 2);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(149, 41);
@@ -300,7 +301,7 @@
             buttonSearch.BackColor = Color.Silver;
             buttonSearch.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             buttonSearch.ForeColor = Color.Black;
-            buttonSearch.Location = new Point(473, 43);
+            buttonSearch.Location = new Point(510, 33);
             buttonSearch.Margin = new Padding(3, 2, 3, 2);
             buttonSearch.Name = "buttonSearch";
             buttonSearch.Size = new Size(149, 41);
@@ -324,7 +325,7 @@
             buttonRegister.BackColor = Color.Silver;
             buttonRegister.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
             buttonRegister.ForeColor = Color.Black;
-            buttonRegister.Location = new Point(303, 43);
+            buttonRegister.Location = new Point(327, 33);
             buttonRegister.Margin = new Padding(3, 2, 3, 2);
             buttonRegister.Name = "buttonRegister";
             buttonRegister.Size = new Size(149, 41);
@@ -389,7 +390,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { exportToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(685, 28);
+            menuStrip1.Size = new Size(751, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -419,7 +420,7 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
-            ClientSize = new Size(685, 606);
+            ClientSize = new Size(751, 606);
             Controls.Add(groupBoxPersonel);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
