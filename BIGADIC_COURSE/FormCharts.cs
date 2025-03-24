@@ -306,10 +306,13 @@ namespace BIGADIC_COURSE
                 BarSeries barSeries = new()  // Yeni bir bar serisi oluştur
                 {
                     Title = "Kayıt Sayısı",
-                    ItemsSource = chartDict.Select(kv => new BarItem { Value = kv.Value }).ToList(),
+                    ItemsSource = chartDict.Select(kv => new BarItem { Value = kv.Value }).ToList(),                    
                     LabelPlacement = LabelPlacement.Inside, // Label konumunu ayarla (Inside, Middle, Outside)
                     LabelFormatString = "{0:N0}" // Sayıyı formatla (Tam sayı)
                 };
+
+                barSeries.FillColor = OxyColor.FromRgb(128,196,233);
+                
 
                 CategoryAxis categoryAxis = new() // Kategori ekseni (X ekseni) oluştur
                 {
