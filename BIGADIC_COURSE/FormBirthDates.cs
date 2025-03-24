@@ -52,12 +52,13 @@ namespace BIGADIC_COURSE
                 if (listViewBirthDate.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
                 {
                     DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes && ExportToExcel())
-                        MessageBox.Show("Kayıtlar Excel Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes )
+                        if(!ExportToExcel())
+                            MessageBox.Show("Kayıtlar Excel Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                else if (ExportToExcel())
-                    MessageBox.Show("Kayıtlar Excel Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!ExportToExcel())
+                    MessageBox.Show("Kayıtlar Excel Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -73,11 +74,12 @@ namespace BIGADIC_COURSE
                 if (listViewBirthDate.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
                 {
                     DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes && ExportToPdf())
-                        MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes )
+                        if(!ExportToPdf())
+                            MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (ExportToPdf())
-                    MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!ExportToPdf())
+                    MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             catch (Exception ex)

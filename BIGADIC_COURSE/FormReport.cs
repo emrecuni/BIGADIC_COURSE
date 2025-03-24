@@ -321,12 +321,13 @@ namespace BIGADIC_COURSE
                 if (listViewAllRegister.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
                 {
                     DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes && ExportToExcel())
-                        MessageBox.Show("Kayıtlar Excel Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                        if (!ExportToExcel())
+                            MessageBox.Show("Kayıtlar Excel Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                else if (ExportToExcel())
-                    MessageBox.Show("Kayıtlar Excel Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!ExportToExcel())
+                    MessageBox.Show("Kayıtlar Excel Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -342,11 +343,12 @@ namespace BIGADIC_COURSE
                 if (listViewAllRegister.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
                 {
                     DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes && ExportToPdf())
-                        MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                        if (!ExportToPdf())
+                            MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (ExportToPdf())
-                    MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarıldı.\n\nDosya Açılıyor...", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (!ExportToPdf())
+                    MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -395,7 +397,7 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[3, 1].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
                     worksheet.Cells[3, 1].Value = "Gençlik ve Kültür Merkezi";
                     worksheet.Cells[3, 1].Style.Font.Size = 14;
-                    
+
                     worksheet.Cells[4, 1].Value = "ID";
                     worksheet.Cells[4, 2].Value = "T.C. No";
                     worksheet.Cells[4, 3].Value = "Adı";
@@ -420,7 +422,7 @@ namespace BIGADIC_COURSE
                     }
 
                     worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
-                   
+
                     try
                     {
                         package.Save();
@@ -429,7 +431,7 @@ namespace BIGADIC_COURSE
                     {
                         MessageBox.Show("Açık Excel Dosyasını Kapatıp Yeniden Deneyin.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
-                    }                  
+                    }
                 }
                 Process.Start(new ProcessStartInfo
                 {
@@ -532,7 +534,7 @@ namespace BIGADIC_COURSE
                     Directory.CreateDirectory(pdfPath);
 
                 pdfPath += $"Anlık_Rapor_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.pdf";
-                
+
 
                 using (PdfWriter writer = new PdfWriter(new FileInfo(pdfPath)))
                 {
@@ -559,7 +561,7 @@ namespace BIGADIC_COURSE
                         document.Add(new Paragraph($"BEKLEYEN BAŞVURU SAYISI: {_registers.Count(r => r.STATUS == "B")}").SetFont(font).SetFontSize(12));
                         document.Add(new Paragraph($"FAALİYET GÖSTEREN BRANŞ SAYISI: {_registers.Where(r => r.STATUS == "A" || r.STATUS == "P").GroupBy(r => r.COURSEID).Count()}").SetFont(font).SetFontSize(12));
 
-                        
+
 
                         document.Add(new Paragraph("\nFAALİYET GÖSTEREN BRANŞLAR\n").SetFont(font).SetFontSize(14).SetUnderline().SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
 

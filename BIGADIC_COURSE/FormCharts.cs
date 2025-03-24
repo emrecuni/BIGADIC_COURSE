@@ -306,13 +306,13 @@ namespace BIGADIC_COURSE
                 BarSeries barSeries = new()  // Yeni bir bar serisi oluştur
                 {
                     Title = "Kayıt Sayısı",
-                    ItemsSource = chartDict.Select(kv => new BarItem { Value = kv.Value }).ToList(),                    
+                    ItemsSource = chartDict.Select(kv => new BarItem { Value = kv.Value }).ToList(),
                     LabelPlacement = LabelPlacement.Inside, // Label konumunu ayarla (Inside, Middle, Outside)
                     LabelFormatString = "{0:N0}" // Sayıyı formatla (Tam sayı)
                 };
 
-                barSeries.FillColor = OxyColor.FromRgb(128,196,233);
-                
+                barSeries.FillColor = OxyColor.FromRgb(128, 196, 233);
+
 
                 CategoryAxis categoryAxis = new() // Kategori ekseni (X ekseni) oluştur
                 {
@@ -483,12 +483,12 @@ namespace BIGADIC_COURSE
                         Directory.CreateDirectory(imagePath);
                     imagePath += $"\\chart_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.png";
                     Screenshots(imagePath);
-                    if(ExportToPdf())
-                    MessageBox.Show("Grafik Pdf Dosyasına Başarıyla Aktarıldı.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);                                        
+                    if (!ExportToPdf())
+                        MessageBox.Show("Grafik Pdf Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                     MessageBox.Show("Çizilmiş Bir Grafik Bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
+
             }
             catch (Exception ex)
             {
@@ -501,7 +501,7 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                
+
                 string pdfPath = Application.StartupPath + "ExportPdf\\";
                 if (!Directory.Exists(pdfPath))
                     Directory.CreateDirectory(pdfPath);
@@ -512,12 +512,11 @@ namespace BIGADIC_COURSE
                 {
                     using (PdfDocument pdf = new PdfDocument(writer))
                     {
-                        
+
                         pdf.AddNewPage(iText.Kernel.Geom.PageSize.A4.Rotate());
 
                         iText.Layout.Document document = new iText.Layout.Document(pdf);
                         document.SetMargins(0, 10, 30, 10);
-
 
                         PdfFont font = PdfFontFactory.CreateFont("C:/Windows/Fonts/arial.ttf", PdfEncodings.IDENTITY_H);
 
@@ -528,7 +527,6 @@ namespace BIGADIC_COURSE
                         document.Add(img);
                         document.Add(new Paragraph("BİGADİÇ BELEDİYESİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
                         document.Add(new Paragraph("GENÇLİK VE KÜLTÜR MERKEZİ").SetFont(font).SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-
 
                         img = new iText.Layout.Element.Image(ImageDataFactory.Create(imagePath));
                         img.SetAutoScale(true);
@@ -563,7 +561,7 @@ namespace BIGADIC_COURSE
             try
             {
                 string ssPath = Application.StartupPath + $"ExportCharts";
-                var oldSS = Directory.GetFiles(ssPath) ;
+                var oldSS = Directory.GetFiles(ssPath);
 
                 if (oldSS.Length > 0)
                 {
