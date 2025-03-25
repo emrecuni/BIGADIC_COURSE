@@ -220,7 +220,7 @@ X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesn
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
-* Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış
+- Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış - //onun bilgisayarında öyle görünüyor
 * SS'e zoom yapıp pdf'e basmayı dene
 
 
