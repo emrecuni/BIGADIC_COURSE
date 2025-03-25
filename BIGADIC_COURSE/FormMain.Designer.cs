@@ -125,7 +125,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(1307, 28);
+            menuStrip1.Size = new Size(1300, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -182,21 +182,21 @@
             // addPersonelToolStripMenuItem
             // 
             addPersonelToolStripMenuItem.Name = "addPersonelToolStripMenuItem";
-            addPersonelToolStripMenuItem.Size = new Size(180, 24);
+            addPersonelToolStripMenuItem.Size = new Size(120, 24);
             addPersonelToolStripMenuItem.Text = "Ekle";
             addPersonelToolStripMenuItem.Click += addPersonelToolStripMenuItem_Click;
             // 
             // deletePersonelToolStripMenuItem
             // 
             deletePersonelToolStripMenuItem.Name = "deletePersonelToolStripMenuItem";
-            deletePersonelToolStripMenuItem.Size = new Size(180, 24);
+            deletePersonelToolStripMenuItem.Size = new Size(120, 24);
             deletePersonelToolStripMenuItem.Text = "Sil";
             deletePersonelToolStripMenuItem.Click += deletePersonelToolStripMenuItem_Click;
             // 
             // listPersonelToolStripMenuItem
             // 
             listPersonelToolStripMenuItem.Name = "listPersonelToolStripMenuItem";
-            listPersonelToolStripMenuItem.Size = new Size(180, 24);
+            listPersonelToolStripMenuItem.Size = new Size(120, 24);
             listPersonelToolStripMenuItem.Text = "Listele";
             listPersonelToolStripMenuItem.Click += listPersonelToolStripMenuItem_Click;
             // 
@@ -879,7 +879,7 @@
             groupBoxBranches.Margin = new Padding(3, 2, 3, 2);
             groupBoxBranches.Name = "groupBoxBranches";
             groupBoxBranches.Padding = new Padding(3, 2, 3, 2);
-            groupBoxBranches.Size = new Size(446, 460);
+            groupBoxBranches.Size = new Size(439, 460);
             groupBoxBranches.TabIndex = 2;
             groupBoxBranches.TabStop = false;
             groupBoxBranches.Text = "Branş Seçimleri...";
@@ -891,7 +891,7 @@
             flowLayoutPanelBranches.Location = new Point(3, 22);
             flowLayoutPanelBranches.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanelBranches.Name = "flowLayoutPanelBranches";
-            flowLayoutPanelBranches.Size = new Size(440, 436);
+            flowLayoutPanelBranches.Size = new Size(433, 436);
             flowLayoutPanelBranches.TabIndex = 0;
             // 
             // groupBoxListGraphicsPrint
@@ -903,7 +903,7 @@
             groupBoxListGraphicsPrint.Margin = new Padding(3, 2, 3, 2);
             groupBoxListGraphicsPrint.Name = "groupBoxListGraphicsPrint";
             groupBoxListGraphicsPrint.Padding = new Padding(3, 2, 3, 2);
-            groupBoxListGraphicsPrint.Size = new Size(1260, 271);
+            groupBoxListGraphicsPrint.Size = new Size(1253, 271);
             groupBoxListGraphicsPrint.TabIndex = 5;
             groupBoxListGraphicsPrint.TabStop = false;
             groupBoxListGraphicsPrint.Text = "Listeler";
@@ -917,7 +917,7 @@
             groupBoxList.Margin = new Padding(3, 2, 3, 2);
             groupBoxList.Name = "groupBoxList";
             groupBoxList.Padding = new Padding(3, 2, 3, 2);
-            groupBoxList.Size = new Size(1249, 242);
+            groupBoxList.Size = new Size(1242, 242);
             groupBoxList.TabIndex = 0;
             groupBoxList.TabStop = false;
             // 
@@ -930,7 +930,7 @@
             listViewAllRegister.Location = new Point(3, 20);
             listViewAllRegister.Margin = new Padding(3, 2, 3, 2);
             listViewAllRegister.Name = "listViewAllRegister";
-            listViewAllRegister.Size = new Size(1243, 220);
+            listViewAllRegister.Size = new Size(1236, 220);
             listViewAllRegister.TabIndex = 0;
             listViewAllRegister.UseCompatibleStateImageBehavior = false;
             listViewAllRegister.View = View.Details;
@@ -981,7 +981,7 @@
             // columnHeaderStatus
             // 
             columnHeaderStatus.Text = "Durumu";
-            columnHeaderStatus.Width = 90;
+            columnHeaderStatus.Width = 75;
             // 
             // groupBoxMain
             // 
@@ -996,7 +996,7 @@
             groupBoxMain.Margin = new Padding(3, 2, 3, 2);
             groupBoxMain.Name = "groupBoxMain";
             groupBoxMain.Padding = new Padding(3, 2, 3, 2);
-            groupBoxMain.Size = new Size(1287, 799);
+            groupBoxMain.Size = new Size(1280, 799);
             groupBoxMain.TabIndex = 0;
             groupBoxMain.TabStop = false;
             // 
@@ -1023,10 +1023,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1307, 840);
+            ClientSize = new Size(1300, 840);
             Controls.Add(groupBoxMain);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 9F);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 3, 4, 3);

@@ -109,7 +109,7 @@ namespace BIGADIC_COURSE
                 Sql sql = new Sql();
 
                 query.Clear();
-                query.Append("SELECT * FROM COURSES WHERE TYPE <> 1;");
+                query.Append("SELECT * FROM COURSES WHERE TYPE <> 1 OR TYPE IS NULL;");
 
                 DataTable? branchesTable = await sql.GetFromDb(query.ToString()); // veri tabanından bütün branşlar çekilir
 

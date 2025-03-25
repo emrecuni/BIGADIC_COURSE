@@ -52,8 +52,8 @@ namespace BIGADIC_COURSE
                 if (listViewBirthDate.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
                 {
                     DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes )
-                        if(!ExportToExcel())
+                    if (dialogResult == DialogResult.Yes)
+                        if (!ExportToExcel())
                             MessageBox.Show("Kayıtlar Excel Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
@@ -74,8 +74,8 @@ namespace BIGADIC_COURSE
                 if (listViewBirthDate.Items.Count == 0) // listenen hiçbir kayıt yoksa onay ister
                 {
                     DialogResult dialogResult = MessageBox.Show("Listenen Hiçbir Kayıt Yok. Devam Etmek İstiyor Musunuz?", "SORU", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes )
-                        if(!ExportToPdf())
+                    if (dialogResult == DialogResult.Yes)
+                        if (!ExportToPdf())
                             MessageBox.Show("Kayıtlar Pdf Dosyasına Aktarlırken Bir Hata Oldu.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (!ExportToPdf())
@@ -192,7 +192,7 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[row, 4].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
                     worksheet.Cells[row, 5].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
                     worksheet.Cells[row, 6].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thick;
-                    
+
                     worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
 
                     worksheet.Cells[row, 1].Value = "Görüşmeyi Yapan Personel";
@@ -202,7 +202,7 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[row++, 4].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
 
                     worksheet.Cells[row, 1].Value = ".......................";
-                    worksheet.Cells[row, 4].Value = "Nalan ŞAHAL";
+                    worksheet.Cells[row, 4].Value = "........";
                     worksheet.Cells[row, 4, row, 6].Merge = true;
                     worksheet.Cells[row, 4].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     worksheet.Cells[row++, 4].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
@@ -212,7 +212,7 @@ namespace BIGADIC_COURSE
                     worksheet.Cells[row, 4].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
                     worksheet.Cells[row, 4].Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
 
-                                        
+
                     worksheet.Cells.Style.Font.Name = "Calibri";
                     try
                     {
@@ -300,10 +300,18 @@ namespace BIGADIC_COURSE
 
                         document.Add(new Paragraph());
                         document.Add(new Paragraph("Görüşmeyi Yapan Personel").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT));
-                        document.Add(new Paragraph("Onaylayan").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
-                        document.Add(new Paragraph("Nalan ŞAHAL").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
-                        document.Add(new Paragraph("Gençlik ve Kültür Merkezi Müdürü").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT));
-                        
+                        Div div = new Div()
+                        .SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT)
+                        .SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE)
+                        .SetMarginRight(20); // Sağdan biraz boşluk ekleyebilirsin
+
+                        div.Add(new Paragraph("Onaylayan").SetFont(font).SetFontSize(11));
+                        div.Add(new Paragraph("........").SetFont(font).SetFontSize(11));
+                        div.Add(new Paragraph("Gençlik ve Kültür Merkezi Müdürü").SetFont(font).SetFontSize(11));
+
+                        document.Add(div);
+
+
                         document.Close();
                     }
                 }

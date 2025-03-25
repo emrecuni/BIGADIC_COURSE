@@ -212,19 +212,25 @@ X Personel eklemeyi kontrol et // bütün alanlar doluyken doldur pop-up'ı çı
 X Personel ekledikten sonra anlık raporda personel sayısı gelmiyor // tip eklendikten sonra oldu sanırım // async metod tamamlanmadan rapor oluşturuluyordu X
 X İlk açılışta eşleşen doğum günü bulunamadı diyor ama doğum günü sayfasına girdiğimde gösteriyor // Ezgi Kaya 25.03 X
 X Kayıt durumu bazında grafiğinde cinsiyet seçimi çalışmıyor X
+X Doğum gününde müdür adını sil "..." koy X
+X Main formu sizable değil fixed yap X
 
+
+* WP api ile mesaj gönder
+* Onaylan müdür belediye kısmını sağa yaslı değil ortalanmış olarak yaz
+* Branş düzenleme ekranı ekle // wp sonrası
+* Pdf'lerde hücre genişliklerini statik yap // wp sonrası
+* Doğum günü pdf'inde görüşmeyi yapan ile onaylayanı aynı satıra koy // wp sonrası
+* Personel eklendiğinde eklenen personeli göster // wp sonrası
 X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
 	* Test etmek gerekiyor 
 * Versiyon.txt ekle
-* Nesne oluşturmayı basitleştir //new()
-* Excel ve pdf işlemlerini tek bir class ile yapmayı dene
+* Nesne oluşturmayı basitleştir //new() // wp sonrası
+* Excel ve pdf işlemlerini tek bir class ile yapmayı dene // wp sonrası
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 - Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış - //onun bilgisayarında öyle görünüyor
 * SS'e zoom yapıp pdf'e basmayı dene
-* Personel eklendiğinde eklenen personeli göster
-* WP api ile mesaj gönder
-
 
 
 
