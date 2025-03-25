@@ -111,18 +111,21 @@ namespace BIGADIC_COURSE
                 query.Clear();
                 query.Append("SELECT * FROM COURSES;");
 
-                DataTable branchesTable = await sql.GetFromDb(query.ToString()); // veri tabanından bütün branşlar çekilir
+                DataTable? branchesTable = await sql.GetFromDb(query.ToString()); // veri tabanından bütün branşlar çekilir
 
                 flowLayoutPanelBranches.Controls.Clear();
-                foreach (DataRow branch in branchesTable.Rows) // veri tabanından çekilen bütün branşlar flowlayoutpanel'a eklenir
+                if (branchesTable != null)
                 {
-                    CheckBox addedBranch = new CheckBox();
-                    flowLayoutPanelBranches.Controls.Add(addedBranch);
-                    addedBranch.Text = branch.ItemArray[1].ToString();
-                    addedBranch.Name = $"checkBox{branch.ItemArray[0]}";
-                    addedBranch.Tag = branch.ItemArray[0];
-                    addedBranch.Location = new Point(10, 10);
-                    addedBranch.ForeColor = Color.Black;
+                    foreach (DataRow branch in branchesTable.Rows) // veri tabanından çekilen bütün branşlar flowlayoutpanel'a eklenir
+                    {
+                        CheckBox addedBranch = new CheckBox();
+                        flowLayoutPanelBranches.Controls.Add(addedBranch);
+                        addedBranch.Text = branch.ItemArray[1].ToString();
+                        addedBranch.Name = $"checkBox{branch.ItemArray[0]}";
+                        addedBranch.Tag = branch.ItemArray[0];
+                        addedBranch.Location = new Point(10, 10);
+                        addedBranch.ForeColor = Color.Black;
+                    }
                 }
             }
             catch (Exception ex)
