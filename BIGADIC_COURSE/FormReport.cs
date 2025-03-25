@@ -123,7 +123,7 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
+        private async void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -200,7 +200,7 @@ namespace BIGADIC_COURSE
                         filteredRegisters = _registers.FindAll(r => r.REGISTERDATE >= DateTime.Today.AddYears(-1)).ToList();
                         break;
                     case 20: // anlık rapor
-                        GetPersonels();
+                        await GetPersonels();
                         ExportCurrentReport();
                         break;
                 }
@@ -561,8 +561,6 @@ namespace BIGADIC_COURSE
                         document.Add(new Paragraph($"BEKLEYEN BAŞVURU SAYISI: {_registers.Count(r => r.STATUS == "B")}").SetFont(font).SetFontSize(12));
                         document.Add(new Paragraph($"FAALİYET GÖSTEREN BRANŞ SAYISI: {_registers.Where(r => r.STATUS == "A" || r.STATUS == "P").GroupBy(r => r.COURSEID).Count()}").SetFont(font).SetFontSize(12));
 
-
-
                         document.Add(new Paragraph("\nFAALİYET GÖSTEREN BRANŞLAR\n").SetFont(font).SetFontSize(14).SetUnderline().SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
 
                         List<Register> activeCourses = _registers.Where(r => r.STATUS == "A" || r.STATUS == "P")
@@ -623,7 +621,7 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private async void GetPersonels()
+        private async Task GetPersonels()
         {
             try
             {
