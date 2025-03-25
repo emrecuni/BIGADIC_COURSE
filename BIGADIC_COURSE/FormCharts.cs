@@ -561,6 +561,8 @@ namespace BIGADIC_COURSE
             try
             {
                 string ssPath = Application.StartupPath + $"ExportCharts";
+                if(!Directory.Exists(ssPath)) 
+                    Directory.CreateDirectory(ssPath);
                 var oldSS = Directory.GetFiles(ssPath);
 
                 if (oldSS.Length > 0)

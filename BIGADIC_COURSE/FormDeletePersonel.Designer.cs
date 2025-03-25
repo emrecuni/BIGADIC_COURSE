@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDeletePersonelBranch));
             groupBoxDelete = new GroupBox();
             buttonDeleteBranch = new Button();
             groupBoxBranches = new GroupBox();
@@ -87,6 +88,7 @@
             Controls.Add(groupBoxDelete);
             Controls.Add(groupBoxBranches);
             Font = new Font("Segoe UI Semibold", 11.25F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             Name = "FormDeletePersonelBranch";
             StartPosition = FormStartPosition.CenterParent;
