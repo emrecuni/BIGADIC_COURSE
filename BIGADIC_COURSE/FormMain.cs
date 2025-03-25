@@ -1556,7 +1556,8 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                
+                FormAddPersonelBranch formAddPersonelBranch = new();
+                formAddPersonelBranch.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -1569,7 +1570,8 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                
+                FormDeletePersonelBranch formDeletePersonelBranch = new();
+                formDeletePersonelBranch.ShowDialog();
             }
             catch (Exception ex)
             {

@@ -1,6 +1,6 @@
 ﻿namespace BIGADIC_COURSE
 {
-    partial class FormAddPersonel
+    partial class FormAddPersonelBranch
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormAddPersonel";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddPersonelBranch));
+            SuspendLayout();
+            // 
+            // FormAddPersonelBranch
+            // 
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGray;
+            ClientSize = new Size(740, 512);
+            Font = new Font("Segoe UI Semibold", 11.25F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4);
+            Name = "FormAddPersonelBranch";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Personel Branşı Ekle";
+            ResumeLayout(false);
         }
 
         #endregion

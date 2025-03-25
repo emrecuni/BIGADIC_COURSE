@@ -1,6 +1,6 @@
 ﻿namespace BIGADIC_COURSE
 {
-    partial class FormDeletePersonel
+    partial class FormDeletePersonelBranch
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormDeletePersonel";
+            SuspendLayout();
+            // 
+            // FormDeletePersonelBranch
+            // 
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGray;
+            ClientSize = new Size(1029, 600);
+            Font = new Font("Segoe UI Semibold", 11.25F);
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "FormDeletePersonelBranch";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Personel Branşı Sil";
+            ResumeLayout(false);
         }
 
         #endregion

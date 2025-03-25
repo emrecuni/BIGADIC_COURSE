@@ -99,7 +99,7 @@ namespace BIGADIC_COURSE
                 comboBoxBranchType.SelectedIndex = 0;
 
                 query.Clear();
-                query.Append("SELECT * FROM PERSONELTYPES;");
+                query.Append("SELECT * FROM PERSONELTYPES WHERE ID <> 1;");
 
                 DataTable? results = await sql.GetFromDb(query.ToString());
 

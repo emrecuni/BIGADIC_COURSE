@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BIGADIC_COURSE
 {
-    public partial class FormDeletePersonel : Form
+    public partial class FormDeletePersonelBranch : Form
     {
-        public FormDeletePersonel()
+        public FormDeletePersonelBranch()
         {
             InitializeComponent();
         }
