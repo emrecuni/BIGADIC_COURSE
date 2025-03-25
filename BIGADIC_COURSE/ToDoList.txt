@@ -211,7 +211,7 @@ X Personel tipleri için personel branş'ı ekle formu ekle X
 X Personel eklemeyi kontrol et // bütün alanlar doluyken doldur pop-up'ı çıkartıyor X
 X Personel ekledikten sonra anlık raporda personel sayısı gelmiyor // tip eklendikten sonra oldu sanırım // async metod tamamlanmadan rapor oluşturuluyordu X
 X İlk açılışta eşleşen doğum günü bulunamadı diyor ama doğum günü sayfasına girdiğimde gösteriyor // Ezgi Kaya 25.03 X
-
+X Kayıt durumu bazında grafiğinde cinsiyet seçimi çalışmıyor X
 
 X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
 	* Test etmek gerekiyor 
@@ -222,6 +222,9 @@ X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 - Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış - //onun bilgisayarında öyle görünüyor
 * SS'e zoom yapıp pdf'e basmayı dene
+* Personel eklendiğinde eklenen personeli göster
+* WP api ile mesaj gönder
+
 
 
 

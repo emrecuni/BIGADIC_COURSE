@@ -237,7 +237,19 @@ namespace BIGADIC_COURSE
 
                 foreach (Register register in _registers)
                 {
-                    if (!chartDict.ContainsKey(register.STATUSDESC) && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate) > 0)
+                    // erkek kayıtlar
+                    if (!chartDict.ContainsKey(register.STATUSDESC) && selectedGenderRadioButton == "E" && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate) > 0)
+                        chartDict.Add(register.STATUSDESC, _registers.Count(r => r.STATUSDESC == register.STATUSDESC
+                                  && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate
+                                  && r.GENDER));
+
+                    //kadın kayıtlar
+                    else if (!chartDict.ContainsKey(register.STATUSDESC) && selectedGenderRadioButton == "K" && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate) > 0)
+                        chartDict.Add(register.STATUSDESC, _registers.Count(r => r.STATUSDESC == register.STATUSDESC
+                                  && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate
+                                  && r.GENDER == false));
+                    // tüm kayıtlar
+                    else if (!chartDict.ContainsKey(register.STATUSDESC) && _registers.Count(r => r.COURSE == register.COURSE && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate) > 0)
                         chartDict.Add(register.STATUSDESC, _registers.Count(r => r.STATUSDESC == register.STATUSDESC
                            && r.REGISTERDATE >= startDate && r.REGISTERDATE <= endDate));
                 }
@@ -561,7 +573,7 @@ namespace BIGADIC_COURSE
             try
             {
                 string ssPath = Application.StartupPath + $"ExportCharts";
-                if(!Directory.Exists(ssPath)) 
+                if (!Directory.Exists(ssPath))
                     Directory.CreateDirectory(ssPath);
                 var oldSS = Directory.GetFiles(ssPath);
 
