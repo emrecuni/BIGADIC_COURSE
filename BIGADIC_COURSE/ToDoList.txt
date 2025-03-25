@@ -205,6 +205,9 @@ X Kursiyer tablosundaki id kayıt tablosundaki kursiyer id'ye bağlanmıyor X
 X Zorunlu yönetici olarak çalışmasını sağla X
 X Personel listview'ının kolon uzunluklarını düzelt X
 X Grafik formun size'ını düşür veya startposition'ı düzenle // sayfanın üstüne taşıyor laptop ekranında X
+X Chart'ta split kötü görünüyor //Ekran görüntüsü 2025-03-24 014400.png X
+X Branş eklerken 3. sıraya geçebiliyor geçemesin // futbol - fen bilgisi - hentbol X
+
 
 X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
 	* Test etmek gerekiyor 
@@ -213,13 +216,12 @@ X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesn
 * Excel ve pdf işlemlerini tek bir class ile yapmayı dene
 X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
-* Branş eklerken 3. sıraya geçebiliyor geçemesin // futbol - fen bilgisi - hentbol
 * Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış
 * SS'e zoom yapıp pdf'e basmayı dene
-* Chart'ta split kötü görünüyor //Ekran görüntüsü 2025-03-24 014400.png
 * Personel eklemeyi kontrol et // bütün alanlar doluyken doldur pop-up'ı çıkartıyor
 * Personel tipleri için personel branş'ı ekle formu ekle
 * Personel ekledikten sonra anlık raporda personel sayısı gelmiyor // tip eklendikten sonra oldu sanırım
+* İlk açılışta eşleşen doğum günü bulunamadı diyor ama doğum günü sayfasına girdiğimde gösteriyor // Ezgi Kaya 25.03
 
 
 id:

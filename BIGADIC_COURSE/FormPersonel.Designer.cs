@@ -404,14 +404,14 @@
             // exportToExcelToolStripMenuItem
             // 
             exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            exportToExcelToolStripMenuItem.Size = new Size(166, 24);
+            exportToExcelToolStripMenuItem.Size = new Size(180, 24);
             exportToExcelToolStripMenuItem.Text = "Excel'e Aktar";
             exportToExcelToolStripMenuItem.Click += exportToExcelToolStripMenuItem_Click;
             // 
             // exportToPdfToolStripMenuItem
             // 
             exportToPdfToolStripMenuItem.Name = "exportToPdfToolStripMenuItem";
-            exportToPdfToolStripMenuItem.Size = new Size(166, 24);
+            exportToPdfToolStripMenuItem.Size = new Size(180, 24);
             exportToPdfToolStripMenuItem.Text = "Pdf'e Aktar";
             exportToPdfToolStripMenuItem.Click += exportToPdfToolStripMenuItem_Click;
             // 

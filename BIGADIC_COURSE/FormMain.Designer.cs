@@ -38,6 +38,9 @@
             graphicToolStripMenuItem = new ToolStripMenuItem();
             importToolStripMenuItem = new ToolStripMenuItem();
             personelToolStripMenuItem = new ToolStripMenuItem();
+            addPersonelToolStripMenuItem = new ToolStripMenuItem();
+            deletePersonelToolStripMenuItem = new ToolStripMenuItem();
+            listPersonelToolStripMenuItem = new ToolStripMenuItem();
             birthDatesToolStripMenuItem = new ToolStripMenuItem();
             adminPanelToolStripMenuItem = new ToolStripMenuItem();
             groupBoxPerson = new GroupBox();
@@ -171,10 +174,31 @@
             // 
             // personelToolStripMenuItem
             // 
+            personelToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addPersonelToolStripMenuItem, deletePersonelToolStripMenuItem, listPersonelToolStripMenuItem });
             personelToolStripMenuItem.Name = "personelToolStripMenuItem";
             personelToolStripMenuItem.Size = new Size(79, 24);
             personelToolStripMenuItem.Text = "Personel";
-            personelToolStripMenuItem.Click += personelToolStripMenuItem_Click;
+            // 
+            // addPersonelToolStripMenuItem
+            // 
+            addPersonelToolStripMenuItem.Name = "addPersonelToolStripMenuItem";
+            addPersonelToolStripMenuItem.Size = new Size(180, 24);
+            addPersonelToolStripMenuItem.Text = "Ekle";
+            addPersonelToolStripMenuItem.Click += addPersonelToolStripMenuItem_Click;
+            // 
+            // deletePersonelToolStripMenuItem
+            // 
+            deletePersonelToolStripMenuItem.Name = "deletePersonelToolStripMenuItem";
+            deletePersonelToolStripMenuItem.Size = new Size(180, 24);
+            deletePersonelToolStripMenuItem.Text = "Sil";
+            deletePersonelToolStripMenuItem.Click += deletePersonelToolStripMenuItem_Click;
+            // 
+            // listPersonelToolStripMenuItem
+            // 
+            listPersonelToolStripMenuItem.Name = "listPersonelToolStripMenuItem";
+            listPersonelToolStripMenuItem.Size = new Size(180, 24);
+            listPersonelToolStripMenuItem.Text = "Listele";
+            listPersonelToolStripMenuItem.Click += listPersonelToolStripMenuItem_Click;
             // 
             // birthDatesToolStripMenuItem
             // 
@@ -1106,5 +1130,8 @@
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ToolStripMenuItem birthDatesToolStripMenuItem;
+        private ToolStripMenuItem addPersonelToolStripMenuItem;
+        private ToolStripMenuItem deletePersonelToolStripMenuItem;
+        private ToolStripMenuItem listPersonelToolStripMenuItem;
     }
 }

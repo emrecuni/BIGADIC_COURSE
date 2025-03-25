@@ -551,7 +551,7 @@ namespace BIGADIC_COURSE
             }
         }
 
-        private void personelToolStripMenuItem_Click(object sender, EventArgs e)
+        private void listPersonelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1549,6 +1549,32 @@ namespace BIGADIC_COURSE
             {
                 Log.logger.Error($"birthDatesToolStripMenuItem_Click Error Hata Kodu: 2048 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2048", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void addPersonelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"addPersonelToolStripMenuItem_Click Error Hata Kodu: 2049 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2049", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void deletePersonelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"deletePersonelToolStripMenuItem_Click Error Hata Kodu: 2050 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2050", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
