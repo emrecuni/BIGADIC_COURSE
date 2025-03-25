@@ -143,8 +143,8 @@ namespace BIGADIC_COURSE
                     parameters.Add(new SqlParameter("@Name", SqlDbType.NVarChar, 50) { Value = textBoxName.Text.Trim().ToUpper() });
                     parameters.Add(new SqlParameter("@Surname", SqlDbType.NVarChar, 50) { Value = textBoxSurname.Text.Trim().ToUpper() });
                     parameters.Add(new SqlParameter("@Phone", SqlDbType.Char, 10) { Value = maskedTextBoxPhone.Text });
-                    parameters.Add(new SqlParameter("@Type", SqlDbType.TinyInt) { Value = comboBoxPersonelType.SelectedIndex });
-                    parameters.Add(new SqlParameter("@CourseId", SqlDbType.TinyInt) { Value = comboBoxBranch.SelectedIndex });
+                    parameters.Add(new SqlParameter("@Type", SqlDbType.TinyInt) { Value = courses.First(c => c.TYPEDESCRIPTION == comboBoxPersonelType.SelectedItem.ToString()).TYPE });
+                    parameters.Add(new SqlParameter("@CourseId", SqlDbType.TinyInt) { Value = courses.First(c => c.COURSE == comboBoxBranch.SelectedItem.ToString()).COURSEID });
 
                     int returnCode = await sql.EditData(query.ToString(), parameters);
                     int id = -1;
@@ -165,6 +165,7 @@ namespace BIGADIC_COURSE
                             RefreshData(); // veri tabanındaki kayıtlar tekrar çekilir
                             GetNewRegisters(id); // sadece yeni eklene kayıtlar listview'a getirir
                             buttonClear_Click(sender, e); // textbox'ları temizler
+                            comboBoxBranch.Enabled = false;
                             MessageBox.Show($"Kayıt(lar) Başarılıyla Eklendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                         case 2:
@@ -174,7 +175,7 @@ namespace BIGADIC_COURSE
                     }
                 }
                 else
-                    MessageBox.Show("Lütfen Bütün Alanları Doldurun.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Lütfen Bütün Alanları Doldurun.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);               
             }
             catch (Exception ex)
             {
@@ -223,6 +224,7 @@ namespace BIGADIC_COURSE
                             RefreshData(); // veri tabanındaki kayıtlar tekrar çekilir
                             GetUpdatedRegister(id); // sadece güncellenen kaydı getirir
                             buttonClear_Click(sender, e); // textbox'ları temizler
+                            comboBoxBranch.Enabled = false;
                             buttonUpdate.Enabled = false;
                             buttonDelete.Enabled = false;
                             MessageBox.Show($"Kayıt Başarılıyla Güncellendi.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -380,7 +382,8 @@ namespace BIGADIC_COURSE
                 maskedTextBoxPhone.Text = allPersonels.Find(p => p.ID == id)?.PHONE;
                 comboBoxPersonelType.SelectedIndex = allPersonels.Find(p => p.ID == id).TYPE;
                 comboBoxBranch.SelectedItem = allPersonels.Find(p => p.ID == id)?.COURSE;
-                
+
+                comboBoxBranch.Enabled = true;
                 buttonRegister.Enabled = false;
                 buttonUpdate.Enabled = true;
                 buttonDelete.Enabled = true;
@@ -759,15 +762,15 @@ namespace BIGADIC_COURSE
                 if (comboBoxPersonelType.SelectedIndex > 0)
                 {
                     comboBoxBranch.Items.Clear();
-
+                    comboBoxBranch.Items.Add("Seçiniz");
                     var selectedTypeCourses = courses.FindAll(c => c.TYPEDESCRIPTION == comboBoxPersonelType.SelectedItem.ToString());
-                    
+
                     foreach (Personel? course in selectedTypeCourses)
-                    {
                         comboBoxBranch.Items.Add(course.COURSE);
-                       
-                    }
+                    comboBoxBranch.Enabled = true;
                 }
+                else
+                    comboBoxBranch.Enabled = false;
             }
             catch (Exception ex)
             {
