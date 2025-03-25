@@ -1495,7 +1495,7 @@ namespace BIGADIC_COURSE
                         .GroupBy(r => r.TRAINEEID)
                         .Select(r => r.First()).ToList();
 
-                    if (birthDates.Count(b => b.BIRTHDATE.Date == DateTime.Now.Date) > 0 || isBirthdateStrip)
+                    if (birthDates.Count(b => b.BIRTHDATE.Date.Month == DateTime.Now.Date.Month && b.BIRTHDATE.Date.Day == DateTime.Now.Date.Day) > 0 || isBirthdateStrip)
                     {
                         DialogResult dialogResult = MessageBox.Show("Eşleşen Doğum Günleri Listelensin Mi?", "SORU", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialogResult == DialogResult.Yes)
