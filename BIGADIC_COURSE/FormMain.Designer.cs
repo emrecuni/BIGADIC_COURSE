@@ -133,20 +133,20 @@
             // 
             branchToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addBranchToolStripMenuItem, deleteBranchToolStripMenuItem });
             branchToolStripMenuItem.Name = "branchToolStripMenuItem";
-            branchToolStripMenuItem.Size = new Size(59, 24);
-            branchToolStripMenuItem.Text = "Branş";
+            branchToolStripMenuItem.Size = new Size(91, 24);
+            branchToolStripMenuItem.Text = "Branş Ekle";
             // 
             // addBranchToolStripMenuItem
             // 
             addBranchToolStripMenuItem.Name = "addBranchToolStripMenuItem";
-            addBranchToolStripMenuItem.Size = new Size(106, 24);
+            addBranchToolStripMenuItem.Size = new Size(180, 24);
             addBranchToolStripMenuItem.Text = "Ekle";
             addBranchToolStripMenuItem.Click += addBranchToolStripMenuItem_Click;
             // 
             // deleteBranchToolStripMenuItem
             // 
             deleteBranchToolStripMenuItem.Name = "deleteBranchToolStripMenuItem";
-            deleteBranchToolStripMenuItem.Size = new Size(106, 24);
+            deleteBranchToolStripMenuItem.Size = new Size(180, 24);
             deleteBranchToolStripMenuItem.Text = "Sil";
             deleteBranchToolStripMenuItem.Click += deleteBranchToolStripMenuItem_Click;
             // 
@@ -258,7 +258,6 @@
             groupBoxPerson.Size = new Size(602, 460);
             groupBoxPerson.TabIndex = 0;
             groupBoxPerson.TabStop = false;
-            groupBoxPerson.Text = "Kayıt";
             // 
             // labelEndDate
             // 
@@ -677,7 +676,6 @@
             groupBoxTotal.Size = new Size(193, 460);
             groupBoxTotal.TabIndex = 1;
             groupBoxTotal.TabStop = false;
-            groupBoxTotal.Text = "Toplamlar...";
             // 
             // radioButtonTotal
             // 
@@ -882,7 +880,6 @@
             groupBoxBranches.Size = new Size(439, 460);
             groupBoxBranches.TabIndex = 2;
             groupBoxBranches.TabStop = false;
-            groupBoxBranches.Text = "Branş Seçimleri...";
             // 
             // flowLayoutPanelBranches
             // 
@@ -1027,7 +1024,6 @@
             Controls.Add(groupBoxMain);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 9F);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 3, 4, 3);

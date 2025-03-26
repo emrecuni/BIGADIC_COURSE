@@ -910,8 +910,14 @@ namespace BIGADIC_COURSE
                         flowLayoutPanelBranches.Controls.Clear(); // branşları eklenmeden bütün kurslar temizlenir
                         foreach (DataRow branch in branchesTable.Rows) // veri tabanından çekilen bütün branşlar flowlayoutpanel'a eklenir
                         {
+                            GroupBox groupBox = new();
+                            groupBox.Text = string.Empty;
+                            groupBox.Tag = branch.ItemArray[0];
+                            groupBox.Name = $"groupBox{branch.ItemArray[0]}";
+                            groupBox.Size = new Size(175, 50);
+
                             CheckBox addedBranch = new CheckBox();
-                            flowLayoutPanelBranches.Controls.Add(addedBranch);
+                            groupBox.Controls.Add(addedBranch);
                             addedBranch.Text = branch.ItemArray[1].ToString();
                             addedBranch.Name = $"checkBox{branch.ItemArray[0]}";
                             addedBranch.Tag = branch.ItemArray[0];
@@ -921,12 +927,14 @@ namespace BIGADIC_COURSE
                             addedBranch.CheckedChanged += AddedBranch_CheckedChanged;
 
                             Label label = new Label();
-                            flowLayoutPanelBranches.Controls.Add(label);
+                            groupBox.Controls.Add(label);
                             label.Text = "....";
-                            label.Location = new Point(10, 10);
+                            label.Location = new Point(125, 10);
                             label.ForeColor = Color.Red;
                             label.Name = $"label{branch.ItemArray[0]}";
                             label.Tag = branch.ItemArray[0];
+
+                            flowLayoutPanelBranches.Controls.Add(groupBox);
                         }
                     }));
                 }
