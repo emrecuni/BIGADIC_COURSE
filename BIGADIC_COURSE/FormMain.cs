@@ -921,7 +921,7 @@ namespace BIGADIC_COURSE
                             addedBranch.Text = branch.ItemArray[1].ToString();
                             addedBranch.Name = $"checkBox{branch.ItemArray[0]}";
                             addedBranch.Tag = branch.ItemArray[0];
-                            addedBranch.Location = new Point(10, 10);
+                            addedBranch.Location = new Point(10, 15);
                             addedBranch.ForeColor = Color.Black;
                             addedBranch.Font = new Font("Segoe UI", 9.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(162)));
                             addedBranch.CheckedChanged += AddedBranch_CheckedChanged;
@@ -929,7 +929,7 @@ namespace BIGADIC_COURSE
                             Label label = new Label();
                             groupBox.Controls.Add(label);
                             label.Text = "....";
-                            label.Location = new Point(125, 10);
+                            label.Location = new Point(125, 15);
                             label.ForeColor = Color.Red;
                             label.Name = $"label{branch.ItemArray[0]}";
                             label.Tag = branch.ItemArray[0];
@@ -993,13 +993,16 @@ namespace BIGADIC_COURSE
                 var courseCounts = allRegistersList.GroupBy(r => r.COURSEID)
                                                    .ToDictionary(g => g.Key, g => g.Count());
 
-                foreach (Label label in flowLayoutPanelBranches.Controls.OfType<Label>())
+                foreach (GroupBox groupBox in flowLayoutPanelBranches.Controls.OfType<GroupBox>())
                 {
-                    if (label.Tag != null && int.TryParse(label.Tag.ToString(), out int courseId))
+                    foreach (Label label in groupBox.Controls.OfType<Label>())
                     {
-                        label.Text = courseCounts.ContainsKey(courseId) ? courseCounts[courseId].ToString() : "0";
-                        label.Refresh();  // Zorla güncelle  
-                    }
+                        if (label.Tag != null && int.TryParse(label.Tag.ToString(), out int courseId))
+                        {
+                            label.Text = courseCounts.ContainsKey(courseId) ? courseCounts[courseId].ToString() : "0";
+                            label.Refresh();  // Zorla güncelle  
+                        }
+                    }                    
                 }
                 //Application.DoEvents(); // UI'yi güncelle
 

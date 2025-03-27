@@ -886,7 +886,7 @@
             flowLayoutPanelBranches.AutoScroll = true;
             flowLayoutPanelBranches.Dock = DockStyle.Fill;
             flowLayoutPanelBranches.Location = new Point(3, 22);
-            flowLayoutPanelBranches.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanelBranches.Margin = new Padding(1);
             flowLayoutPanelBranches.Name = "flowLayoutPanelBranches";
             flowLayoutPanelBranches.Size = new Size(392, 436);
             flowLayoutPanelBranches.TabIndex = 0;
