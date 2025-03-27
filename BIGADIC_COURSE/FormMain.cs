@@ -982,12 +982,11 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                List<GroupBox> groupboxes = flowLayoutPanelBranches.Controls.OfType<GroupBox>().ToList();
-                List<CheckBox> checkBoxes = new();
-                foreach (GroupBox groupbox in groupboxes) 
-                {
-                    checkBoxes.AddRange(groupbox.Controls.OfType<CheckBox>());
-                }
+                List<CheckBox> checkBoxes = flowLayoutPanelBranches.Controls
+                .OfType<GroupBox>()
+                .SelectMany(g => g.Controls.OfType<CheckBox>())
+                .ToList();
+    
                 FormReport formReport = new FormReport(allRegistersList, checkBoxes);
                 formReport.ShowDialog();
             }
@@ -1015,7 +1014,7 @@ namespace BIGADIC_COURSE
                             label.Text = courseCounts.ContainsKey(courseId) ? courseCounts[courseId].ToString() : "0";
                             label.Refresh();  // Zorla güncelle  
                         }
-                    }                    
+                    }
                 }
                 //Application.DoEvents(); // UI'yi güncelle
 
