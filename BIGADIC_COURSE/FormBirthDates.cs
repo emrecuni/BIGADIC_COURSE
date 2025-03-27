@@ -4,6 +4,7 @@ using iText.IO.Image;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout.Element;
+using iText.Layout.Properties;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing;
 using System;
@@ -300,16 +301,29 @@ namespace BIGADIC_COURSE
 
                         document.Add(new Paragraph());
                         document.Add(new Paragraph("Görüşmeyi Yapan Personel").SetFont(font).SetFontSize(11).SetTextAlignment(iText.Layout.Properties.TextAlignment.LEFT));
-                        Div div = new Div()
-                        .SetTextAlignment(iText.Layout.Properties.TextAlignment.RIGHT)
-                        .SetVerticalAlignment(iText.Layout.Properties.VerticalAlignment.MIDDLE)
-                        .SetMarginRight(20); // Sağdan biraz boşluk ekleyebilirsin
+                        // Ana DIV (Sağa hizalı)
+                        Div outerDiv = new Div()
+                            .SetTextAlignment(TextAlignment.RIGHT) // Sağa hizala
+                            .SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.RIGHT) // Sayfanın sağına yasla
+                            .SetWidth(200) // Genişlik belirleyerek hizalamayı daha iyi sağlarız
+                            .SetMarginRight(20); // Sağdan biraz boşluk bırak
 
-                        div.Add(new Paragraph("Onaylayan").SetFont(font).SetFontSize(11));
-                        div.Add(new Paragraph("........").SetFont(font).SetFontSize(11));
-                        div.Add(new Paragraph("Gençlik ve Kültür Merkezi Müdürü").SetFont(font).SetFontSize(11));
+                        // İç DIV (Dikey ortalanmış içerik için)
+                        Div innerDiv = new Div()
+                            .SetVerticalAlignment(VerticalAlignment.MIDDLE) // Dikey ortala
+                            .SetHeight(100) // Dikey ortalamayı sağlamak için yükseklik ver
+                            .SetTextAlignment(TextAlignment.CENTER); // Metinleri ortala
 
-                        document.Add(div);
+                        // İçeriği ekleyelim
+                        innerDiv.Add(new Paragraph("Onaylayan").SetFontSize(11));
+                        innerDiv.Add(new Paragraph("........").SetFontSize(11));
+                        innerDiv.Add(new Paragraph("Gençlik ve Kültür Merkezi Müdürü").SetFontSize(11));
+
+                        // İç divi dış div içine ekle
+                        outerDiv.Add(innerDiv);
+
+                        // PDF'ye ekle
+                        document.Add(outerDiv);
 
 
                         document.Close();

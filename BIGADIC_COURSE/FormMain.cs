@@ -914,7 +914,7 @@ namespace BIGADIC_COURSE
                             groupBox.Text = string.Empty;
                             groupBox.Tag = branch.ItemArray[0];
                             groupBox.Name = $"groupBox{branch.ItemArray[0]}";
-                            groupBox.Size = new Size(175, 50);
+                            groupBox.Size = new Size(180, 50);
 
                             CheckBox addedBranch = new CheckBox();
                             groupBox.Controls.Add(addedBranch);
