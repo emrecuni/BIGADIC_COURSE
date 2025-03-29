@@ -125,7 +125,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(1259, 28);
+            menuStrip1.Size = new Size(1260, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -877,7 +877,7 @@
             groupBoxBranches.Margin = new Padding(3, 2, 3, 2);
             groupBoxBranches.Name = "groupBoxBranches";
             groupBoxBranches.Padding = new Padding(3, 2, 3, 2);
-            groupBoxBranches.Size = new Size(398, 460);
+            groupBoxBranches.Size = new Size(399, 460);
             groupBoxBranches.TabIndex = 2;
             groupBoxBranches.TabStop = false;
             // 
@@ -888,7 +888,7 @@
             flowLayoutPanelBranches.Location = new Point(3, 22);
             flowLayoutPanelBranches.Margin = new Padding(1);
             flowLayoutPanelBranches.Name = "flowLayoutPanelBranches";
-            flowLayoutPanelBranches.Size = new Size(392, 436);
+            flowLayoutPanelBranches.Size = new Size(393, 436);
             flowLayoutPanelBranches.TabIndex = 0;
             // 
             // groupBoxListGraphicsPrint
@@ -900,7 +900,7 @@
             groupBoxListGraphicsPrint.Margin = new Padding(3, 2, 3, 2);
             groupBoxListGraphicsPrint.Name = "groupBoxListGraphicsPrint";
             groupBoxListGraphicsPrint.Padding = new Padding(3, 2, 3, 2);
-            groupBoxListGraphicsPrint.Size = new Size(1212, 271);
+            groupBoxListGraphicsPrint.Size = new Size(1213, 271);
             groupBoxListGraphicsPrint.TabIndex = 5;
             groupBoxListGraphicsPrint.TabStop = false;
             groupBoxListGraphicsPrint.Text = "Listeler";
@@ -914,7 +914,7 @@
             groupBoxList.Margin = new Padding(3, 2, 3, 2);
             groupBoxList.Name = "groupBoxList";
             groupBoxList.Padding = new Padding(3, 2, 3, 2);
-            groupBoxList.Size = new Size(1201, 242);
+            groupBoxList.Size = new Size(1202, 242);
             groupBoxList.TabIndex = 0;
             groupBoxList.TabStop = false;
             // 
@@ -927,7 +927,7 @@
             listViewAllRegister.Location = new Point(3, 20);
             listViewAllRegister.Margin = new Padding(3, 2, 3, 2);
             listViewAllRegister.Name = "listViewAllRegister";
-            listViewAllRegister.Size = new Size(1195, 220);
+            listViewAllRegister.Size = new Size(1196, 220);
             listViewAllRegister.TabIndex = 0;
             listViewAllRegister.UseCompatibleStateImageBehavior = false;
             listViewAllRegister.View = View.Details;
@@ -993,7 +993,7 @@
             groupBoxMain.Margin = new Padding(3, 2, 3, 2);
             groupBoxMain.Name = "groupBoxMain";
             groupBoxMain.Padding = new Padding(3, 2, 3, 2);
-            groupBoxMain.Size = new Size(1239, 799);
+            groupBoxMain.Size = new Size(1240, 799);
             groupBoxMain.TabIndex = 0;
             groupBoxMain.TabStop = false;
             // 
@@ -1020,14 +1020,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1259, 840);
+            ClientSize = new Size(1260, 840);
             Controls.Add(groupBoxMain);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 9F);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 3, 4, 3);
-            MaximizeBox = false;
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Bigadiç Belediyesi_Bilgi_İşlem";
