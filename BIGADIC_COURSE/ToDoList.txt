@@ -231,7 +231,11 @@ X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 - Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış - //onun bilgisayarında öyle görünüyor
 * SS'e zoom yapıp pdf'e basmayı dene
-
+* Branşların olduğu groupbox'ı genişlet
+* Uygulamayı tam ekran olarak başlat
+* Form sizeable yapıyorum
+* Listviewclick 733'te hata veriyor 2020
+* Branş düzenle tipi
 
 
 id:
