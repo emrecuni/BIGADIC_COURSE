@@ -730,8 +730,13 @@ namespace BIGADIC_COURSE
                 }
 
                 //textBoxSelectionBranches.Text = allRegistersList.FirstOrDefault(r => r.ID == id).COURSE;
-                CheckBox checkBox = flowLayoutPanelBranches.Controls.OfType<CheckBox>()
-                                        .FirstOrDefault(c => c.Tag.ToString() == allRegistersList.FirstOrDefault(r => r.ID == id).COURSEID.ToString());
+                //CheckBox checkBox = flowLayoutPanelBranches.Controls.OfType<CheckBox>()
+                //                        .FirstOrDefault(c => c.Tag.ToString() == allRegistersList.FirstOrDefault(r => r.ID == id).COURSEID.ToString());
+                
+                List<GroupBox> groupBoxes = flowLayoutPanelBranches.Controls.OfType<GroupBox>().ToList();
+
+                CheckBox checkBox = groupBoxes.Select(g => g.Controls.OfType<CheckBox>()).FirstOrDefault
+                
                 checkBox.Checked = true;
                 buttonUpdate.Enabled = true;
                 buttonDelete.Enabled = true;

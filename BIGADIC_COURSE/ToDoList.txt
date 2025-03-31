@@ -236,6 +236,7 @@ X Personelleri load'da listele X
 * Form sizable yapıyorum
 * Listviewclick 733'te hata veriyor 2020
 * Branş düzenle tipi
+* "Bu yapıya gerek var mı" kontrol et
 
 
 id:
