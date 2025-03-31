@@ -1030,6 +1030,7 @@
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Bigadiç Belediyesi_Bilgi_İşlem";
+            WindowState = FormWindowState.Maximized;
             FormClosing += FormMain_FormClosing;
             Load += FormMain_Load;
             Resize += FormMain_Resize;

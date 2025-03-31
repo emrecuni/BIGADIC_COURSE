@@ -233,7 +233,7 @@ X Personelleri load'da listele X
 * SS'e zoom yapıp pdf'e basmayı dene
 * Branşların olduğu groupbox'ı genişlet
 * Uygulamayı tam ekran olarak başlat
-* Form sizeable yapıyorum
+* Form sizable yapıyorum
 * Listviewclick 733'te hata veriyor 2020
 * Branş düzenle tipi
 
