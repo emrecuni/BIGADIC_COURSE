@@ -705,15 +705,15 @@ namespace BIGADIC_COURSE
 
                     int id = int.Parse(listViewAllRegister.SelectedItems[0].Text.Substring(3));
 
-                    idStr.Clear();
-                    if (id < 10)
-                        idStr.Append($"GKM000{id}");
-                    else if (id < 100)
-                        idStr.Append($"GKM00{id}");
-                    else if (id < 1000)
-                        idStr.Append($"GKM0{id}");
-                    else
-                        idStr.Append($"GKM{id}");
+                    //idStr.Clear();
+                    //if (id < 10)
+                    //    idStr.Append($"GKM000{id}");
+                    //else if (id < 100)
+                    //    idStr.Append($"GKM00{id}");
+                    //else if (id < 1000)
+                    //    idStr.Append($"GKM0{id}");
+                    //else
+                    //    idStr.Append($"GKM{id}");
 
                     textBoxId.Text = listViewAllRegister.SelectedItems[0].Text;
                     textBoxName.Text = allRegistersList.FirstOrDefault(r => r.ID == id)?.NAME;
@@ -929,7 +929,7 @@ namespace BIGADIC_COURSE
                             groupBox.Text = string.Empty;
                             groupBox.Tag = branch.ItemArray[0];
                             groupBox.Name = $"groupBox{branch.ItemArray[0]}";
-                            groupBox.Size = new Size(180, 50);
+                            groupBox.Size = new Size(200, 50);
 
                             CheckBox addedBranch = new CheckBox();
                             groupBox.Controls.Add(addedBranch);
@@ -937,6 +937,7 @@ namespace BIGADIC_COURSE
                             addedBranch.Name = $"checkBox{branch.ItemArray[0]}";
                             addedBranch.Tag = branch.ItemArray[0];
                             addedBranch.Location = new Point(10, 15);
+                            addedBranch.Size = new Size(150, 25);
                             addedBranch.ForeColor = Color.Black;
                             addedBranch.Font = new Font("Segoe UI", 9.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(162)));
                             addedBranch.CheckedChanged += AddedBranch_CheckedChanged;
@@ -944,7 +945,7 @@ namespace BIGADIC_COURSE
                             Label label = new Label();
                             groupBox.Controls.Add(label);
                             label.Text = "....";
-                            label.Location = new Point(125, 15);
+                            label.Location = new Point(160, 15);
                             label.ForeColor = Color.Red;
                             label.Name = $"label{branch.ItemArray[0]}";
                             label.Tag = branch.ItemArray[0];
