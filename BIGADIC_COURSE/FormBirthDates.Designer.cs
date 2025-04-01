@@ -138,6 +138,7 @@
             Controls.Add(listViewBirthDate);
             Controls.Add(menuStripExport);
             Font = new Font("Segoe UI Semibold", 11.25F);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStripExport;
             Margin = new Padding(4, 5, 4, 5);

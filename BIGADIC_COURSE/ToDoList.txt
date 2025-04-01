@@ -221,11 +221,15 @@ X Branşların olduğu groupbox'ı genişlet X
 X "Bu yapıya gerek var mı" kontrol et id X
 X Branş tipi düzenle sayfası X
 X Branş tipi değiştirilmediyse bildir X
+X Formları fixed yap X
+X Branş düzenleme ekranı ekle // wp sonrası X
+X Onaylan müdür belediye kısmını sağa yaslı değil ortalanmış olarak yaz X
+
 
 * WP api ile mesaj gönder
-* Onaylan müdür belediye kısmını sağa yaslı değil ortalanmış olarak yaz
-* Branş düzenleme ekranı ekle // wp sonrası
-* Pdf'lerde hücre genişliklerini statik yap // wp sonrası
+
+
+* Pdf'lerde hücre genişliklerini statik yap // wp sonrası 
 * Doğum günü pdf'inde görüşmeyi yapan ile onaylayanı aynı satıra koy // wp sonrası
 * Personel eklendiğinde eklenen personeli göster // wp sonrası
 X Çıkış yap dedikten sonra bazen otomatik içeri alıyor tekrar // user nesnesini dispose etmek gerekebilir X
@@ -237,7 +241,7 @@ X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 - Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış - //onun bilgisayarında öyle görünüyor
 * SS'e zoom yapıp pdf'e basmayı dene
-* Formları fixed yap
+
 
 
 id:

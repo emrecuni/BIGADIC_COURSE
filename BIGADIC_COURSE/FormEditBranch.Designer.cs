@@ -111,7 +111,7 @@
             ClientSize = new Size(332, 191);
             Controls.Add(groupBoxAddBranch);
             Font = new Font("Segoe UI Semibold", 11.25F);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
             MaximizeBox = false;
