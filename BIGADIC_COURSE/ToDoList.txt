@@ -219,6 +219,8 @@ X Form sizable yap X
 X Listviewclick 733'te hata veriyor 2020 X
 X Branşların olduğu groupbox'ı genişlet X
 X "Bu yapıya gerek var mı" kontrol et id X
+X Branş tipi düzenle sayfası X
+X Branş tipi değiştirilmediyse bildir X
 
 * WP api ile mesaj gönder
 * Onaylan müdür belediye kısmını sağa yaslı değil ortalanmış olarak yaz
@@ -235,7 +237,6 @@ X Personelleri load'da listele X
 	* Fazla datayla test et // sanal makinede 
 - Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış - //onun bilgisayarında öyle görünüyor
 * SS'e zoom yapıp pdf'e basmayı dene
-* Branş tipi düzenle sayfası
 * Formları fixed yap
 
 

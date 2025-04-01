@@ -64,6 +64,7 @@
             // 
             // comboBoxBranchType
             // 
+            comboBoxBranchType.Enabled = false;
             comboBoxBranchType.FormattingEnabled = true;
             comboBoxBranchType.Location = new Point(144, 64);
             comboBoxBranchType.Name = "comboBoxBranchType";
