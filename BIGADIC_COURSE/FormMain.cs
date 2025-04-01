@@ -424,7 +424,13 @@ namespace BIGADIC_COURSE
                 buttonRegister.Enabled = false;
                 flowLayoutPanelBranches.Enabled = true;
 
-                List<CheckBox> checkBoxes = flowLayoutPanelBranches.Controls.OfType<CheckBox>().Where(c => c.Checked == true).ToList();
+                List<CheckBox> checkBoxes = flowLayoutPanelBranches.Controls
+                .OfType<GroupBox>()    // FlowLayoutPanel içindeki sadece GroupBox'ları seç
+                .SelectMany(g => g.Controls.OfType<CheckBox>())  // Her GroupBox içindeki CheckBox'ı al
+                .ToList()
+                .Where(c => c.Checked == true)
+                .ToList();
+
                 checkBoxes.ForEach(checkBox => { checkBox.Checked = false; });
 
                 listViewAllRegister.Items.Clear();
@@ -687,72 +693,76 @@ namespace BIGADIC_COURSE
         {
             try
             {
-                List<CheckBox> allCheckBoxes = flowLayoutPanelBranches.Controls.OfType<CheckBox>().ToList(); // bütün checkbox'ların tiki kaldırılır
-                foreach (var check in allCheckBoxes)
-                    check.Checked = false;
-
-                int id = int.Parse(listViewAllRegister.SelectedItems[0].Text.Substring(3));
-
-                idStr.Clear();
-                if (id < 10)
-                    idStr.Append($"GKM000{id}");
-                else if (id < 100)
-                    idStr.Append($"GKM00{id}");
-                else if (id < 1000)
-                    idStr.Append($"GKM0{id}");
-                else
-                    idStr.Append($"GKM{id}");
-
-                textBoxId.Text = idStr.ToString();
-                textBoxName.Text = allRegistersList.FirstOrDefault(r => r.ID == id).NAME;
-                textBoxSurname.Text = allRegistersList.FirstOrDefault(r => r.ID == id).SURNAME;
-                maskedTextBoxTckn.Text = allRegistersList.FirstOrDefault(r => r.ID == id).TCKN;
-                maskedTextBoxPhone.Text = allRegistersList.FirstOrDefault(r => r.ID == id).PHONE;
-                dateTimePickerBirthDate.Value = allRegistersList.FirstOrDefault(r => r.ID == id).BIRTHDATE;
-                dateTimePickerRegisterDate.Value = allRegistersList.FirstOrDefault(r => r.ID == id).REGISTERDATE;
-
-                if (allRegistersList.FirstOrDefault(r => r.ID == id).GENDER)
-                    radioButtonMale.Checked = true;
-                else
-                    radioButtonFemale.Checked = true;
-
-                switch (allRegistersList.FirstOrDefault(r => r.ID == id).STATUS)
+                if (allRegistersList != null)
                 {
-                    case "A":
-                        radioButtonActive.Checked = true;
-                        break;
-                    case "B":
-                        radioButtonWaiting.Checked = true;
-                        break;
-                    case "P":
-                        radioButtonPassive.Checked = true;
-                        break;
+                    List<CheckBox> allCheckBoxes = flowLayoutPanelBranches.Controls
+                    .OfType<GroupBox>()    // FlowLayoutPanel içindeki sadece GroupBox'ları seç
+                    .SelectMany(g => g.Controls.OfType<CheckBox>())  // Her GroupBox içindeki CheckBox'ı al
+                    .ToList();  // Listeye çevir // bütün checkbox'ların tiki kaldırılır
+
+                    foreach (var check in allCheckBoxes)
+                        check.Checked = false;
+
+                    int id = int.Parse(listViewAllRegister.SelectedItems[0].Text.Substring(3));
+
+                    idStr.Clear();
+                    if (id < 10)
+                        idStr.Append($"GKM000{id}");
+                    else if (id < 100)
+                        idStr.Append($"GKM00{id}");
+                    else if (id < 1000)
+                        idStr.Append($"GKM0{id}");
+                    else
+                        idStr.Append($"GKM{id}");
+
+                    textBoxId.Text = listViewAllRegister.SelectedItems[0].Text;
+                    textBoxName.Text = allRegistersList.FirstOrDefault(r => r.ID == id)?.NAME;
+                    textBoxSurname.Text = allRegistersList.FirstOrDefault(r => r.ID == id)?.SURNAME;
+                    maskedTextBoxTckn.Text = allRegistersList.FirstOrDefault(r => r.ID == id)?.TCKN;
+                    maskedTextBoxPhone.Text = allRegistersList.FirstOrDefault(r => r.ID == id)?.PHONE;
+                    dateTimePickerBirthDate.Value = allRegistersList.FirstOrDefault(r => r.ID == id)!.BIRTHDATE;
+                    dateTimePickerRegisterDate.Value = allRegistersList.FirstOrDefault(r => r.ID == id)!.REGISTERDATE;
+
+                    if (allRegistersList.FirstOrDefault(r => r.ID == id)!.GENDER)
+                        radioButtonMale.Checked = true;
+                    else
+                        radioButtonFemale.Checked = true;
+
+                    switch (allRegistersList.FirstOrDefault(r => r.ID == id)?.STATUS)
+                    {
+                        case "A":
+                            radioButtonActive.Checked = true;
+                            break;
+                        case "B":
+                            radioButtonWaiting.Checked = true;
+                            break;
+                        case "P":
+                            radioButtonPassive.Checked = true;
+                            break;
+                    }
+                    //textBoxSelectionBranches.Text = allRegistersList.FirstOrDefault(r => r.ID == id).COURSE;
+
+                    var checkBox = allCheckBoxes.FirstOrDefault(c => c.Tag?.ToString() == allRegistersList?.FirstOrDefault(r => r.ID == id)?.COURSEID.ToString());
+
+                    if (checkBox != null)
+                        checkBox.Checked = true;
+
+                    buttonUpdate.Enabled = true;
+                    buttonDelete.Enabled = true;
+                    flowLayoutPanelBranches.Enabled = false;
+
+                    selectedRegister = new Register
+                    {
+                        ID = id,
+                        NAME = textBoxName.Text,
+                        SURNAME = textBoxSurname.Text,
+                        TCKN = maskedTextBoxTckn.Text,
+                        PHONE = maskedTextBoxPhone.Text,
+                        BIRTHDATE = dateTimePickerBirthDate.Value,
+                        GENDER = radioButtonMale.Checked ? true : false,
+                        STATUS = allRegistersList?.FirstOrDefault(r => r.ID == id)?.STATUS
+                    };
                 }
-
-                //textBoxSelectionBranches.Text = allRegistersList.FirstOrDefault(r => r.ID == id).COURSE;
-                //CheckBox checkBox = flowLayoutPanelBranches.Controls.OfType<CheckBox>()
-                //                        .FirstOrDefault(c => c.Tag.ToString() == allRegistersList.FirstOrDefault(r => r.ID == id).COURSEID.ToString());
-                
-                List<GroupBox> groupBoxes = flowLayoutPanelBranches.Controls.OfType<GroupBox>().ToList();
-
-                CheckBox checkBox = groupBoxes.Select(g => g.Controls.OfType<CheckBox>()).FirstOrDefault
-                
-                checkBox.Checked = true;
-                buttonUpdate.Enabled = true;
-                buttonDelete.Enabled = true;
-                flowLayoutPanelBranches.Enabled = false;
-
-                selectedRegister = new Register
-                {
-                    ID = id,
-                    NAME = textBoxName.Text,
-                    SURNAME = textBoxSurname.Text,
-                    TCKN = maskedTextBoxTckn.Text,
-                    PHONE = maskedTextBoxPhone.Text,
-                    BIRTHDATE = dateTimePickerBirthDate.Value,
-                    GENDER = radioButtonMale.Checked ? true : false,
-                    STATUS = allRegistersList.FirstOrDefault(r => r.ID == id).STATUS
-                };
             }
             catch (Exception ex)
             {
@@ -991,7 +1001,7 @@ namespace BIGADIC_COURSE
                 .OfType<GroupBox>()
                 .SelectMany(g => g.Controls.OfType<CheckBox>())
                 .ToList();
-    
+
                 FormReport formReport = new FormReport(allRegistersList, checkBoxes);
                 formReport.ShowDialog();
             }

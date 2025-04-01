@@ -214,6 +214,9 @@ X İlk açılışta eşleşen doğum günü bulunamadı diyor ama doğum günü 
 X Kayıt durumu bazında grafiğinde cinsiyet seçimi çalışmıyor X
 X Doğum gününde müdür adını sil "..." koy X
 X Main formu sizable değil fixed yap X
+X Uygulamayı tam ekran olarak başlat X
+X Form sizable yap X
+X Listviewclick 733'te hata veriyor 2020 X
 
 
 * WP api ile mesaj gönder
@@ -232,10 +235,7 @@ X Personelleri load'da listele X
 - Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış - //onun bilgisayarında öyle görünüyor
 * SS'e zoom yapıp pdf'e basmayı dene
 * Branşların olduğu groupbox'ı genişlet
-* Uygulamayı tam ekran olarak başlat
-* Form sizable yapıyorum
-* Listviewclick 733'te hata veriyor 2020
-* Branş düzenle tipi
+* Branş tipi düzenle sayfası
 * "Bu yapıya gerek var mı" kontrol et
 
 
