@@ -236,7 +236,7 @@ X Personelleri load'da listele X
 - Personel pdf'inde tabloyu enine uzatebilirsen uzatmaya çalış - //onun bilgisayarında öyle görünüyor
 * SS'e zoom yapıp pdf'e basmayı dene
 * Branş tipi düzenle sayfası
-
+* Formları fixed yap
 
 
 id:
