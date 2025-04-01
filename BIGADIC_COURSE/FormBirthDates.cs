@@ -324,8 +324,6 @@ namespace BIGADIC_COURSE
 
                         // PDF'ye ekle
                         document.Add(outerDiv);
-
-
                         document.Close();
                     }
                 }
