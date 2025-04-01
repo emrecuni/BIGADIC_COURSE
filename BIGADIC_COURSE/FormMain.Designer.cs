@@ -109,6 +109,7 @@
             groupBoxMain = new GroupBox();
             textBoxTitle = new TextBox();
             timer = new System.Windows.Forms.Timer(components);
+            editBranchToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             groupBoxPerson.SuspendLayout();
             groupBoxTotal.SuspendLayout();
@@ -131,7 +132,7 @@
             // 
             // branchToolStripMenuItem
             // 
-            branchToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addBranchToolStripMenuItem, deleteBranchToolStripMenuItem });
+            branchToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addBranchToolStripMenuItem, deleteBranchToolStripMenuItem, editBranchToolStripMenuItem });
             branchToolStripMenuItem.Name = "branchToolStripMenuItem";
             branchToolStripMenuItem.Size = new Size(91, 24);
             branchToolStripMenuItem.Text = "Branş Ekle";
@@ -139,14 +140,14 @@
             // addBranchToolStripMenuItem
             // 
             addBranchToolStripMenuItem.Name = "addBranchToolStripMenuItem";
-            addBranchToolStripMenuItem.Size = new Size(106, 24);
+            addBranchToolStripMenuItem.Size = new Size(180, 24);
             addBranchToolStripMenuItem.Text = "Ekle";
             addBranchToolStripMenuItem.Click += addBranchToolStripMenuItem_Click;
             // 
             // deleteBranchToolStripMenuItem
             // 
             deleteBranchToolStripMenuItem.Name = "deleteBranchToolStripMenuItem";
-            deleteBranchToolStripMenuItem.Size = new Size(106, 24);
+            deleteBranchToolStripMenuItem.Size = new Size(180, 24);
             deleteBranchToolStripMenuItem.Text = "Sil";
             deleteBranchToolStripMenuItem.Click += deleteBranchToolStripMenuItem_Click;
             // 
@@ -1014,6 +1015,13 @@
             timer.Interval = 350;
             timer.Tick += timer_Tick;
             // 
+            // editBranchToolStripMenuItem
+            // 
+            editBranchToolStripMenuItem.Name = "editBranchToolStripMenuItem";
+            editBranchToolStripMenuItem.Size = new Size(180, 24);
+            editBranchToolStripMenuItem.Text = "Düzenle";
+            editBranchToolStripMenuItem.Click += editBranchToolStripMenuItem_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1130,5 +1138,6 @@
         private ToolStripMenuItem addPersonelToolStripMenuItem;
         private ToolStripMenuItem deletePersonelToolStripMenuItem;
         private ToolStripMenuItem listPersonelToolStripMenuItem;
+        private ToolStripMenuItem editBranchToolStripMenuItem;
     }
 }

@@ -1618,5 +1618,19 @@ namespace BIGADIC_COURSE
                 MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2050", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void editBranchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormEditBranch formEditBranch = new();
+                formEditBranch.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Log.logger.Error($"editBranchToolStripMenuItem_Click Error Hata Kodu: 2051 ex.message: {ex.Message} ex.stacktrace: {ex.StackTrace}");
+                MessageBox.Show("Bir Hata Oluştu. Hata Kodu: 2051", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
