@@ -85,9 +85,9 @@
 Uygulama, rol tabanlı erişim kontrolü (RBAC) sistemiyle çalışmaktadır. Giriş yapan kullanıcının yetkisine göre işlem kapsamı otomatik olarak belirlenir.
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                   🔑 GİRİŞ EKRANI                   │
-└──────────────────────┬──────────────────────────────┘
+┌────────────────────────────────────────────────────────┐
+│                   🔑 GİRİŞ EKRANI 🔑                  |
+└──────────────────────┬─────────────────────────────────┘
                        │
           ┌────────────┴────────────┐
           │                         │
@@ -111,7 +111,7 @@ Uygulama, rol tabanlı erişim kontrolü (RBAC) sistemiyle çalışmaktadır. Gi
 | ![OxyPlot](https://img.shields.io/badge/OxyPlot-Grafik_Görünümü-512BD4?style=flat-square) | ![Excel](https://img.shields.io/badge/Excel-.xlsx_Çıktısı-217346?style=flat-square&logo=microsoftexcel&logoColor=white) |
 | Kurs bazlı kayıt istatistikleri | Öğrenci listesi |
 | Cinsiyet kurs yükü dağılımı | Kurs raporları |
-| | ![PDF](https://img.shields.io/badge/PDF-.pdf_Çıktısı-EC1C24?style=flat-square&logo=adobeacrobatreader&logoColor=white) |
+| Kayıt durumu dağılımı | ![PDF](https://img.shields.io/badge/PDF-.pdf_Çıktısı-EC1C24?style=flat-square&logo=adobeacrobatreader&logoColor=white) |
 
 </div>
 
